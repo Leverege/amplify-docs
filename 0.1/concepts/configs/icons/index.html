@@ -576,6 +576,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#type-icons" class="md-nav__link">
+    Type Icons
+  </a>
+  
+    <nav class="md-nav" aria-label="Type Icons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-type-icon-for-a-blueprint" class="md-nav__link">
+    Default Type Icon for a Blueprint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-attribute-type-icon-for-a-specific-relationship-path" class="md-nav__link">
+    Relationship Attribute Type Icon for a Specific Relationship Path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-example_2" class="md-nav__link">
+    Metadata Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1489,6 +1523,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#type-icons" class="md-nav__link">
+    Type Icons
+  </a>
+  
+    <nav class="md-nav" aria-label="Type Icons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-type-icon-for-a-blueprint" class="md-nav__link">
+    Default Type Icon for a Blueprint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-attribute-type-icon-for-a-specific-relationship-path" class="md-nav__link">
+    Relationship Attribute Type Icon for a Specific Relationship Path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-example_2" class="md-nav__link">
+    Metadata Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1594,7 +1662,7 @@
 </code></pre></div>
 <p>## Navigation Icons
   Format: SVG or PNG
-  There are two ways to set your navigation icon, which is used in the top navigation bar and the sidebar, as well as the mobile navigation menu. </p>
+  There are two ways to set your <code>navIcon</code>, which is used in the top navigation bar and the sidebar, as well as the mobile navigation menu. </p>
 <p>### Default Navigation Icon for a Blueprint
   To set the default navigation icon for a blueprint, use the navIcon property in the blueprint metadata.</p>
 <p>### Relationship Attribute Icon for a Specific Relationship Path
@@ -1612,7 +1680,7 @@
 </code></pre></div></p>
 <p>## Title Icons
    Format: SVG or PNG
-  There are two ways to set your screen title icon, which is used in the header section of a given page.</p>
+  There are two ways to set your <code>screenIcon</code>, which is used in the header section of a given page.</p>
 <p>### Default Title Icon for a Blueprint
   To set the default screen title icon for a blueprint, use the screenIcon property in the blueprint metadata.</p>
 <p>### Relationship Attribute Icon for a Specific Relationship Path
@@ -1625,7 +1693,21 @@
 <h3 id="metadata-example_1">Metadata Example<a class="headerlink" href="#metadata-example_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;icons&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;navIcon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/asset-title.svg&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;screenIcon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/asset-title.svg&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="type-icons">Type Icons<a class="headerlink" href="#type-icons" title="Permanent link">&para;</a></h2>
+<p>Format: SVG or PNG
+There are two ways to set your <code>typeIcon</code>, which is used in list cards, selection cards, and more</p>
+<h3 id="default-type-icon-for-a-blueprint">Default Type Icon for a Blueprint<a class="headerlink" href="#default-type-icon-for-a-blueprint" title="Permanent link">&para;</a></h3>
+<p>To set the default type icon for a blueprint, use the typeIcon property in the blueprint metadata.</p>
+<h3 id="relationship-attribute-type-icon-for-a-specific-relationship-path">Relationship Attribute Type Icon for a Specific Relationship Path<a class="headerlink" href="#relationship-attribute-type-icon-for-a-specific-relationship-path" title="Permanent link">&para;</a></h3>
+<p>To override the default type icon at a specific relationship path, add the typeIcon property to the metadata of the relationship attribute.</p>
+<h3 id="metadata-example_2">Metadata Example<a class="headerlink" href="#metadata-example_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;icons&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;typeIcon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/asset-normal.png&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
