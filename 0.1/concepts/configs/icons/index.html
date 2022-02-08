@@ -558,6 +558,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#metadata-example" class="md-nav__link">
+    Metadata Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#match-syntax" class="md-nav__link">
     Match Syntax
   </a>
@@ -1484,6 +1491,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#metadata-example" class="md-nav__link">
+    Metadata Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#match-syntax" class="md-nav__link">
     Match Syntax
   </a>
@@ -1554,19 +1568,50 @@
 <br />
 <figcaption>Example of icons used in map context</figcaption></p>
 </figure>
+<h3 id="metadata-example">Metadata Example<a class="headerlink" href="#metadata-example" title="Permanent link">&para;</a></h3>
 <p>Icon State Fields
 - <code>src</code> the URL of the icon
 - <code>height</code> height of the icon in px
 - <code>width</code> width of the icon in px</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Plugins</span><span class="p">,</span> <span class="nx">Context</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/plugin&#39;</span>
-
-<span class="kd">const</span> <span class="nx">matchContext</span> <span class="o">=</span> <span class="p">{</span> 
-  <span class="nx">use</span> <span class="o">:</span> <span class="s1">&#39;actionBar&#39;</span><span class="p">,</span> 
-  <span class="nx">client</span> <span class="o">:</span><span class="s1">&#39;MyScreen&#39;</span><span class="p">,</span> 
-  <span class="nx">mobile</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span> 
-  <span class="nx">otherParam</span> <span class="o">:</span> <span class="s1">&#39;yes&#39;</span> 
-<span class="p">}</span>
-<span class="kd">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span> <span class="s1">&#39;Actions&#39;</span><span class="p">,</span> <span class="nx">Context</span><span class="p">.</span><span class="nx">createMatch</span><span class="p">(</span> <span class="nx">matchContext</span> <span class="p">)</span> <span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="nt">&quot;icons&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;mapbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;history&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/history.png&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;history-rollover&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/history-rollover.png&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;history-selected&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/history-selected.png&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;normal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/asset-normal.png&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;rollover&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/asset-rollover.png&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;rollover-selected&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/asset-rollover-selected.png&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;selected&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/asset-selected.png&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>In this particualr case, MyAction's <code>matches.use</code> would be compared against <code>matchContext.use</code>, and <code>matches.client</code> would be compared to <code>matchContext.client</code>. Since both fields match, the Action would pass the filter an be used. The other fields in the matchContext are unused in the case of MyAction, but other plugins might use them. It is important for the plugin point creator to document the contents of the matchContext. Some common matchContext parameters are represent here, but any keys can be supplied by the plugin point. </p>
 <table>
