@@ -564,33 +564,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#match-syntax" class="md-nav__link">
-    Match Syntax
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#handles-paradigm" class="md-nav__link">
-    Handles Paradigm
-  </a>
-  
-    <nav class="md-nav" aria-label="Handles Paradigm">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
-    Context
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1497,33 +1470,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#match-syntax" class="md-nav__link">
-    Match Syntax
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#handles-paradigm" class="md-nav__link">
-    Handles Paradigm
-  </a>
-  
-    <nav class="md-nav" aria-label="Handles Paradigm">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
-    Context
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1553,18 +1499,18 @@
 <p>The metadata for map icons are found under the mapbox property, which is further subdivided by the icon state. Supported icon types for the map include your default icons (normal, rollover, selected, rollover-selected) and your historical point icons (history, history-rollover, history-selected).</p>
 <h3 id="current-location-icon-states">Current Location Icon States<a class="headerlink" href="#current-location-icon-states" title="Permanent link">&para;</a></h3>
 <figure>
-<p><img alt="Location Icon States" src="../assets/map-icon-states.svg" width="600" />
+<p><img alt="Location Icon States" src="../assets/map-icon-states.svg" width="700" />
   </p>
 <figcaption>Possible icon states for the current location of a device on the map</figcaption>
 </figure>
 <h3 id="history-location-icon-states">History Location Icon States<a class="headerlink" href="#history-location-icon-states" title="Permanent link">&para;</a></h3>
 <figure>
-<p><img alt="Location History Icon States" src="../assets/map-icon-history-states.svg" width="600" />
+<p><img alt="Location History Icon States" src="../assets/map-icon-history-states.svg" width="700" />
   </p>
 <figcaption>Possible icon states for a historical point of a device on the map</figcaption>
 </figure>
 <h3 id="map-examples">Map Examples<a class="headerlink" href="#map-examples" title="Permanent link">&para;</a></h3>
-<p><img alt="Map Example" src="../assets/map-icon-example.svg" width="600" />
+<p><img alt="Map Example" src="../assets/map-icon-example.svg" width="700" />
 <br />
 <figcaption>Example of icons used in map context</figcaption></p>
 </figure>
@@ -1632,179 +1578,24 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>In this particualr case, MyAction's <code>matches.use</code> would be compared against <code>matchContext.use</code>, and <code>matches.client</code> would be compared to <code>matchContext.client</code>. Since both fields match, the Action would pass the filter an be used. The other fields in the matchContext are unused in the case of MyAction, but other plugins might use them. It is important for the plugin point creator to document the contents of the matchContext. Some common matchContext parameters are represent here, but any keys can be supplied by the plugin point. </p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>client</td>
-<td>The overal type of screen or client.</td>
-</tr>
-<tr>
-<td>clientType</td>
-<td>A refinement of the client. Is sometimes the same as client</td>
-</tr>
-<tr>
-<td>mobile</td>
-<td>Is this client being used for a mobile presentation</td>
-</tr>
-<tr>
-<td>objectType</td>
-<td>The type of object being represented</td>
-</tr>
-<tr>
-<td>path</td>
-<td>The relationship path</td>
-</tr>
-<tr>
-<td>relationship</td>
-<td>A Relationship object</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition info">
-<p class="admonition-title">Example Note</p>
-<p>In the above case, the Plugins.get() is not caching its results so the filter will occur
-every time. This is for example purposes only, and a Plugin View should really be used instead.
-The Context.createMatch() is a convenience function that calls 
-<div class="highlight"><pre><span></span><code>plg =&gt; Match.isMatch( clientMatch, plg.matches )
+<p>## Navigation Icons
+  Format: SVG or PNG
+  There are two ways to set your navigation icon, which is used in the top navigation bar and the sidebar, as well as the mobile navigation menu. </p>
+<p>###Default Navigation Icon for a Blueprint
+  To set the default navigation icon for a blueprint, use the navIcon property in the blueprint metadata.</p>
+<p>###Relationship Attribute Icon for a Specific Relationship Path
+ To override the default navigation icon at a specific relationship path, add the navIcon property to the metadata of the relationship attribute. For example, to override the location navigation icon at the company level, you’ll go to the company blueprint’s location attribute and add the metadata.</p>
+<figure markdown="block">
+  ![Location Icon States](assets/nav-icon-example.svg){ width="700" }
+    &lt;figcaption&gt;Icon usage in navigation&lt;/figcaption&gt;
+  </figure>
+<p>### Metadata Example
+  <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;icons&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;navIcon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/asset-nav.svg&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-<h3 id="match-syntax">Match Syntax<a class="headerlink" href="#match-syntax" title="Permanent link">&para;</a></h3>
-<p>The <code>Match.isMatch( context, matches )</code> function has several rules it follows.</p>
-<table>
-<thead>
-<tr>
-<th>If matches is</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>null</td>
-<td>return true. All requirements are met.</td>
-</tr>
-<tr>
-<td>Array</td>
-<td><code>isMatch()</code> is called for each element in the array. If any ony return true, the outer <code>isMatch()</code> will return true as well.</td>
-</tr>
-<tr>
-<td>function</td>
-<td>The result of calling <code>matches( context )</code> will be returned. (it should return true or false)</td>
-</tr>
-<tr>
-<td>Object</td>
-<td>Each <code>key</code> in <code>matches</code> is evaluated against the <code>context</code>. If any one returns false, false is returned. Otherwise return true. See below for Field rules.</td>
-</tr>
-<tr>
-<td>else &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>return false.</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>In general, it is best to use the Array or the Object when ever possible and avoid the complicated function at the field level. However, setting matches to a function and console logging the <code>context</code> is a quick way to see debug the <code>matchesContext</code> being used to evaluate your Plugin. </p>
-</div>
-<p>When isMatch compares the fields in the matches object to the context object, it will use the following rules to evaluate each field key. The <code>matches[field]</code> and <code>context[field]</code> maybe both be arrays, in which cases each item in the <code>matches</code> is compared to each value in the <code>context</code>, and if any result in a true evaluation, the field will be considered matching.</p>
-<p>(For this description, V is the field value supplied in the matches object from the Plugin, and CV is the value of the field in the matchContext. R is used to indicate a recursive invokation of this rule.)</p>
-<table>
-<thead>
-<tr>
-<th>If the field value V</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>is an Array</td>
-<td>Return true if <code>R( V[n], CV)</code> is true</td>
-</tr>
-<tr>
-<td>equals CV</td>
-<td>return true</td>
-</tr>
-<tr>
-<td>*</td>
-<td>return true if CV is non-null</td>
-</tr>
-<tr>
-<td>Starts with '!'</td>
-<td>return true if <code>V.substring(1)</code> is not equal to CV</td>
-</tr>
-<tr>
-<td>Starts with '&gt;', '&gt;=', '&lt;', '&lt;='</td>
-<td>returns true if mathematically CV is greater than, greater than or equal to, less then, less than or equal to the V minues the comparator</td>
-</tr>
-<tr>
-<td>null</td>
-<td>return true if CV is null or undefined</td>
-</tr>
-<tr>
-<td>Object</td>
-<td>if <code>V.not</code> exists, return false if <code>R( V.not, CV)</code> returns true. If <code>V.and</code> exists, return <code>R( V.and, CV)</code>. Otherwise return true</td>
-</tr>
-<tr>
-<td>function</td>
-<td>return result of V( context, CV )</td>
-</tr>
-<tr>
-<td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>return false</td>
-</tr>
-</tbody>
-</table>
-<h2 id="handles-paradigm">Handles Paradigm<a class="headerlink" href="#handles-paradigm" title="Permanent link">&para;</a></h2>
-<p>In this paradigm, the Plugin will have a <code>handle( cxt )</code> method that can return either true or false. If true, the Plugin should be used. This is very similar to Matches paradigm, though the intent is different, and these two paradigms are often used together on the same plugin point. Where the Matches paradigm may statically filter the set of Plugins down to all possible ones that might be used in this particular plugin point, the <code>handles( cxt )</code> is meant to look deeper at what is happening in that particular case to determine if the plugin can or wants participate. The context object <code>cxt</code> supplied to this method contains entries that represent the current state of the plugin point: are certain objects checked, is the user right clicking on a particular item, is an item in a list selected, etc.</p>
-<p>As an example, a Contextual Action Menu plugin might want to work in a table of objects of type "vehicle", but only want that vehicle is in an alert state and the user has permissions to send an sms message to its owner. The Matches might match against client equaling 'TableView' and its path equaling 'dealer.vehicles', while the <code>handles( cxt )</code> would check that the target object is a vehicle and the user is permissioned to send an sms. </p>
-<h3 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h3>
-<p>The plugins library includes a <code>Context</code> class meant to aid in the evaluation of the <code>handles()</code> context object. On primary support supplied is in regards to the target of the given context. It can be one object or many. There could also be a secondary target, or many secondary targets. It is up to your Plugin to decide when it should participate using the given context. In the case of a Action, some can support many targets, like perhaps a bulk remove. Some may require a single primary and a single secondary target, like a pair A to B. Some may allow many targets and many secondary targets. And some may not require targets at all, but some other field in the context. </p>
-<p>The following methods in <code>Context</code> can help your Plugin evaluate this context object. The following target methods below will look at the 'target' key in the Context object. Normally, objects are expected to have a <code>{ type : &lt;objectType&gt; }</code> field. When this is not possible, the context can be constructed with a <code>targetType</code> field that indicates the type of targets in the target list.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>getTarget( cxt )</td>
-<td>Returns the first object in the target field</td>
-</tr>
-<tr>
-<td>getTargets( cxt )</td>
-<td>Returns an Array of objects in the target field</td>
-</tr>
-<tr>
-<td>getTargetTypes( cxt )</td>
-<td>Returns an Array of objectTypes in the target field</td>
-</tr>
-<tr>
-<td>isTargetOfType( cxt, type, only&nbsp;=&nbsp;true&nbsp;)</td>
-<td>Returns true if the target is of the given type. When <code>isOnly</code> is true, this will also return false when there are more than one target.</td>
-</tr>
-<tr>
-<td>getTargetOfType( cxt, type, only&nbsp;=&nbsp;true&nbsp;)</td>
-<td>Returns the object or null in the target if it is of the given type. When <code>isOnly</code> is true, this will also return null when there are more than one target.</td>
-</tr>
-<tr>
-<td>hasTargetsOfType( cxt, type, arrayCondition&nbsp;=&nbsp;'any&nbsp;)</td>
-<td>This will return true if there are any targets in the list of the specified type. Possible options for <code>arrayCondition</code> inclue 'any', 'onlyOne', 'one', and 'all'. Using 'onlyOne' means there is only one target in the list and it is of the given type. Using 'one' means there is only one target in the list of the type. Using 'all' means all trargets must be of the specified type.</td>
-</tr>
-<tr>
-<td>getTargetsOfType( cxt, type, arrayCondition&nbsp;=&nbsp;'any&nbsp;)</td>
-<td>This is like <code>hasTargetsOfType()</code> but an array of the targets are actually returned.</td>
-</tr>
-</tbody>
-</table>
-<p>For secondary target evaluation, the same methods above exist but with the addition of 'Secondary' in the method name: <code>getSecondaryTargetTypes</code>, <code>isSecondaryTargetOfType</code>, <code>getSecondaryTargetOfType</code>, <code>hasSecondaryTargetsOfType</code>, <code>getSecondaryTargetsOfType</code>. These methods will use the fields called <code>secondaryTarget</code> and <code>`secondaryTargetType</code>.</p>
-<p>These methods are also available in a generic form where you can supply the keys to evaluate: <code>getObject</code>, <code>getObjects</code>, <code>getOfType</code>, <code>getObjectTypes</code>, <code>isObjectOfType</code>, <code>getObjectOfType</code>, <code>hasObjectsOfType</code>.</p>
 
               
             </article>
