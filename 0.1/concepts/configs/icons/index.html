@@ -1539,16 +1539,25 @@
 <p>The metadata for map icons are found under the mapbox property, which is further subdivided by the icon state. Supported icon types for the map include your default icons (normal, rollover, selected, rollover-selected) and your historical point icons (history, history-rollover, history-selected).</p>
 <h3 id="current-location-icon-states">Current Location Icon States<a class="headerlink" href="#current-location-icon-states" title="Permanent link">&para;</a></h3>
 <figure>
-<p><img alt="Location Icon States" src="../assets/map-icon-states.svg" width="500" />
+<p><img alt="Location Icon States" src="../assets/map-icon-states.svg" width="600" />
   </p>
 <figcaption>Possible icon states for the current location of a device on the map</figcaption>
 </figure>
 <h3 id="history-location-icon-states">History Location Icon States<a class="headerlink" href="#history-location-icon-states" title="Permanent link">&para;</a></h3>
+<figure>
+<p><img alt="Location History Icon States" src="../assets/map-icon-history-states.svg" width="600" />
+  </p>
+<figcaption>Possible icon states for a historical point of a device on the map</figcaption>
+</figure>
 <h3 id="map-examples">Map Examples<a class="headerlink" href="#map-examples" title="Permanent link">&para;</a></h3>
+<p><img alt="Map Example" src="../assets/map-icon-example.svg" width="600" />
+<br />
+<figcaption>Example of icons used in map context</figcaption></p>
+</figure>
 <p>Icon State Fields
-* 'src': the URL of the icon
-* 'height': height of the icon in px
-* 'width': width of the icon in px</p>
+- <code>src</code> the URL of the icon
+- <code>height</code> height of the icon in px
+- <code>width</code> width of the icon in px</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Plugins</span><span class="p">,</span> <span class="nx">Context</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/plugin&#39;</span>
 
 <span class="kd">const</span> <span class="nx">matchContext</span> <span class="o">=</span> <span class="p">{</span> 
