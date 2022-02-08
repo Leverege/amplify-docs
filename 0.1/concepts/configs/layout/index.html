@@ -13,7 +13,7 @@
     
     
       
-        <title>Views - Leverege Build</title>
+        <title>Layout - Leverege Build</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#views" class="md-skip">
+        <a href="#layout" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Views
+              Layout
             
           </span>
         </div>
@@ -202,8 +202,6 @@
         
   
   
-    
-  
 
 
   
@@ -215,7 +213,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../" class="md-tabs__link">
         Concepts
       </a>
     </li>
@@ -411,14 +409,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -449,14 +445,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
       
       
@@ -480,7 +474,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Plugins</a>
+          <a href="../">Configuration</a>
           
             <label for="__nav_3_1">
               <span class="md-nav__icon md-icon"></span>
@@ -488,10 +482,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Plugins" data-md-level="2">
+      <nav class="md-nav" aria-label="Configuration" data-md-level="2">
         <label class="md-nav__title" for="__nav_3_1">
           <span class="md-nav__icon md-icon"></span>
-          Plugins
+          Configuration
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -503,8 +497,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../refinement/" class="md-nav__link">
-        Refinement
+      <a href="../icons/" class="md-nav__link">
+        Icons
       </a>
     </li>
   
@@ -517,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../factories/" class="md-nav__link">
+      <a href="../../plugins/factories.md" class="md-nav__link">
         Factories
       </a>
     </li>
@@ -529,21 +523,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../plugins/views.md" class="md-nav__link">
         Views
       </a>
-      
     </li>
   
 
@@ -555,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
+      <a href="../../plugins/config.md" class="md-nav__link">
         Config
       </a>
     </li>
@@ -569,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../layout/" class="md-nav__link">
+      <a href="../../plugins/layout.md" class="md-nav__link">
         Layout
       </a>
     </li>
@@ -1438,45 +1422,55 @@
               
                 
 
-<h1 id="views">Views<a class="headerlink" href="#views" title="Permanent link">&para;</a></h1>
-<p>As mentioned earlier, the <code>Plugins.get( type, filter )</code> call can return a filtered set of plugins of a given type. Sometimes, however, these plugins are evaluated and organized into a more complicated structure that allows for easier and quicker access. This is where the <code>View</code> comes into play. The <code>View</code> will watch the Plugin mechanisms for Plugins that are added and removed, and mark its view as dirty when appropriate. When the View is nexted ask for its value, it can either recalculate the value or return a cached one.</p>
-<p>For a plugin point to use a Factory, it should use the <code>createView( type, options, throwError = false )</code> method to obtain and/or create it.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">view</span> <span class="o">=</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">createView</span><span class="p">(</span> <span class="s1">&#39;myProject.MyLookupType&#39;</span><span class="p">,</span> <span class="nx">options</span> <span class="p">)</span>
+<h1 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h1>
+<p>Sometimes, especially for UI Plugins, the Plugins need to be ordered and arranged into a tree like structure. This can be true of actions in a menu, creators in a selector, and other such mechanisms. The <code>Layout</code> is supplied as a common way to do this ordering.</p>
+<p>To use it:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Layout</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/plugins&#39;</span>
+
+<span class="kd">const</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">Layout</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span> <span class="nx">arrayOfItems</span> <span class="cm">/*, { buildTree : true } */</span> <span class="p">)</span>
 </code></pre></div>
-<p>The first argument identifies the plugin point type that the View is using , the second object is the options used to configure the factory:</p>
+<p>This <code>create</code> call will look at every item in the array for a <code>layout</code> object. This object can have the following options:</p>
 <table>
 <thead>
 <tr>
-<th>Option Field</th>
+<th>Field</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>name</td>
-<td>default</td>
-<td>The name of the View. This is used to cache the View so it can be returned from a repeated <code>createFactory()</code> or <code>getFactory()</code> call.</td>
-</tr>
-<tr>
 <td>sort</td>
-<td>defaultSort</td>
-<td>This defines the sort function used to sort the plugins. By default, the sort function uses a string sorting mechanism on the 'sort' key, but alternates functions can be used. If this is 'byNumber', a sort using a number will be installed.</td>
+<td>item.name or item.type or '_z'</td>
+<td>This string is used to organize the objects into priorities. Items sorted with small sort values are higher in the list, so an 'a' will occur before a 'z' in sort order.</td>
 </tr>
 <tr>
-<td>filter</td>
-<td>null</td>
-<td>The filter used to prune plugins from the View. If <code>processor</code> is supplied, this is not used.</td>
+<td>group</td>
+<td>[]</td>
+<td>An array of strings representing groups. In a tree, items that share the group path will end up in the same node in hierarchy.</td>
 </tr>
 <tr>
-<td>processor</td>
-<td>null</td>
-<td>A function that, if supplied, this is invoked with an Array of sorted  plugins. The result of this function is returned from <code>View.get()</code>. If this is not supplied, the <code>filter</code> options will be used.</td>
+<td>groupNames</td>
+<td>[]</td>
+<td>The name of the group elements, used for human consumption. Only one item will contribute this value (the first one defining it)</td>
+</tr>
+<tr>
+<td>groupIcons</td>
+<td>[]</td>
+<td>The icon (either url or font icon) of the groups, used for human consumption. Only one item will contribute this value (the first one defining it)</td>
 </tr>
 </tbody>
 </table>
-<p>If a processor is not supplied, <code>view.get()</code> will return an array of plugins, sorted and filtered according to those options. If the processor is given, the result from the processor defines the shape of the return value of <code>view.get()</code>.</p>
-<p>When a Plugin of the View's type is added or removed, the view is marked as dirty and is recalculated vi <code>processor</code> or <code>filter</code> on the next invokation of <code>view.get()</code>.</p>
+<p>If <code>create()</code> is called with the <code>buildTree</code> option set to false, and array of objects containing <code>{ sort, group, groupKey, groupNames, groupIcons, item }</code> will be returned.</p>
+<p>If <code>buildTree</code> is not set or is true, the array will be turned into a tree, where the root and groups in the tree look like:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nx">type</span> <span class="o">:</span> <span class="s1">&#39;layoutNode&#39;</span><span class="p">,</span>
+  <span class="nx">name</span><span class="p">,</span>
+  <span class="nx">icon</span><span class="p">,</span>
+  <span class="nx">items</span> <span class="o">:</span> <span class="p">[</span> <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The items array will contain items from the original array and other layout nodes, created in order to support the hierarchy.</p>
 
               
             </article>
@@ -1491,41 +1485,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../factories/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Factories" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Factories
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../config/" class="md-footer__link md-footer__link--next" aria-label="Next: Config" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Config
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
