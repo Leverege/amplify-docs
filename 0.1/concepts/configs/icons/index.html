@@ -537,12 +537,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#matches-paradigm" class="md-nav__link">
-    Matches Paradigm
+  <a href="#map-icons" class="md-nav__link">
+    Map Icons
   </a>
   
-    <nav class="md-nav" aria-label="Matches Paradigm">
+    <nav class="md-nav" aria-label="Map Icons">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-location-icon-states" class="md-nav__link">
+    Current Location Icon States
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history-location-icon-states" class="md-nav__link">
+    History Location Icon States
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-examples" class="md-nav__link">
+    Map Examples
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#match-syntax" class="md-nav__link">
@@ -1498,12 +1519,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#matches-paradigm" class="md-nav__link">
-    Matches Paradigm
+  <a href="#map-icons" class="md-nav__link">
+    Map Icons
   </a>
   
-    <nav class="md-nav" aria-label="Matches Paradigm">
+    <nav class="md-nav" aria-label="Map Icons">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-location-icon-states" class="md-nav__link">
+    Current Location Icon States
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history-location-icon-states" class="md-nav__link">
+    History Location Icon States
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-examples" class="md-nav__link">
+    Map Examples
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#match-syntax" class="md-nav__link">
@@ -1551,20 +1593,26 @@
                 
 
 <h1 id="icon-configuration">Icon Configuration<a class="headerlink" href="#icon-configuration" title="Permanent link">&para;</a></h1>
-<p>There are many situations where you will want to customize your icons, whether they are for your navigation, map, headers, or lists. This is easily accomplished by adding metadata via Architect. </p>
-<p>!!! Accessing Blueprints &amp; Metadata
-To update and configure default icons, you will need access to Leverege Architect, our core platform interface.</p>
-<h2 id="matches-paradigm">Matches Paradigm<a class="headerlink" href="#matches-paradigm" title="Permanent link">&para;</a></h2>
-<p>Sometimes a plugin point will use the Matches paradigme to filter Plugins. This is often used as static, cacheable filter for all possible things that might show up in a plugin point. This paradigm has two sides: one advertised by the plugin point indicating what and/or where it is, and one on the Plugin that indicates its specific requirements. In order for a Plugin to be used, all the required fields in the Plugin's <code>matches</code> object must be met by the plugin point's <code>matchContext</code>. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="k">default</span> <span class="nx">MyAction</span> <span class="p">{</span>
-  <span class="nx">matches</span> <span class="o">:</span> <span class="p">{</span>
-    <span class="nx">use</span> <span class="o">:</span> <span class="s1">&#39;actionBar&#39;</span><span class="p">,</span>
-    <span class="nx">client</span> <span class="o">:</span> <span class="s1">&#39;MyScreen&#39;</span>
-  <span class="p">}</span>
-  <span class="c1">// ...</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>This plugin is specifying that it should be used only when the plugin point specifies that the plugins are being used for an <code>actionBar</code> and the plugin point is in client called <code>MyScreen</code>. How plugin point specifies this filtered set of plugins can vary, but a simple example is to use the filter parameter on Plugins.get()</p>
+<p>There are many situations where you will want to customize your icons, whether they are for your navigation, map, headers, or lists. This is easily accomplished by adding metadata via Architect. Before following along, please ensure you have access to our Architect UI.</p>
+<div class="admonition storing icons">
+<p class="admonition-title">Storing</p>
+</div>
+<p>Prior to any of this configuration, the icons must be uploaded to the cloud and hosted publically. We suggest using GCP for this step. You also must know the URL of each icon state.</p>
+<h2 id="map-icons">Map Icons<a class="headerlink" href="#map-icons" title="Permanent link">&para;</a></h2>
+<p>Format: PNG</p>
+<p>The metadata for map icons are found under the mapbox property, which is further subdivided by the icon state. Supported icon types for the map include your default icons (normal, rollover, selected, rollover-selected) and your historical point icons (history, history-rollover, history-selected).</p>
+<h3 id="current-location-icon-states">Current Location Icon States<a class="headerlink" href="#current-location-icon-states" title="Permanent link">&para;</a></h3>
+<figure>
+<p><img alt="Location Icon States" src="/assets/images/map-icon-states.svg" width="500" />
+  </p>
+<figcaption>Possible icon states</figcaption>
+</figure>
+<h3 id="history-location-icon-states">History Location Icon States<a class="headerlink" href="#history-location-icon-states" title="Permanent link">&para;</a></h3>
+<h3 id="map-examples">Map Examples<a class="headerlink" href="#map-examples" title="Permanent link">&para;</a></h3>
+<p>Each icon state takes 3 fields:
+-src: the URL of the icon
+-height: height of the icon in px
+-width: width of the icon in px</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Plugins</span><span class="p">,</span> <span class="nx">Context</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/plugin&#39;</span>
 
 <span class="kd">const</span> <span class="nx">matchContext</span> <span class="o">=</span> <span class="p">{</span> 
