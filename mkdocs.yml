@@ -19,12 +19,13 @@ nav :
   - Home: index.md
   - UI Setup:
     - setup/index.md
-    - Branding:
+    - Branding & Styling:
        - setup/branding/index.md
-       - UI Builder: setup/branding/builder.md
+       - UI Theme: setup/branding/builder.md
        - UI Inspector: setup/branding/inspector.md
        - Logos: setup/branding/logos.md
        - Icons: setup/branding/icons.md
+       - Notifications: setup/branding/notifications.md
     - Styling:
       - setup/configs/index.md
     - Configuration:
