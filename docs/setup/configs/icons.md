@@ -89,7 +89,15 @@ Icon State Fields
     }
   }
 ```
-
+| Property | Image Naming Convention |
+|-------|---------|
+| `normal` | blueprint-normal.png |
+| `rollover` | blueprint-rollover.png |
+| `selected` | blueprint-selected.png |
+| `rollover-selected` | blueprint-rollover-selected.png |
+| `history` | Global Icon: history.png, Blueprint-Specific Icon: blueprint-history.png |
+| `history-rollover` | Global Icon: history-rollover.png, Blueprint-Specific Icon: blueprint-history-rollover.png |
+| `history-selected` | Global Icon: history-selected.png, Blueprint-Specific Icon: blueprint-history-selected.png|
 
 ## Navigation Icons
 
@@ -111,6 +119,11 @@ The `navIcon` property is used in the top navigation bar and the sidebar, as wel
     }
   }
   ```
+  | Property | Image Naming Convention |
+  |-------|---------|
+  | `navIcon` | blueprint-nav.svg |
+
+  
 
 ## Title Icons
   
@@ -132,6 +145,9 @@ The  `screenIcon` property is used in the header section of a given page. You ca
   }
 }
 ```
+| Property | Image Naming Convention |
+|-------|---------|
+| `screenIcon` | blueprint-title.svg |
 
 ## Type Icons
 
@@ -148,6 +164,12 @@ The `typeIcon` property is used in list cards, selection cards, and more. You ca
   }
 }
 ```
+For screen icons, some people prefer to use the same icon they used for the `normal` map property. If so, you will use the same file with the naming convention blueprint-normal.png. If you want to use a seperate file, follow the naming convention below.
+
+| Property | Image Naming Convention |
+|-------|---------|
+| `typeIcon` | blueprint-type.svg |
+
 
 ## Attribute Overrides
 
@@ -158,3 +180,8 @@ To override the default icon at a specific relationship path, add the icon prope
   <figcaption>Override metadata at the relationship attribute</figcaption>
 </figure>
 
+| Property | Image Naming Convention |
+|-------|---------|
+| `navIcon` | blueprint-nav-path.svg ex. location-nav-company.svg |
+
+Above you can see we added the path the icon is used at to the end of the naming convention.
