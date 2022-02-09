@@ -27,8 +27,6 @@ nav :
        - Icons: setup/branding/icons.md
        - Email & SMS Templates: setup/branding/notifications.md
        - Empty States & Illustrations: setup/branding/empty-states.md
-    - Styling:
-      - setup/configs/index.md
     - Configuration:
       - setup/models/index.md
       - Model Util: setup/models/model-util.md

@@ -1,12 +1,29 @@
-# Branding
+# Empty States & Illustrations
 
-The Leverege Stack makes customizing the end-user interfaces and emails to your brand very simiple. In this section, we'll cover how you can use the UI builder, our global theming engine, and our email/text templates to ensure that your product is visually stunniing.
+No one likes a blank screen. That's why we've given you the ability to add helpful text hints, illustrations, and help links to the different empty states users might come across in the UI.
 
-## UI Builder
+<figure markdown>
+![Blueprint Metadata Editor](assets/blueprint-metadata.svg){ width="700" }
+  <figcaption>Edit blueprint metadata in the info tab</figcaption>
+</figure>
 
-The UI Builder is a stand-alone tool that allows you to edit & update the CSS of all UI elements in real time on your development site. This empowers you to change everything from a button color to the flex direction of a pane, all in one place.
+## No Items to Load
 
-## UI Inspector
+When your users are just starting out with your UI and they haven't added any data yet, they may need some help to guide them in the right direction. That's why we've given you the ability to configure the empty states of certain components, like the table & card list. You can make these changes for a given blueprint in the blueprint's metadata.
 
-In your interfaces, you can turn on the UI inspector, which tells you what variant in the UI builder you are looking at. This allows you to quickly identify and update a given style of a css variant of a UI element. 
+<figure markdown>
+![Blueprint Metadata Editor](assets/no-data.svg){ width="700" }
+  <figcaption>Configuration options</figcaption>
+</figure>
 
+
+``` json
+"strings": {
+  "noDataTitle": "Add Your Assets",
+  "noDataBody": "Ready to import your asset inventory? Upload your assets in bulk or individually.",
+  "noDataDocLink": "https://www.google.com/"
+  },
+"icons": {
+  "noData": "https://molten-ui-assets.storage.googleapis.com/no-data.svg"
+  ```
+  
