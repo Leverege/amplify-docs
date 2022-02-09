@@ -15,10 +15,11 @@ theme:
     - search.suggest
 nav : 
   - Home: index.md
-  - Introduction:
   - UI Setup:
+    - setup/index.md
     - Branding:
-        - setup/branding/branding.md
+       - setup/index.md
+       - Branding: setup/branding/branding.md
     - Styling:
       - setup/configs/index.md
       - Icons: setup/configs/icons.md
