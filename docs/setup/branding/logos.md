@@ -13,8 +13,8 @@ The logos used in the interfaces are stored in the UI builder in various places.
 </figure>
 
 - Element Type: Button
-- Variant Name: 'navLogo'
-- Mobile Override: 'mobileNavLogo'
+- Variant Name: `navLogo`
+- Mobile Override: `mobileNavLogo`
 
 !!! Tip "SVG Format for Best Resolution"
 
@@ -42,7 +42,7 @@ There are two branding assets that can be configured on this page.
 The login logo is a different element & variant in the UI builder than the navLogo. The variant information is below. 
 
 - Element Type: Text
-- Variant Name: 'loginLogo'
+- Variant Name: `loginLogo`
 
 Edit the logo by navigating to the property tab and pasting the URL (same process as above)
 
@@ -51,7 +51,7 @@ Edit the logo by navigating to the property tab and pasting the URL (same proces
 The login background is a pane and the image will be added as the URL of the background property.
 
 - Element Type: Pane
-- Variant Name: 'loginBackground'
+- Variant Name: `loginBackground`
 
 <figure markdown>
 ![Login Background](assets/login-background.png){ width="700" }

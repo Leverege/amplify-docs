@@ -1,31 +1,11 @@
-# Configuration
+# UI Inspector Overview
 
-The `Plugins` mechanism supplies a way registering objects for use in different mechanisms. The `Config` mechanism supplies a single location where these plugins can supply configurable options without each interface having to make its own options mechanism.
+The UI inspector allows designers to hover over any UI element in the interface and quickly see the element type and variant name. Because every element is nested in another, the inspector will show the child, then each consecutive parent in the panel. If the element in question is a pane, the inspector will include the layout as well.
 
-## Getting Config Values 
+<figure markdown>
+![Inspector](assets/inspector.png){ width="700" }
+  <figcaption>Inspector</figcaption>
+</figure>
 
-To use the Config option in your plugin, invoke the `get( rsource, key, defaultValue )` method:
-
-``` javascript 
-import { Config } from `@leverege/plugins`
-
-const opt1 = Config.get( 'myProject.MyPlugin', 'option1', 12 )
-
-```
-
-In general, you should avoid get Config options at the time you javascript is loaded, but instead delay until when the option is needed. This will avoid any ordering issues between intialization and usage of the Config options.
-
-## Setting Config Values 
-
-To set the Config option, use `set( rsource, key, value )` method:
-
-``` javascript 
-import { Config } from `@leverege/plugins`
-
-Config.set( 'myProject.MyPlugin', 'option1', 42 )
-
-```
-
-On Molten startup, the `LoadConfig` plugin will take all options stored in Molten's config object at the path 'plugins/config' and set them on the Plugin's Config object.
-
-
+!!! Tip "Enabling the Inspector"
+    The inspector should only be enabled in your development environment. Engineers can enable the inspector per UI. Once the inspector is enabled, you can toggle it on and off using the keyboard shortcut `Ctrl`+`i`

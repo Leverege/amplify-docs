@@ -5,6 +5,8 @@ theme:
   favicon : assets/amplify-favicon.svg
   name: material
   custom_dir: overrides
+  font:
+    text: Inter
   features:
     - navigation.tabs
     - navigation.top
