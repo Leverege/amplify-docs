@@ -20,16 +20,17 @@ Metadata Example
 
 ```json
 {
-"strings": {
-      "noDataTitle": "Add Your Assets",
-      "noDataBody": "Ready to import your asset inventory? Upload your assets in bulk or individually.",
-      "noDataDocLink": "https://www.google.com/"
-      },
-"icons": {
-      "noData": "https://molten-ui-assets.storage.googleapis.com/no-data.svg"
-      }
-  }
-  ```
+ "strings": {
+        "noDataTitle": "Add Your Assets",
+        "noDataBody": "Ready to import your asset inventory? Upload your assets in bulk or individually.",
+        "noDataDocLink": "https://www.google.com/"
+        },
+  "icons": {
+        "noData": "https://molten-ui-assets.storage.googleapis.com/no-data.svg"
+        }
+}
+```
+
   
 ## No Search Results
 
@@ -42,16 +43,17 @@ Sometimes your user searches for something that just doesn't exist. To help them
 
 Metadata Example 
 
-```json
-{
-"strings": {
-      "noSearchResultsTitle": "We Couldn't Find Any Matches For That",
-      "noSearchResultsBody": "Please try another search query.",
-      },
-"icons": {
-      "noSearchResults": "https://molten-ui-assets.storage.googleapis.com/no-search-results.svg"
-      }
-    }
+  ```json
+  {
+   "strings": {
+         "noSearchResultsTitle": "We Couldn't Find Any Matches For That",
+         "noSearchResultsBody": "Please try another search query.",
+         },
+   "icons": {
+         "noSearchResults": "https://molten-ui-assets.storage.googleapis.com/no-search-results.svg"
+         }
+  }
   ```
-  
+
+
 !!! Tip "SVG files will have the best resolution"
