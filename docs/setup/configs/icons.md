@@ -89,6 +89,7 @@ Icon State Fields
     }
   }
 ```
+
 | Property | Image Naming Convention |
 |-------|---------|
 | `normal` | blueprint-normal.png |
@@ -119,6 +120,7 @@ The `navIcon` property is used in the top navigation bar and the sidebar, as wel
     }
   }
   ```
+  
   | Property | Image Naming Convention |
   |-------|---------|
   | `navIcon` | blueprint-nav.svg |
@@ -145,6 +147,7 @@ The  `screenIcon` property is used in the header section of a given page. You ca
   }
 }
 ```
+
 | Property | Image Naming Convention |
 |-------|---------|
 | `screenIcon` | blueprint-title.svg |
