@@ -857,7 +857,7 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="nt">&quot;icons&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;mapbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;history&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -897,6 +897,15 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
+| Property | Image Naming Convention |
+|-------|---------|
+| <code>normal</code> | blueprint-normal.png |
+| <code>rollover</code> | blueprint-rollover.png |
+| <code>selected</code> | blueprint-selected.png |
+| <code>rollover-selected</code> | blueprint-rollover-selected.png |
+| <code>history</code> | Global Icon: history.png, Blueprint-Specific Icon: blueprint-history.png |
+| <code>history-rollover</code> | Global Icon: history-rollover.png, Blueprint-Specific Icon: blueprint-history-rollover.png |
+| <code>history-selected</code> | Global Icon: history-selected.png, Blueprint-Specific Icon: blueprint-history-selected.png|</p>
 <h2 id="navigation-icons">Navigation Icons<a class="headerlink" href="#navigation-icons" title="Permanent link">&para;</a></h2>
 <p>The <code>navIcon</code> property is used in the top navigation bar and the sidebar, as well as the mobile navigation menu. You can set the default icon in the blueprint metadata.</p>
 <div class="admonition info">
@@ -907,12 +916,15 @@
 <figcaption>Icon usage in navigation</figcaption>
 </figure>
 <h3 id="metadata-example_1">Metadata Example<a class="headerlink" href="#metadata-example_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;icons&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;navIcon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/asset-nav.svg&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+  | Property | Image Naming Convention |
+  |-------|---------|
+  | <code>navIcon</code> | blueprint-nav.svg |</p>
 <h2 id="title-icons">Title Icons<a class="headerlink" href="#title-icons" title="Permanent link">&para;</a></h2>
 <p>The  <code>screenIcon</code> property is used in the header section of a given page. You can set the default icon in the blueprint metadata.</p>
 <div class="admonition info">
@@ -924,24 +936,42 @@
 <figcaption>Icon usage in screen titles</figcaption>
 </figure>
 <h3 id="metadata-example_2">Metadata Example<a class="headerlink" href="#metadata-example_2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;icons&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;screenIcon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/asset-title.svg&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+| Property | Image Naming Convention |
+|-------|---------|
+| <code>screenIcon</code> | blueprint-title.svg |</p>
 <h2 id="type-icons">Type Icons<a class="headerlink" href="#type-icons" title="Permanent link">&para;</a></h2>
 <p>The <code>typeIcon</code> property is used in list cards, selection cards, and more. You can set the default icon in the blueprint metadata.</p>
 <div class="admonition info">
 <p class="admonition-title">Format: SVG or PNG</p>
 </div>
 <h3 id="metadata-example_3">Metadata Example<a class="headerlink" href="#metadata-example_3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;icons&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;typeIcon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/asset-normal.png&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+For screen icons, some people prefer to use the same icon they used for the <code>normal</code> map property. If so, you will use the same file with the naming convention blueprint-normal.png. If you want to use a seperate file, follow the naming convention below.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Image Naming Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>typeIcon</code></td>
+<td>blueprint-type.svg</td>
+</tr>
+</tbody>
+</table>
 <h2 id="attribute-overrides">Attribute Overrides<a class="headerlink" href="#attribute-overrides" title="Permanent link">&para;</a></h2>
 <p>To override the default icon at a specific relationship path, add the icon property to the metadata of the relationship attribute. For example, to override the location <code>navicon</code> at the company level, you’ll go to the company blueprint’s location attribute and add the metadata.</p>
 <figure>
@@ -949,6 +979,21 @@
   </p>
 <figcaption>Override metadata at the relationship attribute</figcaption>
 </figure>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Image Naming Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>navIcon</code></td>
+<td>blueprint-nav-path.svg ex. location-nav-company.svg</td>
+</tr>
+</tbody>
+</table>
+<p>Above you can see we added the path the icon is used at to the end of the naming convention.</p>
 
               
             </article>
