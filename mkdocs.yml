@@ -17,6 +17,10 @@ theme:
     - search.suggest
 nav : 
   - Home: index.md
+  - Introduction:
+     - intro/index.md
+  - Data Architecture:
+     - architecture/index.md
   - UI Setup:
     - setup/index.md
     - Branding & Styling:
@@ -35,6 +39,10 @@ nav :
       - Styling Overrides : setup/nav/path-overrides.md
     - Developer Options:
       - setup/dev.md
+  - UI Configuration:
+     - config/index.md
+  - Features:
+     - features/index.md
 extra:
   version: 
     provider: mike
