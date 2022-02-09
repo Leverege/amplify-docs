@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configuration" class="md-skip">
+        <a href="#ui-builder-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -326,7 +326,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Branding</a>
+          <a href="../">Branding</a>
           
             <label for="__nav_2_2">
               <span class="md-nav__icon md-icon"></span>
@@ -383,16 +383,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-config-values" class="md-nav__link">
-    Getting Config Values
+  <a href="#navigating-the-ui-builder" class="md-nav__link">
+    Navigating the UI Builder
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-config-values" class="md-nav__link">
-    Setting Config Values
+  <a href="#variants" class="md-nav__link">
+    Variants
   </a>
+  
+    <nav class="md-nav" aria-label="Variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-new-variant" class="md-nav__link">
+    Creating a New Variant
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-inheritence" class="md-nav__link">
+    Variant Inheritence
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -601,16 +621,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-config-values" class="md-nav__link">
-    Getting Config Values
+  <a href="#navigating-the-ui-builder" class="md-nav__link">
+    Navigating the UI Builder
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-config-values" class="md-nav__link">
-    Setting Config Values
+  <a href="#variants" class="md-nav__link">
+    Variants
   </a>
+  
+    <nav class="md-nav" aria-label="Variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-new-variant" class="md-nav__link">
+    Creating a New Variant
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-inheritence" class="md-nav__link">
+    Variant Inheritence
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -627,22 +667,45 @@
               
                 
 
-<h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
-<p>The <code>Plugins</code> mechanism supplies a way registering objects for use in different mechanisms. The <code>Config</code> mechanism supplies a single location where these plugins can supply configurable options without each interface having to make its own options mechanism.</p>
-<h2 id="getting-config-values">Getting Config Values<a class="headerlink" href="#getting-config-values" title="Permanent link">&para;</a></h2>
-<p>To use the Config option in your plugin, invoke the <code>get( rsource, key, defaultValue )</code> method:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Config</span> <span class="p">}</span> <span class="kr">from</span> <span class="sb">`@leverege/plugins`</span>
-
-<span class="kd">const</span> <span class="nx">opt1</span> <span class="o">=</span> <span class="nx">Config</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span> <span class="s1">&#39;myProject.MyPlugin&#39;</span><span class="p">,</span> <span class="s1">&#39;option1&#39;</span><span class="p">,</span> <span class="mf">12</span> <span class="p">)</span>
-</code></pre></div>
-<p>In general, you should avoid get Config options at the time you javascript is loaded, but instead delay until when the option is needed. This will avoid any ordering issues between intialization and usage of the Config options.</p>
-<h2 id="setting-config-values">Setting Config Values<a class="headerlink" href="#setting-config-values" title="Permanent link">&para;</a></h2>
-<p>To set the Config option, use <code>set( rsource, key, value )</code> method:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Config</span> <span class="p">}</span> <span class="kr">from</span> <span class="sb">`@leverege/plugins`</span>
-
-<span class="nx">Config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span> <span class="s1">&#39;myProject.MyPlugin&#39;</span><span class="p">,</span> <span class="s1">&#39;option1&#39;</span><span class="p">,</span> <span class="mf">42</span> <span class="p">)</span>
-</code></pre></div>
-<p>On Molten startup, the <code>LoadConfig</code> plugin will take all options stored in Molten's config object at the path 'plugins/config' and set them on the Plugin's Config object.</p>
+<h1 id="ui-builder-overview">UI Builder Overview<a class="headerlink" href="#ui-builder-overview" title="Permanent link">&para;</a></h1>
+<p>The UI Builder is an application that empowers users with the ability to style UI elements and make visual changes to UI elements in-real time. </p>
+<p>UI Builder is aimed at designers and other non-technical users to be able to make UI style changes quickly. By making UI style changes through UI Builder, users do not need to know how to code, manipulate HTML/CSS, or redeploy a project. Designers can make styling changes independently of engineers building out the application. This reduces the need to ask engineers to make styling changes and shortens the communication loop.</p>
+<div class="admonition info">
+<p class="admonition-title">Active Themes</p>
+<p>Active themes should only be used on dev environments. In your staging and production environments, engineers will export the theme during the deployment so that it is "static". This ensures that designers do not accidently turn an entire production interface pink, for example.</p>
+</div>
+<h2 id="navigating-the-ui-builder">Navigating the UI Builder<a class="headerlink" href="#navigating-the-ui-builder" title="Permanent link">&para;</a></h2>
+<p>Every project has it's own UI builder project associated with it. If a given project has multiple UIs, the same UI builder project or multiple UI builder projects can be used per UI. </p>
+<p>UI Builder projects are organized by the type of UI element you are editiing. You can find the categories down the left side of the project. </p>
+<figure>
+<p><img alt="UI Builder" src="../assets/ui-builder.png" width="700" />
+  </p>
+<figcaption>UI Builder Project</figcaption>
+</figure>
+<p>When a user clicks into a specific UI element, they can visually see an example of the UI element and can manually update nearly every aspect of it (e.g. color, padding, borders, hover states etc.). Any changes they make to the element are live changes to the development UI.</p>
+<figure>
+<p><img alt="UI Builder Elements" src="../assets/element-editor.png" width="700" />
+  </p>
+<figcaption>UI Builder Element Editor</figcaption>
+</figure>
+<h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
+<p>Each UI type has variations of that element called variants. A variant is a way to reuse the style of a given element in multiple places. </p>
+<p>For example, if a designer wants to use the same style button on two different places in the UI, they would use the same variant and any changes made to that variant on UI Builder will update both of those buttons. </p>
+<p>This means that all the designer has to do is specify to the engineer that a given button should inherit a given variant. It also means the engineer can code/place the button and the designer can then use the UI builder to fine tune how it looks. For some components, the variant can be specified in configuration panel of the UI component itself rather than needing to communicate it to the engineer.</p>
+<h3 id="creating-a-new-variant">Creating a New Variant<a class="headerlink" href="#creating-a-new-variant" title="Permanent link">&para;</a></h3>
+<p>Create a variant by clicking the type of UI element in the left navigation. Then scroll to the bottom of the page and enter in the name of the variant in Variant field and press the + button. Configure the variant in the resulting right hand panel.</p>
+<figure>
+<p><img alt="UI Builder Elements" src="../assets/add-variant.svg" width="700" />
+  </p>
+<figcaption>Adding a new variant</figcaption>
+</figure>
+<h3 id="variant-inheritence">Variant Inheritence<a class="headerlink" href="#variant-inheritence" title="Permanent link">&para;</a></h3>
+<p>When creating a new variant, you very rarely need to start from scratch. Let's say you already built your primary button, but now you just need an icon version. Instead of rebuilding all of your styles, you can set your new primaryIconic button to inherit all of the default values from the primary button. Once you set that up, you can add in any overrides you need, maybe the width or border-radius for example. </p>
+<figure>
+<p><img alt="UI Builder Elements" src="../assets/inherit-variant.svg" width="700" />
+  </p>
+<figcaption>Adding a new variant</figcaption>
+</figure>
 
               
             </article>
@@ -661,7 +724,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Concepts" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Branding" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -670,7 +733,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Concepts
+              Branding
             </div>
           </div>
         </a>
