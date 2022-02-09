@@ -8,7 +8,6 @@ There are many situations where you will want to customize your icons, whether t
   <figcaption>Edit blueprint metadata in the info tab</figcaption>
 </figure>
 
-
 !!! Tip "Storing Icons"
     Prior to any of this configuration, the icons must be uploaded to the cloud and hosted publically. We suggest using GCP for this step. You also must know the URL of each icon state.
 
