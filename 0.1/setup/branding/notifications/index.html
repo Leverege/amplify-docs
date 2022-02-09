@@ -13,7 +13,7 @@
     
     
       
-        <title>Notifications - Leverege Supervise & Amplify</title>
+        <title>Email & SMS Templates - Leverege Supervise & Amplify</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Notifications
+              Email & SMS Templates
             
           </span>
         </div>
@@ -327,6 +327,8 @@
         
           
         
+          
+        
       
       
         
@@ -421,12 +423,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Notifications
+          Email & SMS Templates
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Notifications
+        Email & SMS Templates
       </a>
       
         
@@ -471,10 +473,31 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuring-your-templates" class="md-nav__link">
+    Configuring Your Templates
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../empty-states/" class="md-nav__link">
+        Empty States & Illustrations
+      </a>
     </li>
   
 
@@ -668,6 +691,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuring-your-templates" class="md-nav__link">
+    Configuring Your Templates
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -683,6 +713,10 @@
 
 <h1 id="email-sms-templates">Email &amp; SMS Templates<a class="headerlink" href="#email-sms-templates" title="Permanent link">&para;</a></h1>
 <p>We provide three email templates out of the box in Architect. Any email template can be customized using our html editor. Below, we'll walk through how you can easily create and customize your emails.</p>
+<div class="admonition tip">
+<p class="admonition-title">Adding a Template</p>
+<p>Our available templates are all easy to add under the New Template button in the top right corner</p>
+</div>
 <figure>
 <p><img alt="API UI Templates" src="../assets/templates.png" width="700" />
   </p>
@@ -735,10 +769,6 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition tip">
-<p class="admonition-title">Adding a Template</p>
-<p>Our available templates are all easy to add under the New Template button in the top right corner</p>
-</div>
 <h3 id="editing-your-template">Editing Your Template<a class="headerlink" href="#editing-your-template" title="Permanent link">&para;</a></h3>
 <p>When you select a template, you will see three tabs. Make sure you save any changes you make in the top right corner.</p>
 <div class="admonition warning">
@@ -753,7 +783,7 @@
 <figure>
 <p><img alt="Email tab" src="../assets/email-template.png" width="700" />
   </p>
-<figcaption>Templates in Architect</figcaption>
+<figcaption>Email template editor</figcaption>
 </figure>
 <h3 id="supported-sms-templates">Supported SMS Templates<a class="headerlink" href="#supported-sms-templates" title="Permanent link">&para;</a></h3>
 <p>The following templates also support SMS versions. </p>
@@ -783,6 +813,14 @@
 </tr>
 </tbody>
 </table>
+<h2 id="configuring-your-templates">Configuring Your Templates<a class="headerlink" href="#configuring-your-templates" title="Permanent link">&para;</a></h2>
+<p>Some email templates include a button that takes you to a given UI. Once you have your UI stood up on the desired URL, you can edit the URL information in a given button to ensure it takes you to the right place.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background:#194edc; color:white; padding:10px 20px; border-radius:5px; font-size: 13px;&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:white;text-decoration:none;&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://yourURLhere/activateAccount?username={{username}}&amp;email={{email}}&amp;token={{activationToken}}{{#if projectId}}&amp;projectId={{projectId}}{{/if}}&quot;</span><span class="p">&gt;</span>
+    Join Now
+  <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></div>
 
               
             </article>
@@ -817,13 +855,13 @@
       
       
         
-        <a href="../../configs/" class="md-footer__link md-footer__link--next" aria-label="Next: Plugins" rel="next">
+        <a href="../empty-states/" class="md-footer__link md-footer__link--next" aria-label="Next: Empty States &amp; Illustrations" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Plugins
+              Empty States & Illustrations
             </div>
           </div>
           <div class="md-footer__button md-icon">
