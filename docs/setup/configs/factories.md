@@ -14,7 +14,7 @@
 !!! Tip Plugin Replacement
     If you are unhappy with a registered factory object (like an Editor for a Model), you can replace the install one with you own. It will be use in place of the original. Make sure your object implements all the requirements defined by the plugin point.
 
-## Creation and Registration
+## Creation and BOO
 
 For a plugin point to use a Factory, it should use the `createFactory( type, options, throwError = false )` method to obtain and/or create it.
 

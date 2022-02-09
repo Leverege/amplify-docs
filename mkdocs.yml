@@ -1,8 +1,8 @@
-site_name: Leverege Build
+site_name: Leverege Supervise & Amplify
 copyright: Copyright &copy; Leverege LLC 2022 | All Rights Reserved | IoT Changes Everything&trade;
 theme:
-  logo : https://assets-global.website-files.com/613a44464f3640442ee4b84f/617a7ebce6bc9c507e0d1310_Frame.svg
-  favicon : https://assets-global.website-files.com/613a44464f3640442ee4b84f/617a7ebce6bc9c507e0d1310_Frame.svg
+  logo : assets/amplify-logo.svg
+  favicon : assets/amplify-favicon.svg
   name: material
   custom_dir: overrides
   features:
@@ -15,60 +15,17 @@ theme:
     - search.suggest
 nav : 
   - Home: index.md
-  - Getting Started:
-      - Installation: getting-started/index.md
-      - Localization: getting-started/i18n.md
-  - Concepts: 
-    - Plugins: 
-      - concepts/plugins/index.md
-      - Refinement: concepts/plugins/refinement.md
-      - Factories: concepts/plugins/factories.md
-      - Views: concepts/plugins/views.md
-      - Config: concepts/plugins/config.md
-      - Layout: concepts/plugins/layout.md
-    - Models:
-      - concepts/models/index.md
-      - Model Util: concepts/models/model-util.md
-      - Editors: concepts/models/editors.md
-    - Attributes:
-      - concepts/attributes/index.md
-      - Formatters: concepts/attributes/formatters.md
-      - Relationships: concepts/attributes/relationships.md
-      - Data Sources: concepts/attributes/data-sources.md
-      - Details: concepts/attributes/details.md
-      - Table Columns: concepts/attributes/table.md
-    - Actions: concepts/actions.md
-  - Documentation: 
-    - Startup: 
-      - docs/startup/index.md
-      - Initializers: docs/startup/initializers.md
-      - Support Components: docs/startup/support-components.md
-      - Redux: docs/startup/redux.md
-    - Adding a Screen:
-      - docs/routes/index.md
-      - Screens : docs/routes/screens.md
-      - Routes : docs/routes/routes.md
-      - Links : docs/routes/links.md
-    - Consuming Custom Data:
-      - docs/custom-data/index.md
-      - Creating Custom Actions : docs/custom-data/actions.md
-      - Creating a DataSource : docs/custom-data/data-source.md
-      - Making Custom Attributes : docs/custom-data/attributes.md
-      - Creating a Route : docs/custom-data/routes.md
-      - Adding CRUD Actions : docs/custom-data/molten-actions.md
-      - Customizing Search : docs/custom-data/search.md
-    - Data Sources:
-      - docs/data-sources/index.md
-
-    - Data Viewers:
-      - docs/data-viewers/index.md
-      
-  - Plugins:
-    - plugins/index.md
-  - Configuration:
-    - config/index.md
-  - API:
-    - api/index.md
+  - Introduction:
+  - UI Setup:
+    - Branding:
+        - setup/branding/branding.md
+    - Styling:
+      - setup/configs/index.md
+      - Icons: setup/configs/icons.md
+    - Configuration:
+      - setup/models/index.md
+      - Model Util: setup/models/model-util.md
+      - Editors: setup/models/editors.md
 extra:
   version: 
     provider: mike
