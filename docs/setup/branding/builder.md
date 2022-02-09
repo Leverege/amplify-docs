@@ -5,13 +5,13 @@ The UI Builder is an application that empowers users with the ability to style U
 UI Builder is aimed at designers and other non-technical users to be able to make UI style changes quickly. By making UI style changes through UI Builder, users do not need to know how to code, manipulate HTML/CSS, or redeploy a project. Designers can make styling changes independently of engineers building out the application. This reduces the need to ask engineers to make styling changes and shortens the communication loop.
 
 !!! Info "Active Themes"
-    Active themes should only be used on dev environments. In your staging and production environments, engineers will export the theme during the deployment so that it is "static". This ensures that designers do not accidently turn an entire production interface pink, for example.
+    Active themes should only be used on dev environments. In your staging and production environments, engineers will export the theme during the deployment so that it is "static". This ensures that designers do not accidentally turn an entire production interface pink, for example.
     
 ## Navigating the UI Builder
 
 Every project has it's own UI builder project associated with it. If a given project has multiple UIs, the same UI builder project or multiple UI builder projects can be used per UI. 
 
-UI Builder projects are organized by the type of UI element you are editiing. You can find the categories down the left side of the project. 
+UI Builder projects are organized by the type of UI element you are editing. You can find the categories down the left side of the project. 
 
 <figure markdown>
 ![UI Builder](assets/ui-builder.png){ width="700" }
@@ -42,7 +42,7 @@ Create a variant by clicking the type of UI element in the left navigation. Then
   <figcaption>Adding a new variant</figcaption>
 </figure>
 
-### Variant Inheritence
+### Variant Inheritance
 
 When creating a new variant, you very rarely need to start from scratch. Let's say you already built your primary button, but now you just need an icon version. Instead of rebuilding all of your styles, you can set your new primaryIconic button to inherit all of the default values from the primary button. Once you set that up, you can add in any overrides you need, maybe the width or border-radius for example. 
 

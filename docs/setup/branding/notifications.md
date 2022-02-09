@@ -50,7 +50,7 @@ The following templates also support SMS versions.
 | Login Code Error | loginCodeError | Users can not request one-time access codes with the same phone number that has two-step verification enabled. If they try to request a code, they will receive this text |
 
 
-## Configuring Your Templates
+## Configuring Your Template's Buttons
 
 Some email templates include a button that takes you to a given UI. Once you have your UI stood up on the desired URL, you can edit the URL information in a given button to ensure it takes you to the right place.
 
