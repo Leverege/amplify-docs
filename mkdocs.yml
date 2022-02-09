@@ -27,10 +27,14 @@ nav :
        - Icons: setup/branding/icons.md
        - Email & SMS Templates: setup/branding/notifications.md
        - Empty States: setup/branding/empty-states.md
-    - Configuration:
-      - setup/models/index.md
-      - Model Util: setup/models/model-util.md
-      - Editors: setup/models/editors.md
+    - Navigation:
+      - setup/nav/index.md
+      - Routes: setup/nav/route.md
+      - Sort & Order Pages: setup/nav/sort.md
+      - Page Display Options: setup/nav/page.md
+      - Styling Overrides : setup/nav/path-overrides.md
+    - Developer Options:
+      - setup/dev.md
 extra:
   version: 
     provider: mike
