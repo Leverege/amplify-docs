@@ -13,7 +13,7 @@
     
     
       
-        <title>Plugins - Leverege Supervise & Amplify</title>
+        <title>Branding - Leverege Supervise & Amplify</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#plugins" class="md-skip">
+        <a href="#branding" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Plugins
+              Branding
             
           </span>
         </div>
@@ -531,15 +531,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#use" class="md-nav__link">
-    Use
+  <a href="#ui-builder" class="md-nav__link">
+    UI Builder
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#observable" class="md-nav__link">
-    Observable
+  <a href="#ui-inspector" class="md-nav__link">
+    UI Inspector
   </a>
   
 </li>
@@ -557,79 +557,12 @@
               
                 
 
-<h1 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h1>
-<p>Molten makes heavy use of the <code>@leverege/plugins</code> library. This library supplies a central registration mechanism in which various classes, functions, and objects can be declared to participate in other framework's interfaces. Often this binding can occur without the need for a direct dependency on target framework. The uses for this 'repository of things' can very greatly: from dynamic url routing, to custom contextual actions, to attribute definition, to logic intercept mechanisms, to initializers, to UI editor lookups, to colorizers, to name just a few. </p>
-<h2 id="use">Use<a class="headerlink" href="#use" title="Permanent link">&para;</a></h2>
-<p>The use of this library can be very simple and the requirements are very few:</p>
-<ul>
-<li>Including the library in your own code</li>
-<li>Defining an interface for your custom plugin mechanism (sometimes called Plugin Points)</li>
-<li>Picking a unique plugin name for your mechanism (usually namespaced, like <myProject>.<MyPluginPoint> )</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Plugins</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/plugin&#39;</span> <span class="c1">// 1</span>
-
-<span class="kd">const</span> <span class="nx">plgs</span> <span class="o">=</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span> <span class="s1">&#39;myProject.Initializer&#39;</span> <span class="p">)</span> <span class="c1">// 2</span>
-<span class="nx">plgs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="p">(</span> <span class="nx">initializer</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> 
-  <span class="nx">initializer</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span> <span class="c1">// 3</span>
-<span class="p">}</span> <span class="p">)</span>
-</code></pre></div>
-<p>In this example, we have defined our own custom plugin point that will invoke an <code>init</code> method at the appropriate time. It has imported the library (1), asked for all plugins registered as a <code>myProject.Initializer</code> plugin (2),  and used the custom plugin point's interface to invoke init() on each plugin (3). It can be that simple to define your own custom Plugins point. </p>
-<p>To participate in that example plugin point, simply add a plugin to the Plugin mechanism:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Plugins</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/plugin&#39;</span> <span class="c1">// 1</span>
-
-<span class="nx">MyInitializer</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">init</span> <span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="cm">/* do something */</span> <span class="p">}</span> <span class="p">}</span>
-
-<span class="c1">// Alternately: molten.addPlugin( &#39;myProject.Initializer&#39;, MyInitializer )</span>
-<span class="nx">Plugins</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span> <span class="s1">&#39;myProject.Initializer&#39;</span><span class="p">,</span> <span class="nx">MyInitializer</span> <span class="p">)</span>
-</code></pre></div>
-<p>This <code>Plugins.add()</code> or <code>molten.addPlugin()</code> registers the plugin for use at the specified plugins point. Adding a plugin can be as simple as this. </p>
-<p>Some plugin points are a little more complicated. These plugin points will often use <a href="./refinement">match objects</a>, type values, and methods to help determine whether or not a particular plugin should be used in a particular instance. Some will define sort values (like <a href="/docs/startup/initializers/">Molten's initializer plugins</a>) to help aid in ordered invokation. Some are meant to be used in <a href="(./factories)">Factory</a> lookup mechanism or participate in active <a href="(./views)">Views</a>. These extra mechanisms need to be defined by the plugin points interface documentation so developers can understand how to leverage the particular plugin point. </p>
-<h2 id="observable">Observable<a class="headerlink" href="#observable" title="Permanent link">&para;</a></h2>
-<p>The Plugins mechanism is also observable, meaning that listeners can be registered to detect when plugins are added or removed. This can help plugin endpoints respond to new plugins or avoid ordering issues cause by importation/registration order. It can also help to support dynamic loading of code. </p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Add a listener to all types</span>
-<span class="kd">const</span> <span class="nx">unsubscribeGlobal</span> <span class="o">=</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span> <span class="nx">listener</span> <span class="p">)</span>
-
-<span class="c1">// Add a listener to a specific type</span>
-<span class="kd">const</span> <span class="nx">unsubscribeType</span> <span class="o">=</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span> <span class="s1">&#39;myProject.Initializer&#39;</span><span class="p">,</span> <span class="nx">listener</span> <span class="p">)</span>
-
-<span class="c1">// To remove a listener from all types</span>
-<span class="nx">Plugins</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span> <span class="nx">listener</span> <span class="p">)</span>
-<span class="c1">// or use the returned function</span>
-<span class="nx">unsubscribeGlobal</span><span class="p">()</span> 
-
-<span class="c1">// To remove a listener from a specific type</span>
-<span class="nx">Plugins</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span> <span class="s1">&#39;myProject.Initializer&#39;</span><span class="p">,</span> <span class="nx">listener</span> <span class="p">)</span>
-<span class="c1">// or use the returned function</span>
-<span class="nx">unsubscribeType</span><span class="p">()</span> 
-</code></pre></div>
-<p>The listener method will be invoked with an object when an add or remove occurs:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span> 
-  <span class="nx">type</span><span class="p">,</span>       <span class="c1">// either &#39;pluginAdded&#39; or &#39;pluginRemoved&#39;, </span>
-  <span class="nx">pluginType</span><span class="p">,</span> <span class="c1">// The plugin type that changed</span>
-  <span class="nx">plugin</span><span class="p">,</span>     <span class="c1">// The plugin that was added or removed</span>
-  <span class="nx">plugins</span>     <span class="c1">// The Plugins object </span>
-<span class="p">}</span>
-</code></pre></div>
-<p>An alternative why of determining if Plugins were added or removed without listening to Plugins is to look at the version number for a type. </p>
-<div class="highlight"><pre><span></span><code> <span class="kd">const</span> <span class="nx">version</span> <span class="o">=</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">getVersion</span><span class="p">(</span> <span class="s1">&#39;myProject.Initializer&#39;</span> <span class="p">)</span>
-</code></pre></div>
-<p>Anytime a plugin is added or removed, the version number will be updated. This change detection is useful when caches are being used to record previous work using the plugins. A change to the version can be used to bust the cache and cause the work to be recalculated with the current plugin set.</p>
-<div class="highlight"><pre><span></span><code>  <span class="kd">const</span> <span class="nx">version</span> <span class="o">=</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">getVersion</span><span class="p">(</span> <span class="s1">&#39;myProject.PluginPoint&#39;</span> <span class="p">)</span>
-
-  <span class="c1">// React Example</span>
-  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">useMemo</span><span class="p">(</span> <span class="p">(</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span> <span class="s1">&#39;myProject.PluginPoint&#39;</span> <span class="p">)</span>
-    <span class="c1">// do some work</span>
-    <span class="k">return</span> <span class="nx">result</span>
-  <span class="p">},</span> <span class="p">[</span> <span class="nx">version</span> <span class="p">]</span> <span class="p">)</span>
-
-  <span class="c1">// @leverege/value-cache example</span>
-  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">valueCache</span><span class="p">.</span><span class="nx">calc</span><span class="p">((</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span> <span class="s1">&#39;myProject.PluginPoint&#39;</span> <span class="p">)</span>
-    <span class="c1">// do some work</span>
-    <span class="k">return</span> <span class="nx">result</span>
-  <span class="p">},</span> <span class="nx">version</span> <span class="p">)</span>
-</code></pre></div>
+<h1 id="branding">Branding<a class="headerlink" href="#branding" title="Permanent link">&para;</a></h1>
+<p>The Leverege Stack makes customizing the end-user interfaces and emails to your brand very simiple. In this section, we'll cover how you can use the UI builder, our global theming engine, and our email/text templates to ensure that your product is visually stunniing.</p>
+<h2 id="ui-builder">UI Builder<a class="headerlink" href="#ui-builder" title="Permanent link">&para;</a></h2>
+<p>The UI Builder is a stand-alone tool that allows you to edit &amp; update the CSS of all UI elements in real time on your development site. This empowers you to change everything from a button color to the flex direction of a pane, all in one place.</p>
+<h2 id="ui-inspector">UI Inspector<a class="headerlink" href="#ui-inspector" title="Permanent link">&para;</a></h2>
+<p>In your interfaces, you can turn on the UI inspector, which tells you what variant in the UI builder you are looking at. This allows you to quickly identify and update a given style of a css variant of a UI element. </p>
 
               
             </article>
