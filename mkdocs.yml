@@ -21,6 +21,7 @@ nav :
        - setup/branding/index.md
        - UI Builder: setup/branding/builder.md
        - UI Inspector: setup/branding/inspector.md
+       - Logos: setup/branding/logos.md
     - Styling:
       - setup/configs/index.md
       - Icons: setup/configs/icons.md
