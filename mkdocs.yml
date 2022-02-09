@@ -19,7 +19,8 @@ nav :
     - setup/index.md
     - Branding:
        - setup/index.md
-       - Branding: setup/branding/branding.md
+       - UI Builder: setup/branding/builder.md
+       - UI Inspector: setup/branding/inspector.md
     - Styling:
       - setup/configs/index.md
       - Icons: setup/configs/icons.md
