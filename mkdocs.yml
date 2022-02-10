@@ -37,7 +37,7 @@ nav :
       - Page Display Options: setup/nav/page.md
       - Styling Overrides : setup/nav/path-overrides.md
     - Developer Options:
-      - setup/dev.md
+      - Overview: setup/dev.md
   - UI Configuration:
      - config/index.md
   - Features:
