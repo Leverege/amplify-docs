@@ -14,14 +14,14 @@ Every project has it's own UI builder project associated with it. If a given pro
 UI Builder projects are organized by the type of UI element you are editing. You can find the categories down the left side of the project. 
 
 <figure markdown>
-![UI Builder](assets/ui-builder.png){ width="700" }
+![!UI Builder](assets/ui-builder.png){ width="700" }
   <figcaption>UI Builder Project</figcaption>
 </figure>
 
 When a user clicks into a specific UI element, they can visually see an example of the UI element and can manually update nearly every aspect of it (e.g. color, padding, borders, hover states etc.). Any changes they make to the element are live changes to the development UI.
 
 <figure markdown>
-![UI Builder Elements](assets/element-editor.png){ width="700" }
+![!UI Builder Elements](assets/element-editor.png){ width="700" }
   <figcaption>UI Builder Element Editor</figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ This means that all the designer has to do is specify to the engineer that a giv
 Create a variant by clicking the type of UI element in the left navigation. Then scroll to the bottom of the page and enter in the name of the variant in Variant field and press the + button. Configure the variant in the resulting right hand panel.
 
 <figure markdown>
-![UI Builder Elements](assets/add-variant.svg){ width="700" }
+![!UI Builder Elements](assets/add-variant.svg){ width="700" }
   <figcaption>Adding a new variant</figcaption>
 </figure>
 
@@ -47,7 +47,7 @@ Create a variant by clicking the type of UI element in the left navigation. Then
 When creating a new variant, you very rarely need to start from scratch. Let's say you already built your primary button, but now you just need an icon version. Instead of rebuilding all of your styles, you can set your new primaryIconic button to inherit all of the default values from the primary button. Once you set that up, you can add in any overrides you need, maybe the width or border-radius for example. 
 
 <figure markdown>
-![UI Builder Elements](assets/inherit-variant.svg){ width="700" }
+![!UI Builder Elements](assets/inherit-variant.svg){ width="700" }
   <figcaption>Adding a new variant</figcaption>
 </figure>
 

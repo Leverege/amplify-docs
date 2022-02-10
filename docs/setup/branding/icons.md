@@ -4,7 +4,7 @@
 There are many situations where you will want to customize your icons, whether they are for your navigation, map, headers, or lists. This is easily accomplished by adding metadata via Architect. Before following along, please ensure you have access to our Architect UI.
 
 <figure markdown>
-![Blueprint Metadata Editor](assets/blueprint-metadata.svg){ width="700" }
+![!Blueprint Metadata Editor](assets/blueprint-metadata.svg){ width="700" }
   <figcaption>Edit blueprint metadata in the info tab</figcaption>
 </figure>
 
@@ -19,19 +19,19 @@ The metadata for map icons are found under the mapbox property, which is further
 
 ### Current Location Icon States
 <figure markdown>
-![Location Icon States](assets/map-icon-states.svg){ width="700" }
+![!Location Icon States](assets/map-icon-states.svg){ width="700" }
   <figcaption>Possible icon states for the current location of a device on the map</figcaption>
 </figure>
 
 ### History Location Icon States
 <figure markdown>
-![Location History Icon States](assets/map-icon-history-states.svg){ width="700" }
+![!Location History Icon States](assets/map-icon-history-states.svg){ width="700" }
   <figcaption>Possible icon states for a historical point of a device on the map</figcaption>
 </figure>
 
 ### Map Examples
 <figure markdown>
-![Map Example](assets/map-icon-example.svg){ width="700" }
+![!Map Example](assets/map-icon-example.svg){ width="700" }
   <figcaption>Example of icons used in map context</figcaption>
 </figure>
 
@@ -106,7 +106,7 @@ The `navIcon` property is used in the top navigation bar and the sidebar, as wel
 !!! Info "Format: SVG or PNG"
 
 <figure markdown>
-![Navigation Icon Example](assets/nav-icon-example.svg){ width="700" }
+![!Navigation Icon Example](assets/nav-icon-example.svg){ width="700" }
 <figcaption>Icon usage in navigation</figcaption>
 </figure>
   
@@ -133,7 +133,7 @@ The  `screenIcon` property is used in the header section of a given page. You ca
 !!! Info "Format: SVG or PNG"
 
 <figure markdown>
-![Screen Icon Example](assets/screen-icon-example.svg){ width="700" }
+![!Screen Icon Example](assets/screen-icon-example.svg){ width="700" }
   <figcaption>Icon usage in screen titles</figcaption>
 </figure>
 

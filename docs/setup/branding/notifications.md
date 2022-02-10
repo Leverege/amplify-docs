@@ -6,7 +6,7 @@ We provide three email templates out of the box in Architect. Any email template
     Our available templates are all easy to add under the New Template button in the top right corner
 
 <figure markdown>
-![API UI Templates](assets/templates.png){ width="700" }
+![!API UI Templates](assets/templates.png){ width="700" }
   <figcaption>Templates in Architect</figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ Tabs Overview
 - Text: If the template has a supported SMS component, you will see the text message under the text tab.
 
 <figure markdown>
-![Email tab](assets/email-template.png){ width="700" }
+![!Email tab](assets/email-template.png){ width="700" }
   <figcaption>Email template editor</figcaption>
 </figure>
 

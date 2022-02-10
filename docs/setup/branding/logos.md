@@ -8,7 +8,7 @@ The logos used in the interfaces are stored in the UI builder in various places.
 ## Top Navigation Logo
 
 <figure markdown>
-![Nav Logo Example](assets/top-nav-logo-example.svg){ width="700" }
+![!Nav Logo Example](assets/top-nav-logo-example.svg){ width="700" }
   <figcaption>Top Navigation Logo</figcaption>
 </figure>
 
@@ -21,14 +21,14 @@ The logos used in the interfaces are stored in the UI builder in various places.
 Once you have located the variant, select the variant and navigate to the right hand panel. There, you will select the property tab and paste your URL. 
 
 <figure markdown>
-![Nav Logo](assets/nav-logo.png){ width="700" }
+![!Nav Logo](assets/nav-logo.png){ width="700" }
   <figcaption>Paste URL into icon property field</figcaption>
 </figure>
 
 ## Login Page Options
 
 <figure markdown>
-![Login Page](assets/login-logo-background.svg){ width="700" }
+![!Login Page](assets/login-logo-background.svg){ width="700" }
   <figcaption>Login Page</figcaption>
 </figure>
 
@@ -54,6 +54,6 @@ The login background is a pane and the image will be added as the URL of the bac
 - Variant Name: `loginBackground`
 
 <figure markdown>
-![Login Background](assets/login-background.png){ width="700" }
+![!Login Background](assets/login-background.png){ width="700" }
   <figcaption>Paste URL into background image field</figcaption>
 </figure>

@@ -15,7 +15,7 @@ So far, we have used the automatic screen display option, which we call the nest
 In many cases, you don't want the entire page to change when you click on an item. Instead, you want the details of a specific item to replace the item list. For example, if you are looking at a list of assets in your location and you select one to learn more, you might not want the side navigation to change to display that asset and it's children. 
 
 <figure markdown>
-![Embedded Display](assets/embeded-display.svg){ width="700" }
+![!Embedded Display](assets/embeded-display.svg){ width="700" }
   <figcaption>Embedded Screen Display</figcaption>
 </figure>
 

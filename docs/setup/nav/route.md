@@ -3,7 +3,7 @@
 In your UI, you have the ability to decide which blueprint or blueprints will be your root(s). By making a blueprint a root, you are selecting that blueprint to be the root of your hierarchy for that section of the UI. The root page will load a system-wide list of every item of that blueprint type. Let's take the hierarchy below as our example. 
 
 <figure markdown>
-![Hierarchy Diagram](assets/hierarchy.svg){ width="700" }
+![!Hierarchy Diagram](assets/hierarchy.svg){ width="700" }
   <figcaption>Hierarchy diagram</figcaption>
 </figure>
 
@@ -28,21 +28,21 @@ For a refresher on relationship types and usages, {==please refer to this link.=
 You can have one root or multiple roots in your UI. In this case, it makes sense for the company blueprint to be a root, which will make the company blueprint a top level navigation option.
 
 <figure markdown>
-![Root](assets/root.svg){ width="700" }
+![!Root](assets/root.svg){ width="700" }
   <figcaption>Company root example</figcaption>
 </figure>
 
 On top of adding companies to the top level navigation, the root also will only load that blueprint and it's children. For example, if you selected the location blueprint as a root along with the company blueprint, you would see both in the top nav (example below). 
 
 <figure markdown>
-![Root](assets/multi-root.svg){ width="700" }
+![!Root](assets/multi-root.svg){ width="700" }
   <figcaption>Multi-root example</figcaption>
 </figure>
 
 Under the location's tab, you will have entirely new set of pages, representing the child blueprints, in your UI. This pages will be completely separate from the pages representing the same blueprint under the company root. To help visual this, take a look at the diagram below. 
 
 <figure markdown>
-![Hierarchy 2](assets/location-hierarchy.svg){ width="700" }
+![!Hierarchy 2](assets/location-hierarchy.svg){ width="700" }
   <figcaption>Multi-root hierarchy</figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ Under the location's tab, you will have entirely new set of pages, representing 
 In some cases, it's helpful to see your assets or trackers across all companies or locations at the root level. In these types of cases, we find it helpful to group those pages together. The grouping mechanism puts a group of root pages into a dropdown in the top navigation, saving you critical screen space. 
 
 <figure markdown>
-![Root Group](assets/root-group.svg){ width="700" }
+![!Root Group](assets/root-group.svg){ width="700" }
   <figcaption>Group dropdown example</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ These pages will load individually, so you will have one page for a system-wide 
 To make a blueprint a root, all you have to do is add the tag `is:root` to the blueprint tag section. 
 
 <figure markdown>
-![Tag Input](assets/tags.png){ width="700" }
+![!Tag Input](assets/tags.png){ width="700" }
   <figcaption>Group dropdown example</figcaption>
 </figure>
 

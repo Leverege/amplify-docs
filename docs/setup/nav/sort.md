@@ -3,7 +3,7 @@
 Once you have selected and set up your root, you will find that by clicking on a root item, you are taken to a new page in the UI with a sidebar navigation. For example, let’s look at our example with locations. 
 
 <figure markdown>
-![Sidebar Example](assets/root-children.png){ width="700" }
+![!Sidebar Example](assets/root-children.png){ width="700" }
   <figcaption>Location example</figcaption>
 </figure>
 
@@ -19,7 +19,7 @@ The sidebar navigation includes:
 ## Sections & Ordering
 
 <figure markdown>
-![Desired Layout](assets/desired-layout.svg){ width="700" }
+![!Desired Layout](assets/desired-layout.svg){ width="700" }
   <figcaption>Desired Layout</figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ The tag to order your blueprints is `navSort:<SORT_KEY>`, where the sort key is 
 Because you are sorting the children relationships of a location, these tags get added to the relationship attribute of each blueprint on the location blueprint (image below). Once the tags are applied, you will see a divider align appear between section a & b.
 
 <figure markdown>
-![Attribute](assets/relationship-attribute.png){ width="700" }
+![!Attribute](assets/relationship-attribute.png){ width="700" }
   <figcaption>Relationship attribute editor</figcaption>
 </figure>
 
@@ -55,7 +55,7 @@ For our example we're working on, the overview and users tags would follow the e
 Now that we've added all of our tags, our sidebar should look like the sidebar on the left in the image below. We'll be reviewing how to add section titles next.
 
 <figure markdown>
-![step one](assets/step-one.svg){ width="700" }
+![!step one](assets/step-one.svg){ width="700" }
   <figcaption>Sections & Ordering Outcome/figcaption>
 </figure>
 
