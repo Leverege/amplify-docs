@@ -13,7 +13,7 @@
     
     
       
-        <title>Routes - Leverege Supervise & Amplify</title>
+        <title>Roots - Leverege Supervise & Amplify</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#views" class="md-skip">
+        <a href="#roots" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Routes
+              Roots
             
           </span>
         </div>
@@ -657,9 +657,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Roots
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Routes
+        Roots
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-roots" class="md-nav__link">
+    Selecting Roots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-groups" class="md-nav__link">
+    Root Groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-roots" class="md-nav__link">
+    Configuring Roots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-roots-from-specific-roles" class="md-nav__link">
+    Hiding Roots from Specific Roles
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -880,6 +932,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-roots" class="md-nav__link">
+    Selecting Roots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-groups" class="md-nav__link">
+    Root Groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-roots" class="md-nav__link">
+    Configuring Roots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-roots-from-specific-roles" class="md-nav__link">
+    Hiding Roots from Specific Roles
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -891,45 +979,87 @@
               
                 
 
-<h1 id="views">Views<a class="headerlink" href="#views" title="Permanent link">&para;</a></h1>
-<p>As mentioned earlier, the <code>Plugins.get( type, filter )</code> call can return a filtered set of plugins of a given type. Sometimes, however, these plugins are evaluated and organized into a more complicated structure that allows for easier and quicker access. This is where the <code>View</code> comes into play. The <code>View</code> will watch the Plugin mechanisms for Plugins that are added and removed, and mark its view as dirty when appropriate. When the View is nexted ask for its value, it can either recalculate the value or return a cached one.</p>
-<p>For a plugin point to use a Factory, it should use the <code>createView( type, options, throwError = false )</code> method to obtain and/or create it.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">view</span> <span class="o">=</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">createView</span><span class="p">(</span> <span class="s1">&#39;myProject.MyLookupType&#39;</span><span class="p">,</span> <span class="nx">options</span> <span class="p">)</span>
-</code></pre></div>
-<p>The first argument identifies the plugin point type that the View is using , the second object is the options used to configure the factory:</p>
+<h1 id="roots">Roots<a class="headerlink" href="#roots" title="Permanent link">&para;</a></h1>
+<p>In your UI, you have the ability to decide which blueprint or blueprints will be your root(s). By making a blueprint a root, you are selecting that blueprint to be the root of your hierarchy for that section of the UI. The root page will load a system-wide list of every item of that blueprint type. Let's take the hierarchy below as our example. </p>
+<figure>
+<p><img alt="Hierarchy Diagram" src="../assets/hierarchy.svg" width="700" />
+  </p>
+<figcaption>Hierarchy diagram</figcaption>
+</figure>
+<p>Let's break down the relationships in the example above. The company blueprint has 3 child relationships, all of which are one-to-many. The child blueprints are:</p>
+<ul>
+<li>Location Blueprint</li>
+<li>Asset Blueprint</li>
+<li>Tracker Blueprint</li>
+</ul>
+<p>The location blueprint also has child relationships, all of which are one-to-many. These child blueprints are: </p>
+<ul>
+<li>Asset Blueprint</li>
+<li>Tracker Blueprint</li>
+<li>Zone Blueprint</li>
+<li>Beacon Blueprint</li>
+<li>Floor Blueprint</li>
+</ul>
+<p>For a refresher on relationship types and usages, {<mark>please refer to this link.</mark>}</p>
+<h2 id="selecting-roots">Selecting Roots<a class="headerlink" href="#selecting-roots" title="Permanent link">&para;</a></h2>
+<p>You can have one root or multiple roots in your UI. In this case, it makes sense for the company blueprint to be a root, which will make the company blueprint a top level navigation option.</p>
+<figure>
+<p><img alt="Root" src="../assets/root.svg" width="700" />
+  </p>
+<figcaption>Company root example</figcaption>
+</figure>
+<p>On top of adding companies to the top level navigation, the root also will only load that blueprint and it's children. For example, if you selected the location blueprint as a root along with the company blueprint, you would see both in the top nav (example below). </p>
+<figure>
+<p><img alt="Root" src="../assets/multi-root.svg" width="700" />
+  </p>
+<figcaption>Multi-root example</figcaption>
+</figure>
+<p>Under the location's tab, you will have entirely new set of pages, representing the child blueprints, in your UI. This pages will be completely separate from the pages representing the same blueprint under the company root. To help visual this, take a look at the diagram below. </p>
+<figure>
+<p><img alt="Hierarchy 2" src="../assets/location-hierarchy.svg" width="700" />
+  </p>
+<figcaption>Multi-root hierarchy</figcaption>
+</figure>
+<h2 id="root-groups">Root Groups<a class="headerlink" href="#root-groups" title="Permanent link">&para;</a></h2>
+<p>In some cases, it's helpful to see your assets or trackers across all companies or locations at the root level. In these types of cases, we find it helpful to group those pages together. The grouping mechanism puts a group of root pages into a dropdown in the top navigation, saving you critical screen space. </p>
+<figure>
+<p><img alt="Root Group" src="../assets/root-group.svg" width="700" />
+  </p>
+<figcaption>Group dropdown example</figcaption>
+</figure>
+<p>These pages will load individually, so you will have one page for a system-wide list of assets and one for a system-wide list of trackers. </p>
+<h2 id="configuring-roots">Configuring Roots<a class="headerlink" href="#configuring-roots" title="Permanent link">&para;</a></h2>
+<p>To make a blueprint a root, all you have to do is add the tag <code>is:root</code> to the blueprint tag section. </p>
+<figure>
+<p><img alt="Tag Input" src="../assets/tags.png" width="700" />
+  </p>
+<figcaption>Group dropdown example</figcaption>
+</figure>
+<p>Below are the different types of configuration options for roots via tags.</p>
 <table>
 <thead>
 <tr>
-<th>Option Field</th>
-<th>Default</th>
-<th>Description</th>
+<th>Property</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>name</td>
-<td>default</td>
-<td>The name of the View. This is used to cache the View so it can be returned from a repeated <code>createFactory()</code> or <code>getFactory()</code> call.</td>
+<td><code>is:root</code></td>
+<td>Adds the blueprint to the top-level navigation as a root</td>
 </tr>
 <tr>
-<td>sort</td>
-<td>defaultSort</td>
-<td>This defines the sort function used to sort the plugins. By default, the sort function uses a string sorting mechanism on the 'sort' key, but alternates functions can be used. If this is 'byNumber', a sort using a number will be installed.</td>
+<td><code>rootNavGroup:&lt;Name&gt;</code></td>
+<td>If a blueprint is set as a root, it can be added to a group in the top navigation. Name represents which group the blueprint is added to and is used in the label of the dropdown</td>
 </tr>
 <tr>
-<td>filter</td>
-<td>null</td>
-<td>The filter used to prune plugins from the View. If <code>processor</code> is supplied, this is not used.</td>
-</tr>
-<tr>
-<td>processor</td>
-<td>null</td>
-<td>A function that, if supplied, this is invoked with an Array of sorted  plugins. The result of this function is returned from <code>View.get()</code>. If this is not supplied, the <code>filter</code> options will be used.</td>
+<td><code>rootNavGroupIcons:&lt;URL&gt;</code></td>
+<td>To set the icon for a group, use this tag on any blueprint in that group. This icon must be hosted publicly online</td>
 </tr>
 </tbody>
 </table>
-<p>If a processor is not supplied, <code>view.get()</code> will return an array of plugins, sorted and filtered according to those options. If the processor is given, the result from the processor defines the shape of the return value of <code>view.get()</code>.</p>
-<p>When a Plugin of the View's type is added or removed, the view is marked as dirty and is recalculated vi <code>processor</code> or <code>filter</code> on the next invokation of <code>view.get()</code>.</p>
+<h2 id="hiding-roots-from-specific-roles">Hiding Roots from Specific Roles<a class="headerlink" href="#hiding-roots-from-specific-roles" title="Permanent link">&para;</a></h2>
+<p>Not every role should have the same access, and the same goes for roots. You can easily hide a root from a given role by using the tag <code>excludeFrom:&lt;Role&gt;</code></p>
 
               
             </article>
