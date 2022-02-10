@@ -81,4 +81,8 @@ Below are the different types of configuration options for roots via tags.
 
 Not every role should have the same access, and the same goes for roots. You can easily hide a root from a given role by using the tag `excludeFrom:<Role>`
 
+| Property | Purpose |
+|-------|--------------|
+| `excludeFrom:<Role>` | Hides this root from a given role |
+| `excludeFrom:*` | Hides this root from all roles. Useful when more than one UI is used for a given project and a root is only needed for one of the two UIs. Note that this requires mutations to implement.  |
 
