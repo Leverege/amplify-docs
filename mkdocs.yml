@@ -32,7 +32,6 @@ nav :
        - Email & SMS Templates: setup/branding/notifications.md
        - Empty States: setup/branding/empty-states.md
     - Navigation:
-      - setup/nav/index.md
       - Roots: setup/nav/route.md
       - Sort & Order Pages: setup/nav/sort.md
       - Page Display Options: setup/nav/page.md
