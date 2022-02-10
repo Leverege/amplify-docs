@@ -1060,6 +1060,24 @@
 </table>
 <h2 id="hiding-roots-from-specific-roles">Hiding Roots from Specific Roles<a class="headerlink" href="#hiding-roots-from-specific-roles" title="Permanent link">&para;</a></h2>
 <p>Not every role should have the same access, and the same goes for roots. You can easily hide a root from a given role by using the tag <code>excludeFrom:&lt;Role&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>excludeFrom:&lt;Role&gt;</code></td>
+<td>Hides this root from a given role</td>
+</tr>
+<tr>
+<td><code>excludeFrom:*</code></td>
+<td>Hides this root from all roles. Useful when more than one UI is used for a given project and a root is only needed for one of the two UIs. Note that this requires mutations to implement.</td>
+</tr>
+</tbody>
+</table>
 
               
             </article>
