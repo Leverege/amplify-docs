@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#factories" class="md-skip">
+        <a href="#styling-overrides" class="md-skip">
           Skip to content
         </a>
       
@@ -699,47 +699,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Styling Overrides
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Styling Overrides
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creation-and-boo" class="md-nav__link">
-    Creation and BOO
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dynamic-factories" class="md-nav__link">
-    Dynamic Factories
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -918,28 +880,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creation-and-boo" class="md-nav__link">
-    Creation and BOO
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dynamic-factories" class="md-nav__link">
-    Dynamic Factories
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -951,129 +891,13 @@
               
                 
 
-<h1 id="factories">Factories<a class="headerlink" href="#factories" title="Permanent link">&para;</a></h1>
-<p>The Factory concept encapsulates the "I have a object, give me a way to do X with it". This 'way' can be represented by a Class, a function or object, and is defined by the plugin point making use of the factory. What the intent of this mechanism is ( the X ), is left up to the plugin point. Examples include but are in no way limited to:</p>
-<ul>
-<li>Finding a processor for an incoming message object</li>
-<li>Presenting a React editor or view for an object</li>
-<li>Exporting an XML node that represents the object</li>
-<li>Finding a formatting object to convert the object to a string</li>
-<li>Configuring a cache mechanism to use a different backend</li>
-<li>Finding and configuring a color calculator for objects   </li>
-</ul>
-<p>In order to find or lookup the appropriate handling mechanism from the Factory, the object must have a <code>type</code> associated with it. By default, the factories look for the 'type' field on the object and use it to look up the mechanism registered in the factory.</p>
-<div class="admonition tip plugin replacement">
-<p class="admonition-title">Tip</p>
-<p>If you are unhappy with a registered factory object (like an Editor for a Model), you can replace the install one with you own. It will be use in place of the original. Make sure your object implements all the requirements defined by the plugin point.</p>
-</div>
-<h2 id="creation-and-boo">Creation and BOO<a class="headerlink" href="#creation-and-boo" title="Permanent link">&para;</a></h2>
-<p>For a plugin point to use a Factory, it should use the <code>createFactory( type, options, throwError = false )</code> method to obtain and/or create it.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">factory</span> <span class="o">=</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">createFactory</span><span class="p">(</span> 
-  <span class="s1">&#39;myProject.MyLookupType&#39;</span><span class="p">,</span>
-  <span class="p">{</span>
-    <span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>
-    <span class="nx">pluginKey</span> <span class="o">:</span> <span class="s1">&#39;processor&#39;</span><span class="p">,</span>
-    <span class="nx">strategy</span> <span class="o">:</span> <span class="nx">Plugins</span><span class="p">.</span><span class="nx">ALL</span>
-  <span class="p">}</span>
-<span class="p">)</span>
-</code></pre></div>
-<p>The first argument identifies the plugin point type that the Factory is using in its lookups, the second object is the options used to configure the factory:</p>
-<table>
-<thead>
-<tr>
-<th>Option Field</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>default</td>
-<td>The name of the Factory. This is used to cache the factory so it can be returned from a repeated <code>createFactory()</code> or <code>getFactory()</code> call.</td>
-</tr>
-<tr>
-<td>pluginKey</td>
-<td>plugin</td>
-<td>The key in the registered plugin that defines the item the Factory will use.</td>
-</tr>
-<tr>
-<td>pluginKeyType</td>
-<td>type</td>
-<td>The type key name used by <code>Factory.create()</code> and <code>Factory.get()</code> when finding a factory item.</td>
-</tr>
-<tr>
-<td>strategy</td>
-<td>Plugins.ALL</td>
-<td>This determines how to treat the item found in create() before it is returned. See below for strategy descriptions.</td>
-</tr>
-<tr>
-<td>defaultObject</td>
-<td>null</td>
-<td>If no look up is found for a type, this object will be used</td>
-</tr>
-<tr>
-<td>registry</td>
-<td>null</td>
-<td>The default objects in the lookup</td>
-</tr>
-</tbody>
-</table>
-<p>To register a Plugins for use in the factory describe above:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">myFactoryPlugin</span> <span class="o">=</span> <span class="p">{</span> 
-  <span class="nx">type</span> <span class="o">:</span> <span class="s1">&#39;myObjectType&#39;</span><span class="p">,</span>
-  <span class="nx">processor</span> <span class="o">:</span> <span class="p">(</span> <span class="nx">obj</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="cm">/* do something */</span> <span class="p">}</span>
-<span class="p">}</span>
-<span class="nx">Plugins</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span> <span class="sb">`myProject.MyLookupType`</span><span class="p">,</span> <span class="nx">myFactoryPlugin</span> <span class="p">)</span>
-</code></pre></div>
-<p>In this case, the <code>type</code> defines what kind of object this processor will be used for. Because the Factory options specified <code>processor</code> as the <code>pluginKey</code>, the actual object is registered using that key. If the factory is invoked like this</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">msg</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">type</span> <span class="o">:</span> <span class="s1">&#39;myObjectType&#39;</span><span class="p">,</span> <span class="cm">/* more values */</span> <span class="p">}</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">factory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span> <span class="nx">msg</span> <span class="p">)</span>
-</code></pre></div>
-<p>the <code>myFactoryPlugin.processor( msg )</code> will be invoked and its result returned. Because the stategy is <code>ALL</code> and the processor is a function, the function will be invoked will all parameters given to the <code>create()</code>.</p>
-<p>Different Strategy objects can be set on a Factory to allow different behaviors to occur. 
-When <code>create( obj, ...rest )</code> is invoked, the strategies will behave in the following ways:</p>
-<table>
-<thead>
-<tr>
-<th>Strategy</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Plugins.ALL</td>
-<td>This is the default strategy. If the registered item is a function, it will be invoked with <code>f( obj, ...rest )</code> and the result returned. If the registered item is a Class, <code>new Clzz( obj, ...args )</code> will be returned.</td>
-</tr>
-<tr>
-<td>Plugins.NONE</td>
-<td>If the registered item is a function, it will be invoked with no options. If the registered item is a Class, <code>new Clzz( )</code> will be returned.</td>
-</tr>
-<tr>
-<td>Plugins.ARGS</td>
-<td>If the registered item is a function, it will be invoked with <code>f( ...rest )</code> and the result returned. If the registered item is a Class, <code>new Clzz( ...args )</code> will be returned.</td>
-</tr>
-<tr>
-<td>Plugins.MERGE</td>
-<td>If the registered item is a function, it will be invoked with <code>f( { model : msg, ...rest } )</code> and the result returned. If the registered item is a Class, <code>new Clzz( { model : msg, ...args } )</code> will be returned. The <code>Plugins.mergeStrategy()</code> call can be used to create a merge strategy that will use a different key.</td>
-</tr>
-<tr>
-<td>Plugins.LOOKUP</td>
-<td>In this case, the registered object is simply returned</td>
-</tr>
-<tr>
-<td>Plugins.reactStrategy( React, propKey = 'model' )</td>
-<td>This strategy will call React.createElement() with the registered item as the component function or class. The <code>...rest</code> object will be supplied as props to the component. If propKey is a string, the <code>obj</code> object will be given as a prop as well, using the <code>propKey</code> as the prop name.</td>
-</tr>
-<tr>
-<td>function</td>
-<td>A custom <code>function( factory, registeredItem, typeOrObject, props )</code> can be set as the strategy object as well.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="dynamic-factories">Dynamic Factories<a class="headerlink" href="#dynamic-factories" title="Permanent link">&para;</a></h2>
-<p>The Factory mechanism used in the plugin library is backed by <code>@leverege/factory</code> and augmented to include automatic registration and deregistration of plugins as they are added and removed.</p>
-<p>The factory mechanism can be used independently of Plugins as well - See <code>@leverege/factory</code>.</p>
+<h1 id="styling-overrides">Styling Overrides<a class="headerlink" href="#styling-overrides" title="Permanent link">&para;</a></h1>
+<p>To override any blueprint metadata at a specific relationship path, add the property to the metadata of the relationship attribute. For example, to override the location <code>navicon</code> at the company level, you’ll go to the company blueprint’s location attribute and add the metadata.</p>
+<figure markdown="block">
+ ![Screen Icon Example](assets/attribute-override.svg){ width="700" }
+   <figcaption markdown="off">Override metadata at the relationship attribute</figcaption>
+ </figure>
+<p>You can override anything from icons &amp; strings to illustrations and documentation links. Anything you have been able to configure thus far can be changed.</p>
 
               
             </article>
