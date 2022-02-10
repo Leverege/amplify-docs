@@ -5,7 +5,7 @@
 So far, we have used the automatic screen display option, which we call the nesting display. For the nesting display, when you select an item, you are drilled into an entirely new page about that item, featuring a sidebar of that item's children (example below).
 
 <figure markdown>
-![Nesting Display](assets/root-children.png){ width="700" }
+![!Nesting Display](assets/root-children.png){ width="700" }
   <figcaption>Nesting Screen Display</figcaption>
 </figure>
 
