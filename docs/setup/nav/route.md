@@ -1,24 +1,84 @@
-# Views
+# Roots
 
-As mentioned earlier, the `Plugins.get( type, filter )` call can return a filtered set of plugins of a given type. Sometimes, however, these plugins are evaluated and organized into a more complicated structure that allows for easier and quicker access. This is where the `View` comes into play. The `View` will watch the Plugin mechanisms for Plugins that are added and removed, and mark its view as dirty when appropriate. When the View is nexted ask for its value, it can either recalculate the value or return a cached one.
+In your UI, you have the ability to decide which blueprint or blueprints will be your root(s). By making a blueprint a root, you are selecting that blueprint to be the root of your hierarchy for that section of the UI. The root page will load a system-wide list of every item of that blueprint type. Let's take the hierarchy below as our example. 
+
+<figure markdown>
+![Hierarchy Diagram](assets/hierarchy.svg){ width="700" }
+  <figcaption>Hierarchy diagram</figcaption>
+</figure>
+
+Let's break down the relationships in the example above. The company blueprint has 3 child relationships, all of which are one-to-many. The child blueprints are:
+
+- Location Blueprint
+- Asset Blueprint
+- Tracker Blueprint
+
+The location blueprint also has child relationships, all of which are one-to-many. These child blueprints are: 
+
+- Asset Blueprint
+- Tracker Blueprint
+- Zone Blueprint
+- Beacon Blueprint
+- Floor Blueprint
+
+For a refresher on relationship types and usages, {==please refer to this link.==}
 
 
+## Selecting Roots
+You can have one root or multiple roots in your UI. In this case, it makes sense for the company blueprint to be a root, which will make the company blueprint a top level navigation option.
 
-For a plugin point to use a Factory, it should use the `createView( type, options, throwError = false )` method to obtain and/or create it.
+<figure markdown>
+![Root](assets/root.svg){ width="700" }
+  <figcaption>Company root example</figcaption>
+</figure>
 
-``` javascript
-const view = Plugins.createView( 'myProject.MyLookupType', options )
-```
+On top of adding companies to the top level navigation, the root also will only load that blueprint and it's children. For example, if you selected the location blueprint as a root along with the company blueprint, you would see both in the top nav (example below). 
 
-The first argument identifies the plugin point type that the View is using , the second object is the options used to configure the factory:
+<figure markdown>
+![Root](assets/multi-root.svg){ width="700" }
+  <figcaption>Multi-root example</figcaption>
+</figure>
 
-| Option Field | Default | Description |
-|--------------|---------|-------------|
-| name | default | The name of the View. This is used to cache the View so it can be returned from a repeated `createFactory()` or `getFactory()` call. |
-| sort | defaultSort | This defines the sort function used to sort the plugins. By default, the sort function uses a string sorting mechanism on the 'sort' key, but alternates functions can be used. If this is 'byNumber', a sort using a number will be installed. |
-| filter | null | The filter used to prune plugins from the View. If `processor` is supplied, this is not used. |
-| processor | null | A function that, if supplied, this is invoked with an Array of sorted  plugins. The result of this function is returned from `View.get()`. If this is not supplied, the `filter` options will be used.  |
+Under the location's tab, you will have entirely new set of pages, representing the child blueprints, in your UI. This pages will be completely separate from the pages representing the same blueprint under the company root. To help visual this, take a look at the diagram below. 
 
-If a processor is not supplied, `view.get()` will return an array of plugins, sorted and filtered according to those options. If the processor is given, the result from the processor defines the shape of the return value of `view.get()`.
+<figure markdown>
+![Hierarchy 2](assets/location-hierarchy.svg){ width="700" }
+  <figcaption>Multi-root hierarchy</figcaption>
+</figure>
 
-When a Plugin of the View's type is added or removed, the view is marked as dirty and is recalculated vi `processor` or `filter` on the next invokation of `view.get()`.
+
+## Root Groups
+
+In some cases, it's helpful to see your assets or trackers across all companies or locations at the root level. In these types of cases, we find it helpful to group those pages together. The grouping mechanism puts a group of root pages into a dropdown in the top navigation, saving you critical screen space. 
+
+<figure markdown>
+![Root Group](assets/root-group.svg){ width="700" }
+  <figcaption>Group dropdown example</figcaption>
+</figure>
+
+These pages will load individually, so you will have one page for a system-wide list of assets and one for a system-wide list of trackers. 
+
+
+## Configuring Roots
+
+To make a blueprint a root, all you have to do is add the tag `is:root` to the blueprint tag section. 
+
+<figure markdown>
+![Tag Input](assets/tags.png){ width="700" }
+  <figcaption>Group dropdown example</figcaption>
+</figure>
+
+Below are the different types of configuration options for roots via tags.
+
+| Property | Purpose |
+|-------|--------------|
+| `is:root` | Adds the blueprint to the top-level navigation as a root |
+| `rootNavGroup:<Name>` | If a blueprint is set as a root, it can be added to a group in the top navigation. Name represents which group the blueprint is added to and is used in the label of the dropdown  |
+| `rootNavGroupIcons:<URL>` | To set the icon for a group, use this tag on any blueprint in that group. This icon must be hosted publicly online |
+
+
+## Hiding Roots from Specific Roles
+
+Not every role should have the same access, and the same goes for roots. You can easily hide a root from a given role by using the tag `excludeFrom:<Role>`
+
+
