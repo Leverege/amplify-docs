@@ -970,8 +970,8 @@
 <h1 id="roots">Roots<a class="headerlink" href="#roots" title="Permanent link">&para;</a></h1>
 <p>In your UI, you have the ability to decide which blueprint or blueprints will be your root(s). By making a blueprint a root, you are selecting that blueprint to be the root of your hierarchy for that section of the UI. The root page will load a system-wide list of every item of that blueprint type. Let's take the hierarchy below as our example. </p>
 <figure>
-<p><img alt="Hierarchy Diagram" src="../assets/hierarchy.svg" width="700" />
-  </p>
+<p><div class="lightgallery"><a data-sub-html="Hierarchy Diagram" href="../assets/hierarchy.svg"><img alt="Hierarchy Diagram" src="../assets/hierarchy.svg" width="700" />
+  </a></div></p>
 <figcaption>Hierarchy diagram</figcaption>
 </figure>
 <p>Let's break down the relationships in the example above. The company blueprint has 3 child relationships, all of which are one-to-many. The child blueprints are:</p>
@@ -992,35 +992,35 @@
 <h2 id="selecting-roots">Selecting Roots<a class="headerlink" href="#selecting-roots" title="Permanent link">&para;</a></h2>
 <p>You can have one root or multiple roots in your UI. In this case, it makes sense for the company blueprint to be a root, which will make the company blueprint a top level navigation option.</p>
 <figure>
-<p><img alt="Root" src="../assets/root.svg" width="700" />
-  </p>
+<p><div class="lightgallery"><a data-sub-html="Root" href="../assets/root.svg"><img alt="Root" src="../assets/root.svg" width="700" />
+  </a></div></p>
 <figcaption>Company root example</figcaption>
 </figure>
 <p>On top of adding companies to the top level navigation, the root also will only load that blueprint and it's children. For example, if you selected the location blueprint as a root along with the company blueprint, you would see both in the top nav (example below). </p>
 <figure>
-<p><img alt="Root" src="../assets/multi-root.svg" width="700" />
-  </p>
+<p><div class="lightgallery"><a data-sub-html="Root" href="../assets/multi-root.svg"><img alt="Root" src="../assets/multi-root.svg" width="700" />
+  </a></div></p>
 <figcaption>Multi-root example</figcaption>
 </figure>
 <p>Under the location's tab, you will have entirely new set of pages, representing the child blueprints, in your UI. This pages will be completely separate from the pages representing the same blueprint under the company root. To help visual this, take a look at the diagram below. </p>
 <figure>
-<p><img alt="Hierarchy 2" src="../assets/location-hierarchy.svg" width="700" />
-  </p>
+<p><div class="lightgallery"><a data-sub-html="Hierarchy 2" href="../assets/location-hierarchy.svg"><img alt="Hierarchy 2" src="../assets/location-hierarchy.svg" width="700" />
+  </a></div></p>
 <figcaption>Multi-root hierarchy</figcaption>
 </figure>
 <h2 id="root-groups">Root Groups<a class="headerlink" href="#root-groups" title="Permanent link">&para;</a></h2>
 <p>In some cases, it's helpful to see your assets or trackers across all companies or locations at the root level. In these types of cases, we find it helpful to group those pages together. The grouping mechanism puts a group of root pages into a dropdown in the top navigation, saving you critical screen space. </p>
 <figure>
-<p><img alt="Root Group" src="../assets/root-group.svg" width="700" />
-  </p>
+<p><div class="lightgallery"><a data-sub-html="Root Group" href="../assets/root-group.svg"><img alt="Root Group" src="../assets/root-group.svg" width="700" />
+  </a></div></p>
 <figcaption>Group dropdown example</figcaption>
 </figure>
 <p>These pages will load individually, so you will have one page for a system-wide list of assets and one for a system-wide list of trackers. </p>
 <h2 id="configuring-roots">Configuring Roots<a class="headerlink" href="#configuring-roots" title="Permanent link">&para;</a></h2>
 <p>To make a blueprint a root, all you have to do is add the tag <code>is:root</code> to the blueprint tag section. </p>
 <figure>
-<p><img alt="Tag Input" src="../assets/tags.png" width="700" />
-  </p>
+<p><div class="lightgallery"><a data-sub-html="Tag Input" href="../assets/tags.png"><img alt="Tag Input" src="../assets/tags.png" width="700" />
+  </a></div></p>
 <figcaption>Group dropdown example</figcaption>
 </figure>
 <p>Below are the different types of configuration options for roots via tags.</p>
