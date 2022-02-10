@@ -1,37 +1,30 @@
-# Layout
+# Screen Display Options
 
-Sometimes, especially for UI Plugins, the Plugins need to be ordered and arranged into a tree like structure. This can be true of actions in a menu, creators in a selector, and other such mechanisms. The `Layout` is supplied as a common way to do this ordering.
+## Nesting Screen Display
 
-To use it:
+So far, we have used the automatic screen display option, which we call the nesting display. For the nesting display, when you select an item, you are drilled into an entirely new page about that item, featuring a sidebar of that item's children (example below).
 
-``` javascript 
-import { Layout } from '@leverege/plugins'
+<figure markdown>
+![Nesting Display](assets/root-children.png){ width="700" }
+  <figcaption>Nesting Screen Display</figcaption>
+</figure>
 
-const tree = Layout.create( arrayOfItems /*, { buildTree : true } */ )
-```
 
-This `create` call will look at every item in the array for a `layout` object. This object can have the following options:
+## Embedded Screen Display
 
-| Field | Default | Description |
-|-------|---------|-------------|
-| sort | item.name or item.type or '_z' | This string is used to organize the objects into priorities. Items sorted with small sort values are higher in the list, so an 'a' will occur before a 'z' in sort order.  |
-| group | [] | An array of strings representing groups. In a tree, items that share the group path will end up in the same node in hierarchy.  |
-| groupNames | [] | The name of the group elements, used for human consumption. Only one item will contribute this value (the first one defining it) |
-| groupIcons | [] | The icon (either url or font icon) of the groups, used for human consumption. Only one item will contribute this value (the first one defining it) |
+In many cases, you don't want the entire page to change when you click on an item. Instead, you want the details of a specific item to replace the item list. For example, if you are looking at a list of assets in your location and you select one to learn more, you might not want the side navigation to change to display that asset and it's children. 
 
-If `create()` is called with the `buildTree` option set to false, and array of objects containing `{ sort, group, groupKey, groupNames, groupIcons, item }` will be returned.
+<figure markdown>
+![Embedded Display](assets/embedded-display.svg){ width="700" }
+  <figcaption>Embedded Screen Display</figcaption>
+</figure>
 
-If `buildTree` is not set or is true, the array will be turned into a tree, where the root and groups in the tree look like:
+In the image above, you can see the asset details screen replaced the list screen without changing the side navigation. On top of that, in the event that the asset is the parent in a relationship, you will see those child blueprint pages in the top section of the asset detail view. 
 
-``` javascript 
-{
-  type : 'layoutNode',
-  name,
-  icon,
-  items : [ ]
-}
-```
+The tag to embed a screen is `itemScreen:embed`. This is a tag added to the relationship attribute of the blueprint you want to embed.
 
-The items array will contain items from the original array and other layout nodes, created in order to support the hierarchy.
 
+## No Screen Display
+
+Sometimes, you don't want your user to drill into an item at all. The tag to hide the drill down page all together  is `itemScreen:none`. 
 

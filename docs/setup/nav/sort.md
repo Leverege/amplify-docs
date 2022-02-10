@@ -36,7 +36,7 @@ The tag to order your blueprints is `navSort:<SORT_KEY>`, where the sort key is 
 Because you are sorting the children relationships of a location, these tags get added to the relationship attribute of each blueprint on the location blueprint (image below). Once the tags are applied, you will see a divider align appear between section a & b.
 
 <figure markdown>
-![Desired Layout](assets/desired-layout.svg){ width="700" }
+![Attribute](assets/relationship-attribute.png){ width="700" }
   <figcaption>Relationship attribute editor</figcaption>
 </figure>
 
