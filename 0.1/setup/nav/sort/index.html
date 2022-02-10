@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configuration" class="md-skip">
+        <a href="#sort-order-pages" class="md-skip">
           Skip to content
         </a>
       
@@ -696,15 +696,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-config-values" class="md-nav__link">
-    Getting Config Values
+  <a href="#sections-ordering" class="md-nav__link">
+    Sections &amp; Ordering
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-config-values" class="md-nav__link">
-    Setting Config Values
+  <a href="#section-names" class="md-nav__link">
+    Section Names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-pages-from-roles" class="md-nav__link">
+    Hiding Pages from Roles
   </a>
   
 </li>
@@ -925,15 +932,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-config-values" class="md-nav__link">
-    Getting Config Values
+  <a href="#sections-ordering" class="md-nav__link">
+    Sections &amp; Ordering
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-config-values" class="md-nav__link">
-    Setting Config Values
+  <a href="#section-names" class="md-nav__link">
+    Section Names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-pages-from-roles" class="md-nav__link">
+    Hiding Pages from Roles
   </a>
   
 </li>
@@ -951,22 +965,108 @@
               
                 
 
-<h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
-<p>The <code>Plugins</code> mechanism supplies a way registering objects for use in different mechanisms. The <code>Config</code> mechanism supplies a single location where these plugins can supply configurable options without each interface having to make its own options mechanism.</p>
-<h2 id="getting-config-values">Getting Config Values<a class="headerlink" href="#getting-config-values" title="Permanent link">&para;</a></h2>
-<p>To use the Config option in your plugin, invoke the <code>get( rsource, key, defaultValue )</code> method:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Config</span> <span class="p">}</span> <span class="kr">from</span> <span class="sb">`@leverege/plugins`</span>
-
-<span class="kd">const</span> <span class="nx">opt1</span> <span class="o">=</span> <span class="nx">Config</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span> <span class="s1">&#39;myProject.MyPlugin&#39;</span><span class="p">,</span> <span class="s1">&#39;option1&#39;</span><span class="p">,</span> <span class="mf">12</span> <span class="p">)</span>
+<h1 id="sort-order-pages">Sort &amp; Order Pages<a class="headerlink" href="#sort-order-pages" title="Permanent link">&para;</a></h1>
+<p>Once you have selected and set up your root, you will find that by clicking on a root item, you are taken to a new page in the UI with a sidebar navigation. For example, let’s look at our example with locations. </p>
+<figure>
+<p><img alt="Sidebar Example" src="../assets/root-children.png" width="700" />
+  </p>
+<figcaption>Location example</figcaption>
+</figure>
+<p>The sidebar navigation includes:</p>
+<ul>
+<li>An overview page of the item, named Overview</li>
+<li>All blueprints that have the location blueprint as a parent, regardless of if the relationship is one-to-one or one-to-many</li>
+<li>If user management is enabled, a users page. For more information on enabling user management, review {==our documentation here. ==}</li>
+</ul>
+<p>!!! Tip “Icons”
+    Reminder that the icons loading into the side navigation were set in the blueprint metadata. Revisit our icons documentation to review this process.</p>
+<h2 id="sections-ordering">Sections &amp; Ordering<a class="headerlink" href="#sections-ordering" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="Desired Layout" src="../assets/desired-layout.svg" width="700" />
+  </p>
+<figcaption>Desired Layout</figcaption>
+</figure>
+<p>We are going to break down how you get from the left sidebar navigation above to the right sidebar. To start, let’s break out and order our sections.</p>
+<p>The tag to order your blueprints is <code>navSort:&lt;SORT_KEY&gt;</code>, where the sort key is comprised of a letter that determines the section and a number that determines the order. The letter and number are separated by a period. Each blueprint's tag is outlined below. </p>
+<ul>
+<li>Assets: <code>navSort:a.1</code></li>
+<li>Trackers: <code>navSort:a.2</code></li>
+<li>Beacons: <code>navSort:b.1</code></li>
+<li>Floors: <code>navSort:b.2</code></li>
+<li>Zones: <code>navSort:b.3</code></li>
+</ul>
+<p>Because you are sorting the children relationships of a location, these tags get added to the relationship attribute of each blueprint on the location blueprint (image below). Once the tags are applied, you will see a divider align appear between section a &amp; b.</p>
+<figure>
+<p><img alt="Desired Layout" src="../assets/desired-layout.svg" width="700" />
+  </p>
+<figcaption>Relationship attribute editor</figcaption>
+</figure>
+<p>The overview and users pages are ordered with different tags. These tags are added to the location blueprint itself. </p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>navSortOverview:&lt;SORT_KEY&gt;</code></td>
+<td>To order the overview page, add this tag to the parent blueprint</td>
+</tr>
+<tr>
+<td><code>navSortUserManagement:&lt;SORT_KEY&gt;</code></td>
+<td>To order the users page, add this tag to the parent blueprint</td>
+</tr>
+</tbody>
+</table>
+<p>For our example we're working on, the overview and users tags would follow the example below.</p>
+<ul>
+<li>Overview: <code>navSortOverview:c.1</code></li>
+<li>Users: <code>navSortUserManagement:c.2</code></li>
+</ul>
+<p>Now that we've added all of our tags, our sidebar should look like the sidebar on the left in the image below. We'll be reviewing how to add section titles next.</p>
+<figure>
+<p><img alt="step one" src="../assets/step-one.svg" width="700" />
+  </p>
+<figcaption>Sections &amp; Ordering Outcome/figcaption&gt;
+</figcaption>
+</figure>
+<h2 id="section-names">Section Names<a class="headerlink" href="#section-names" title="Permanent link">&para;</a></h2>
+<p>To add a section name, you'll want to identify the first page in each section. For our inventory section, the first page is the assets attribute. This is where you will add the tag <code>navSectionName:&lt;NAME&gt;</code>. </p>
+<p>If you want to add the section name above the user management or overview pages, you will need to add a string to your metadata on the parent blueprint. In this case, we would add the string to the metadata on the location blueprint.</p>
+<table>
+<thead>
+<tr>
+<th>String</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>overviewSectionName</code></td>
+<td>If the overview page is the first page in a section, add this string to the parent blueprint metadata with the desired name.</td>
+</tr>
+<tr>
+<td><code>userManagementSectionName</code></td>
+<td>If the users page is the first page in a section, add this string to the parent blueprint metadata with the desired name.</td>
+</tr>
+</tbody>
+</table>
+<p>For our example, we added the two tags below. </p>
+<ul>
+<li>On the assets attribute at the location blueprint: <code>navSectionName:Inventory</code></li>
+<li>On the beacons attribute at the location blueprint: <code>navSectionName:Installation</code></li>
+</ul>
+<p>To add the location management section name, we added the following metadata to the location blueprint.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;strings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;overviewSectionName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Location Management&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>In general, you should avoid get Config options at the time you javascript is loaded, but instead delay until when the option is needed. This will avoid any ordering issues between intialization and usage of the Config options.</p>
-<h2 id="setting-config-values">Setting Config Values<a class="headerlink" href="#setting-config-values" title="Permanent link">&para;</a></h2>
-<p>To set the Config option, use <code>set( rsource, key, value )</code> method:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Config</span> <span class="p">}</span> <span class="kr">from</span> <span class="sb">`@leverege/plugins`</span>
-
-<span class="nx">Config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span> <span class="s1">&#39;myProject.MyPlugin&#39;</span><span class="p">,</span> <span class="s1">&#39;option1&#39;</span><span class="p">,</span> <span class="mf">42</span> <span class="p">)</span>
-</code></pre></div>
-<p>On Molten startup, the <code>LoadConfig</code> plugin will take all options stored in Molten's config object at the path 'plugins/config' and set them on the Plugin's Config object.</p>
+<h2 id="hiding-pages-from-roles">Hiding Pages from Roles<a class="headerlink" href="#hiding-pages-from-roles" title="Permanent link">&para;</a></h2>
+<p>Not every role permissioned to a location should have access to every page. To quickly and easily hide a page from a role, use the <code>excludeFrom:&lt;Role&gt;</code> tag on the relationship attribute if the page is a blueprint. </p>
+<p>The user management page will only appear if the user has permission to perform user management actions. The overview page will appear for any user permissioned to that blueprint.</p>
 
               
             </article>
