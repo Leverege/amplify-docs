@@ -5,7 +5,6 @@ theme:
   favicon : assets/amplify-favicon.svg
   name: material
   custom_dir: overrides
-  custom_dir: 'theme'
   font:
     text: Inter
   features:
@@ -70,7 +69,6 @@ markdown_extensions:
   - attr_list
   - def_list
   - footnotes
-  - lightgallery
   - meta
   - md_in_html
   - pymdownx.superfences:
@@ -98,3 +96,4 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.tasklist
   - pymdownx.tilde
+  - lightgallery
