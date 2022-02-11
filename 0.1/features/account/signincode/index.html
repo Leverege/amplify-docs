@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#one-time-access-code" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -903,6 +908,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         One-Time Access Code
@@ -1218,80 +1225,43 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
 
-  <h1>One-Time Access Code</h1>
-
-<p>Pets have 3 attributes (besides their id): Name, Age, and Position.</p>
-<p>To be able to view these attributes in a table, update form, or creation form, <code>Attribute</code> plugins must be created for them.</p>
-<p>Attributes plugins have a few required fields, namely:</p>
-<ul>
-<li>
-<p>name - The name of the Attribute, which is used to look it up along with objectType to perform common operations</p>
-</li>
-<li>
-<p>objectType - The type of object this Attribute is relevant to, which is used along with name to look it up to perform common operations</p>
-</li>
-<li>
-<p>valueType - The type of the attribute, which can be anything, but common types include <code>strings</code>, <code>numbers</code>, <code>integers</code>, <code>geoPoints</code>, <code>geoJson</code>, and <code>Timestamp</code>.</p>
-</li>
-<li>
-<p>get - This function is used by display and update mechanisms to get the current value of this attribute given an instance of the objectType it pertains to and some context</p>
-</li>
-<li>
-<p>displayName - A field of the Attribute used to display the attribute in lists for configuration or default titles</p>
-</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Name Attribute</label><label for="__tabbed_1_2">Age Attribute</label><label for="__tabbed_1_3">Position Attribute</label><label for="__tabbed_1_4">Setup</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>  <span class="p">{</span>
-    <span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
-    <span class="nx">objectType</span> <span class="o">:</span> <span class="s1">&#39;petApi.pet&#39;</span><span class="p">,</span>
-    <span class="nx">valueType</span> <span class="o">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span>
-    <span class="nx">get</span> <span class="o">:</span> <span class="p">(</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">cxt</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> 
-      <span class="k">return</span> <span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">name</span>
-    <span class="p">},</span>
-    <span class="nx">displayName</span> <span class="o">:</span> <span class="s1">&#39;Name&#39;</span>
-  <span class="p">}</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>  <span class="p">{</span>
-    <span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span>
-    <span class="nx">objectType</span> <span class="o">:</span> <span class="s1">&#39;petApi.pet&#39;</span><span class="p">,</span>
-    <span class="nx">valueType</span> <span class="o">:</span> <span class="s1">&#39;number&#39;</span><span class="p">,</span>
-    <span class="nx">get</span> <span class="o">:</span> <span class="p">(</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">cxt</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> 
-      <span class="k">return</span> <span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">age</span>
-    <span class="p">},</span>
-    <span class="nx">displayName</span> <span class="o">:</span> <span class="s1">&#39;Age&#39;</span>
-  <span class="p">}</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>  <span class="p">{</span>
-    <span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;geoPosition&#39;</span><span class="p">,</span>
-    <span class="nx">objectType</span> <span class="o">:</span> <span class="s1">&#39;petApi.pet&#39;</span><span class="p">,</span>
-    <span class="nx">valueType</span> <span class="o">:</span> <span class="s1">&#39;geoPoint&#39;</span><span class="p">,</span>
-    <span class="nx">get</span> <span class="o">:</span> <span class="p">(</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">cxt</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> 
-      <span class="k">return</span> <span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">position</span>
-    <span class="p">},</span>
-    <span class="nx">displayName</span> <span class="o">:</span> <span class="s1">&#39;Position&#39;</span>
-  <span class="p">}</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>  <span class="nx">molten</span><span class="p">.</span><span class="nx">addPlugin</span><span class="p">(</span> <span class="s1">&#39;Attribute&#39;</span><span class="p">,</span> <span class="nx">NameAttribute</span> <span class="p">)</span>
-  <span class="nx">molten</span><span class="p">.</span><span class="nx">addPlugin</span><span class="p">(</span> <span class="s1">&#39;Attribute&#39;</span><span class="p">,</span> <span class="nx">AgeAttribute</span> <span class="p">)</span>
-  <span class="nx">molten</span><span class="p">.</span><span class="nx">addPlugin</span><span class="p">(</span> <span class="s1">&#39;Attribute&#39;</span><span class="p">,</span> <span class="nx">PositionAttribute</span> <span class="p">)</span>
-</code></pre></div>
-</div>
-</div>
-</div>
+<h1 id="one-time-access-code">One-Time Access Code<a class="headerlink" href="#one-time-access-code" title="Permanent link">&para;</a></h1>
+<p>The one-time access code feature is enabled or disabled at the project level. If the feature is enabled, any user registered in our system can request a one-time access code via the email address associated with their account. The code can be sent via email or text, as long as the user has a phone number tied to their account. The one-time access code button can be found on the login screen (image below).</p>
+<figure>
+<p><div class="lightgallery"><a data-sub-html="Login" href="assets/login.svg"><img alt="Login" src="assets/login.svg" width="700" />
+  </a></div></p>
+<figcaption>Login Screen</figcaption>
+</figure>
+<p>An example of the email is below. If you want to customize your email, review our <a href="../../setup/branding/notifications/">email configuration &amp; styling</a> help guide.</p>
+<figure>
+<p><div class="lightgallery"><a data-sub-html="Email" href="assets/email.svg"><img alt="Email" src="assets/email.svg" width="700" />
+  </a></div></p>
+<figcaption>Access Code Email</figcaption>
+</figure>
 
               
             </article>
