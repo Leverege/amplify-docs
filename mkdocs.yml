@@ -42,6 +42,18 @@ nav :
      - config/index.md
   - Features:
      - features/index.md
+     - Accounts:
+        - Two-Step Verification: features/accounts/authentication.md
+        - One-Time Access Code: features/accounts/signincode.md
+        - Multi-Role Management: features/accounts/roles.md
+     - FOTA Management:
+        - features/fota/index.md
+     - Quick Search:
+        - features/search/index.md
+     - Maps:
+        - features/map/index.md
+        - Zones: features/map/zone.md
+        - Multi-Floor Management: features/map/multifloor.md
 extra:
   version: 
     provider: mike
