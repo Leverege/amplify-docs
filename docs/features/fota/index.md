@@ -1,4 +1,4 @@
-# Introduction to FOTA Server
+# Introduction to FOTA 
 
 Firmware Component: A firmware component is a software program for a specific processor inside the hardware. Your hardware will generally have 2 or more components. Some common components are below.
 

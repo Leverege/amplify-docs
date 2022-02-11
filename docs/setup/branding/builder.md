@@ -9,7 +9,7 @@ UI Builder is aimed at designers and other non-technical users to be able to mak
     
 ## Navigating the UI Builder
 
-Every project has it's own UI builder project associated with it. If a given project has multiple UIs, the same UI builder project or multiple UI builder projects can be used per UI. 
+Every project has it's own UI builder project associated with it. If a given project has multiple UIs, a single UI builder project can be used for multiple UIs or each UI can use a unique UI builder project.
 
 UI Builder projects are organized by the type of UI element you are editing. You can find the categories down the left side of the project. 
 
