@@ -51,7 +51,7 @@ nav :
      - Search & Filter:
         - features/search/index.md
         - Quick Search: features/search/quicksearch.md
-     - Pairing
+     - Pairing:
         - features/pair/index.md
      - Maps:
         - features/map/index.md
