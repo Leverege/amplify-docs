@@ -46,14 +46,19 @@ nav :
         - Two-Step Verification: features/account/authentication.md
         - One-Time Access Code: features/account/signincode.md
         - Multi-Role Management: features/account/roles.md
-     - FOTA Management:
-        - features/fota/index.md
-     - Quick Search:
+     - Create & Edit:
+        - features/create/index.md
+     - Search & Filter:
         - features/search/index.md
+        - Quick Search: features/search/quicksearch.md
+     - Pairing
+        - features/pair/index.md
      - Maps:
         - features/map/index.md
         - Zones: features/map/zone.md
         - Multi-Floor Management: features/map/multifloor.md
+     - FOTA Management:
+        - features/fota/index.md
 extra:
   version: 
     provider: mike
