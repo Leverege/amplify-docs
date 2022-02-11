@@ -1451,16 +1451,21 @@
 - Component Specific Data Fields</p>
 <h2 id="creating-firmware-application-versions">Creating Firmware Application Versions<a class="headerlink" href="#creating-firmware-application-versions" title="Permanent link">&para;</a></h2>
 <p>To create a new version of the firmware application, the user defines the following information</p>
-<p>Firmware Application Data Fields
-- Device Type
-- Semantic Version
-- Components</p>
-<div class="highlight"><pre><span></span><code>* BLE Component Version
-* MCU Component Version
-* etc
-</code></pre></div>
+<p>Firmware Application Data Fields</p>
 <ul>
-<li>Dependency (Upgrade Path)</li>
+<li>Device Type</li>
+<li>Semantic Version</li>
+<li>
+<p>Components</p>
+<ul>
+<li>BLE Component Version</li>
+<li>MCU Component Version</li>
+<li>etc</li>
+</ul>
+</li>
+<li>
+<p>Dependency (Upgrade Path)</p>
+</li>
 </ul>
 <h3 id="dependency-upgrade-path">Dependency (Upgrade Path)<a class="headerlink" href="#dependency-upgrade-path" title="Permanent link">&para;</a></h3>
 <p>Every firmware application version has a dependency entry field that is filled out when the firmware application version is created. This field tells the system what the upgrade path for this specific application version is. Real examples of what this looks like are below.</p>
