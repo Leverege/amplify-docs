@@ -43,6 +43,26 @@ nav :
      - config/config-basics.md
   - Features:
      - features/index.md
+     - Accounts:
+        - Two-Step Verification: features/account/authentication.md
+        - One-Time Access Code: features/account/signincode.md
+        - Multi-Role Management: features/account/roles.md
+     - Create & Edit:
+        - features/create/index.md
+     - Search & Filter:
+        - features/search/index.md
+        - Quick Search: features/search/quicksearch.md
+     - Pairing:
+        - features/pair/index.md
+     - Maps:
+        - features/map/index.md
+        - Zones: features/map/zone.md
+        - Multi-Floor Management: features/map/multifloor.md
+     - FOTA Management:
+        - features/fota/index.md
+        - Device Type: features/fota/type.md
+        - Applications & Components: features/fota/application.md
+        - FOTA Releases: features/fota/release.md
 extra:
   version: 
     provider: mike
