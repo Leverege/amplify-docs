@@ -1177,12 +1177,22 @@
             
           
         
+          
+        
+          
+        
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index md-nav__link--active">
           <a href="./">FOTA Management</a>
+          
+            <label for="__nav_6_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -1193,6 +1203,48 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="type/" class="md-nav__link">
+        Device Type
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application/" class="md-nav__link">
+        Applications & Components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release/" class="md-nav__link">
+        FOTA Releases
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -1265,7 +1317,8 @@
 <p>Device Group: A device group is a subset of devices at a given blueprint (i.e. location) with the same device type. </p>
 <h2 id="how-does-it-work">How Does It Work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
 <p>The FOTA server manages the firmware upgrades of the hardware in the system. Every heartbeat, the device will check whether there is a firmware application upgrade available via the FOTA server. </p>
-<p>From there, if a firmware application update is available, the FOTA server attempts to upgrade the device to the latest firmware application version. The FOTA server will only attempt to upgrade one component at a time. Note that firmware application upgrade paths only allow for one component to be different between applications.  If successful, it updates the firmware application. If unsuccessful, the device can attempt to upgrade again. The amount of times the device retries is configurable per device type and the default is 3. If the device reaches the maximum amount of retries and has still not upgraded, the upgrade is stopped and marked as failed. Note that the maximum amount of retries applies to a single firmware application upgrade. If the device has to upgrade through multiple versions, each one will have a limit of retries equivalent to the configured amount per device type. </p>
+<p>From there, if a firmware application update is available, the FOTA server attempts to upgrade the device to the latest firmware application version. The FOTA server will only attempt to upgrade one component at a time. Note that firmware application upgrade paths only allow for one component to be different between applications.  If successful, it updates the firmware application. If unsuccessful, the device can attempt to upgrade again. </p>
+<p>The amount of times the device retries is configurable per device type and the default is 3. If the device reaches the maximum amount of retries and has still not upgraded, the upgrade is stopped and marked as failed. Note that the maximum amount of retries applies to a single firmware application upgrade. If the device has to upgrade through multiple versions, each one will have a limit of retries equivalent to the configured amount per device type. </p>
 <p>The steps the FOTA server takes to check if the device should upgrade to a new firmware application are the following. If any of the below checks evaluate to false, the FOTA server does not upgrade the device: </p>
 <ul>
 <li>Is there an active release?</li>
@@ -1310,6 +1363,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="type/" class="md-footer__link md-footer__link--next" aria-label="Next: Device Type" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Device Type
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
