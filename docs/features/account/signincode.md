@@ -7,7 +7,7 @@ The one-time access code feature is enabled or disabled at the project level. If
   <figcaption>Login Screen</figcaption>
 </figure>
 
-An example of the email is below. If you want to customize your email, review our [email configuration & styling](../../setup/branding/notifications/) help guide.
+An example of the email is below. If you want to customize your email, review our [email configuration & styling](../../../setup/branding/notifications/) help guide.
 
 <figure markdown>
 ![!Email](assets/email.svg){ width="700" }
