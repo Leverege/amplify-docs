@@ -15,6 +15,7 @@ Firmware Component Data Fields
 To create a new version of the firmware application, the user defines the following information
 
 Firmware Application Data Fields
+
 - Device Type
 - Semantic Version
 - Components
