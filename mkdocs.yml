@@ -59,6 +59,9 @@ nav :
         - Multi-Floor Management: features/map/multifloor.md
      - FOTA Management:
         - features/fota/index.md
+        - Device Type: features/fota/type.md
+        - Applications & Components: features/fota/application.md
+        - FOTA Releases: features/fota/release.md
 extra:
   version: 
     provider: mike
