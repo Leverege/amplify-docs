@@ -43,9 +43,9 @@ nav :
   - Features:
      - features/index.md
      - Accounts:
-        - Two-Step Verification: features/accounts/authentication.md
-        - One-Time Access Code: features/accounts/signincode.md
-        - Multi-Role Management: features/accounts/roles.md
+        - Two-Step Verification: features/account/authentication.md
+        - One-Time Access Code: features/account/signincode.md
+        - Multi-Role Management: features/account/roles.md
      - FOTA Management:
         - features/fota/index.md
      - Quick Search:
