@@ -43,13 +43,15 @@ nav :
      - config/config-basics.md
   - Features:
      - features/index.md
-     - Accounts:
+     - Account Access:
         - Two-Step Verification: features/account/authentication.md
         - One-Time Access Code: features/account/signincode.md
         - Multi-Role Management: features/account/roles.md
-     - Create & Edit:
+     - User Management:
+        - features/users/index.md
+     - Create & Edit Items:
         - features/create/index.md
-     - Search & Filter:
+     - Search & Filter Items:
         - features/search/index.md
         - Quick Search: features/search/quicksearch.md
      - Pairing:
