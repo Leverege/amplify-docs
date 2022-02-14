@@ -5,6 +5,7 @@
 Each firmware component has its own set of data fields that are required to create a new firmware component version. An example of the types of data each component has are below. 
 
 Firmware Component Data Fields
+
 - Device Type
 - Type (MCU, BLE, etc)
 - Semantic Version
