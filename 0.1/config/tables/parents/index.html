@@ -1610,7 +1610,25 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="running-functions-against-the-parent-value">Running Functions Against the Parent Value<a class="headerlink" href="#running-functions-against-the-parent-value" title="Permanent link">&para;</a></h2>
-<p>When copying the value from the parent, sometimes you want to run a function against it to get the correct child data. The two valid options for this are ‘geoJsonCenter’ and ‘geoJsonCenterOfMass’, which are only usable with a parent geoShape value and a geoPoint child value. If type is not set, the parent value will be copied to the child. The types must be the same.</p>
+<p>When copying the value from the parent, sometimes you want to run a function against it to get the correct child data. The two valid options for this are <code>geoJsonCenter</code> and <code>geoJsonCenterOfMass</code>, which are only usable with a parent geoShape value and a geoPoint child value. If type is not set, the parent value will be copied to the child. The types must be the same.</p>
+<table>
+<thead>
+<tr>
+<th>Setter Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>geoJsonCenter</code></td>
+<td>If you drew a box around the geoshape, this represents the center of that box.</td>
+</tr>
+<tr>
+<td><code>geoJsonCenterOfMass</code></td>
+<td>This represents the geometric center of the geoshape, the arithmetic mean position of all of the points ini the figure.</td>
+</tr>
+</tbody>
+</table>
 <p>A good use case example for this function is beacon installation  into zones. When installing beacons, you might want them to automatically be placed in the center of a zone, in which case you would want to use <code>type:geoShapeCenterOfMass</code></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;setter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
