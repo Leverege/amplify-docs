@@ -42,7 +42,7 @@ nav :
      - config/index.md
      - Getting Started: config/config-basics.md
      - Tables:
-        - config/tabels/parents.md
+        - config/tables/parents.md
   - Features:
      - features/index.md
      - Account Access:
