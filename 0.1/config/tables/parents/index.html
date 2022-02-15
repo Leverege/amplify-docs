@@ -1520,6 +1520,12 @@
                 
 
 <h1 id="parent-data-columns-in-tables">Parent Data Columns in Tables<a class="headerlink" href="#parent-data-columns-in-tables" title="Permanent link">&para;</a></h1>
+<p>Sometimes, you want  to show the parent on the child table. You can see an example of this below, where the table is showing the parent location of the asset. In this guide, we'll show you how to set that up in your interface.</p>
+<figure>
+<p><div class="lightgallery"><a data-sub-html="Table Column Example" href="../assets/location-col.svg"><img alt="Table Column Example" src="../assets/location-col.svg" width="700" />
+  </a></div></p>
+<figcaption>Parent table column example</figcaption>
+</figure>
 <p>To add and configure parent columns in the child blueprint's table, you can add metadata to the parent attribute on the child blueprint. </p>
 <figure>
 <p><div class="lightgallery"><a data-sub-html="Blueprint Metadata Editor" href="../assets/parent-setter.png"><img alt="Blueprint Metadata Editor" src="../assets/parent-setter.png" width="700" />
@@ -1546,7 +1552,7 @@
 </tbody>
 </table>
 <p>For example, if your root is Location which has a one to many relationship with Assets and you are on the assets page in a given location, your path would be <code>location.assets</code> and your source path would be <code>location</code>. Whether you use singular or plural depends on the type of relationship. If it was a one-to-one relationship, your path would look like <code>location.asset</code>. </p>
-<p>Alternatively, if your root was company and company had a one-to-many relationship with locations while locations still had a one-to-many relationship with assets, your path and sourcePath would be <code>company.location.assets</code>  &amp;  <code>company.locations</code> respectively. </p>
+<p>Alternatively, if your root was company and company had a one-to-many relationship with locations while locations still had a one-to-many relationship with assets, your path and sourcePath would be <code>company.locations.assets</code>  &amp;  <code>company.locations</code> respectively. </p>
 <p>For our final example, lets say both your location blueprint and asset blueprint are roots and you want to load the location column into the root-level asset page. In this case your path is  <code>asset</code> and your source path is <code>location</code>. Both will be singular since they are roots.</p>
 <h3 id="metadata-example">Metadata Example<a class="headerlink" href="#metadata-example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
@@ -1563,8 +1569,6 @@
 <span class="w">      </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;asset&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;sourcePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
 <span class="w">      </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
@@ -1604,8 +1608,6 @@
 <span class="w">          </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location.address&quot;</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
@@ -1638,9 +1640,7 @@
 <span class="w">           </span><span class="nt">&quot;copyNull&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
 <span class="w">           </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zone.area&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">           </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;geoShapeCenterOfMass&quot;</span><span class="w"></span>
-<span class="w">         </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">         </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
