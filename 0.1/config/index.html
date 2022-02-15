@@ -763,12 +763,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index md-nav__link--active">
           <a href="./">UI Configuration</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -779,6 +785,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="config-basics/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -1313,189 +1333,7 @@
 
   <h1>Index</h1>
 
-<p>This describes the values in the Molten Confg.js file.</p>
-<p>Show/Hide the Layout Controller
-Path</p>
-<p>plugins/config/LayoutViewerSelector</p>
-<p>Allows visibility control of the layout button in GroupScreen and ItemInfoScreen.</p>
-<p>{
-  allowEditing : <boolean>|<string><function>
-}
-for example: </p>
-<p>{
-  allowEditing : "Installer, Admin"
-}
-Would allow user in the persona of Installer or Admin to see the buttons</p>
-<p>plugins/config/mapBoxPosition</p>
-<p>Sets default position and zoom.
-selectedRezoomThreshold: Indicates at what range (or less ) the view should recenter/zoom in on the selected object.
-selectedZoom : target zoom when selection occurs and rezoom threshold is exceeded. ( Negative one means dont zoom )
-pathOptions : an object where the keys are the blueprint paths to allow customization of selectedRezoom options.</p>
-<p>{
-  center : [ -77.1902656, 39.1081595 ],
-  zoom : 18,
-  selectedRezoomThreshold : 12, // if we re beyond this range, selection will cause rezoom/center
-  selectedZoom : 18, // this is the target range to go to on selection. 
-  pathOptions : {
-    building : { selectedRezoomThreshold : 10, selectedZoom : 18 }
-  }
-}</p>
-<p>UserManagement / ResourceUser Screen 
-Under plugins/config/ResourceUsers, the following keys can be set to change properties:</p>
-<p>Key</p>
-<p>Default</p>
-<p>userSelectorUsernameLabel</p>
-<p>Email or Username*</p>
-<p>userSelectorUsernameHint</p>
-<p>Enter Email or Username</p>
-<p>userSelectorUsernameInstructions</p>
-<p>Enter user's email or username and hit enter or next to continue.</p>
-<p>addUserTitle</p>
-<p>Add User</p>
-<p>editUserTitle</p>
-<p>Edit User</p>
-<p>addUserOkay</p>
-<p>Next</p>
-<p>editUserUpdate</p>
-<p>Update</p>
-<p>allowCreateUser</p>
-<p>true</p>
-<p>allowInviteUser</p>
-<p>true</p>
-<p>inviteEmailLabel</p>
-<p>Email*</p>
-<p>inviteEmailHint</p>
-<p>Enter Email</p>
-<p>createEmailLabel</p>
-<p>Account Email*</p>
-<p>createEmailHint</p>
-<p>ex. johnsmith@example.com</p>
-<p>createUsernameLabel</p>
-<p>Username</p>
-<p>createUsernameHint</p>
-<p>Enter Username</p>
-<p>activateEmailLabel</p>
-<p>Account Email*</p>
-<p>createNameLabel</p>
-<p>Name*</p>
-<p>createNameHint</p>
-<p>ex. John Smith</p>
-<p>createPhoneLabel</p>
-<p>Phone Number</p>
-<p>createPhoneHint</p>
-<p>ex. (555) 555-5555</p>
-<p>createPasswordLabel</p>
-<p>Password</p>
-<p>createPasswordHint</p>
-<p>Enter password</p>
-<p>createConfirmPasswordLabel</p>
-<p>Confirm Password</p>
-<p>createConfirmPasswordHint</p>
-<p>Re-enter password</p>
-<p>screenIcon</p>
-<p>addDialogIcon</p>
-<p>editDialogIcon</p>
-<p>removeUserDialogIcon</p>
-<p>404 / LostScreen
-Under plugins/config/LostScreen, the following keys can be set to change properties:</p>
-<p>Key</p>
-<p>Default</p>
-<p>Description</p>
-<p>title</p>
-<p>Oops!</p>
-<p>The title to put on the page</p>
-<p>message</p>
-<p>We couldn't find this page - our apologies!</p>
-<p>The sub text to display to the user</p>
-<p>button</p>
-<p>Let's find our way</p>
-<p>The label of the button on the ‘home’ link</p>
-<p>link</p>
-<p>'/'</p>
-<p>The location to take the user when the button is pressed</p>
-<p>image</p>
-<p>fa fa-meh-o</p>
-<p>The font icon or image url to display. This can also be an array of font icons and image urls. If it is an Array, one will randomly be selected and used.</p>
-<p>These images are supplied as good initial resource.s</p>
-<p>LostScreen : {
-  image : [
-    'https://molten-ui-assets.storage.googleapis.com/404-UFO.png',
-    'https://molten-ui-assets.storage.googleapis.com/404-Earth.png',
-    'https://molten-ui-assets.storage.googleapis.com/404-Page.png',
-    'https://molten-ui-assets.storage.googleapis.com/404-Ghost.png'
-  ]
-}</p>
-<p>NetworkOffline
-Under plugins/config/NetworkOffline, the following keys can be set to change properties:</p>
-<p>Key</p>
-<p>Default</p>
-<p>Description</p>
-<p>message</p>
-<p>Your Network connection has been lost.</p>
-<p>The message to display when network connection is lost.</p>
-<p>icon</p>
-<p>fa fa-exclamation-triangle</p>
-<p>The font icon class or image url to display with the text, when the connection is lost.</p>
-<p>BlueprintActions
-Under plugins/config/BlueprintActions, the following keys can be set to change properties:</p>
-<p>Key</p>
-<p>Default</p>
-<p>Description</p>
-<p>updateIcon</p>
-<p>fa fa-pencil fa-fw</p>
-<p>The font icon class or image url to display for a blueprint update action.</p>
-<p>createIcon</p>
-<p>fa fa-plus fa-fw</p>
-<p>The font icon class or image url to display for a blueprint create action.</p>
-<p>bulkCreateIcon</p>
-<p>fa fa-plus fa-fw</p>
-<p>The font icon class or image url to display for a blueprint bulk create action.</p>
-<p>removeIcon</p>
-<p>fa fa-trash fa-fw</p>
-<p>The font icon class or image url to display for a blueprint remove action.</p>
-<p>No Data/No Search Results Views
-Under plugins/config/<client> where <client> is one of ListDataViewer or TableDataViewer the following keys can be set to change the no data/no search results views:</p>
-<p>Key</p>
-<p>Default</p>
-<p>Description</p>
-<p>noDataMessage</p>
-<p>The class found in molten at:
-src/screens/shared/group/noData/NoDataView.jsx</p>
-<p>The string or React Component/Function to render when there is no data in the table/list</p>
-<p>Under plugins/config/NoDataView the following keys can be set to configure the NoDataView that is used by default</p>
-<p>Key</p>
-<p>Default</p>
-<p>Description</p>
-<p>Key</p>
-<p>Default</p>
-<p>Description</p>
-<p>noDataTitle</p>
-<p>the name of the blueprint</p>
-<p>Can be overridden by a string in the blueprint or attribute</p>
-<p>noDataBody</p>
-<p>Looks like there's nothing here, try creating something!</p>
-<p>Can be overridden by a string in the blueprint or attribute</p>
-<p>noDataIcon</p>
-<p>https://molten-ui-assets.storage.googleapis.com/no-data.svg</p>
-<p>Can be overridden by a string in the blueprint or attribute</p>
-<p>noDataIconDimensions</p>
-<p>{ height : 224, width : 224 }</p>
-<p>Can be overridden by a string in the blueprint or attribute</p>
-<p>noDataDocLink</p>
-<p>null</p>
-<p>Can be overridden by a string in the blueprint or attribute</p>
-<p>noSearchResultsTitle</p>
-<p>We couldn't find any matches for that</p>
-<p>Can be overridden by a string in the blueprint or attribute</p>
-<p>noSearchResultsBody</p>
-<p>Please try searching for another item</p>
-<p>Can be overridden by a string in the blueprint or attribute</p>
-<p>noSearchResultsIcon</p>
-<p>https://molten-ui-assets.storage.googleapis.com/no-search-results.svg</p>
-<p>Can be overridden by a string in the blueprint or attribute</p>
-<p>noSearchResultsIconDimensions</p>
-<p>{ height : 224, width : 224 }</p>
-<p>Can be overridden by a string in the blueprint or attribute</p>
+<p>In this section, we will be covering how to configure the UI and save configuration to dashboards to be used throughout the application.</p>
 
               
             </article>
@@ -1530,13 +1368,13 @@ src/screens/shared/group/noData/NoDataView.jsx</p>
       
       
         
-        <a href="../features/" class="md-footer__link md-footer__link--next" aria-label="Next: Index" rel="next">
+        <a href="config-basics/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting Started" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Index
+              Getting Started
             </div>
           </div>
           <div class="md-footer__button md-icon">
