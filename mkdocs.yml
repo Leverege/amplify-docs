@@ -40,7 +40,7 @@ nav :
       - Overview: setup/dev.md
   - UI Configuration:
      - config/index.md
-     - config/config-basics.md
+     - Getting Started: config/config-basics.md
   - Features:
      - features/index.md
      - Account Access:
