@@ -18,7 +18,7 @@ To add and configure parent columns in the child blueprint's table, you can add 
 For the setter metadata, there are two values you need to understand, `path` and  `sourcePath`.
 
 | Setter Value | Description |
-|-------|---------|
+|---------|---------|
 | `path` | The path of the current blueprint you are trying to configure the parent column for. Paths determine where you are in the UI looking at this blueprint. |
 | `sourcePath` | The path of the parent you are trying to load into the chid table. |
 
@@ -28,7 +28,7 @@ Alternatively, if your root was company and company had a one-to-many relationsh
 
 For our final example, lets say both your location blueprint and asset blueprint are roots and you want to load the location column into the root-level asset page. In this case your path is  `asset` and your source path is `location`. Both will be singular since they are roots.
 
-### Metadata Example
+Metadata Example
 
 ```json
 {
@@ -62,7 +62,7 @@ Along with enabling the parent to show up in the child table, you can also copy 
 | `copyNull` | If the value is null, you can either copy the value by setting this to true or ignoring the value by setting this to false |
 | `parent` | Parent represents the attribute from the parent blueprint you want to copy onto the child. The format is the same as the child value.  |
 
-### Metadata Example
+Metadata Example
 
 ```json
 {
