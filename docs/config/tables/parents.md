@@ -16,7 +16,7 @@ For the setter metadata, there are two values you need to understand, `path` and
 
 For example, if your root is Location which has a one to many relationship with Assets and you are on the assets page in a given location, your path would be `location.assets` and your source path would be `location`. Whether you use singular or plural depends on the type of relationship. If it was a one-to-one relationship, your path would look like `location.asset`. 
 
-Alternatively, if your root was company and company had a one-to-many relationship with locations while locations still had a one-to-many relationship with assets, your path and sourcePath would be `company.locations.asset`  &  `company.locations` respectively. 
+Alternatively, if your root was company and company had a one-to-many relationship with locations while locations still had a one-to-many relationship with assets, your path and sourcePath would be `company.location.assets`  &  `company.locations` respectively. 
 
 For our final example, lets say both your location blueprint and asset blueprint are roots and you want to load the location column into the root-level asset page. In this case your path is  `asset` and your source path is `location`. Both will be singular since they are roots.
 
@@ -31,7 +31,7 @@ For our final example, lets say both your location blueprint and asset blueprint
         "sourcePath": "location"
       },
       {
-        "path": "company.locations.asset",
+        "path": "company.locations.assets",
         "sourcePath": "company.locations"
       },
       {
