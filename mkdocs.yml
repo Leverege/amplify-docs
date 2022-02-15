@@ -41,6 +41,8 @@ nav :
   - UI Configuration:
      - config/index.md
      - Getting Started: config/config-basics.md
+     - Tables:
+        - config/tabels/parents.md
   - Features:
      - features/index.md
      - Account Access:
