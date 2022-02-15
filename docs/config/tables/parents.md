@@ -76,9 +76,15 @@ Along with enabling the parent to show up in the child table, you can also copy 
 
 ## Running Functions Against the Parent Value
 
-When copying the value from the parent, sometimes you want to run a function against it to get the correct child data. The two valid options for this are ‘geoJsonCenter’ and ‘geoJsonCenterOfMass’, which are only usable with a parent geoShape value and a geoPoint child value. If type is not set, the parent value will be copied to the child. The types must be the same.
+When copying the value from the parent, sometimes you want to run a function against it to get the correct child data. The two valid options for this are `geoJsonCenter` and `geoJsonCenterOfMass`, which are only usable with a parent geoShape value and a geoPoint child value. If type is not set, the parent value will be copied to the child. The types must be the same.
+
+| Setter Value | Description |
+|-------|---------|
+| `geoJsonCenter` | If you drew a box around the geoshape, this represents the center of that box. |
+| `geoJsonCenterOfMass` | This represents the geometric center of the geoshape, the arithmetic mean position of all of the points ini the figure. |
 
 A good use case example for this function is beacon installation  into zones. When installing beacons, you might want them to automatically be placed in the center of a zone, in which case you would want to use `type:geoShapeCenterOfMass`
+
 
 
 ```json
