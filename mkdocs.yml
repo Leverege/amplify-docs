@@ -19,7 +19,7 @@ nav :
   - Home: index.md
   - Introduction:
      - intro/index.md
-  - Data Architecture:
+  - Project Setup:
      - architecture/index.md
      - Roles & Permissions:
        - architecture/roles/index.md
