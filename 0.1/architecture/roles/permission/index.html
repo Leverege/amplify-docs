@@ -13,7 +13,7 @@
     
     
       
-        <title>Permission - Leverege Supervise & Amplify</title>
+        <title>Permissions - Leverege Supervise & Amplify</title>
       
     
     
@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#permissions" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Permission
+              Permissions
             
           </span>
         </div>
@@ -410,22 +415,42 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Roles, Permissions, & Users</a>
+          <a href="../">Roles & Permissions</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Roles, Permissions, & Users" data-md-level="2">
+      <nav class="md-nav" aria-label="Roles & Permissions" data-md-level="2">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
-          Roles, Permissions, & Users
+          Roles & Permissions
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permissions.md" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -1423,146 +1448,239 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    Terminology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-permissions" class="md-nav__link">
+    Common Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-permissions" class="md-nav__link">
+    System Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    Device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blueprints-relationships" class="md-nav__link">
+    Blueprints &amp; Relationships
+  </a>
+  
+    <nav class="md-nav" aria-label="Blueprints &amp; Relationships">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blueprints" class="md-nav__link">
+    Blueprints:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-attributes" class="md-nav__link">
+    Relationship Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-access" class="md-nav__link">
+    API Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    User
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    Network
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
 
-  <h1>Permission</h1>
-
-<p>Contained on this page is a list of all the present Leverege Platform Api Objects that support role based authorization and their relevant permissions. People wishing to make custom roles for an ongoing project should start by reading the Auto-Generated and Device Permissions in particular.</p>
-<p>Table of Contents
-Common Permissions</p>
-<p>Types</p>
-<p>Project</p>
-<p>System</p>
-<p>Device</p>
-<p>Hierarchy</p>
-<p>Blueprint</p>
-<p>MessageRoute</p>
-<p>Network</p>
-<p>OidcClient</p>
-<p>Scenario</p>
-<p>Script</p>
-<p>Template</p>
-<p>Timer</p>
-<p>User</p>
-<p>Contact</p>
-<p>ApiAccess</p>
-<p>Role</p>
-<p>Permission</p>
-<p>Module</p>
-<p>Geotile</p>
-<p>Rsrc</p>
-<p>Hook</p>
-<p>Enum/ResourceEnum</p>
-<p>VIN</p>
-<p>Auto-Generated Permissions</p>
-<p>Common Permissions
-Some permissions can be seen used against nearly every type of object in the platform. These are the CRUDL permissions. CRUDL is an acronym that stands for Create, Read, Update, Delete, List.</p>
-<p>Create - the permission to create an object</p>
-<p>Read - given some object’s id, the ability to read its data</p>
-<p>Update - given some object’s id, the ability to update its data</p>
-<p>Delete - given some object’s id, the ability to delete it</p>
-<p>List - the ability to get a list of all objects without having to know their ids</p>
-<p>Types
-Project
-Projects are a root level item in the Leverege Platform. They represent a container of other resources constituting a complete IoT solution. Projects use the common CRUDL permissions, but also have the following custom permissions:</p>
-<p>loginAs - This permission allows a user to login as any other user in the project. This is powerful when given to third party API’s the user has developed, because it allows that third party API to act in the user’s capacity in the system.</p>
-<p>System
-Sytems are buckets of devices that can be used to logically separate sets of devices from each other. Systems use only the common CRUDL permissions.</p>
-<p>Device
-Devices are digital shadows of physical objects. They can represent hardware devices like trackers, physical assets like cows, or organizational buckets like companies. Devices use the common CRUDL permissions, but also have the following custom permissions:</p>
-<p>readData - Read not only a device’s header information (like a name), but also its data, which might include things like sensor readings, addresses, or contact information.</p>
-<p>readHistory - View the changes to a device’s data over time</p>
-<p>readEvents - View the relevant events that have occurred to a device over time. Might include things like threshold violations or alerts.</p>
-<p>updateEvents - Update or create device events</p>
-<p>sendMessage - Send a device a message. This may only be relevant if a device is physically capable of receiving messages, like in the instance of configuring a tracker or other piece of hardware.</p>
-<p>runSimulation - Simulate a device</p>
-<p>readByNetworkAlias - Get devices by their network ids</p>
-<p>deleteRelationship - Delete a device's relationship. For instance, removing a cow from a barn stall, or unpairing a car and a tracker. Deleting a relationship will not delete the device.</p>
-<p>createRelationship - Create a device’s relationships. For instance, pairing a car and tracker. Creating a relationship does not create a device.</p>
-<p>updateData - Update a device’s data. This generates historical data points, and will be reflected to anyone with a readData permission. An example of updating a device’s data would be setting a Farm’s address.</p>
-<p>updateAnyData - A more powerful version of updateData. Users with updateData are restricted to updating fields as validated by the device’s Blueprint. Users with updateAnyData are not subject to that restriction. As an example, a user with updateData likely couldn’t change the temperature reported by a sensor, but a user with updateAnyData could. This permission is usually only for administrators.</p>
-<p>Hierarchy
-Effectively a clone of the Device module. The Hierarchy is designed to permission within the interface, but is rarely if ever used.</p>
-<p>Blueprint
-A blueprint is a guide to what a device’s data will look like. Blueprints contain a collection of Attributes that each define an individual piece of information about a device. Blueprints use only the common CRUDL permissions.</p>
-<p>MessageRoute
-MessageRoutes define the way a device’s data flows through the Leverege system. MessageRoutes can be attached to Blueprints or Devices (but usually only Blueprints). As an example, a message route for a Car might go first to a service that enhances the GPS location data of the device with a zone name on an auction lot, and then to the Leverege Transponder service to be written to the databases. MessageRoutes use only the common CRUDL permissions.</p>
-<p>Network
-Networks represent a collection of mappings from external ids to internal Leverege ids. Networks ensure that only one device at a given time can have a given external mapping. For example, if you are sending tracker data into the Leverege Platform, that data will need some form of identifier to say what device it is from. Many times that id is chosen by the manufacturer, say a serial number or SKU. A network will map that serial number or SKU to a device’s unique id in the Leverege Platform, and ensure that mapping is one-to-one. Networks use only the common CRUDL permissions.</p>
-<p>OidcClient
-OidcClients provide a mechanism for mapping external user management and authentication systems into the Leverege Platforms RBAC authorization system. Examples of this would be using Okta, Auth0, or Firebase Users for authentication. OidcClients use only the common CRUDL permissions.</p>
-<p>Scenario
-Scenarios are playable data simulations that can be run on top of simulated devices. They use a key-framing mechanism to make simulated devices act like real devices within the Leverege Platform. Scenarios use only the common CRUDL permissions.</p>
-<p>Script
-Scripts are user contributed code that can be used to process data within the Leverege Platform. Scripts are typically used as data enhancers or decorators on MessageRoutes. Scripts use the common CRUDL permissions, but also have the following custom permissions:</p>
-<p>deploy - the ability to deploy the script’s code to a cloud function</p>
-<p>undeploy - the ability to undeploy a script’s code from a cloud function</p>
-<p>Template
-Templates are Email or SMS based mechanisms for templating messages to users. The most common usage for Templates is sending custom account activation emails. Templates use only the common CRUDL permissions.</p>
-<p>Timer
-Timers are a mechanism for triggering delayed or repeating actions. They can be used to query urls, send pub/sub messages, or trigger reason scripts. Timers use the common CRUDL permissions, but also have the following custom permissions:</p>
-<p>start - Timers don’t run unless started. The start permissions allows a user to start a timer running.</p>
-<p>stop - Stops a Timer that is running.</p>
-<p>User
-Users are the users of a give IoT project. Users use the common CRUDL permissions, but also have the following custom permissions:</p>
-<p>assignRoles - allows a user to assign roles to other users. Unless they’re admin, users can only assign roles they already have.</p>
-<p>Contact
-Contacts are lists of names, emails, and phone numbers that represent people who can be contacted about a given resource. Contacts exist on systems and devices. Contacts use only the common CRUDL permissions.</p>
-<p>ApiAccess
-ApiAccess objects represent sets of tokens/keys that allow third party services to connect to the Leverege Platform (usually as project level admins) using OAuth2. ApiAccesses use only the common CRUDL permissions.</p>
-<p>Role
-Roles are containers of permission that can be paired with users and resources of other types to grant permission to perform actions within the Leverege Platform. Roles use only the common CRUDL permissions.</p>
-<p>Permission
-Permissions define actions that can be taken in the Leverege Platform, and are used inside roles to define what users are authorized to do. Permissions use only the common CRUDL permissions.</p>
-<p>Module
-Modules are logical groupings of permissions. Modules use only the common CRUDL permissions.</p>
-<p>Geotile
-Geotiles are data sets that can be overlaid on maps in Leverege Applications. Geotiles use only the common CRUDL permissions.</p>
-<p>Rsrc
-Rsrc’s are loosely structured buckets of information related to other resources in the system. The most common use of Rsrc’s  is to hold User Settings in Molten based UI’s. Rsrc's use only the common CRUDL permissions.</p>
-<p>Hook
-Hooks are a mechanism used to tie into Leverege Platform events, such as device pairing, or user login. Hooks use only the common CRUDL permissions.</p>
-<p>Enum/ResourceEnum
-Enums/ResourceEnums are collections of values with metadata that define the possible values a certain type of thing can be. Users use the common CRUDL permissions, but also have the following custom permissions:</p>
-<p>createValue - the permission to create an enum value</p>
-<p>updateValue - the permission to update an enum value</p>
-<p>deleteValue - the permission to delete an enum value</p>
-<p>VIN
-VINs are used to lookup vehicles and ascertain vehicle information from the VIN. VINS use only the common CRUDL permissions.</p>
-<p>Auto-Generated Permissions
-Some permissions are generated when Blueprints or relationship Attributes are made. They tend to follow a similar form as the Device permissions. The main difference is that Blueprint or Attribute level permissions only allow a user to perform actions on Devices of a given type, or at certain paths in the hierarchy as defined by the Attributes. Their permissions are as follows:</p>
-<p>Blueprints:</p>
-<p>Create <blueprintName>: create Devices of a type</p>
-<p>Read <blueprintName>: read Devices of a type (if you know the id)</p>
-<p>Update <blueprintName>: update Devices of a type</p>
-<p>Delete <blueprintName>: delete Devices of a type</p>
-<p>List <blueprintName>: list Devices of a type</p>
-<p>Read <blueprintName> History: read the history of any Devices of a given type</p>
-<p>Read <blueprintName> Events: read the events of any Devices of a given type</p>
-<p>Update <blueprintName> Events: update the events of any Devices of a given type</p>
-<p>Send <blueprintName> Messages: send messages to any Devices of a given type</p>
-<p>Delete <blueprintName> Relationships: delete any relationships that go to Devices of a given type</p>
-<p>Create <blueprintName> Relationships: delete any relationships that go to Devices of a given type</p>
-<p>Update <blueprintName> Data: update the data of any Devices of a given type</p>
-<p>Update Any <blueprintName> Data: update any data (unvalidated) of any Devices of a given type</p>
-<p>Attributes</p>
-<p>Create <aName> in a <bName>: Create Devices of a given Blueprint at a given place in the hierarchy</p>
-<p>Read <aName> from a <bName>: Read Devices of a given Blueprint at a given place in the hierarchy (must know the id)</p>
-<p>Update <aName> in a <bName>: Update Devices of a given Blueprint at a given place in the hierarchy</p>
-<p>Delete <aName> from a <bName>: Delete Devices of a given Blueprint at a given place in the hierarchy</p>
-<p>List <aName> in a <bName>: List Devices of a given Blueprint at a given place in the hierarchy</p>
-<p>Read <aName> History in a <bName>: Read the history of Devices of a given Blueprint at a given place in the hierarchy</p>
-<p>Read <aName> Events in a <bName>: Read the events of Devices of a given Blueprint at a given place in the hierarchy</p>
-<p>Update <aName> Events in a <bName>: Update the events of Devices of a given Blueprint at a given place in the hierarchy</p>
-<p>Send <aName> Messages in a <bName>: Send messages to Devices of a given Blueprint at a given place in the hierarchy</p>
-<p>Remove <aName> from a <bName>: Delete relationships to Devices of a given Blueprint at a given place in the hierarchy</p>
-<p>Add <aName> to a <bName>: Create Relationships to Devices of a given Blueprint at a given place in the hierarchy</p>
-<p>Update <aName> data in a <bName>: Update the data of Devices of a given Blueprint at a given place in the hierarchy</p>
-<p>Update Any <aName> Data in a <bName>: Update any data (unvalidated) of Devices of a given Blueprint at a given place in the hierarchy</p>
+<h1 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h1>
+<h2 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System</td>
+<td>Sytems are buckets of devices that can be used to logically separate sets of devices from each other. Systems use only the common CRUDL permissions.</td>
+</tr>
+<tr>
+<td>Device</td>
+<td>Devices are digital shadows of physical objects. They can represent hardware devices like trackers, physical assets like cows, or organizational buckets like companies.</td>
+</tr>
+<tr>
+<td>Blueprint</td>
+<td>Blueprints define the structure of our devices and relationship between device entities in our solution. Some permissions are generated when Blueprints or relationship Attributes are made.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-permissions">Common Permissions<a class="headerlink" href="#common-permissions" title="Permanent link">&para;</a></h2>
+<p>Some permissions can be seen used against nearly every type of object in the platform. These are the CRUDL permissions. CRUDL is an acronym that stands for Create, Read, Update, Delete, List.</p>
+<ul>
+<li>Create - the permission to create an object</li>
+<li>Read - given some object’s id, the ability to read its data</li>
+<li>Update - given some object’s id, the ability to update its data</li>
+<li>Delete - given some object’s id, the ability to delete it</li>
+<li>List - the ability to get a list of all objects without having to know their ids</li>
+</ul>
+<h2 id="system-permissions">System Permissions<a class="headerlink" href="#system-permissions" title="Permanent link">&para;</a></h2>
+<p>Sytems are buckets of devices that can be used to logically separate sets of devices from each other. Systems use only the common CRUDL permissions.</p>
+<h2 id="device">Device<a class="headerlink" href="#device" title="Permanent link">&para;</a></h2>
+<p>Devices are digital shadows of physical objects. They can represent hardware devices like trackers, physical assets like cows, or organizational buckets like companies. Devices use the common CRUDL permissions, but also have the following custom permissions:</p>
+<ul>
+<li>readData - Read not only a device’s header information (like a name), but also its data, which might include things like sensor readings, addresses, or contact information.</li>
+<li>readHistory - View the changes to a device’s data over time</li>
+<li>readEvents - View the relevant events that have occurred to a device over time. Might include things like threshold violations or alerts.</li>
+<li>updateEvents - Update or create device events</li>
+<li>sendMessage - Send a device a message. This may only be relevant if a device is physically capable of receiving messages, like in the instance of configuring a tracker or other piece of hardware.</li>
+<li>runSimulation - Simulate a device</li>
+<li>readByNetworkAlias - Get devices by their network ids</li>
+<li>deleteRelationship - Delete a device's relationship. For instance, removing a cow from a barn stall, or unpairing a car and a tracker. Deleting a relationship will not delete the device.</li>
+<li>createRelationship - Create a device’s relationships. For instance, pairing a car and tracker. Creating a relationship does not create a device.</li>
+<li>updateData - Update a device’s data. This generates historical data points, and will be reflected to anyone with a readData permission. An example of updating a device’s data would be setting a Farm’s address.</li>
+<li>updateAnyData - A more powerful version of updateData. Users with updateData are restricted to updating fields as validated by the device’s Blueprint. Users with updateAnyData are not subject to that restriction. As an example, a user with updateData likely couldn’t change the temperature reported by a sensor, but a user with updateAnyData could. This permission is usually only for administrators.</li>
+</ul>
+<h2 id="blueprints-relationships">Blueprints &amp; Relationships<a class="headerlink" href="#blueprints-relationships" title="Permanent link">&para;</a></h2>
+<p>Some permissions are generated when Blueprints or relationship Attributes are made. They tend to follow a similar form as the Device permissions. The main difference is that Blueprint or Attribute level permissions only allow a user to perform actions on Devices of a given type, or at certain paths in the hierarchy as defined by the Attributes. Their permissions are as follows:</p>
+<h3 id="blueprints">Blueprints:<a class="headerlink" href="#blueprints" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create <blueprintName>: create Devices of a type</li>
+<li>Read <blueprintName>: read Devices of a type (if you know the id)</li>
+<li>Update <blueprintName>: update Devices of a type</li>
+<li>Delete <blueprintName>: delete Devices of a type</li>
+<li>List <blueprintName>: list Devices of a type</li>
+<li>Read <blueprintName> History: read the history of any Devices of a given type</li>
+<li>Read <blueprintName> Events: read the events of any Devices of a given type</li>
+<li>Update <blueprintName> Events: update the events of any Devices of a given type</li>
+<li>Send <blueprintName> Messages: send messages to any Devices of a given type</li>
+<li>Delete <blueprintName> Relationships: delete any relationships that go to Devices of a given type</li>
+<li>Create <blueprintName> Relationships: delete any relationships that go to Devices of a given type</li>
+<li>Update <blueprintName> Data: update the data of any Devices of a given type</li>
+<li>Update Any <blueprintName> Data: update any data (unvalidated) of any Devices of a given type</li>
+</ul>
+<h3 id="relationship-attributes">Relationship Attributes<a class="headerlink" href="#relationship-attributes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create <aName> in a <bName>: Create Devices of a given Blueprint at a given place in the hierarchy</li>
+<li>Read <aName> from a <bName>: Read Devices of a given Blueprint at a given place in the hierarchy (must know the id)</li>
+<li>Update <aName> in a <bName>: Update Devices of a given Blueprint at a given place in the hierarchy</li>
+<li>Delete <aName> from a <bName>: Delete Devices of a given Blueprint at a given place in the hierarchy</li>
+<li>List <aName> in a <bName>: List Devices of a given Blueprint at a given place in the hierarchy</li>
+<li>Read <aName> History in a <bName>: Read the history of Devices of a given Blueprint at a given place in the hierarchy</li>
+<li>Read <aName> Events in a <bName>: Read the events of Devices of a given Blueprint at a given place in the hierarchy</li>
+<li>Update <aName> Events in a <bName>: Update the events of Devices of a given Blueprint at a given place in the hierarchy</li>
+<li>Send <aName> Messages in a <bName>: Send messages to Devices of a given Blueprint at a given place in the hierarchy</li>
+<li>Remove <aName> from a <bName>: Delete relationships to Devices of a given Blueprint at a given place in the hierarchy</li>
+<li>Add <aName> to a <bName>: Create Relationships to Devices of a given Blueprint at a given place in the hierarchy</li>
+<li>Update <aName> data in a <bName>: Update the data of Devices of a given Blueprint at a given place in the hierarchy</li>
+<li>Update Any <aName> Data in a <bName>: Update any data (unvalidated) of Devices of a given Blueprint at a given place in the hierarchy</li>
+</ul>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>In our farming example, let's imagine we have the following hierarchy.</p>
+<figure>
+<p><div class="lightgallery"><a data-sub-html="Cow Hierarchy" href="../assets/hierarchy.svg"><img alt="Cow Hierarchy" src="../assets/hierarchy.svg" width="700" />
+  </a></div></p>
+<figcaption>Example of Farm Hierarchy</figcaption>
+</figure>
+<p>Let's say you want to give your farmhand role the ability to create a cow, but only in a location. Your permission for this would be:</p>
+<ul>
+<li>Create a cow in a location</li>
+</ul>
+<p>This permission allows the user to create a cow when they are at the  location level  cows  page. This user would not be able to create a cow on the cows page at a company. </p>
+<p>Now, you want your farm manager role to be able to create a cow in a location and in a company. They would have two permissions on their role:</p>
+<ul>
+<li>Create a cow in a location</li>
+<li>Create a cow in a company</li>
+</ul>
+<p>Finally, let's say instead of letting the farm manager role create cows in a location or in a company, you want them to be able to create a cow anywhere in the system. For this, you would use the  following blueprint-level permission</p>
+<ul>
+<li>Can create a cow</li>
+</ul>
+<h2 id="api-access">API Access<a class="headerlink" href="#api-access" title="Permanent link">&para;</a></h2>
+<p>ApiAccess objects represent sets of tokens/keys that allow third party services to connect to the Leverege Platform (usually as project level admins) using OAuth2. ApiAccesses use only the common CRUDL permissions.</p>
+<h2 id="user">User<a class="headerlink" href="#user" title="Permanent link">&para;</a></h2>
+<p>Users are the users of a give IoT project. Users use the common CRUDL permissions, but also have the following custom permissions:</p>
+<ul>
+<li>assignRoles - allows a user to assign roles to other users. Unless they’re admin, users can only assign roles they already have.</li>
+</ul>
+<h2 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h2>
+<p>Networks represent a collection of mappings from external ids to internal Leverege ids. Networks ensure that only one device at a given time can have a given external mapping. For example, if you are sending tracker data into the Leverege Stack, that data will need some form of identifier to say what device it is from. Many times that id is chosen by the manufacturer, say a serial number or SKU. A network will map that serial number or SKU to a device’s unique id in the Leverege Stack, and ensure that mapping is one-to-one. Networks use only the common CRUDL permissions.</p>
+<div class="admonition tip">
+<p class="admonition-title">Common Permission Needed for Pairing</p>
+</div>
+<p>readByNetworkAlias is a common permission that must be added to a role if that role is responsible for pairing one device to another and the network ID is used in the pairing form</p>
 
               
             </article>
