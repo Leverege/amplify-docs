@@ -1,4 +1,4 @@
-# Role-Based User Management
+# Roles & Permissions Overview
 
 The Leverege Stack uses a role-based access control system. Role-based access control refers to the idea of assigning permissions to users based on their role within an organization. It offers a simple, manageable approach to access management that is less prone to error than assigning permissions to users individually.
 
@@ -19,31 +19,6 @@ When planning your access control strategy, it's best practice to assign users t
 | User ID | The unique ID of the ‘user’. Can be any ID representing the account. This is also the Api Access ID. |
 | User Role | Combines a user ID and a role ID with a resource id |
 | CRUDL | An acronym that stands for Create, Read, Update, Delete, List. These are the most common operations that can be performed on objects in the Leverege Stack |
-
-
-## Permissions
-The Leverege Stack contains many different types of data structures, and encompasses a large number of actions that can be performed against those data structures. As a result, the number of permissions within the system can be very large. In our farming example, let's imagine we have the following hierarchy.
-
-<figure markdown>
-![!Cow Hierarchy](assets/hierarchy.svg){ width="700" }
-  <figcaption>Example of Farm Hierarchy</figcaption>
-</figure>
-
-Let's say you want to give your farmhand role the ability to create a cow, but only in a location. Your permission for this would be:
-
-* Create a cow in a location
-
-This permission allows the user to create a cow when they are at the  location level  cows  page. This user would not be able to create a cow on the cows page at a company. 
-
-Now, you want your farm manager role to be able to create a cow in a location and in a company. They would have two permissions on their role:
-
-* Create a cow in a location
-* Create a cow in a company
-
-Finally, let's say instead of letting the farm manager role create cows in a location or in a company, you want them to be able to create a cow anywhere in the system. For this, you would use the  following permission
-
-* Create a cow
-
 
 ## Roles
 
