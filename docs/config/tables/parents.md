@@ -85,7 +85,12 @@ When copying the value from the parent, sometimes you want to run a function aga
 | Setter Value | Description |
 |-------|---------|
 | `geoJsonCenter` | If you drew a box around the geoshape, this represents the center of that box. |
-| `geoJsonCenterOfMass` | This represents the geometric center of the geoshape, the arithmetic mean position of all of the points ini the figure. |
+| `geoJsonCenterOfMass` | This represents the geometric center of the geoshape, the arithmetic mean position of all of the points in the figure. |
+
+<figure markdown>
+![!Center Example](assets/center.svg){ width="700" }
+<figcaption>Center vs. Center of Mass</figcaption>
+</figure>
 
 A good use case example for this function is beacon installation  into zones. When installing beacons, you might want them to automatically be placed in the center of a zone, in which case you would want to use `type:geoShapeCenterOfMass`
 
