@@ -21,6 +21,8 @@ nav :
      - intro/index.md
   - Data Architecture:
      - architecture/index.md
+     - Roles, Permissions, & Users:
+       - architecture/roles/index.md
   - UI Setup:
     - setup/index.md
     - Branding & Styling:
