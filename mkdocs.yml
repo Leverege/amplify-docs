@@ -40,6 +40,7 @@ nav :
       - Sort & Order Pages: setup/nav/sort.md
       - Page Display Options: setup/nav/page.md
       - Styling Overrides : setup/nav/path-overrides.md
+      - Role-Specific Settings: setup/nav/role.md
     - Developer Options:
       - Overview: setup/dev.md
   - UI Configuration:

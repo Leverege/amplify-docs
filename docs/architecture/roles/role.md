@@ -20,7 +20,7 @@ To create a custom role, you'll head to Architect and select the Roles tab in th
 | Display Name | This is the UI friendly version of the name. In the above example, you might write Location Admin |
 | Category | This is an optional field where you can assign a role a category |
 | Description | This is an optional field to help others understand what this role is for |
-| Metadata | For a given role, you have a host of metadata options to help configure your UI. Review these in the <==UI Setup section==> |
+| Metadata | For a given role, you have a host of metadata options to help configure your UI. Review these in the [role-specific UI setup section](../../../setup/nav/role/) |
 
 
 ## Assigning Permissions to a Custom Role
