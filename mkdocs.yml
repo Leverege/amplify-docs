@@ -24,6 +24,7 @@ nav :
      - Roles & Permissions:
        - architecture/roles/index.md
        - Permissions: architecture/roles/permission.md
+       - Creating Roles: architecture/roles/role.md
   - UI Setup:
     - setup/index.md
     - Branding & Styling:
