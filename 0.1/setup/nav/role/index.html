@@ -13,7 +13,7 @@
     
     
       
-        <title>Formatters - Leverege Supervise & Amplify</title>
+        <title>Role-Specific Settings - Leverege Supervise & Amplify</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#formatters" class="md-skip">
+        <a href="#role-specific-setup" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Formatters
+              Role-Specific Settings
             
           </span>
         </div>
@@ -218,13 +218,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         UI Setup
       </a>
     </li>
@@ -488,12 +490,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -677,12 +681,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
       
       
       
@@ -717,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nav/route/" class="md-nav__link">
+      <a href="../route/" class="md-nav__link">
         Roots
       </a>
     </li>
@@ -731,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nav/sort/" class="md-nav__link">
+      <a href="../sort/" class="md-nav__link">
         Sort & Order Pages
       </a>
     </li>
@@ -745,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nav/page/" class="md-nav__link">
+      <a href="../page/" class="md-nav__link">
         Page Display Options
       </a>
     </li>
@@ -759,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nav/path-overrides/" class="md-nav__link">
+      <a href="../path-overrides/" class="md-nav__link">
         Styling Overrides
       </a>
     </li>
@@ -771,11 +777,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../nav/role/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Role-Specific Settings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Role-Specific Settings
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1493,6 +1540,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1504,7 +1566,65 @@
               
                 
 
-<h1 id="formatters">Formatters<a class="headerlink" href="#formatters" title="Permanent link">&para;</a></h1>
+<h1 id="role-specific-setup">Role-Specific Setup<a class="headerlink" href="#role-specific-setup" title="Permanent link">&para;</a></h1>
+<p>If you want a role to have a specific home page in the UI, you can add metadata to the role to specify it's home page. To add the metadata, head to the roles tab in Architect and select the role. In the right panel, you will see an edit button next to the metadata section. </p>
+<figure>
+<p><div class="lightgallery"><a data-sub-html="Metadata" href="../assets/metadata.png"><img alt="Metadata" src="../assets/metadata.png" width="700" />
+  </a></div></p>
+<figcaption>Editing Metadata in Architect</figcaption>
+</figure>
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>JSON Path</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ui/defaultUrl</code></td>
+<td>Stores metadata for an initial url calculator for this role.</td>
+</tr>
+<tr>
+<td><code>ui/excludeFrom</code></td>
+<td>Used to filter roles from being presented in the UI. This includes the role picker in the user menu (top right of UI) and all model editors where a role can be selected for saving/loading models.</td>
+</tr>
+<tr>
+<td><code>ui/blockFrom</code></td>
+<td>Used to prevent users with certain roles from logging into named or default UIs</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td>Used by the UI to determine which role should take precedence when a user is assigned to multiple roles.</td>
+</tr>
+<tr>
+<td><code>usedAtBlueprints</code></td>
+<td>Used to filter roles presented in the User Access screen for a given object type.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;ui&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;defaultUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;urlPathRoleCalculator&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;single&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/p/roleName/blueprintAlias/:resourceId&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;multiple&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/p/roleName/blueprintAlias&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;blueprintUUID&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;blockFrom&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;uiName&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;excludeFrom&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;uiName&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;usedAtBlueprints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;blueprintAlias&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
               
             </article>
@@ -1519,6 +1639,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../path-overrides/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Styling Overrides" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Styling Overrides
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../dev/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Overview
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
