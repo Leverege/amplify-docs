@@ -13,7 +13,7 @@
     
     
       
-        <title>UI Theme - Leverege Supervise & Amplify</title>
+        <title>Creating Roles - Leverege Supervise & Amplify</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ui-builder-overview" class="md-skip">
+        <a href="#creating-a-role" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UI Theme
+              Creating Roles
             
           </span>
         </div>
@@ -202,22 +202,6 @@
         
   
   
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../architecture/" class="md-tabs__link">
-        Data Architecture
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
     
   
 
@@ -227,6 +211,22 @@
   
     <li class="md-tabs__item">
       <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Data Architecture
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../setup/" class="md-tabs__link">
         UI Setup
       </a>
     </li>
@@ -361,12 +361,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -382,7 +384,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../architecture/">Data Architecture</a>
+          <a href="../../">Data Architecture</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -403,12 +405,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
       
       
       
@@ -426,7 +430,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../architecture/roles/">Roles & Permissions</a>
+          <a href="../">Roles & Permissions</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -449,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../architecture/roles/permission/" class="md-nav__link">
+      <a href="../permission/" class="md-nav__link">
         Permissions
       </a>
     </li>
@@ -461,11 +465,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../architecture/roles/role/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Creating Roles
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Creating Roles
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    Terminology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assigning-permissions-to-a-custom-role" class="md-nav__link">
+    Assigning Permissions to a Custom Role
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -490,14 +542,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -517,7 +567,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">UI Setup</a>
+          <a href="../../../setup/">UI Setup</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -538,14 +588,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
       
       
       
@@ -571,7 +619,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Branding & Styling</a>
+          <a href="../../../setup/branding/">Branding & Styling</a>
           
             <label for="__nav_4_2">
               <span class="md-nav__icon md-icon"></span>
@@ -592,79 +640,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          UI Theme
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../setup/branding/builder/" class="md-nav__link">
         UI Theme
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#navigating-the-ui-builder" class="md-nav__link">
-    Navigating the UI Builder
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variants" class="md-nav__link">
-    Variants
-  </a>
-  
-    <nav class="md-nav" aria-label="Variants">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-new-variant" class="md-nav__link">
-    Creating a New Variant
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variant-inheritance" class="md-nav__link">
-    Variant Inheritance
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -676,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../inspector/" class="md-nav__link">
+      <a href="../../../setup/branding/inspector/" class="md-nav__link">
         UI Inspector
       </a>
     </li>
@@ -690,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../logos/" class="md-nav__link">
+      <a href="../../../setup/branding/logos/" class="md-nav__link">
         Logos
       </a>
     </li>
@@ -704,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../icons/" class="md-nav__link">
+      <a href="../../../setup/branding/icons/" class="md-nav__link">
         Icons
       </a>
     </li>
@@ -718,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../notifications/" class="md-nav__link">
+      <a href="../../../setup/branding/notifications/" class="md-nav__link">
         Email & SMS Templates
       </a>
     </li>
@@ -732,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../empty-states/" class="md-nav__link">
+      <a href="../../../setup/branding/empty-states/" class="md-nav__link">
         Empty States
       </a>
     </li>
@@ -789,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nav/route/" class="md-nav__link">
+      <a href="../../../setup/nav/route/" class="md-nav__link">
         Roots
       </a>
     </li>
@@ -803,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nav/sort/" class="md-nav__link">
+      <a href="../../../setup/nav/sort/" class="md-nav__link">
         Sort & Order Pages
       </a>
     </li>
@@ -817,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nav/page/" class="md-nav__link">
+      <a href="../../../setup/nav/page/" class="md-nav__link">
         Page Display Options
       </a>
     </li>
@@ -831,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nav/path-overrides/" class="md-nav__link">
+      <a href="../../../setup/nav/path-overrides/" class="md-nav__link">
         Styling Overrides
       </a>
     </li>
@@ -882,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dev/" class="md-nav__link">
+      <a href="../../../setup/dev/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1558,36 +1538,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#navigating-the-ui-builder" class="md-nav__link">
-    Navigating the UI Builder
+  <a href="#terminology" class="md-nav__link">
+    Terminology
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#variants" class="md-nav__link">
-    Variants
+  <a href="#assigning-permissions-to-a-custom-role" class="md-nav__link">
+    Assigning Permissions to a Custom Role
   </a>
-  
-    <nav class="md-nav" aria-label="Variants">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-new-variant" class="md-nav__link">
-    Creating a New Variant
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variant-inheritance" class="md-nav__link">
-    Variant Inheritance
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1604,44 +1564,52 @@
               
                 
 
-<h1 id="ui-builder-overview">UI Builder Overview<a class="headerlink" href="#ui-builder-overview" title="Permanent link">&para;</a></h1>
-<p>The UI Builder is an application that empowers users with the ability to style UI elements and make visual changes to UI elements in-real time. </p>
-<p>UI Builder is aimed at designers and other non-technical users to be able to make UI style changes quickly. By making UI style changes through UI Builder, users do not need to know how to code, manipulate HTML/CSS, or redeploy a project. Designers can make styling changes independently of engineers building out the application. This reduces the need to ask engineers to make styling changes and shortens the communication loop.</p>
-<div class="admonition info">
-<p class="admonition-title">Active Themes</p>
-<p>Active themes should only be used on dev environments. In your staging and production environments, engineers will export the theme during the deployment so that it is "static". This ensures that designers do not accidentally turn an entire production interface pink, for example.</p>
-</div>
-<h2 id="navigating-the-ui-builder">Navigating the UI Builder<a class="headerlink" href="#navigating-the-ui-builder" title="Permanent link">&para;</a></h2>
-<p>Every project has it's own UI builder project associated with it. If a given project has multiple UIs, a single UI builder project can be used for multiple UIs or each UI can use a unique UI builder project.</p>
-<p>UI Builder projects are organized by the type of UI element you are editing. You can find the categories down the left side of the project. </p>
+<h1 id="creating-a-role">Creating a Role<a class="headerlink" href="#creating-a-role" title="Permanent link">&para;</a></h1>
+<p>The Leverege Stack builds up a large number of pre-configured roles based on blueprints that a user might wish to employ in their system during the early start-up stages. Common roles include things like Device Viewer, Device Editor, and Device List Editor. Realistically, once you reach a phase in your development where you have end-users, custom roles are needed to fine-tune your solution to your use case.</p>
+<p>Commonly, users create custom roles that match 1-to-1 with the personas of a customer or product. A persona is a set of responsibilities a certain type of user has to carry out one or more business processes. Examples of personas in an IoT application include Company Admin, Location Admin, Location Editor, and Location Viewer. In Architect, users would create roles corresponding to each of these roles.</p>
+<p>To create a custom role, you'll head to Architect and select the Roles tab in the left sidebar of your project. There, you will be able to create custom roles for your project by selecting the Create Role button in the top right corner.</p>
 <figure>
-<p><div class="lightgallery"><a data-sub-html="UI Builder" href="../assets/ui-builder.png"><img alt="UI Builder" src="../assets/ui-builder.png" width="700" />
+<p><div class="lightgallery"><a data-sub-html="Role Creation" href="../assets/role.png"><img alt="Role Creation" src="../assets/role.png" width="700" />
   </a></div></p>
-<figcaption>UI Builder Project</figcaption>
+<figcaption>Create Role Form</figcaption>
 </figure>
-<p>When a user clicks into a specific UI element, they can visually see an example of the UI element and can manually update nearly every aspect of it (e.g. color, padding, borders, hover states etc.). Any changes they make to the element are live changes to the development UI.</p>
+<h2 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>The name is the path of the role. This must be named using camelCase. For example, Location Admin would be written locationAdmin</td>
+</tr>
+<tr>
+<td>Display Name</td>
+<td>This is the UI friendly version of the name. In the above example, you might write Location Admin</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>This is an optional field where you can assign a role a category</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>This is an optional field to help others understand what this role is for</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>For a given role, you have a host of metadata options to help configure your UI. Review these in the &lt;<mark>UI Setup section</mark>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="assigning-permissions-to-a-custom-role">Assigning Permissions to a Custom Role<a class="headerlink" href="#assigning-permissions-to-a-custom-role" title="Permanent link">&para;</a></h2>
+<p>Once your role is created, you can assign permissions to the role. To do so, click the edit button next to the permissions section in the right hand panel. That will open the following modal. </p>
 <figure>
-<p><div class="lightgallery"><a data-sub-html="UI Builder Elements" href="../assets/element-editor.png"><img alt="UI Builder Elements" src="../assets/element-editor.png" width="700" />
+<p><div class="lightgallery"><a data-sub-html="Role Creation" href="../assets/permission.png"><img alt="Role Creation" src="../assets/permission.png" width="700" />
   </a></div></p>
-<figcaption>UI Builder Element Editor</figcaption>
-</figure>
-<h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
-<p>Each UI type has variations of that element called variants. A variant is a way to reuse the style of a given element in multiple places. </p>
-<p>For example, if a designer wants to use the same style button on two different places in the UI, they would use the same variant and any changes made to that variant on UI Builder will update both of those buttons. </p>
-<p>This means that all the designer has to do is specify to the engineer that a given button should inherit a given variant. It also means the engineer can code/place the button and the designer can then use the UI builder to fine tune how it looks. For some components, the variant can be specified in configuration panel of the UI component itself rather than needing to communicate it to the engineer.</p>
-<h3 id="creating-a-new-variant">Creating a New Variant<a class="headerlink" href="#creating-a-new-variant" title="Permanent link">&para;</a></h3>
-<p>Create a variant by clicking the type of UI element in the left navigation. Then scroll to the bottom of the page and enter in the name of the variant in Variant field and press the + button. Configure the variant in the resulting right hand panel.</p>
-<figure>
-<p><div class="lightgallery"><a data-sub-html="UI Builder Elements" href="../assets/add-variant.svg"><img alt="UI Builder Elements" src="../assets/add-variant.svg" width="700" />
-  </a></div></p>
-<figcaption>Adding a new variant</figcaption>
-</figure>
-<h3 id="variant-inheritance">Variant Inheritance<a class="headerlink" href="#variant-inheritance" title="Permanent link">&para;</a></h3>
-<p>When creating a new variant, you very rarely need to start from scratch. Let's say you already built your primary button, but now you just need an icon version. Instead of rebuilding all of your styles, you can set your new primaryIconic button to inherit all of the default values from the primary button. Once you set that up, you can add in any overrides you need, maybe the width or border-radius for example. </p>
-<figure>
-<p><div class="lightgallery"><a data-sub-html="UI Builder Elements" href="../assets/inherit-variant.svg"><img alt="UI Builder Elements" src="../assets/inherit-variant.svg" width="700" />
-  </a></div></p>
-<figcaption>Adding a new variant</figcaption>
+<figcaption>Add Permissions Form</figcaption>
 </figure>
 
               
@@ -1661,7 +1629,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Branding" rel="prev">
+        <a href="../permission/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Permissions" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1670,20 +1638,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Branding
+              Permissions
             </div>
           </div>
         </a>
       
       
         
-        <a href="../inspector/" class="md-footer__link md-footer__link--next" aria-label="Next: UI Inspector" rel="next">
+        <a href="../../../setup/" class="md-footer__link md-footer__link--next" aria-label="Next: UI Setup Overview" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              UI Inspector
+              UI Setup Overview
             </div>
           </div>
           <div class="md-footer__button md-icon">
