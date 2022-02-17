@@ -1,5 +1,5 @@
 
-# Creating a Role
+# Creating a Custom Role
 
 The Leverege Stack builds up a large number of pre-configured roles based on blueprints that a user might wish to employ in their system during the early start-up stages. Common roles include things like Device Viewer, Device Editor, and Device List Editor. Realistically, once you reach a phase in your development where you have end-users, custom roles are needed to fine-tune your solution to your use case.
 
@@ -23,7 +23,7 @@ To create a custom role, you'll head to Architect and select the Roles tab in th
 | Metadata | For a given role, you have a host of metadata options to help configure your UI. Review these in the [role-specific UI setup section](../../../setup/nav/role/) |
 
 
-## Assigning Permissions to a Custom Role
+## Assigning Permissions to a Role
 
 Once your role is created, you can assign permissions to the role. To do so, click the edit button next to the permissions section in the right hand panel. That will open the following modal. 
 
