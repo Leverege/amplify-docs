@@ -4,7 +4,7 @@
 Once you've created all of your blueprints, it's time to form your relationships. Let's take a look at our hierarchy again to form a plan. 
 
 <figure markdown>
-![!Blueprint Hierarchy](assets/relationship.png){ width="700" }
+![!Blueprint Hierarchy](assets/relationship.svg){ width="700" }
   <figcaption>Hierarchy Outline</figcaption>
 </figure>
 

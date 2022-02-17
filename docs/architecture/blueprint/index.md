@@ -21,7 +21,7 @@ When adding blueprints to a new project, it is helpful to add them in order of m
 Let's imagine we have the following hierarchy
 
 <figure markdown>
-![!Blueprint Hierarchy](assets/hierarchy.png){ width="700" }
+![!Blueprint Hierarchy](assets/hierarchy.svg){ width="700" }
   <figcaption>Hierarchy Outline</figcaption>
 </figure>
 
