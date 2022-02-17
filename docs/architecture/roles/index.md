@@ -4,9 +4,9 @@ The Leverege Stack uses a role-based access control system. Role-based access co
 
 When using RBAC, you analyze the needs of your users and group them into roles based on common responsibilities. You then assign one or more roles to each user and one or more permissions to each role. The user-role and role-permissions relationships make it simple to perform user assignments since users no longer need to be managed individually, but instead have privileges that conform to the permissions assigned to their role(s).
 
-For example, if you were using RBAC to control access for a cow tracking application, you could give farm manager a role that allows them create locations, add & manage users, and view employee performance analytics. Farm hands may have a role that only shows them the cows at a given location and any alerts associated with that location. 
+For example, if you were using RBAC to control access for a cow tracking application, you could give the farm manager a role that allows them create locations, add & manage users, and view employee performance analytics. Farm hands may have a role that only shows them the cows at a given location and any alerts associated with that location. 
 
-When planning your access control strategy, it's best practice to assign users the fewest number of permissions that allow them to get their work done.
+When planning your access control strategy, it's best practice to assign users the fewest number of permissions that allow them to get their work done. This is called the Principle of Least Privilege. 
 
 
 ## Terminology

@@ -126,7 +126,7 @@ Users are the users of a give IoT project. Users use the common CRUDL permission
 
 For the common CRUDL permissions, when applied to user management, they look like the following. 
 
-#### Users
+#### Users CRUDL Permissions
 
 * Create 
 * Delete
@@ -140,7 +140,7 @@ For the common CRUDL permissions, when applied to user management, they look lik
 Networks represent a collection of mappings from external ids to internal Leverege ids. Networks ensure that only one device at a given time can have a given external mapping. For example, if you are sending tracker data into the Leverege Stack, that data will need some form of identifier to say what device it is from. Many times that id is chosen by the manufacturer, say a serial number or SKU. A network will map that serial number or SKU to a device’s unique id in the Leverege Stack, and ensure that mapping is one-to-one. Networks use only the common CRUDL permissions.
 
 !!! Tip "Common Permission Needed for Pairing"
-  readByNetworkAlias is a common permission that must be added to a role if that role is responsible for pairing one device to another and the network ID is used in the pairing form
+   readByNetworkAlias is a common permission that must be added to a role if that role is responsible for pairing one device to another and the network ID is used in the pairing form
 
 
 ## Configuration
