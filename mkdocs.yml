@@ -26,8 +26,8 @@ nav :
        - Relationships: architecture/blueprint/relationship.md
      - Networks:
        - architecture/network/index.md
-    - Systems & Devices:
-      - architecture/system/index.md
+    - Systems:
+       - architecture/system/index.md
      - Roles & Permissions:
        - architecture/roles/index.md
        - Permissions: architecture/roles/permission.md
