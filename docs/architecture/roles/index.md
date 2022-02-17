@@ -14,10 +14,10 @@ When planning your access control strategy, it's best practice to assign users t
 | Field | Definition |
 |-------|---------------|
 | Permission | Defines a single action that can be done (create, read, update, delete, list) |
-| Role | A group of permissions that indicate what a user with this role can do. Usually based on the user personas of a given application. Roles have a specific ID referred to as role ID|
+| Role | A group of permissions that indicate what a user with this role can do. Usually based on the user personas of a given application. Roles have a specific ID referred to as role ID |
 | Resource ID | The unique identity of something like a device, system, project, location, asset, etc.  |
-| User ID | The unique ID of the ‘user’. Can be any ID representing the account. This is also the Api Access ID. |
-| User Role | Combines a user ID and a role ID with a resource id |
+| User ID | The unique ID of the ‘user’. Can be any ID representing the account. This is also the API Access ID. |
+| User Role | Combines a user ID and a role ID with a resource ID |
 | CRUDL | An acronym that stands for Create, Read, Update, Delete, List. These are the most common operations that can be performed on objects in the Leverege Stack |
 
 ## Roles

@@ -32,3 +32,4 @@ Once your role is created, you can assign permissions to the role. To do so, cli
   <figcaption>Add Permissions Form</figcaption>
 </figure>
 
+Note that you can search and filter permissions in the permissions pop-up. By default, the filter is set to show custom and project permissions. To show imagine permissions, open the filter dropdown and select imagine. 
