@@ -20,7 +20,7 @@ nav :
   - Project Setup:
      - architecture/index.md
      - Core Concepts:
-       - architecture/core.md
+        - architecture/core/index.md
      - Blueprints:
        - architecture/blueprint/index.md
        - Relationships: architecture/blueprint/relationship.md

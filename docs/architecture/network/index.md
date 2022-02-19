@@ -1,32 +1,63 @@
-# Roles & Permissions Overview
+# Networks
 
-The Leverege Stack uses a role-based access control system. Role-based access control refers to the idea of assigning permissions to users based on their role within an organization. It offers a simple, manageable approach to access management that is less prone to error than assigning permissions to users individually.
+A Network represents a source of device data. When a device needs to be contacted, the Network is used as the target. In particular, messages are published to the <networkId>-outbound topic. The ingestion service setup to manage that network's data can listen on this topic and then communicate appropriately to the source server. The Network Id is also part external identity of a Device.
 
-When using RBAC, you analyze the needs of your users and group them into roles based on common responsibilities. You then assign one or more roles to each user and one or more permissions to each role. The user-role and role-permissions relationships make it simple to perform user assignments since users no longer need to be managed individually, but instead have privileges that conform to the permissions assigned to their role(s).
+Inside the Leverege Stack, devices (and many other elements of a project) are assigned a base 62 UUID. These look something like this: 1pTW01YR4mUAEbcHhbXHk8. 
 
-For example, if you were using RBAC to control access for a cow tracking application, you could give the farm manager a role that allows them create locations, add & manage users, and view employee performance analytics. Farm hands may have a role that only shows them the cows at a given location and any alerts associated with that location. 
+But these IDs are not how devices refer to themselves when sending a message, or how users refer to a device when they need to interact with it. The SmartWalrus tracker we will be integrating with, recall, sends an IMEI as its identifier when it reports. A worker at a Tusk Trucking facility might pair a tracker to a truck by scanning a QR code or type a name from a label printed on the device into the system.  For this project, let’s assume the SmartWalrus trackers have a QR code which encodes the MAC address of the tracker.  
 
-When planning your access control strategy, it's best practice to assign users the fewest number of permissions that allow them to get their work done. This is called the Principle of Least Privilege. 
+Networks let us define how our internal devices will be mapped onto the the source, and set up messaging topics that allow communication with the device using these external names. 
 
-
-## Terminology
-
-| Field | Definition |
-|-------|---------------|
-| Permission | Defines a single action that can be done (create, read, update, delete, list) |
-| Role | A group of permissions that indicate what a user with this role can do. Usually based on the user personas of a given application. Roles have a specific ID referred to as role ID |
-| Resource ID | The unique identity of something like a device, system, project, location, asset, etc.  |
-| User ID | The unique ID of the ‘user’. Can be any ID representing the account. This is also the API Access ID. |
-| User Role | Combines a user ID and a role ID with a resource ID |
-| CRUDL | An acronym that stands for Create, Read, Update, Delete, List. These are the most common operations that can be performed on objects in the Leverege Stack |
-
-## Roles
-
-Essentially, a role is a collection of permissions that you can apply to users. Using roles makes it easier to add, remove, and adjust permissions than assigning permissions to users individually. As your user base increases in scale and complexity, roles become particularly useful.
-
-You can also use roles to collect permissions defined for various APIs. For example, say you have a third-party tool that tracks your barn equipment. Your barn equipment API role could have a `Create equipment in a location` &  `Update equipment in a location` permissions allow the API to create and update equipment in our database.
+## Creating a Network
+In your Architect project, click the Networks tab on the left side, and click the + Custom button. The network creation form asks for three fields: a name, an api key (what we’ll call a networkId for reasons that will be come clear in a moment), and list of network identifiers (what we’ll call aliasKeys). (These are confusing names. Can we change them?)
 
 
-## User Roles
+### Core Concepts: networkId, aliasKey, deviceId
+To understand what work these options are doing, let’s take a look at our message docs for inbound messages (NEED TO ACTUALLY INCLUDE A DOC FOR INBOUND DEVICE MESSAGE IN THE README). Note these three items:
 
-User Roles represent bindings between a user ID, role ID, and resource ID. As an example, a user role represents “giving Steve (User ID) the ability to act as a Farm Hand (Role ID) at Eric’s Farm (Resource ID)”. 
+
+/**
+ ...
+ * @param {string} data.networkId The networkId of the source
+ * @param {string} data.deviceId A string representing the external name of the device. This could be an IotHub device id, a MAC address of a sensor, etc
+ * @param {string} data.aliasKey The name of the key that forms the mapping between the external device’s id and the internal device. This is stored in the internal device’s aliases list, and tends to be unique per network.
+ ...
+ */
+
+Inbound messages include a networkId, an aliasKey, and a deviceId. These three pieces of information tell our platform how to lookup that device:
+
+deviceId : The external name for the individual device (e.g., ‘981472630769911’)
+
+aliasKey : This describes what type of identifier the given device ID is (is it an IMEI? A MAC address?). It refers to a identifier type that we will enter into our network definition.
+
+networkId : (called an ‘Api Key’ in Imagine) The tells us which network, in of all of the networks on the given API server, the API should look to find this device. (There may be many projects running on the same API server which identify their devices with MAC addresses or IMEIs.)
+
+API Server will, in essence, look at the given network for a device with an aliasKey value equal to the deviceId, and route the message to that device. 
+
+In creating the network, we are defining the networkId and the aliasKeys on that network. The actual deviceId gets created at the device level.
+
+Choosing Good Network Values
+Back to our Imagine UI, where we are creating the network, we need to choose the name, networkId (there called ‘Api Key’), and available aliasKeys (there called identifiers). 
+
+The name is simply a human readable display name for the network, so that we can pick it out on our list of networks. We are creating the network for our SmartWalrus trackers, so let’s call it Tusk SmartWalrus Network.
+
+The networkId (entered in the ‘Api Key’ field) must be unique across all projects in Imagine. It should be short, and describe the source / interface. So ‘tusk-tracker-network’ is good, something like ‘dev-trackers’ would be bad. (By convention, networkIds are skewer cased.)
+
+The aliasKeys are the types of external identifiers. The devices provide us with IMEIs when they send messages, and the users will use the MAC addresses. It’s a good practice to be descriptive and specific with these names (and not just default to ‘deviceId’, for example). So lets set that field to ‘imei,macAddress’.
+
+
+To tie this together, this tells us that a parsed inbound SmartWalrus device message from our ingestor might look something like this:
+
+
+
+{
+  type : 'inboundDataEventMsg',
+  time : 1619388341985,
+  networkId : 'tusk-network',
+  aliasKey : 'imei',
+  deviceId : '981472630769911',
+  data : [
+   { path : 'temperature', value : 30.20 }
+  ],
+}
+
