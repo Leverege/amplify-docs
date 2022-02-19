@@ -17,10 +17,10 @@ theme:
     - search.suggest
 nav : 
   - Home: index.md
-  - Introduction:
-     - intro/index.md
   - Project Setup:
      - architecture/index.md
+     - Core Concepts:
+        - architecture/core/index.md
      - Blueprints:
        - architecture/blueprint/index.md
        - Relationships: architecture/blueprint/relationship.md
