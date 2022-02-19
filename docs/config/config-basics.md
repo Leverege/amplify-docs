@@ -40,11 +40,12 @@ To create a version, use the **Save To > Create Version** button in the upper ri
 
 Once created, users can save their current component’s configuration to the version by clicking **Save To > Versions** and selecting the version. Once saved, click **Apply** to apply the configuration to the component.
 
+[Save To Screenshot]
+
+
 ### Load A Version
 
 To retrieve a previously saved version, click the **Load From** button in the upper left of the configuration panel and select the desired version. This will load that version’s configuration into the panel. Click **Apply** to the apply that version’s configuration to the component.
-
-[Save To Screenshot]
 
 [Load From Screenshot]
 
@@ -81,8 +82,6 @@ It’s common for an application to present data on the same page differently to
 
 Use the layout controller to place the desired components on the page. Refer to the documentation for the layout controller for more details.
 
-[Screenshot of layout controller on the UI]
-
 For each component, access the control panel and make the desired configuration changes. Click **Apply** in the configuration panel of that component once all the desired changes are performed. Refer to the document for the specific component for more details.
 
 ### Save the Configured State to a Dashboard
@@ -95,11 +94,15 @@ Once all configuration to all components have been completed, a user can save th
 
 [Screenshot of save & revert of current dashboard]
 
-Note: The Default dashboard is a user’s personal dashboard configuration for exact page location. Saving the configuration to the dashboard titled “Default” will only apply the configuration as the default dashboard to the current user, for currently assumed role, and to exact path for which the configuration was performed. 
+!!! Note "Note: Default Dashboard"
+    Note: The Default dashboard is a user’s personal dashboard configuration for exact page location. Saving the configuration to the dashboard titled “Default” will only apply the configuration as the default dashboard to the current user, for currently assumed role, and to exact path for which the configuration was performed. 
 
-For example, if a user A is on the Company > Assets page as Role A and saves a new configuration to the Default dashboard at that page, it will affect only the Default dashboard for User A while they are using Role A on the Company > Assets page. 
+    For example, if a user A is on the Company > Assets page as Role A and saves a new configuration to the Default dashboard at that page, it will affect only the Default dashboard for User A while they are using Role A on the Company > Assets page. 
 
-It will not impact the Default dashboard for user B at Company > Assets using Role A, not impact Default dashboard for any users at Company > Assets using Role B, and not impact the Default dashboard of user A at other Asset paths (e.g. Location > Assets) using Role A.
+    It will not impact the Default dashboard for user B at Company > Assets using Role A, not impact Default dashboard for any users at Company > Assets using Role B, and not impact the Default dashboard of user A at other Asset paths (e.g. Location > Assets) using Role A.
+
+
+
 
 1. To save the configured state to a new dashboard, click the three-dot icon next to the dashboard selector and click **Save Dashboard As…**
 
@@ -115,7 +118,10 @@ It will not impact the Default dashboard for user B at Company > Assets using Ro
     
     1. **Personal Blueprint Level** - Me on any page showing this page's Blueprint type: The option to select this dashboard will appear for only the current user on any page of any role on a page of the same Blueprint type as the one being configured. This will create an option in the dropdown under the “Mine” section.
 
-Looking for an option to save the configured page to the current user for the current role and current path? Save the dashboard to the Default dashboard by click the check mark next to the left of the dashboard selector?
+[Available To Screenshot]
+
+!!! Question "Saving to Current User & Page Only"
+    Looking for an option to save the configured page to the current user for the current role and current path? Save the dashboard to the Default dashboard by click the check mark next to the left of the dashboard selector.
 
 ### Set the Defaults Of The Page
 
