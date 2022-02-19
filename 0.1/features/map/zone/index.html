@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#action-files" class="md-skip">
+        <a href="#zone-management" class="md-skip">
           Skip to content
         </a>
       
@@ -1064,6 +1064,12 @@
         
           
         
+          
+        
+          
+        
+          
+        
       
       
         
@@ -1105,11 +1111,53 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../config/layout-controller/" class="md-nav__link">
+        Layout Controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../config/search-config/" class="md-nav__link">
+        Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../config/map-config/" class="md-nav__link">
+        Map
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
       
       
       
@@ -1118,13 +1166,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4_3">
+        <label class="md-nav__link" for="__nav_4_6">
           Tables
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tables" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_3">
+        <label class="md-nav__title" for="__nav_4_6">
           <span class="md-nav__icon md-icon"></span>
           Tables
         </label>
@@ -1548,46 +1596,12 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Zones
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Zones
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#action-files" class="md-nav__link">
-    Action Files
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mock-pet-api" class="md-nav__link">
-    Mock Pet API
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1733,28 +1747,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#action-files" class="md-nav__link">
-    Action Files
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mock-pet-api" class="md-nav__link">
-    Mock Pet API
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1767,413 +1761,7 @@
               
                 
 
-  <h1>Zones</h1>
-
-<p>The first step in implementing our pet list demo is to create "action" classes. Action classes in molten allow for a code interface to common actions that would be performed against individuals or groups of items in an API.</p>
-<p>Some examples of these actions include requesting a list from the data's source (like a REST API) as bounded by a set of filters, creating an item in a list, updating an item in a list, deleting an item from a list, etc.</p>
-<p>Additional actions may revolve around retrieving previously requested data in a synchronous manner (like from redux or another local state mechanism)</p>
-<p>An example of what custom actions look like is located below</p>
-<p>These two files demonstrate the proper way to extend ItemActions and GroupActions respectively. The base classes for ItemActions and GroupActions can be found in the <code>src/dataSource</code> folder. They contain documentation around which functions are required to be implemented to successfully extend them, and which are optional.</p>
-<p>For the purpose of this tutorial, the most relevant functions are:</p>
-<p>PetsActions:</p>
-<ul>
-<li>
-<p>item - gets a PetActions instance relevant to a single Pet</p>
-</li>
-<li>
-<p>create - creates a pet in the pets list</p>
-</li>
-<li>
-<p>list/search - goes and gets a list of pets that match a filter object</p>
-</li>
-<li>
-<p>update - updates a specified pet in the list</p>
-</li>
-<li>
-<p>delete - deletes a specified pet from the list</p>
-</li>
-<li>
-<p>getList - gets the list that was requested by list/search from local state</p>
-</li>
-</ul>
-<p>PetActions:
-- parent - gets a PetsActions instance</p>
-<ul>
-<li>
-<p>get - goes and gets the state of a given pet</p>
-</li>
-<li>
-<p>update - updates the pet specified by this actions class</p>
-</li>
-<li>
-<p>delete - deletes the pet specified by this actions class</p>
-</li>
-<li>
-<p>getItem - gets the item specified by this actions class from local state</p>
-</li>
-</ul>
-<h2 id="action-files">Action Files<a class="headerlink" href="#action-files" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PetActions</label><label for="__tabbed_1_2">PetsActions.js</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>  <span class="k">import</span> <span class="p">{</span> <span class="nx">GlobalState</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/ui-redux&#39;</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">DataSources</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/ui-attributes/lib/dataSource&#39;</span>
-  <span class="k">import</span> <span class="nx">ItemActions</span> <span class="kr">from</span> <span class="s1">&#39;../../../src/dataSource/ItemActions&#39;</span>
-  <span class="c1">// eslint-disable-next-line import/no-cycle</span>
-  <span class="k">import</span> <span class="nx">PetsActions</span> <span class="kr">from</span> <span class="s1">&#39;./PetsActions&#39;</span>
-  <span class="k">import</span> <span class="nx">PetApi</span> <span class="kr">from</span> <span class="s1">&#39;./PetApi&#39;</span>
-
-  <span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">PetActions</span> <span class="k">extends</span> <span class="nx">ItemActions</span> <span class="p">{</span>
-
-    <span class="k">static</span> <span class="nx">getItem</span><span class="p">(</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">PetApi</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="kr">constructor</span><span class="p">(</span> <span class="p">{</span> <span class="nx">match</span><span class="p">,</span> <span class="nx">relationship</span><span class="p">,</span> <span class="nx">id</span> <span class="p">}</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">super</span><span class="p">()</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">match</span> <span class="o">=</span> <span class="nx">match</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">relationship</span> <span class="o">=</span> <span class="nx">relationship</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">systemId</span> <span class="o">=</span> <span class="nx">relationship</span><span class="o">?</span><span class="p">.</span><span class="nx">systemId</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span>
-    <span class="p">}</span>
-
-    <span class="nx">getGroup</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">parent</span><span class="p">()</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">    * Returns the parent&#39;s action object. </span>
-<span class="cm">    */</span>
-    <span class="nx">parent</span><span class="p">(</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="ow">new</span> <span class="nx">PetsActions</span><span class="p">(</span> <span class="p">{}</span> <span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="nx">getInterfaceUrl</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">getUrl</span><span class="p">()</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">    * Returns the url for this group action object</span>
-<span class="cm">    */</span>
-    <span class="nx">getUrl</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="sb">`pets/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">    * Returns a redux action that will call api to read a child of the current path</span>
-<span class="cm">    * @param {object} data values of the item to be changed</span>
-<span class="cm">    * @param {object} options api options</span>
-<span class="cm">    * @returns {function} redux thunk function</span>
-<span class="cm">    */</span>
-    <span class="nx">get</span><span class="p">(</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// looks like an action but doesn&#39;t touch redux</span>
-      <span class="k">return</span> <span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">PetApi</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="p">)</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">    * Returns a redux action that will call the api to create an item at the current path</span>
-<span class="cm">    * @param {object} data the data of the item to create</span>
-<span class="cm">    * @param {object} options a set of options</span>
-<span class="cm">    */</span>
-    <span class="nx">create</span><span class="p">(</span> <span class="nx">data</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">PetApi</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span> <span class="nx">data</span> <span class="p">)</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">    * Returns a redux action that will call api to update a child of the current path</span>
-<span class="cm">    * @param {object} data values of the item to be changed</span>
-<span class="cm">    * @param {object} options api options</span>
-<span class="cm">    * @returns {function} redux thunk function</span>
-<span class="cm">    */</span>
-    <span class="nx">update</span><span class="p">(</span> <span class="nx">data</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">pds</span> <span class="o">=</span> <span class="nx">DataSources</span><span class="p">.</span><span class="nx">DataSourceFactory</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span> <span class="s1">&#39;petApi.pet&#39;</span> <span class="p">)</span>
-        <span class="kd">const</span> <span class="nx">entry</span> <span class="o">=</span> <span class="nx">pds</span><span class="p">.</span><span class="nx">getData</span><span class="p">(</span> <span class="p">{</span> <span class="nx">id</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="p">}</span> <span class="p">)</span>
-        <span class="k">return</span> <span class="nx">PetApi</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="p">{</span> <span class="p">...</span><span class="nx">entry</span><span class="p">,</span> <span class="p">...</span><span class="nx">data</span> <span class="p">}</span> <span class="p">)</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">    * Returns a redux action that will call api to delete a child of the current path</span>
-<span class="cm">    * @param {object} options api options</span>
-<span class="cm">    * @returns {function} redux thunk function</span>
-<span class="cm">    */</span>
-    <span class="ow">delete</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">PetApi</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="p">)</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="c1">// local access</span>
-    <span class="nx">getItem</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">PetApi</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="nx">isLoading</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="kc">false</span>
-    <span class="p">}</span>
-
-    <span class="nx">isDone</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="kc">true</span>
-    <span class="p">}</span>
-
-  <span class="p">}</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>  <span class="k">import</span> <span class="p">{</span> <span class="nx">GlobalState</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/ui-redux&#39;</span>
-  <span class="k">import</span> <span class="nx">PetActions</span> <span class="kr">from</span> <span class="s1">&#39;./PetActions&#39;</span>
-  <span class="k">import</span> <span class="nx">GroupActions</span> <span class="kr">from</span> <span class="s1">&#39;../../../src/dataSource/GroupActions&#39;</span>
-  <span class="k">import</span> <span class="nx">PetApi</span> <span class="kr">from</span> <span class="s1">&#39;./PetApi&#39;</span>
-
-  <span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">PetsAction</span> <span class="k">extends</span> <span class="nx">GroupActions</span> <span class="p">{</span>
-
-    <span class="kr">constructor</span><span class="p">(</span> <span class="nx">opts</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">super</span><span class="p">()</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">opts</span> <span class="o">=</span> <span class="nx">opts</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">searches</span> <span class="o">=</span> <span class="p">{}</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">queryName</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span>
-    <span class="p">}</span>
-
-    <span class="nx">getGroup</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span>
-    <span class="p">}</span>
-
-    <span class="nx">getInterfaceUrl</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">getUrl</span><span class="p">()</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">     * Returns the url for this group action object</span>
-<span class="cm">     */</span>
-    <span class="nx">getUrl</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s1">&#39;pets&#39;</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">     * Creates a item action for the id in the group.</span>
-<span class="cm">     */</span>
-    <span class="nx">item</span><span class="p">(</span> <span class="nx">id</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="ow">new</span> <span class="nx">PetActions</span><span class="p">(</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="nx">itemRef</span><span class="p">(</span> <span class="nx">id</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">type</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">relationship</span><span class="p">.</span><span class="nx">blueprint</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span>
-        <span class="nx">ref</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">getUrl</span><span class="p">(),</span>
-        <span class="nx">id</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">     * Returns a redux action that will call api to create an item as a child of the current path</span>
-<span class="cm">     * @param {object} obj item to be created</span>
-<span class="cm">     * @param {object} options api options</span>
-<span class="cm">     * @returns {function} redux thunk function </span>
-<span class="cm">     */</span>
-    <span class="nx">create</span><span class="p">(</span> <span class="nx">obj</span><span class="p">,</span> <span class="nx">options</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">PetApi</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span> <span class="nx">obj</span> <span class="p">)</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">     * Create a dispatch action for a request of a list of objects</span>
-<span class="cm">     */</span>
-    <span class="nx">list</span><span class="p">(</span> <span class="nx">options</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span> <span class="nx">options</span> <span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="nx">search</span><span class="p">(</span> <span class="nx">obj</span><span class="p">,</span> <span class="nx">options</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">async</span> <span class="p">(</span> <span class="nx">dispatch</span><span class="p">,</span> <span class="nx">getState</span><span class="p">,</span> <span class="p">{</span> <span class="nx">api</span> <span class="p">}</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">search</span> <span class="o">=</span> <span class="nx">obj</span><span class="o">?</span><span class="p">.</span><span class="nx">filter</span><span class="o">?</span><span class="p">.</span><span class="nx">value</span>
-        <span class="kd">const</span> <span class="nx">queryName</span> <span class="o">=</span> <span class="nx">options</span><span class="o">?</span><span class="p">.</span><span class="nx">queryName</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">queryName</span>
-        <span class="kd">const</span> <span class="nx">perPage</span> <span class="o">=</span> <span class="nx">obj</span><span class="o">?</span><span class="p">.</span><span class="nx">perPage</span> <span class="o">||</span> <span class="nx">obj</span><span class="o">?</span><span class="p">.</span><span class="nx">limit</span> <span class="o">||</span> <span class="mf">200</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">searches</span><span class="p">[</span><span class="nx">queryName</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">perPage</span><span class="p">,</span> <span class="nx">search</span> <span class="p">}</span>
-        <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">PetApi</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="nx">searches</span><span class="p">[</span><span class="nx">queryName</span><span class="p">]</span> <span class="p">)</span>
-        <span class="k">return</span> <span class="nx">res</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">     * Returns a redux action that will call api to update a child of the current path</span>
-<span class="cm">     * @param {string} id id of the item to be updated</span>
-<span class="cm">     * @param {object} data values of the item to be changed</span>
-<span class="cm">     * @param {object} options api options</span>
-<span class="cm">     * @returns {function} redux thunk function</span>
-<span class="cm">     */</span>
-    <span class="nx">update</span><span class="p">(</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">options</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span> <span class="nx">id</span> <span class="p">).</span><span class="nx">update</span><span class="p">(</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">options</span> <span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="cm">/**</span>
-<span class="cm">     * Returns a redux action that will call api to delete a child of the current path</span>
-<span class="cm">     * @param {string} id id of the item to be deleted</span>
-<span class="cm">     * @param {object} options api options</span>
-<span class="cm">     * @returns {function} redux thunk function</span>
-<span class="cm">     */</span>
-    <span class="ow">delete</span><span class="p">(</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">body</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">reducerOptions</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span> <span class="nx">id</span> <span class="p">).</span><span class="ow">delete</span><span class="p">(</span> <span class="nx">body</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">reducerOptions</span> <span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="nx">getList</span><span class="p">(</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">get</span><span class="p">(),</span> <span class="nx">options</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">queryName</span> <span class="o">=</span> <span class="nx">options</span><span class="o">?</span><span class="p">.</span><span class="nx">queryName</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">queryName</span>
-      <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">PetApi</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="nx">searches</span><span class="p">[</span><span class="nx">queryName</span><span class="p">]</span> <span class="p">)</span>
-      <span class="k">return</span> <span class="nx">res</span>
-    <span class="p">}</span>
-
-    <span class="nx">isLoading</span><span class="p">(</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="kc">false</span>
-    <span class="p">}</span>
-
-    <span class="nx">isDone</span><span class="p">(</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="kc">true</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="mock-pet-api">Mock Pet API<a class="headerlink" href="#mock-pet-api" title="Permanent link">&para;</a></h2>
-<p>The mock api below simulates normal functions of an API without requiring an externally running api.  </p>
-<div class="highlight"><pre><span></span><code>  <span class="k">import</span> <span class="nx">B62</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/base62-util&#39;</span>
-  <span class="k">import</span> <span class="nx">Gen</span> <span class="kr">from</span> <span class="s1">&#39;project-name-generator&#39;</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">UI</span><span class="p">,</span> <span class="nx">GlobalState</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/ui-redux&#39;</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">Attributes</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@leverege/ui-attributes&#39;</span>
-
-  <span class="kd">function</span> <span class="nx">createPet</span><span class="p">(</span> <span class="nx">data</span> <span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">id</span> <span class="o">:</span> <span class="nx">B62</span><span class="p">.</span><span class="nx">v4</span><span class="p">(),</span>
-      <span class="nx">type</span> <span class="o">:</span> <span class="s1">&#39;petApi.pet&#39;</span><span class="p">,</span>
-      <span class="nx">name</span> <span class="o">:</span> <span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="nx">Gen</span><span class="p">().</span><span class="nx">spaced</span> <span class="o">:</span> <span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
-      <span class="nx">age</span> <span class="o">:</span> <span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">age</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">20</span> <span class="p">)</span> <span class="o">:</span> <span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">age</span><span class="p">,</span>
-      <span class="nx">position</span> <span class="o">:</span> <span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">position</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="p">{</span>
-        <span class="nx">lat</span> <span class="o">:</span> <span class="mf">38</span> <span class="o">+</span> <span class="p">(</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="p">),</span>
-        <span class="nx">lon</span> <span class="o">:</span> <span class="o">-</span><span class="mf">76</span> <span class="o">+</span> <span class="p">(</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="p">)</span>
-      <span class="p">}</span> <span class="o">:</span> <span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">position</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="cm">/**</span>
-<span class="cm">  * This is a mock of an api and thus makes no requests, in a real</span>
-<span class="cm">  * situation this would reach out to external data.</span>
-<span class="cm">  */</span>
-  <span class="kd">class</span> <span class="nx">PetApi</span> <span class="p">{</span>
-
-    <span class="nx">generateData</span> <span class="o">=</span> <span class="p">(</span> <span class="nx">count</span> <span class="o">=</span> <span class="mf">200</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{}</span>
-      <span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[]</span>
-      <span class="k">for</span> <span class="p">(</span> <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">n</span> <span class="o">&lt;</span> <span class="nx">count</span><span class="p">;</span> <span class="nx">n</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">createPet</span><span class="p">()</span>
-        <span class="nx">data</span><span class="p">[</span><span class="nx">p</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="nx">p</span>
-        <span class="nx">list</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span> <span class="nx">p</span> <span class="p">)</span>
-      <span class="p">}</span>
-      <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span> <span class="nx">UI</span><span class="p">.</span><span class="nx">multiSet</span><span class="p">(</span> <span class="p">{</span> <span class="nx">petList</span> <span class="o">:</span> <span class="nx">list</span><span class="p">,</span> <span class="nx">petData</span> <span class="o">:</span> <span class="nx">data</span> <span class="p">}</span> <span class="p">)</span> <span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="nx">get</span><span class="p">(</span> <span class="nx">id</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
-      <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">state</span><span class="o">?</span><span class="p">.</span><span class="nx">ui</span><span class="o">?</span><span class="p">.</span><span class="nx">petData</span>
-      <span class="k">return</span> <span class="nx">data</span><span class="o">?</span><span class="p">.[</span><span class="nx">id</span><span class="p">]</span>
-    <span class="p">}</span>
-
-    <span class="nx">set</span><span class="p">(</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">newValue</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
-      <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">state</span><span class="o">?</span><span class="p">.</span><span class="nx">ui</span><span class="o">?</span><span class="p">.</span><span class="nx">petData</span>
-      <span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">state</span><span class="o">?</span><span class="p">.</span><span class="nx">ui</span><span class="o">?</span><span class="p">.</span><span class="nx">petList</span>
-
-      <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="nx">data</span><span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">null</span>
-      <span class="p">}</span>
-      <span class="kd">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span> <span class="nx">item</span> <span class="p">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span> <span class="p">)</span>
-
-      <span class="kd">const</span> <span class="nx">nList</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">...</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span> <span class="mf">0</span><span class="p">,</span> <span class="nx">index</span> <span class="p">),</span>
-        <span class="nx">newValue</span><span class="p">,</span>
-        <span class="p">...</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span> <span class="nx">index</span> <span class="o">+</span> <span class="mf">1</span> <span class="p">)</span>
-      <span class="p">]</span>
-      <span class="kd">const</span> <span class="nx">nData</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="p">...</span><span class="nx">data</span><span class="p">,</span>
-        <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">:</span> <span class="nx">newValue</span>
-      <span class="p">}</span>
-      <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span> <span class="nx">UI</span><span class="p">.</span><span class="nx">multiSet</span><span class="p">(</span> <span class="p">{</span> <span class="nx">petList</span> <span class="o">:</span> <span class="nx">nList</span><span class="p">,</span> <span class="nx">petData</span> <span class="o">:</span> <span class="nx">nData</span> <span class="p">}</span> <span class="p">)</span> <span class="p">)</span>
-      <span class="k">return</span> <span class="nx">nList</span>
-    <span class="p">}</span>
-
-    <span class="ow">delete</span><span class="p">(</span> <span class="nx">id</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
-      <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">state</span><span class="o">?</span><span class="p">.</span><span class="nx">ui</span><span class="o">?</span><span class="p">.</span><span class="nx">petData</span>
-      <span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">state</span><span class="o">?</span><span class="p">.</span><span class="nx">ui</span><span class="o">?</span><span class="p">.</span><span class="nx">petList</span>
-
-      <span class="kd">const</span> <span class="nx">nData</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">data</span> <span class="p">}</span>
-      <span class="ow">delete</span> <span class="nx">nData</span><span class="p">[</span><span class="nx">id</span><span class="p">]</span>
-      <span class="kd">const</span> <span class="nx">nList</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span> <span class="nx">entry</span> <span class="p">=&gt;</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span> <span class="p">)</span>
-      <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span> <span class="nx">UI</span><span class="p">.</span><span class="nx">multiSet</span><span class="p">(</span> <span class="p">{</span> <span class="nx">petList</span> <span class="o">:</span> <span class="nx">nList</span><span class="p">,</span> <span class="nx">petData</span> <span class="o">:</span> <span class="nx">nData</span> <span class="p">}</span> <span class="p">)</span> <span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="nx">create</span><span class="p">(</span> <span class="nx">newData</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
-      <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">state</span><span class="o">?</span><span class="p">.</span><span class="nx">ui</span><span class="o">?</span><span class="p">.</span><span class="nx">petData</span>
-      <span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">state</span><span class="o">?</span><span class="p">.</span><span class="nx">ui</span><span class="o">?</span><span class="p">.</span><span class="nx">petList</span>
-
-      <span class="kd">const</span> <span class="nx">newPet</span> <span class="o">=</span> <span class="nx">createPet</span><span class="p">(</span> <span class="nx">newData</span> <span class="p">)</span>
-      <span class="kd">const</span> <span class="nx">nData</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">data</span> <span class="p">}</span>
-      <span class="kd">const</span> <span class="nx">nList</span> <span class="o">=</span> <span class="p">[</span> <span class="p">...</span><span class="nx">list</span> <span class="p">]</span>
-      <span class="nx">nData</span><span class="p">[</span><span class="nx">newPet</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="nx">newPet</span>
-      <span class="nx">nList</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span> <span class="nx">newPet</span> <span class="p">)</span>
-      <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span> <span class="nx">UI</span><span class="p">.</span><span class="nx">multiSet</span><span class="p">(</span> <span class="p">{</span> <span class="nx">petList</span> <span class="o">:</span> <span class="nx">nList</span><span class="p">,</span> <span class="nx">petData</span> <span class="o">:</span> <span class="nx">nData</span> <span class="p">}</span> <span class="p">)</span> <span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="nx">search</span><span class="p">(</span> <span class="p">{</span> <span class="nx">perPage</span><span class="p">,</span> <span class="nx">search</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">perPage</span> <span class="o">:</span> <span class="mf">200</span><span class="p">,</span> <span class="nx">search</span> <span class="o">:</span> <span class="kc">null</span> <span class="p">}</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">GlobalState</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
-      <span class="kd">let</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">state</span><span class="o">?</span><span class="p">.</span><span class="nx">ui</span><span class="o">?</span><span class="p">.</span><span class="nx">petList</span>
-
-      <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="nx">list</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">loaded</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">loaded</span> <span class="o">=</span> <span class="kc">true</span>
-        <span class="nx">process</span><span class="p">.</span><span class="nx">nextTick</span><span class="p">(</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">generateData</span><span class="p">()</span> <span class="p">)</span>
-        <span class="k">return</span> <span class="kc">null</span>
-      <span class="p">}</span>
-
-      <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="nx">list</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">null</span>
-      <span class="p">}</span>
-
-      <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">list</span>
-      <span class="kd">const</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">{}</span>
-      <span class="kd">const</span> <span class="nx">toCheck</span> <span class="o">=</span> <span class="nx">search</span><span class="o">?</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span> <span class="sr">/[*]/g</span><span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">)</span>
-      <span class="k">if</span> <span class="p">(</span> <span class="nx">toCheck</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">attrs</span> <span class="o">=</span> <span class="nx">Attributes</span><span class="p">.</span><span class="nx">getAttributesFor</span><span class="p">(</span> <span class="s1">&#39;petApi.pet&#39;</span> <span class="p">)</span>
-        <span class="nx">attrs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="p">(</span> <span class="nx">attr</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-          <span class="k">if</span> <span class="p">(</span> <span class="nx">attr</span><span class="p">.</span><span class="nx">valueType</span> <span class="o">!==</span> <span class="s1">&#39;string&#39;</span> <span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span>
-          <span class="p">}</span>
-          <span class="nx">res</span><span class="o">?</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="p">(</span> <span class="nx">i</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-            <span class="kd">const</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">attr</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span> <span class="nx">i</span> <span class="p">)</span>
-            <span class="k">if</span> <span class="p">(</span> <span class="ow">typeof</span> <span class="nx">val</span> <span class="o">===</span> <span class="s1">&#39;string&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">val</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span> <span class="nx">toCheck</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
-              <span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="nx">i</span>
-            <span class="p">}</span>
-          <span class="p">}</span> <span class="p">)</span>
-        <span class="p">}</span> <span class="p">)</span>
-        <span class="nx">list</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span> <span class="nx">items</span> <span class="p">)</span>
-      <span class="p">}</span>
-
-      <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">total</span> <span class="o">:</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
-        <span class="nx">start</span> <span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-        <span class="nx">perPage</span><span class="p">,</span>
-        <span class="nx">count</span> <span class="o">:</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
-        <span class="nx">items</span> <span class="o">:</span> <span class="nx">list</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-
-  <span class="p">}</span>
-
-  <span class="k">export</span> <span class="k">default</span> <span class="ow">new</span> <span class="nx">PetApi</span><span class="p">()</span>
-</code></pre></div>
+<h1 id="zone-management">Zone Management<a class="headerlink" href="#zone-management" title="Permanent link">&para;</a></h1>
 
               
             </article>
@@ -2192,7 +1780,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Map Interactions" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2201,7 +1789,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Index
+              Map Interactions
             </div>
           </div>
         </a>

@@ -1066,6 +1066,12 @@
         
           
         
+          
+        
+          
+        
+          
+        
       
       
         
@@ -1278,11 +1284,53 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../layout-controller/" class="md-nav__link">
+        Layout Controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search-config/" class="md-nav__link">
+        Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map-config/" class="md-nav__link">
+        Map
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
       
       
       
@@ -1291,13 +1339,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4_3">
+        <label class="md-nav__link" for="__nav_4_6">
           Tables
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tables" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_3">
+        <label class="md-nav__title" for="__nav_4_6">
           <span class="md-nav__icon md-icon"></span>
           Tables
         </label>
@@ -2046,9 +2094,9 @@
 <p>To create a version, use the <strong>Save To &gt; Create Version</strong> button in the upper right of the configuration panel. </p>
 <h3 id="save-a-version">Save A Version<a class="headerlink" href="#save-a-version" title="Permanent link">&para;</a></h3>
 <p>Once created, users can save their current component’s configuration to the version by clicking <strong>Save To &gt; Versions</strong> and selecting the version. Once saved, click <strong>Apply</strong> to apply the configuration to the component.</p>
+<p>[Save To Screenshot]</p>
 <h3 id="load-a-version">Load A Version<a class="headerlink" href="#load-a-version" title="Permanent link">&para;</a></h3>
 <p>To retrieve a previously saved version, click the <strong>Load From</strong> button in the upper left of the configuration panel and select the desired version. This will load that version’s configuration into the panel. Click <strong>Apply</strong> to the apply that version’s configuration to the component.</p>
-<p>[Save To Screenshot]</p>
 <p>[Load From Screenshot]</p>
 <h3 id="delete-a-version">Delete A Version<a class="headerlink" href="#delete-a-version" title="Permanent link">&para;</a></h3>
 <p>To delete a version, click the three dots icon next to <strong>Save To  &gt; Delete Versions</strong>, and select the version to delete. Confirm the deletion in the prompt.</p>
@@ -2085,7 +2133,6 @@
 <p>[Screenshot of the dashboard selector]</p>
 <h3 id="configure-each-component-on-the-page">Configure Each Component on the Page<a class="headerlink" href="#configure-each-component-on-the-page" title="Permanent link">&para;</a></h3>
 <p>Use the layout controller to place the desired components on the page. Refer to the documentation for the layout controller for more details.</p>
-<p>[Screenshot of layout controller on the UI]</p>
 <p>For each component, access the control panel and make the desired configuration changes. Click <strong>Apply</strong> in the configuration panel of that component once all the desired changes are performed. Refer to the document for the specific component for more details.</p>
 <h3 id="save-the-configured-state-to-a-dashboard">Save the Configured State to a Dashboard<a class="headerlink" href="#save-the-configured-state-to-a-dashboard" title="Permanent link">&para;</a></h3>
 <p>Once all configuration to all components have been completed, a user can save the entire state of the page to a dashboard.</p>
@@ -2098,9 +2145,12 @@
 </li>
 </ol>
 <p>[Screenshot of save &amp; revert of current dashboard]</p>
+<div class="admonition note">
+<p class="admonition-title">Note: Default Dashboard</p>
 <p>Note: The Default dashboard is a user’s personal dashboard configuration for exact page location. Saving the configuration to the dashboard titled “Default” will only apply the configuration as the default dashboard to the current user, for currently assumed role, and to exact path for which the configuration was performed. </p>
 <p>For example, if a user A is on the Company &gt; Assets page as Role A and saves a new configuration to the Default dashboard at that page, it will affect only the Default dashboard for User A while they are using Role A on the Company &gt; Assets page. </p>
 <p>It will not impact the Default dashboard for user B at Company &gt; Assets using Role A, not impact Default dashboard for any users at Company &gt; Assets using Role B, and not impact the Default dashboard of user A at other Asset paths (e.g. Location &gt; Assets) using Role A.</p>
+</div>
 <ol>
 <li>
 <p>To save the configured state to a new dashboard, click the three-dot icon next to the dashboard selector and click <strong>Save Dashboard As…</strong></p>
@@ -2126,7 +2176,11 @@
 </ol>
 </li>
 </ol>
-<p>Looking for an option to save the configured page to the current user for the current role and current path? Save the dashboard to the Default dashboard by click the check mark next to the left of the dashboard selector?</p>
+<p>[Available To Screenshot]</p>
+<div class="admonition question">
+<p class="admonition-title">Saving to Current User &amp; Page Only</p>
+<p>Looking for an option to save the configured page to the current user for the current role and current path? Save the dashboard to the Default dashboard by click the check mark next to the left of the dashboard selector.</p>
+</div>
 <h3 id="set-the-defaults-of-the-page">Set the Defaults Of The Page<a class="headerlink" href="#set-the-defaults-of-the-page" title="Permanent link">&para;</a></h3>
 <p>The previous section on Saving the Dashboard produces a dashboard that is available for selection by a user on a give page. It does not yet specify whether it will load by default when a user visits that page.</p>
 <p>In order to apply the dashboard to pages so that it loads for given users, page locations, and roles, set the dashboard defaults. </p>
@@ -2213,13 +2267,13 @@
       
       
         
-        <a href="../tables/parents/" class="md-footer__link md-footer__link--next" aria-label="Next: Parent Data Columns in Tables" rel="next">
+        <a href="../layout-controller/" class="md-footer__link md-footer__link--next" aria-label="Next: Layout Controller" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Parent Data Columns in Tables
+              Layout Controller
             </div>
           </div>
           <div class="md-footer__button md-icon">
