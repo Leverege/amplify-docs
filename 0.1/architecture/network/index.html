@@ -13,7 +13,7 @@
     
     
       
-        <title>Roles & Permissions Overview - Leverege Supervise & Amplify</title>
+        <title>Networks - Leverege Supervise & Amplify</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#roles-permissions-overview" class="md-skip">
+        <a href="#networks" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Roles & Permissions Overview
+              Networks
             
           </span>
         </div>
@@ -364,13 +364,17 @@
       
         
           
+            
+          
         
       
       
-        <label class="md-nav__link" for="__nav_2_2">
-          Core Concepts
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../core/">Core Concepts</a>
+          
+        </div>
       
       <nav class="md-nav" aria-label="Core Concepts" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_2">
@@ -379,18 +383,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../core/" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
             
           
         </ul>
@@ -1707,23 +1699,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#terminology" class="md-nav__link">
-    Terminology
+  <a href="#creating-a-network" class="md-nav__link">
+    Creating a Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-concepts-networkid-aliaskey-deviceid" class="md-nav__link">
+    Core Concepts: networkId, aliasKey, deviceId
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#roles" class="md-nav__link">
-    Roles
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-roles" class="md-nav__link">
-    User Roles
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1740,51 +1731,44 @@
               
                 
 
-<h1 id="roles-permissions-overview">Roles &amp; Permissions Overview<a class="headerlink" href="#roles-permissions-overview" title="Permanent link">&para;</a></h1>
-<p>The Leverege Stack uses a role-based access control system. Role-based access control refers to the idea of assigning permissions to users based on their role within an organization. It offers a simple, manageable approach to access management that is less prone to error than assigning permissions to users individually.</p>
-<p>When using RBAC, you analyze the needs of your users and group them into roles based on common responsibilities. You then assign one or more roles to each user and one or more permissions to each role. The user-role and role-permissions relationships make it simple to perform user assignments since users no longer need to be managed individually, but instead have privileges that conform to the permissions assigned to their role(s).</p>
-<p>For example, if you were using RBAC to control access for a cow tracking application, you could give the farm manager a role that allows them create locations, add &amp; manage users, and view employee performance analytics. Farm hands may have a role that only shows them the cows at a given location and any alerts associated with that location. </p>
-<p>When planning your access control strategy, it's best practice to assign users the fewest number of permissions that allow them to get their work done. This is called the Principle of Least Privilege. </p>
-<h2 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Permission</td>
-<td>Defines a single action that can be done (create, read, update, delete, list)</td>
-</tr>
-<tr>
-<td>Role</td>
-<td>A group of permissions that indicate what a user with this role can do. Usually based on the user personas of a given application. Roles have a specific ID referred to as role ID</td>
-</tr>
-<tr>
-<td>Resource ID</td>
-<td>The unique identity of something like a device, system, project, location, asset, etc.</td>
-</tr>
-<tr>
-<td>User ID</td>
-<td>The unique ID of the ‘user’. Can be any ID representing the account. This is also the API Access ID.</td>
-</tr>
-<tr>
-<td>User Role</td>
-<td>Combines a user ID and a role ID with a resource ID</td>
-</tr>
-<tr>
-<td>CRUDL</td>
-<td>An acronym that stands for Create, Read, Update, Delete, List. These are the most common operations that can be performed on objects in the Leverege Stack</td>
-</tr>
-</tbody>
-</table>
-<h2 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link">&para;</a></h2>
-<p>Essentially, a role is a collection of permissions that you can apply to users. Using roles makes it easier to add, remove, and adjust permissions than assigning permissions to users individually. As your user base increases in scale and complexity, roles become particularly useful.</p>
-<p>You can also use roles to collect permissions defined for various APIs. For example, say you have a third-party tool that tracks your barn equipment. Your barn equipment API role could have a <code>Create equipment in a location</code> &amp;  <code>Update equipment in a location</code> permissions allow the API to create and update equipment in our database.</p>
-<h2 id="user-roles">User Roles<a class="headerlink" href="#user-roles" title="Permanent link">&para;</a></h2>
-<p>User Roles represent bindings between a user ID, role ID, and resource ID. As an example, a user role represents “giving Steve (User ID) the ability to act as a Farm Hand (Role ID) at Eric’s Farm (Resource ID)”. </p>
+<h1 id="networks">Networks<a class="headerlink" href="#networks" title="Permanent link">&para;</a></h1>
+<p>A Network represents a source of device data. When a device needs to be contacted, the Network is used as the target. In particular, messages are published to the <networkId>-outbound topic. The ingestion service setup to manage that network's data can listen on this topic and then communicate appropriately to the source server. The Network Id is also part external identity of a Device.</p>
+<p>Inside the Leverege Stack, devices (and many other elements of a project) are assigned a base 62 UUID. These look something like this: 1pTW01YR4mUAEbcHhbXHk8. </p>
+<p>But these IDs are not how devices refer to themselves when sending a message, or how users refer to a device when they need to interact with it. The SmartWalrus tracker we will be integrating with, recall, sends an IMEI as its identifier when it reports. A worker at a Tusk Trucking facility might pair a tracker to a truck by scanning a QR code or type a name from a label printed on the device into the system.  For this project, let’s assume the SmartWalrus trackers have a QR code which encodes the MAC address of the tracker.  </p>
+<p>Networks let us define how our internal devices will be mapped onto the the source, and set up messaging topics that allow communication with the device using these external names. </p>
+<h2 id="creating-a-network">Creating a Network<a class="headerlink" href="#creating-a-network" title="Permanent link">&para;</a></h2>
+<p>In your Architect project, click the Networks tab on the left side, and click the + Custom button. The network creation form asks for three fields: a name, an api key (what we’ll call a networkId for reasons that will be come clear in a moment), and list of network identifiers (what we’ll call aliasKeys). (These are confusing names. Can we change them?)</p>
+<h3 id="core-concepts-networkid-aliaskey-deviceid">Core Concepts: networkId, aliasKey, deviceId<a class="headerlink" href="#core-concepts-networkid-aliaskey-deviceid" title="Permanent link">&para;</a></h3>
+<p>To understand what work these options are doing, let’s take a look at our message docs for inbound messages (NEED TO ACTUALLY INCLUDE A DOC FOR INBOUND DEVICE MESSAGE IN THE README). Note these three items:</p>
+<p>/**
+ ...
+ * @param {string} data.networkId The networkId of the source
+ * @param {string} data.deviceId A string representing the external name of the device. This could be an IotHub device id, a MAC address of a sensor, etc
+ * @param {string} data.aliasKey The name of the key that forms the mapping between the external device’s id and the internal device. This is stored in the internal device’s aliases list, and tends to be unique per network.
+ ...
+ */</p>
+<p>Inbound messages include a networkId, an aliasKey, and a deviceId. These three pieces of information tell our platform how to lookup that device:</p>
+<p>deviceId : The external name for the individual device (e.g., ‘981472630769911’)</p>
+<p>aliasKey : This describes what type of identifier the given device ID is (is it an IMEI? A MAC address?). It refers to a identifier type that we will enter into our network definition.</p>
+<p>networkId : (called an ‘Api Key’ in Imagine) The tells us which network, in of all of the networks on the given API server, the API should look to find this device. (There may be many projects running on the same API server which identify their devices with MAC addresses or IMEIs.)</p>
+<p>API Server will, in essence, look at the given network for a device with an aliasKey value equal to the deviceId, and route the message to that device. </p>
+<p>In creating the network, we are defining the networkId and the aliasKeys on that network. The actual deviceId gets created at the device level.</p>
+<p>Choosing Good Network Values
+Back to our Imagine UI, where we are creating the network, we need to choose the name, networkId (there called ‘Api Key’), and available aliasKeys (there called identifiers). </p>
+<p>The name is simply a human readable display name for the network, so that we can pick it out on our list of networks. We are creating the network for our SmartWalrus trackers, so let’s call it Tusk SmartWalrus Network.</p>
+<p>The networkId (entered in the ‘Api Key’ field) must be unique across all projects in Imagine. It should be short, and describe the source / interface. So ‘tusk-tracker-network’ is good, something like ‘dev-trackers’ would be bad. (By convention, networkIds are skewer cased.)</p>
+<p>The aliasKeys are the types of external identifiers. The devices provide us with IMEIs when they send messages, and the users will use the MAC addresses. It’s a good practice to be descriptive and specific with these names (and not just default to ‘deviceId’, for example). So lets set that field to ‘imei,macAddress’.</p>
+<p>To tie this together, this tells us that a parsed inbound SmartWalrus device message from our ingestor might look something like this:</p>
+<p>{
+  type : 'inboundDataEventMsg',
+  time : 1619388341985,
+  networkId : 'tusk-network',
+  aliasKey : 'imei',
+  deviceId : '981472630769911',
+  data : [
+   { path : 'temperature', value : 30.20 }
+  ],
+}</p>
 
               
             </article>
@@ -1819,13 +1803,13 @@
       
       
         
-        <a href="../system/" class="md-footer__link md-footer__link--next" aria-label="Next: Roles &amp; Permissions Overview" rel="next">
+        <a href="../system/" class="md-footer__link md-footer__link--next" aria-label="Next: Index" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Roles & Permissions Overview
+              Index
             </div>
           </div>
           <div class="md-footer__button md-icon">
