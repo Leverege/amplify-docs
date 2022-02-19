@@ -1,6 +1,6 @@
 # Email & SMS Templates
 
-We provide three email templates out of the box in Architect. Any email template can be customized using our html editor. Below, we'll walk through how you can easily create and customize your emails.
+We provide multiple email templates out of the box in Architect. Any email template can be customized using our html editor. Below, we'll walk through how you can easily create and customize your emails.
 
 !!! Tip "Adding a Template"
     Our available templates are all easy to add under the New Template button in the top right corner
