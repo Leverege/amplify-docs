@@ -79,6 +79,7 @@ For position attributes (e.g. user position, asset positions, device positions),
 * **Rollover**: To generate an info card upon rolling over the layer on the map, check the box next to **Rollover**. To hide an info card from appearing upon rollover, uncheck the box.
 
 *  **Selectable**: To generate an info card upon clicking a layer on the map, check the box next to **Selectable**. To hide an info card from appearing upon selection, uncheck the box.
+
     !!! Note "Rollover and selection config"
         Configuration of the rollover and selection cards themselves are performed in **Global Configuration**
 
@@ -123,5 +124,6 @@ To change the map style, go to the **Options** tab on the map configuration pane
 [Screenshot of map style configuration options]
 
 To change the map style, select a style from the dropdown:
+
 * To use a pre-defined style (e.g. satellite, streets, etc.), select it from the list
 * To use a custom map style, select **Custom** and enter in the Mapbox style URL
