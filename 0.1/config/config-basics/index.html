@@ -2244,9 +2244,17 @@
 <p>Configuration is only available for those users with the appropriate permission.</p>
 <h2 id="primary-configuration-area">Primary Configuration Area<a class="headerlink" href="#primary-configuration-area" title="Permanent link">&para;</a></h2>
 <p>The primary configuration area on a configuration page is typically a 2-panel card. For example, tables have a configuration area where the list of available fields are selectable on the left and the configurable values are displayed on the right. </p>
-<p>[Screenshot of table configuration panel with each side outlined and labeled]</p>
+<figure>
+<p><img alt="Configuration Panel for Table" src="../assets/config-panel-table.png" width="600" />
+  </p>
+<figcaption>Example configuration panel for table viewer component</figcaption>
+</figure>
 <p>The primary configuration may vary slightly depending on the UI component. For example, in the search bar configuration, the configuration area is a list of the searchable fields with checkboxes.</p>
-<p>[Screenshot of search bar configuration]</p>
+<figure>
+<p><img alt="Configuration Panel for Search" src="../assets/config-panel-search.png" width="300" />
+  </p>
+<figcaption>Example configuration panel for search bar component</figcaption>
+</figure>
 <h2 id="versions">Versions<a class="headerlink" href="#versions" title="Permanent link">&para;</a></h2>
 <p>A version is a saved configuration profile for an individual UI component. A user may use versions when experimenting with the configuration of a component before rolling it out to others. </p>
 <p>A version is specific to the user, in that no users can see another’s user versions. </p>
@@ -2254,10 +2262,18 @@
 <p>To create a version, use the <strong>Save To &gt; Create Version</strong> button in the upper right of the configuration panel. </p>
 <h3 id="save-a-version">Save A Version<a class="headerlink" href="#save-a-version" title="Permanent link">&para;</a></h3>
 <p>Once created, users can save their current component’s configuration to the version by clicking <strong>Save To &gt; Versions</strong> and selecting the version. Once saved, click <strong>Apply</strong> to apply the configuration to the component.</p>
-<p>[Save To Screenshot]</p>
+<figure>
+<p><img alt="Saving To a Version" src="../assets/versions-saveto.png" width="500" />
+  </p>
+<figcaption>Saving to configuration a version</figcaption>
+</figure>
 <h3 id="load-a-version">Load A Version<a class="headerlink" href="#load-a-version" title="Permanent link">&para;</a></h3>
 <p>To retrieve a previously saved version, click the <strong>Load From</strong> button in the upper left of the configuration panel and select the desired version. This will load that version’s configuration into the panel. Click <strong>Apply</strong> to the apply that version’s configuration to the component.</p>
-<p>[Load From Screenshot]</p>
+<figure>
+<p><img alt="Loading From a Version" src="../assets/versions-loadfrom.png" width="500" />
+  </p>
+<figcaption>Loading a configuration a version</figcaption>
+</figure>
 <h3 id="delete-a-version">Delete A Version<a class="headerlink" href="#delete-a-version" title="Permanent link">&para;</a></h3>
 <p>To delete a version, click the three dots icon next to <strong>Save To  &gt; Delete Versions</strong>, and select the version to delete. Confirm the deletion in the prompt.</p>
 <h2 id="configuring-a-page">Configuring a Page<a class="headerlink" href="#configuring-a-page" title="Permanent link">&para;</a></h2>
@@ -2280,8 +2296,7 @@
 <p>It’s common for an application to present data on the same page differently to users with different roles. For example, a field engineer may want to see the battery level and firmeware version of a device, while a customer service rep may want to see its last known location. </p>
 <ol>
 <li>
-<p>If the configuration is applicable to a specific role, assume the role by selecting it from the role selector. Access the role selector by clicking the username in upper right of the page and selecting the role under <strong>User Role</strong>.
-[Screenshot of role selector]</p>
+<p>If the configuration is applicable to a specific role, assume the role by selecting it from the role selector. Access the role selector by clicking the username in upper right of the page and selecting the role under <strong>User Role</strong>.</p>
 </li>
 <li>
 <p>Navigate to the page to where the configuration should be applied. For example, if the configuration is intended for the Assets page, navigate to the Assets page.</p>
@@ -2290,7 +2305,11 @@
 <p>If the configuration is meant to be applied to an existing dashboard, load the dashboard by selecting it from the dashboard selector at the top of the page.</p>
 </li>
 </ol>
-<p>[Screenshot of the dashboard selector]</p>
+<figure>
+<p><img alt="Dashboard selector" src="../assets/dashboard-selector.png" width="500" />
+  </p>
+<figcaption>Dashboard selector</figcaption>
+</figure>
 <h3 id="configure-each-component-on-the-page">Configure Each Component on the Page<a class="headerlink" href="#configure-each-component-on-the-page" title="Permanent link">&para;</a></h3>
 <p>Use the layout controller to place the desired components on the page. Refer to the documentation for the layout controller for more details.</p>
 <p>For each component, access the control panel and make the desired configuration changes. Click <strong>Apply</strong> in the configuration panel of that component once all the desired changes are performed. Refer to the document for the specific component for more details.</p>
@@ -2304,7 +2323,11 @@
 <p>To revert the changes back to its previously saved state, click the reverse circle icon.</p>
 </li>
 </ol>
-<p>[Screenshot of save &amp; revert of current dashboard]</p>
+<figure>
+<p><img alt="Save and revert dashboard changes" src="../assets/dashboard-saveto-revert.png" width="200" />
+  </p>
+<figcaption>Save and revert dashboard changes</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note: Default Dashboard</p>
 <p>Note: The Default dashboard is a user’s personal dashboard configuration for exact page location. Saving the configuration to the dashboard titled “Default” will only apply the configuration as the default dashboard to the current user, for currently assumed role, and to exact path for which the configuration was performed. </p>
@@ -2336,7 +2359,11 @@
 </ol>
 </li>
 </ol>
-<p>[Available To Screenshot]</p>
+<figure>
+<p><img alt="Available To Dashboard Options" src="../assets/dashboard-available-to.png" width="400" />
+  </p>
+<figcaption>Available To dashboard options</figcaption>
+</figure>
 <div class="admonition question">
 <p class="admonition-title">Saving to Current User &amp; Page Only</p>
 <p>Looking for an option to save the configured page to the current user for the current role and current path? Save the dashboard to the Default dashboard by click the check mark next to the left of the dashboard selector.</p>
@@ -2345,35 +2372,17 @@
 <p>The previous section on Saving the Dashboard produces a dashboard that is available for selection by a user on a give page. It does not yet specify whether it will load by default when a user visits that page.</p>
 <p>In order to apply the dashboard to pages so that it loads for given users, page locations, and roles, set the dashboard defaults. </p>
 <ol>
-<li>
-<p>Click the three dots icon next to the dashboard selector to load the list of editable dashboards</p>
-</li>
-<li>
-<p>Depending on how many dashboards you have configured and their availability on the page, you will see dashboards separated into the following categories based on availability criteria:</p>
-<ol>
-<li>
-<p><strong>Role</strong> - Dashboards that are available to show on this page based on the user’s role</p>
-</li>
-<li>
-<p><strong>Page</strong> - Dashboards that are available to show on this page based on the user’s page path in the application</p>
-</li>
-<li>
-<p><strong>[Name of Blueprint Type]</strong> (e.g. Assets) - Dashboards that are available to show on this page based on the type of blueprint that page is showing</p>
-</li>
-<li>
-<p><strong>Mine</strong> - Personal dashboards that are available to show on this page based on the type of blueprint that page is showing</p>
-</li>
+<li>Click the three dots icon next to the dashboard selector to load the list of editable dashboards</li>
+<li>Depending on how many dashboards you have configured and their availability on the page, you will see dashboards separated into the following categories based on availability criteria:<ol>
+<li><strong>Role</strong> - Dashboards that are available to show on this page based on the user’s role</li>
+<li><strong>Page</strong> - Dashboards that are available to show on this page based on the user’s page path in the application</li>
+<li><strong>[Name of Blueprint Type]</strong> (e.g. Assets) - Dashboards that are available to show on this page based on the type of blueprint that page is showing</li>
+<li><strong>Mine</strong> - Personal dashboards that are available to show on this page based on the type of blueprint that page is showing</li>
 </ol>
 </li>
-<li>
-<p>To set a dashboard to show by default on the page when it meets the availability criteria, select the dashboard &gt; <strong>Use as Default</strong>.</p>
-<ol>
-<li>
-<p>Only one dashboard from each section can be set as default (e.g. only one Role-level dashboard can be set as default, one Page-level dashboard can be set as default, etc.) </p>
-</li>
-<li>
-<p>In the event that multiple dashboards across each section is set as default, the application shows the default dashboard based on this ranking (from highest to lowest):</p>
-<ol>
+<li>To set a dashboard to show by default on the page when it meets the availability criteria, select the dashboard &gt; <strong>Use as Default</strong>.<ol>
+<li>Only one dashboard from each section can be set as default (e.g. only one Role-level dashboard can be set as default, one Page-level dashboard can be set as default, etc.) </li>
+<li>In the event that multiple dashboards across each section is set as default, the application shows the default dashboard based on this ranking (from highest to lowest):<ol>
 <li>Mine</li>
 <li>Role</li>
 <li>Page</li>
@@ -2384,6 +2393,10 @@
 </ol>
 </li>
 </ol>
+<figure>
+<p><img alt="Dashboard Use As Default" src="../assets/dashboard-use-as-default.png" width="400" /></p>
+<figcaption>Setting a dashboard to be default on this page for users in the Editor role</figcaption>
+</figure>
 <h3 id="managing-dashboards">Managing Dashboards<a class="headerlink" href="#managing-dashboards" title="Permanent link">&para;</a></h3>
 <h4 id="renaming-a-dashboard">Renaming A Dashboard<a class="headerlink" href="#renaming-a-dashboard" title="Permanent link">&para;</a></h4>
 <p>To rename a dashboard, click the three dots icon next to the dashboard selector and select the <strong>[dashboard name] &gt; Rename</strong>.</p>
