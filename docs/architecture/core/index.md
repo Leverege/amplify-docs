@@ -16,9 +16,9 @@ An Attribute defines a field in a Blueprint. There are several types of Attribut
 
 ## Device
 
-A Device represents a thing, either an IoT device or an organizational construct. Each Device has a Blueprint that defines what kind of thing it is. Internally, a Device has an platform generated id. The Device can have multiple source specific ids as well. It is captured through the concept of a network alias. The network alias consists of a Network Id, a alias key, and a value. An example of this triplet might be ('boat-network', 'esn', '5551212' ). This triplet allows the platform to map the external id to the internal id.
+A Device represents a thing, either an IoT device or an organizational construct. Each Device has a Blueprint that defines what kind of thing it is. Internally, a Device has an platform generated id. The Device can have multiple source specific ids as well. It is captured through the concept of a network alias. The network alias consists of a Network Id, a alias key, and a value. An example of this triplet might be ('boat-network', 'esn', '5551212' ). This triplet allows the platform to map the external id to the internal id. 
 
-Project Users can also be assigned permissions on a Device.
+!!! Tip "Project Users can also be assigned permissions on a Device."
 
 ## System
 
@@ -30,7 +30,7 @@ A Network represents a source of device data. When a device needs to be contacte
 
 ## Message Route
 
-A Message Route defines how a particular Message type ( deviceDataEventMsg for example ) is acted upon. This is used to select which reason scripts will run when a new data for a Device is received.
+A Message Route defines how a particular Message type (deviceDataEventMsg for example ) is acted upon. This is used to select which reason scripts will run when a new data for a Device is received.
 
 ## Reason Script
 
@@ -48,17 +48,12 @@ A Timer represents a task that needs to be trigger in a certain amount of time, 
 
 Templates are used to create branded emails or SMS notifications. When Reason triggers a send email request, a Template Id and contextual data can be supplied to produce the branded email.
 
-## Scenario
-
-A Scenario defines how data values for a particular Blueprint change over time. It uses a key framing system to allow the user to set values at given points in time. The intermediate values are computed by a function that exists between two key frame values. A Scenario can be played on a Simulated device.
-
 ## Users
 
-There are two types of users in the Leverege Platform:
+There are two types of users in the Leverege Stack:
 
-Platform Users are users that can create and edit a Project and all of the supporting pieces such as Blueprints, Networks, Scripts.
-
-Project Users are end users of the resulting product. They have access to Systems and Devices. Project User names are unique to a Project, so two different Projects can have a user with name 'demo'.
+* **Platform Users** are users that can create and edit a Project and all of the supporting pieces such as Blueprints, Networks, Scripts.
+* **Project Users** are end users of the resulting product. They have access to Systems and Devices. Project Users' usernames are unique to a Project, so two different Projects can have a user with the username 'demo'.
 
 ## Api Access
 
