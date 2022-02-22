@@ -59,7 +59,17 @@ nav :
      - Search: config/search-config.md
      - Map: config/map-config.md
      - Tables:
+        - config/tables/table-viewer.md
+        - config/tables/list-viewer.md
+        - config/tables/responsive-table.md
+        - config/tables/history-table-viewer.md
+        - config/tables/history-list-viewer.md
+        - config/tables/responsive-history-table.md
         - config/tables/parents.md
+     - Aggregations Viewer: config/aggregations-viewer.md
+     - Grouping Selector: config/grouping-selector.md
+     - Rollovers and Selections: config/rollover-selection.md
+     - Dashboard Viewer: config/dashboard-viewer.md
   - Features:
      - features/index.md
      - Account Access:
