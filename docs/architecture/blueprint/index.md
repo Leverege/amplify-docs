@@ -2,13 +2,6 @@
 
 ![type:video](https://www.loom.com/embed/61364cb8e4674755aa5baf738d898f13)
 
-<!-- blank line -->
-<figure class="video_container">
-  <iframe src="https://www.loom.com/embed/61364cb8e4674755aa5baf738d898f13" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
-<!-- blank line -->
-
-
 Blueprints define the structure of our data and relationship between data entities in our solution. Let's say you had a tracker in your system. You would create a tracker blueprint, then add all of the attributes (data fields) that tracker needs. For example, you might add a position attribute, a temperature attribute, and a serial number attribute. 
 
 Before creating your blueprint, let's review the two different types of blueprints our system supports. 
