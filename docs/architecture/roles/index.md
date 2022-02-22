@@ -8,6 +8,11 @@ For example, if you were using RBAC to control access for a cow tracking applica
 
 When planning your access control strategy, it's best practice to assign users the fewest number of permissions that allow them to get their work done. This is called the Principle of Least Privilege. 
 
+<figure markdown>
+![!Roles](assets/introroles.png){ width="700" }
+  <figcaption>Roles & Permissions UI</figcaption>
+</figure>
+
 
 ## Terminology
 

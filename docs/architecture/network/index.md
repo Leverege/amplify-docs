@@ -63,7 +63,7 @@ To tie this together, this tells us that a parsed inbound Cow Tracker device mes
 {
   type : 'inboundDataEventMsg',
   time : 1619388341985,
-  networkId : 'tusk-network',
+  networkId : 'cow-tracker-network',
   aliasKey : 'imei',
   deviceId : '981472630769911',
   data : [
