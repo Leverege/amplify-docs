@@ -57,3 +57,12 @@ Metadata Example
 
 
 !!! Tip "SVG files will have the best resolution"
+
+## Naming Conventions for Illustrations
+
+| Image Naming Convention | Description |
+|-----------|-----------|
+| no-data.svg | Default no data illustration |
+| no-search-results.svg | Default no search results illustration |
+| no-data-<blueprint>.svg | Blueprint-specific no data illustration. Ex. no-data-tracker.svg |
+| no-search-results-<blueprint>.svg | Blueprint-specific no search results illustration |
