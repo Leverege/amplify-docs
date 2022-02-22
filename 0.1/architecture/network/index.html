@@ -1911,18 +1911,12 @@
     Creating a Network
   </a>
   
-    <nav class="md-nav" aria-label="Creating a Network">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-concepts-networkid-aliaskey-deviceid" class="md-nav__link">
-    Core Concepts: networkId, aliasKey, deviceId
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-good-network-values" class="md-nav__link">
+    Choosing Good Network Values
+  </a>
   
 </li>
       
@@ -1940,43 +1934,81 @@
                 
 
 <h1 id="networks">Networks<a class="headerlink" href="#networks" title="Permanent link">&para;</a></h1>
-<p>A Network represents a source of device data. When a device needs to be contacted, the Network is used as the target. In particular, messages are published to the <networkId>-outbound topic. The ingestion service setup to manage that network's data can listen on this topic and then communicate appropriately to the source server. The Network Id is also part external identity of a Device.</p>
-<p>Inside the Leverege Stack, devices (and many other elements of a project) are assigned a base 62 UUID. These look something like this: 1pTW01YR4mUAEbcHhbXHk8. </p>
-<p>But these IDs are not how devices refer to themselves when sending a message, or how users refer to a device when they need to interact with it. The SmartWalrus tracker we will be integrating with, recall, sends an IMEI as its identifier when it reports. A worker at a Tusk Trucking facility might pair a tracker to a truck by scanning a QR code or type a name from a label printed on the device into the system.  For this project, let’s assume the SmartWalrus trackers have a QR code which encodes the MAC address of the tracker.  </p>
+<p>A Network represents a source of device data. When a device needs to be contacted, the Network is used as the target. In particular, messages are published to the <networkId>-outbound topic. The ingestion service setup to manage that network's data can listen on this topic and then communicate appropriately to the source server. The Network ID is also part external identity of a Device.</p>
+<p>Inside the Leverege Stack, devices (and many other elements of a project) are assigned a Base62 UUID. Base62 IDs consist of the capital letters A-Z, the lower case letters a-z, and the numbers 0–9. It is a binary-to-text encoding schemes that represent binary data in an ASCII string format. An example of a UUID is <strong>1pTW01YR4mUAEbcHhbXHk8</strong>. </p>
+<p>But these IDs are not how devices refer to themselves when sending a message, or how users refer to a device when they need to interact with it. Our example tracker from the cow solution sends an IMEI as its identifier when it reports. A farm hand might pair a tracker to a cow by scanning a QR code or typing an ID from a label printed on the tracker.  For this project, let’s assume the cow trackers have a QR code which encodes the serial number of the tracker.</p>
 <p>Networks let us define how our internal devices will be mapped onto the the source, and set up messaging topics that allow communication with the device using these external names. </p>
 <h2 id="creating-a-network">Creating a Network<a class="headerlink" href="#creating-a-network" title="Permanent link">&para;</a></h2>
-<p>In your Architect project, click the Networks tab on the left side, and click the + Custom button. The network creation form asks for three fields: a name, an api key (what we’ll call a networkId for reasons that will be come clear in a moment), and list of network identifiers (what we’ll call aliasKeys). (These are confusing names. Can we change them?)</p>
-<h3 id="core-concepts-networkid-aliaskey-deviceid">Core Concepts: networkId, aliasKey, deviceId<a class="headerlink" href="#core-concepts-networkid-aliaskey-deviceid" title="Permanent link">&para;</a></h3>
-<p>To understand what work these options are doing, let’s take a look at our message docs for inbound messages (NEED TO ACTUALLY INCLUDE A DOC FOR INBOUND DEVICE MESSAGE IN THE README). Note these three items:</p>
-<p>/**
- ...
- * @param {string} data.networkId The networkId of the source
- * @param {string} data.deviceId A string representing the external name of the device. This could be an IotHub device id, a MAC address of a sensor, etc
- * @param {string} data.aliasKey The name of the key that forms the mapping between the external device’s id and the internal device. This is stored in the internal device’s aliases list, and tends to be unique per network.
- ...
- */</p>
-<p>Inbound messages include a networkId, an aliasKey, and a deviceId. These three pieces of information tell our platform how to lookup that device:</p>
-<p>deviceId : The external name for the individual device (e.g., ‘981472630769911’)</p>
-<p>aliasKey : This describes what type of identifier the given device ID is (is it an IMEI? A MAC address?). It refers to a identifier type that we will enter into our network definition.</p>
-<p>networkId : (called an ‘Api Key’ in Imagine) The tells us which network, in of all of the networks on the given API server, the API should look to find this device. (There may be many projects running on the same API server which identify their devices with MAC addresses or IMEIs.)</p>
+<figure>
+<p><div class="lightgallery"><a data-sub-html="Network" href="assets/network.png"><img alt="Network" src="assets/network.png" width="700" />
+  </a></div></p>
+<figcaption>Creating a Network</figcaption>
+</figure>
+<p>In your Architect project, click the Networks tab on the left side, and click the Add Custom button in the top right corner. The network creation form asks for three fields: a name, an api key (what we’ll call a networkId for reasons that will be come clear in a moment), and list of network identifiers (what we’ll call aliasKeys).</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Value</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Display Name</td>
+<td>This is the display name of your network.</td>
+</tr>
+<tr>
+<td>Device ID</td>
+<td><code>deviceId</code></td>
+<td>This is the identifier of the given device ID. In our example of the cow tracker, the tracker's identifier is a serial number.</td>
+</tr>
+<tr>
+<td>Identifiers</td>
+<td><code>aliasKey</code></td>
+<td>This describes what type of identifier the given device ID is. It refers to a identifier type that we will enter into our network definition.</td>
+</tr>
+<tr>
+<td>API Key</td>
+<td><code>networkId</code></td>
+<td>This is used as the networkID and tells us which network, from the list of the networks on the given API server, the API should look to find this device.</td>
+</tr>
+</tbody>
+</table>
+<p>To understand what work these options are doing, let’s take a look at our message docs for inbound messages. Inbound messages include a networkId, an aliasKey, and a deviceId. Note the example below:</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="err">/**</span><span class="w"></span>
+<span class="w"> </span><span class="err">...</span><span class="w"></span>
+<span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="err">@param</span><span class="w"> </span><span class="p">{</span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">}</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">.</span><span class="kc">net</span><span class="err">workId</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="kc">net</span><span class="err">workId</span><span class="w"> </span><span class="err">o</span><span class="kc">f</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">source</span><span class="w"></span>
+<span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="err">@param</span><span class="w"> </span><span class="p">{</span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">}</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">.deviceId</span><span class="w"> </span><span class="err">A</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">represe</span><span class="kc">nt</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">ex</span><span class="kc">ternal</span><span class="w"> </span><span class="kc">na</span><span class="err">me</span><span class="w"> </span><span class="err">o</span><span class="kc">f</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">device.</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">could</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">serial</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="p">,</span><span class="w"> </span><span class="err">MAC</span><span class="w"> </span><span class="err">address</span><span class="p">,</span><span class="w"> </span><span class="err">VIN</span><span class="p">,</span><span class="w"> </span><span class="err">e</span><span class="kc">t</span><span class="err">c.</span><span class="w"></span>
+<span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="err">@param</span><span class="w"> </span><span class="p">{</span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">}</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">.aliasKey</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="kc">na</span><span class="err">me</span><span class="w"> </span><span class="err">o</span><span class="kc">f</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">key</span><span class="w"> </span><span class="kc">t</span><span class="err">ha</span><span class="kc">t</span><span class="w"> </span><span class="kc">f</span><span class="err">orms</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">mappi</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">be</span><span class="kc">t</span><span class="err">wee</span><span class="kc">n</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">ex</span><span class="kc">ternal</span><span class="w"> </span><span class="err">device’s</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="err">d</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">i</span><span class="kc">nternal</span><span class="w"> </span><span class="err">device.</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">ored</span><span class="w"> </span><span class="err">i</span><span class="kc">n</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">i</span><span class="kc">nternal</span><span class="w"> </span><span class="err">device’s</span><span class="w"> </span><span class="err">aliases</span><span class="w"> </span><span class="err">lis</span><span class="kc">t</span><span class="p">,</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="err">d</span><span class="w"> </span><span class="kc">ten</span><span class="err">ds</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="err">ique</span><span class="w"> </span><span class="err">per</span><span class="w"> </span><span class="kc">net</span><span class="err">work.</span><span class="w"></span>
+<span class="w"> </span><span class="err">...</span><span class="w"></span>
+<span class="w"> </span><span class="err">*/</span><span class="w"></span>
+</code></pre></div>
 <p>API Server will, in essence, look at the given network for a device with an aliasKey value equal to the deviceId, and route the message to that device. </p>
-<p>In creating the network, we are defining the networkId and the aliasKeys on that network. The actual deviceId gets created at the device level.</p>
-<p>Choosing Good Network Values
-Back to our Imagine UI, where we are creating the network, we need to choose the name, networkId (there called ‘Api Key’), and available aliasKeys (there called identifiers). </p>
-<p>The name is simply a human readable display name for the network, so that we can pick it out on our list of networks. We are creating the network for our SmartWalrus trackers, so let’s call it Tusk SmartWalrus Network.</p>
-<p>The networkId (entered in the ‘Api Key’ field) must be unique across all projects in Imagine. It should be short, and describe the source / interface. So ‘tusk-tracker-network’ is good, something like ‘dev-trackers’ would be bad. (By convention, networkIds are skewer cased.)</p>
-<p>The aliasKeys are the types of external identifiers. The devices provide us with IMEIs when they send messages, and the users will use the MAC addresses. It’s a good practice to be descriptive and specific with these names (and not just default to ‘deviceId’, for example). So lets set that field to ‘imei,macAddress’.</p>
-<p>To tie this together, this tells us that a parsed inbound SmartWalrus device message from our ingestor might look something like this:</p>
-<p>{
-  type : 'inboundDataEventMsg',
-  time : 1619388341985,
-  networkId : 'tusk-network',
-  aliasKey : 'imei',
-  deviceId : '981472630769911',
-  data : [
-   { path : 'temperature', value : 30.20 }
-  ],
-}</p>
+<p>When creating the network, we are defining the <code>networkId</code> and the <code>aliasKeys</code> on that network. The actual <code>deviceId</code> gets created at the device level.</p>
+<h2 id="choosing-good-network-values">Choosing Good Network Values<a class="headerlink" href="#choosing-good-network-values" title="Permanent link">&para;</a></h2>
+<p>Back to our Architect UI, where we are creating the network, we need to choose the name, API Key ('networkId'), and Identifiers ('aliasKeys'). </p>
+<p>The name is simply a human readable display name for the network, so that we can pick it out on our list of networks. We are creating the network for our cow trackers, so let's call it Cow GPS Tracker Network. Note that you should not include your environment in your network name (for example, Dev Tracker Network is a bad name). </p>
+<p>The networkId (entered in the ‘Api Key’ field) must be unique across all projects in your Architect instance. It should be short, and describe the source / interface. For our example, we'll use  ‘cow-tracker-network’. By convention, networkIds are skewer cased.</p>
+<p>The aliasKeys are the types of external identifiers. The devices provide us with IMEIs when they send messages, and the users will use the serial number. It’s a good practice to be descriptive and specific with these names (and not just default to ‘deviceId’, for example). So lets set that field to ‘imei,serialNumber’.</p>
+<figure>
+<p><div class="lightgallery"><a data-sub-html="Network" href="assets/networkcreate.png"><img alt="Network" src="assets/networkcreate.png" width="700" />
+  </a></div></p>
+<figcaption>Creating a Network</figcaption>
+</figure>
+<p>To tie this together, this tells us that a parsed inbound Cow Tracker device message from our ingestor might look something like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ype</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">&#39;i</span><span class="kc">n</span><span class="err">bou</span><span class="kc">n</span><span class="err">dDa</span><span class="kc">ta</span><span class="err">Eve</span><span class="kc">nt</span><span class="err">Msg&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kc">t</span><span class="err">ime</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1619388341985</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kc">net</span><span class="err">workId</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kc">tus</span><span class="err">k</span><span class="mi">-</span><span class="kc">net</span><span class="err">work&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="err">aliasKey</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">&#39;imei&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="err">deviceId</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">981472630769911</span><span class="err">&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="err">da</span><span class="kc">ta</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="err">pa</span><span class="kc">t</span><span class="err">h</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kc">te</span><span class="err">mpera</span><span class="kc">ture</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">30.20</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
               
             </article>
