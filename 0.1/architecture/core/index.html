@@ -1984,13 +1984,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scenario" class="md-nav__link">
-    Scenario
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#users" class="md-nav__link">
     Users
   </a>
@@ -2026,14 +2019,16 @@
 <h2 id="attribute">Attribute<a class="headerlink" href="#attribute" title="Permanent link">&para;</a></h2>
 <p>An Attribute defines a field in a Blueprint. There are several types of Attributes such as string, numbers, units, timestamps and relationships. The Attributes can be used to dynamically interpret data in a Device.</p>
 <h2 id="device">Device<a class="headerlink" href="#device" title="Permanent link">&para;</a></h2>
-<p>A Device represents a thing, either an IoT device or an organizational construct. Each Device has a Blueprint that defines what kind of thing it is. Internally, a Device has an platform generated id. The Device can have multiple source specific ids as well. It is captured through the concept of a network alias. The network alias consists of a Network Id, a alias key, and a value. An example of this triplet might be ('boat-network', 'esn', '5551212' ). This triplet allows the platform to map the external id to the internal id.</p>
-<p>Project Users can also be assigned permissions on a Device.</p>
+<p>A Device represents a thing, either an IoT device or an organizational construct. Each Device has a Blueprint that defines what kind of thing it is. Internally, a Device has an platform generated id. The Device can have multiple source specific ids as well. It is captured through the concept of a network alias. The network alias consists of a Network Id, a alias key, and a value. An example of this triplet might be ('boat-network', 'esn', '5551212' ). This triplet allows the platform to map the external id to the internal id. </p>
+<div class="admonition tip">
+<p class="admonition-title">Project Users can also be assigned permissions on a Device.</p>
+</div>
 <h2 id="system">System<a class="headerlink" href="#system" title="Permanent link">&para;</a></h2>
 <p>A System holds a collection of Devices. Project Users can be given access rights to a System, allowing different users to access different collections of Devices.</p>
 <h2 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h2>
 <p>A Network represents a source of device data. When a device needs to be contacted, the Network is used as the target. In particular, messages are published to the <networkId>-outbound topic. The ingestion service setup to manage that network's data can listen on this topic and then communicate appropriately to the source server. The Network Id is also part external identity of a Device.</p>
 <h2 id="message-route">Message Route<a class="headerlink" href="#message-route" title="Permanent link">&para;</a></h2>
-<p>A Message Route defines how a particular Message type ( deviceDataEventMsg for example ) is acted upon. This is used to select which reason scripts will run when a new data for a Device is received.</p>
+<p>A Message Route defines how a particular Message type (deviceDataEventMsg for example ) is acted upon. This is used to select which reason scripts will run when a new data for a Device is received.</p>
 <h2 id="reason-script">Reason Script<a class="headerlink" href="#reason-script" title="Permanent link">&para;</a></h2>
 <p>A Reason Script is code that can be run in response to new Message or a Timer. These Scripts are used to supply business logic to your project. Actions like Sending out a daily status email or calculating alert states and sending notifications when they occur would fall under the domain of a Reason Script. These Scripts can also interface with external systems, as needed.</p>
 <h2 id="reason-trigger">Reason Trigger<a class="headerlink" href="#reason-trigger" title="Permanent link">&para;</a></h2>
@@ -2042,12 +2037,12 @@
 <p>A Timer represents a task that needs to be trigger in a certain amount of time, or repeatedly. These are often used to tell a Reason Script to run periodically.</p>
 <h2 id="template">Template<a class="headerlink" href="#template" title="Permanent link">&para;</a></h2>
 <p>Templates are used to create branded emails or SMS notifications. When Reason triggers a send email request, a Template Id and contextual data can be supplied to produce the branded email.</p>
-<h2 id="scenario">Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
-<p>A Scenario defines how data values for a particular Blueprint change over time. It uses a key framing system to allow the user to set values at given points in time. The intermediate values are computed by a function that exists between two key frame values. A Scenario can be played on a Simulated device.</p>
 <h2 id="users">Users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h2>
-<p>There are two types of users in the Leverege Platform:</p>
-<p>Platform Users are users that can create and edit a Project and all of the supporting pieces such as Blueprints, Networks, Scripts.</p>
-<p>Project Users are end users of the resulting product. They have access to Systems and Devices. Project User names are unique to a Project, so two different Projects can have a user with name 'demo'.</p>
+<p>There are two types of users in the Leverege Stack:</p>
+<ul>
+<li><strong>Platform Users</strong> are users that can create and edit a Project and all of the supporting pieces such as Blueprints, Networks, Scripts.</li>
+<li><strong>Project Users</strong> are end users of the resulting product. They have access to Systems and Devices. Project Users' usernames are unique to a Project, so two different Projects can have a user with the username 'demo'.</li>
+</ul>
 <h2 id="api-access">Api Access<a class="headerlink" href="#api-access" title="Permanent link">&para;</a></h2>
 <p>The Api Access key is used to allow a server to communicate with the Api Server as an admin of the project without having to login. This key is used with the api-service library.</p>
 
