@@ -8,6 +8,11 @@ To access the history list viewer configuration, click the gear icon in the uppe
 
 ## Configuring the History List Viewer
 
+<figure markdown>
+![History list viewer config panel](assets/history-list-config.png){ width="600" }
+  <figcaption>History list viewer configuration panel</figcaption>
+</figure>
+
 ### Attribute Configuration
 
 The currently displayed attributes are shown in the list on the left side of the panel.

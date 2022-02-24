@@ -2,11 +2,18 @@
 
 A responsive table is a component that changes its presentation of its data based on the size of the page or panel that it occupies. When a user drags the boundaries of a responsive table to smaller than a given threshold or resizes the page, the view switches from a table viewer to a list viewer.
 
-The responsive table is called **Table/List** when selecting it from the layout controller.
+!!! Tip "Table/List"
+    The responsive table is called **Table/List** when selecting it from the layout controller.
 
-[Screenshot: view of responsive table showing as a table viewer when component is expanded]
+<figure markdown>
+![Table viewer responsive panel](assets/table-viewer-responsive.png){ width="600" }
+  <figcaption>View of responsive table showing as a table viewer when component is expanded</figcaption>
+</figure>
 
-[Screenshot: view of responsive table showing as a list viewer when component is collapsed
+<figure markdown>
+![List viewer responsive panel](assets/list-viewer-responsive.png){ width="300" }
+  <figcaption>View of responsive table showing as a list viewer when component is collapsed</figcaption>
+</figure>
 
 ## Accessing the Responsive Table Configuration
 

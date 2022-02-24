@@ -8,7 +8,8 @@ When a user drags the boundaries or resizes the page containing a responsive his
 
 To access the responsive table configuration, click the gear icon in the upper right of the component and select **Edit Settings**.
 
-The responsive history table is called **History Table/List** in the layout controller.
+!!! Tip "History Table/List"
+    The responsive history table is called **History Table/List** in the layout controller.
 
 ## Configuring the Responsive Table
 

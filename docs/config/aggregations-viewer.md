@@ -8,8 +8,10 @@ The component can be used in a number different ways. For example, the aggregati
 1. Show the counts of devices by zone
 1. Show the average count of assets in each zone
 
-[Screenshot example of the aggregation viewer showing counts of vehicles by make using the terms aggregation type]
-
+<figure markdown>
+![Aggregations viewer example](assets/aggregations-viewer.png){ width="500" }
+  <figcaption>Aggregations viewer example</figcaption>
+</figure>
 ## Accessing the Aggregations Viewer Configuration
 
 To access the aggregations viewer configuration, verify that the aggregations viewer component is added to the page using the layout controller. Then click the gear icon on the right side of the aggregations viewer panel and select Edit Settings.

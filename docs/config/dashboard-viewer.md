@@ -6,8 +6,15 @@ The dashboard viewer is a component that displays details of assets, devices, or
 
 To access the dashboard configuration, double click an entry in a table viewer or list viewer. Then scroll down to the bottom of the page and click **Edit Layout**. The dashboard will become editable by surfacing a series of buttons to add, remove, and update cards.
 
-[Screenshot: location of Edit Layout button to edit the dashboard]
-[Screeneshot: view of dashboard configuration mode]
+<figure markdown>
+![Accessing the edit mode of dashboard](assets/dashboard-edit-layout.png){ width="600" }
+  <figcaption>Accessing the dashboard configuration edit mode</figcaption>
+</figure>
+
+<figure markdown>
+![View of the dashboard in edit mode](assets/dashboard-edit-mode.png){ width="600" }
+  <figcaption>View of a dashboard in edit mode</figcaption>
+</figure>
 
 ## Configuring the Dashboard Viewer
 

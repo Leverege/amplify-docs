@@ -8,8 +8,10 @@ To access the table configuration, click the gear icon in the upper right of the
 
 ## Configuring the Table Viewer
 
-[Screnshot of table viewer configuration panel]
-
+<figure markdown>
+![Table viewer config panel](assets/table-viewer-config.png){ width="600" }
+  <figcaption>Table viewer configuration panel</figcaption>
+</figure>
 The table view is organized by columns. The currently displayed columns are shown in the list on the left side of the panel.
 
 To add a column to the table, click **Add > [new column]**.
@@ -43,8 +45,8 @@ The Cell configuration section refers to text in the main body of the table. 
 
 ### Allowing fields to be editable
 
-To enable fields in the table to be editable by user input, click the gear icon in the upper right of the component and select **Editable**. Attributes in the corresponding blueprint(s) that have a Source = User become editable by user by double clicking the cell contents.
+To enable fields in the table to be editable by user input, click the gear icon in the upper right of the component and select **Editable**. In addition, the fields must be set to Source = `User` in Architect. This will make the following types of fields editable on the table by creating dropdowns:
 
-[Screenshot: example of the user-editable Make attribute with a source of User]
-
-[Screenshot: example of the Make field being editable on UI when table is set to editable]
+* Attributes that represent parent blueprints (e.g. the Company of an Asset). These fields must be populated using parent setters in Architect. See the documentation on setters for more information.
+* Attributes that are associated in a one-to-one relationship with the blueprints of the current page. For example, if assets and trackers are paired one-to-one, the Tracker field on the Assets table can be made editable, which will expose a dropdown listing all trackers for pairing
+* Fields using enum types (e.g. a discrete set of possible values)

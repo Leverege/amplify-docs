@@ -9,10 +9,18 @@ Users can configure the appearance of the rollover card that surface when a user
 
 To access the rollover configuration, click the user account settings menu in the upper right of the page and select **Settings > Global Configuration**. 
 
+<figure markdown>
+![Global configuration navigation](assets/global-config.png){ width="450" }
+  <figcaption>Global configuration settings</figcaption>
+</figure>
+
 * To configure the rollover card, select the **Rollovers** list item under **Settings**
 * To configure the selection card, select the **Selections** list item under **Settings**
 
-[Screenshot of rollover configuration page]
+<figure markdown>
+![Rollover configuration panel](assets/rollover-config-panel.png){ width="800" }
+  <figcaption>Rollover configuration panel</figcaption>
+</figure>
 
 ## Configuring The Rollover & Selection Card
 

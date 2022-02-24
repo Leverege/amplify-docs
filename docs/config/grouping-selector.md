@@ -4,7 +4,10 @@ A grouping selector is a UI component that applies exclusivity/filtering to data
 
 A grouping selector will also show the count of devices that are in each group. For example, assets in an indoor facility may be grouped by floors.
 
-[Screenshot of grouping selector]
+<figure markdown>
+![Grouping selector example](assets/grouping-selector.png){ width="500" }
+  <figcaption>Grouping selector example</figcaption>
+</figure>
 
 ## Adding a Grouping Selector
 

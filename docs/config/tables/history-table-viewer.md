@@ -8,9 +8,12 @@ To access the history table configuration, click the gear icon in the upper righ
 
 ## Configuring the History Table Viewer
 
-### History Screen Options
+<figure markdown>
+![History table config panel](assets/history-table-config.png){ width="600" }
+  <figcaption>History table viewer configuration panel</figcaption>
+</figure>
 
-[Screenshot of history table viewer configuration panel]
+### History Screen Options
 
 The history table view is organized by columns. The currently displayed columns are shown in the list on the left side of the panel.
 

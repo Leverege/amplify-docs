@@ -10,7 +10,10 @@ To access the responsive table configuration, click the gear icon in the upper r
 
 The list viewer shows data in a card format. By default, the primary label on the card corresponds to the primary name attribute of the blueprint of the page (e.g. Vehicles). This can be changed in the **Options > Title Attribute** field by specifying the desired title in the format `[blueprintName].[attribute]`.
 
-[Screenshot of List Viewer configuration panel]
+<figure markdown>
+![List viewer config panel](assets/list-viewer-config.png){ width="600" }
+  <figcaption>List viewer configuration panel</figcaption>
+</figure>
 
 The currently displayed attributes are shown in the list on the left side of the panel.
 
