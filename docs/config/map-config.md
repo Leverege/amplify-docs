@@ -4,7 +4,10 @@
 
 To access the map configuration options, click the gear icon at the bottom of the map component and select **Edit Settings**.
 
-[Screenshot of map settings gear icon]
+<figure markdown>
+![Map settings icon](assets/map-settings.png){ width="500" }
+  <figcaption>Locating the map settings icon</figcaption>
+</figure>
 
 ## Configuring Map Layers
 
@@ -12,7 +15,10 @@ Icons and geofences on maps are represented as layers. The layers menu lists the
 
 To update the ordering of which layers display over others, click and drag the name of the layer into the desired position.
 
-[Screenshot of map config panel with layers showing]
+<figure markdown>
+![Map settings panel](assets/map-settings-panel.png){ width="700" }
+  <figcaption>Map configuration panel</figcaption>
+</figure>
 
 ## Configuration Options for Position Attributes
 
@@ -55,18 +61,19 @@ For position attributes (e.g. user position, asset positions, device positions),
 
     * **Zoom to Scale**: To have the scale change based on zoom level, check the box next to **Zoom to Scale**. Set the additional scaling factor to take effect at the starting zoom level threshold and the additional scaling factor that is applied at the ending zoom level threshold. The system will additionally scale the icon according to the zoom level.
         * For example, in the below configuration: 
-            * The vehicle icons will scale to 2 at a minimum upon rollover
+            * The asset icons will scale to 2 at a minimum upon rollover
             * Prior to a zoom level of 5, the icon will scale by 2 upon rollover
             * Starting at a zoom level of 5 to a zoom level of 10, the vehicle icons will scale proportionally from a scale of 2 to a scale of 4 upon rollover (4 = original scale of 2 times the factor of 2 at zoom level 10)
             * After zoom level 10, the icon will scale by 4 upon rollover (4 = original scale of 2 times the factor of 2 at zoom level 10).
 
-            [Screenshot of zoom to scale levels]
+<figure markdown>
+![Map zoom to scale level](assets/map-settings-zoom-scale.png){ width="700" }
+  <figcaption>Zoom to scale settings</figcaption>
+</figure>
 
 ## Configuration Options for Geofence/Floor Attributes
 
 ### Visibility
-
-[Screenshot of visibility tab of geofence/floor layers on map configuration]
 
 * **Visible**: To set the layer to be visible, check the box next to Visible. To hide the layer, uncheck the box.
 * **Zoom**: 
@@ -84,8 +91,6 @@ For position attributes (e.g. user position, asset positions, device positions),
         Configuration of the rollover and selection cards themselves are performed in **Global Configuration**
 
 ### Appearance
-
-[Screenshot of Appearance tab of geofence/floor layers on map configuration]
 
 * **Fill Color**: Set the fill color using a set of known rgb values (e.g. rgb(0,0,200))
 * **Fill Opacity**: Set the fill opacity using a value between 0 (transparent) to 1 (opaque)
@@ -105,15 +110,11 @@ For position attributes (e.g. user position, asset positions, device positions),
 
 ### Rollover
 
-[Screenshot of rollover tab of geofence/floor layers on map configuration]
-
 To set specific geofence/floor appearance properties to display upon rollover, go to the **Rollover** tab. Fill, outline, and label properties are configurable to change upon rollover.
 
 See the documentation on the appearance tab for details on the settings available to configure upon rollover.
 
 ### Selected
-
-[Screenshot of selected tab of geofence/floor layers on map configuration]
 
 To set specific geofence/floor appearance properties to display upon selection, go to the **Selection** tab. Fill, outline, and label settings are configurable to change upon selection.
 
@@ -121,8 +122,10 @@ To set specific geofence/floor appearance properties to display upon selection, 
 
 To change the map style, go to the **Options** tab on the map configuration panel. Users can select from pre-defined styles or supply their own custom style using Mapbox.
 
-[Screenshot of map style configuration options]
-
+<figure markdown>
+![Map style config](assets/map-style.png){ width="300" }
+  <figcaption>Map style configuration options</figcaption>
+</figure>
 To change the map style, select a style from the dropdown:
 
 * To use a pre-defined style (e.g. satellite, streets, etc.), select it from the list

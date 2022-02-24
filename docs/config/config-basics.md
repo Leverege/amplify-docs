@@ -28,7 +28,7 @@ The primary configuration area on a configuration page is typically a 2-panel ca
 The primary configuration may vary slightly depending on the UI component. For example, in the search bar configuration, the configuration area is a list of the searchable fields with checkboxes.
 
 <figure markdown>
-![Configuration Panel for Search](assets/config-panel-search.png){ width="300" }
+![Configuration Panel for Search](assets/config-panel-search.png){ width="500" }
   <figcaption>Example configuration panel for search bar component</figcaption>
 </figure>
 
@@ -107,7 +107,7 @@ Once all configuration to all components have been completed, a user can save th
 
 
 <figure markdown>
-![Save and revert dashboard changes](assets/dashboard-saveto-revert.png){ width="200" }
+![Save and revert dashboard changes](assets/dashboard-saveto-revert.png){ width="300" }
   <figcaption>Save and revert dashboard changes</figcaption>
 </figure>
 
@@ -165,7 +165,7 @@ In order to apply the dashboard to pages so that it loads for given users, page 
         1. Default
 
 <figure markdown>
-![Dashboard Use As Default](assets/dashboard-use-as-default.png){ width="400" }
+![Dashboard Use As Default](assets/dashboard-use-as-default.png){ width="500" }
 <figcaption>Setting a dashboard to be default on this page for users in the Editor role</figcaption>
 </figure>
 
