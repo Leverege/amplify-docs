@@ -2054,7 +2054,11 @@
 <h2 id="accessing-the-table-viewer-configuration">Accessing the Table Viewer Configuration<a class="headerlink" href="#accessing-the-table-viewer-configuration" title="Permanent link">&para;</a></h2>
 <p>To access the table configuration, click the gear icon in the upper right of the component and select Edit Settings.</p>
 <h2 id="configuring-the-table-viewer">Configuring the Table Viewer<a class="headerlink" href="#configuring-the-table-viewer" title="Permanent link">&para;</a></h2>
-<p>[Screnshot of table viewer configuration panel]</p>
+<figure>
+<p><img alt="Table viewer config panel" src="../assets/table-viewer-config.png" width="600" />
+  </p>
+<figcaption>Table viewer configuration panel</figcaption>
+</figure>
 <p>The table view is organized by columns. The currently displayed columns are shown in the list on the left side of the panel.</p>
 <p>To add a column to the table, click <strong>Add &gt; [new column]</strong>.</p>
 <p>To reorder the columns, click and drag the column you wish to reorder into the desired location in the list.</p>
@@ -2083,9 +2087,12 @@
 <li><strong>Cell Background</strong>: To set the color of the cell background text, specify a color in the <strong>Background</strong> field. <em>Note: This only changes the color behind the text, it does not change the color of the entire cell.</em></li>
 </ul>
 <h3 id="allowing-fields-to-be-editable">Allowing fields to be editable<a class="headerlink" href="#allowing-fields-to-be-editable" title="Permanent link">&para;</a></h3>
-<p>To enable fields in the table to be editable by user input, click the gear icon in the upper right of the component and select <strong>Editable</strong>. Attributes in the corresponding blueprint(s) that have a Source = User become editable by user by double clicking the cell contents.</p>
-<p>[Screenshot: example of the user-editable Make attribute with a source of User]</p>
-<p>[Screenshot: example of the Make field being editable on UI when table is set to editable]</p>
+<p>To enable fields in the table to be editable by user input, click the gear icon in the upper right of the component and select <strong>Editable</strong>. In addition, the fields must be set to Source = <code>User</code> in Architect. This will make the following types of fields editable on the table by creating dropdowns:</p>
+<ul>
+<li>Attributes that represent parent blueprints (e.g. the Company of an Asset). These fields must be populated using parent setters in Architect. See the documentation on setters for more information.</li>
+<li>Attributes that are associated in a one-to-one relationship with the blueprints of the current page. For example, if assets and trackers are paired one-to-one, the Tracker field on the Assets table can be made editable, which will expose a dropdown listing all trackers for pairing</li>
+<li>Fields using enum types (e.g. a discrete set of possible values)</li>
+</ul>
 
               
             </article>

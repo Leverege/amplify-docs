@@ -2011,7 +2011,11 @@
 <p>Users can configure which fields are searchable on a given dashboard. When a user searches for one or more terms in the search bar, the system will search among the selected fields for a result.</p>
 <h2 id="accessing-the-search-configuration">Accessing the Search Configuration<a class="headerlink" href="#accessing-the-search-configuration" title="Permanent link">&para;</a></h2>
 <p>To access the search configuration panel, click the gear icon on the right side of the search bar.</p>
-<p>[Screenshot of search bar configuration]</p>
+<figure>
+<p><img alt="Configuration Panel for Search" src="../assets/config-panel-search.png" width="500" />
+  </p>
+<figcaption>Example configuration panel for search bar component</figcaption>
+</figure>
 <h2 id="configuring-search">Configuring Search<a class="headerlink" href="#configuring-search" title="Permanent link">&para;</a></h2>
 <p>To select a field to be included in the search, check the box next to the field. Changes performed here will be applied to the currently shown dashboard.</p>
 <p>To reset the search criteria to the default for the persona, click the Reset button in the upper right of the panel.</p>
@@ -2024,6 +2028,14 @@
 <p>This will add a QR code icon in the search bar when the attribute is configured to be among the searchable fields. The QR code icon will be hidden if the attribute is not configured to be among the searchable fields.</p>
 <p>If a QR code contains multiple terms that need to be parsed prior to search, set the <code>scanTextHandler</code> path in the attribute metadata. </p>
 <p>See the attribute documentation for <code>scanTextHandler</code> for more details.</p>
+<figure>
+<p><img alt="Adding the scananbleQr tag in Architect" src="../assets/qr-scannable-api-ui.png" width="600" /></p>
+</figure>
+<figure>
+<p><img alt="QR scan icon on search bar" src="../assets/search-qr-scannable.png" width="600" />
+  </p>
+<figcaption>Top: Adding the scannableQr tag on the asset.assetId attribute<br> Bottom: The QR scan icon on the Assets search bar</figcaption>
+</figure>
 <h2 id="saving-search-configuration-to-personas">Saving Search Configuration to Personas<a class="headerlink" href="#saving-search-configuration-to-personas" title="Permanent link">&para;</a></h2>
 <p>To save a search configuration to a version or persona, make the desired changes to the search and then click the checkmark next to the dashboard selector. This will save the search configuration to the currently shown dashboard. Use the <strong>Advanced</strong> button on the search configuration panel to save the configuration to a specific version.</p>
 

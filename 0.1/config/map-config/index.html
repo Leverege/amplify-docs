@@ -2092,11 +2092,19 @@
 <h1 id="configuring-the-map">Configuring the Map<a class="headerlink" href="#configuring-the-map" title="Permanent link">&para;</a></h1>
 <h2 id="accessing-the-map-options">Accessing the Map Options<a class="headerlink" href="#accessing-the-map-options" title="Permanent link">&para;</a></h2>
 <p>To access the map configuration options, click the gear icon at the bottom of the map component and select <strong>Edit Settings</strong>.</p>
-<p>[Screenshot of map settings gear icon]</p>
+<figure>
+<p><img alt="Map settings icon" src="../assets/map-settings.png" width="500" />
+  </p>
+<figcaption>Locating the map settings icon</figcaption>
+</figure>
 <h2 id="configuring-map-layers">Configuring Map Layers<a class="headerlink" href="#configuring-map-layers" title="Permanent link">&para;</a></h2>
 <p>Icons and geofences on maps are represented as layers. The layers menu lists the layers available for configuration. The list of layers are automatically generated based on position and geofence attribute types.</p>
 <p>To update the ordering of which layers display over others, click and drag the name of the layer into the desired position.</p>
-<p>[Screenshot of map config panel with layers showing]</p>
+<figure>
+<p><img alt="Map settings panel" src="../assets/map-settings-panel.png" width="700" />
+  </p>
+<figcaption>Map configuration panel</figcaption>
+</figure>
 <h2 id="configuration-options-for-position-attributes">Configuration Options for Position Attributes<a class="headerlink" href="#configuration-options-for-position-attributes" title="Permanent link">&para;</a></h2>
 <p>For position attributes (e.g. user position, asset positions, device positions), the following configuration options are available:</p>
 <ul>
@@ -2178,24 +2186,25 @@
 <li>
 <p><strong>Zoom to Scale</strong>: To have the scale change based on zoom level, check the box next to <strong>Zoom to Scale</strong>. Set the additional scaling factor to take effect at the starting zoom level threshold and the additional scaling factor that is applied at the ending zoom level threshold. The system will additionally scale the icon according to the zoom level.</p>
 <ul>
-<li>
-<p>For example, in the below configuration: </p>
-<ul>
-<li>The vehicle icons will scale to 2 at a minimum upon rollover</li>
+<li>For example, in the below configuration: <ul>
+<li>The asset icons will scale to 2 at a minimum upon rollover</li>
 <li>Prior to a zoom level of 5, the icon will scale by 2 upon rollover</li>
 <li>Starting at a zoom level of 5 to a zoom level of 10, the vehicle icons will scale proportionally from a scale of 2 to a scale of 4 upon rollover (4 = original scale of 2 times the factor of 2 at zoom level 10)</li>
 <li>After zoom level 10, the icon will scale by 4 upon rollover (4 = original scale of 2 times the factor of 2 at zoom level 10).</li>
 </ul>
-<p>[Screenshot of zoom to scale levels]</p>
 </li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<figure>
+<p><img alt="Map zoom to scale level" src="../assets/map-settings-zoom-scale.png" width="700" />
+  </p>
+<figcaption>Zoom to scale settings</figcaption>
+</figure>
 <h2 id="configuration-options-for-geofencefloor-attributes">Configuration Options for Geofence/Floor Attributes<a class="headerlink" href="#configuration-options-for-geofencefloor-attributes" title="Permanent link">&para;</a></h2>
 <h3 id="visibility">Visibility<a class="headerlink" href="#visibility" title="Permanent link">&para;</a></h3>
-<p>[Screenshot of visibility tab of geofence/floor layers on map configuration]</p>
 <ul>
 <li><strong>Visible</strong>: To set the layer to be visible, check the box next to Visible. To hide the layer, uncheck the box.</li>
 <li>
@@ -2221,7 +2230,6 @@
 </li>
 </ul>
 <h3 id="appearance">Appearance<a class="headerlink" href="#appearance" title="Permanent link">&para;</a></h3>
-<p>[Screenshot of Appearance tab of geofence/floor layers on map configuration]</p>
 <ul>
 <li><strong>Fill Color</strong>: Set the fill color using a set of known rgb values (e.g. rgb(0,0,200))</li>
 <li><strong>Fill Opacity</strong>: Set the fill opacity using a value between 0 (transparent) to 1 (opaque)</li>
@@ -2240,15 +2248,17 @@
 <li><strong>Label Collision</strong>: Set whether labels allow overlap or ignore placement</li>
 </ul>
 <h3 id="rollover">Rollover<a class="headerlink" href="#rollover" title="Permanent link">&para;</a></h3>
-<p>[Screenshot of rollover tab of geofence/floor layers on map configuration]</p>
 <p>To set specific geofence/floor appearance properties to display upon rollover, go to the <strong>Rollover</strong> tab. Fill, outline, and label properties are configurable to change upon rollover.</p>
 <p>See the documentation on the appearance tab for details on the settings available to configure upon rollover.</p>
 <h3 id="selected">Selected<a class="headerlink" href="#selected" title="Permanent link">&para;</a></h3>
-<p>[Screenshot of selected tab of geofence/floor layers on map configuration]</p>
 <p>To set specific geofence/floor appearance properties to display upon selection, go to the <strong>Selection</strong> tab. Fill, outline, and label settings are configurable to change upon selection.</p>
 <h3 id="setting-a-custom-map-style">Setting a Custom Map Style<a class="headerlink" href="#setting-a-custom-map-style" title="Permanent link">&para;</a></h3>
 <p>To change the map style, go to the <strong>Options</strong> tab on the map configuration panel. Users can select from pre-defined styles or supply their own custom style using Mapbox.</p>
-<p>[Screenshot of map style configuration options]</p>
+<figure>
+<p><img alt="Map style config" src="../assets/map-style.png" width="300" />
+  </p>
+<figcaption>Map style configuration options</figcaption>
+</figure>
 <p>To change the map style, select a style from the dropdown:</p>
 <ul>
 <li>To use a pre-defined style (e.g. satellite, streets, etc.), select it from the list</li>
