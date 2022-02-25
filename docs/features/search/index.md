@@ -39,7 +39,7 @@ To sort the data, click the column name directly. A colored line should appear a
 
 ## Configuring Search
 
-
+The search bar can be configured so that only certain data fields are searchable. For more information on search configuration, see the documentation on Search in the UI Configuration section.
 
 ## Configuring Filters and Sorts
 
