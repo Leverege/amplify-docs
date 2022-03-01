@@ -17,72 +17,29 @@ Before creating your blueprint, let's review the two different types of blueprin
 </figure>
 
 
-### Blueprint Creation Order
+## Blueprint Creation Order
 
 When adding blueprints to a new project, it is helpful to add them in order of most specific to least specific – starting with the devices that provide the least context to other devices and ending with those that provide the most. This is because data in our system is roughly hierarchical – defined in terms of parents and children. By adding the children first, when we add the parent we are able to say that the parent is a parent of this type of thing that already exists in the system. 
 
-Let's imagine we have the following hierarchy
+As an example, we'll be looking at a cow tracking solution for farming company. The company has multiple farm locations. Each of these locations has multiple cows. Each cow will have one tracker. At each location, the cow fields are divided up into zones. From this information, we can infer the below hierarchy is the best for our solution. This is because a location is the best organizational method for our cows, trackers, and zones. In the diagram below, arrows are pointing from a parent to a child and signify that there is a relationship between the two boxes.
 
 <figure markdown>
-![!Blueprint Hierarchy](assets/hierarchy.svg){ width="700" }
+![!Blueprint Hierarchy](assets/relationship.svg){ width="700" }
   <figcaption>Hierarchy Outline</figcaption>
 </figure>
 
-Based on this hierarchy, we need to make 4 blueprints. Based on best practices, we'd want to start with the tracker blueprint and finish with the location blueprint. 
+Based on this hierarchy, we need to make 4 blueprints. These blueprints represent the four different types of things we will have in our system. Based on best practices, we'd want to start with the tracker blueprint and finish with the location blueprint. 
 
 * Tracker Blueprint
 * Cow Blueprint
 * Zone Blueprint
 * Location Blueprint
 
-
 The actual process of creating this blueprint takes a few seconds. But thinking through a tracker’s blueprint structure and setting it up correctly can help make your system easier to maintain, organize, and ultimately scale. 
 
 Trackers send data in formats that we (typically) have no control over. They may include information our end users don’t care about, or format it in a way that is difficult to use. We need to balance the demands of preserving the data as sent (for auditing and diagnosis), and representing it in a way that makes sense to the users of our system. 
 
-### Sketching the Structure
-
-``` json
-{
-  "deviceId": "981472630769911",
-  "time": 1619291293517,
-  "payload": "+STA,981472630769911,28.39,1$"
-}
-```
-
-Let's use the following example message to start off. The message is coming from the external world. It needs to be read by an ingestor that can translate into a device message that our system can understand. Our ingestor is going to choose how to parse out the information in this message, what bits of it to forward on, and how that data is named. We’re going to use our tracker blueprint to set out how we want the data to be structured once it gets into our system--to dictate how the ingestor should translate this message.
-
-We can see that the inbound message to the ingestor gives us a device identifier (an IMEI in this case), the time the message was sent, and the payload. The send time is interesting from a message standpoint, and could be helpful with diagnosing message backups or the like. But it probably isn’t necessary to capture in our device data--it’s data about the message transmission stream, not the device. So we’ll trust our ingestor to log that information somewhere, but won’t include it in the blueprint.
-
-We’ll definitely need the IMEI. That’s how the outside world talks about the tracker, so we’ll need to capture that so we can map it to our internal system. 
-
-The real action is in the payload. It comes as a single piece of data (a string), but is packed with information. Our ingestor can parse this into a friendly format. So we just need to figure out what that format should be.
-
-There are two types of payloads, giving us roughly seven different data points: the device ID, which we already have from above, the type of message the device sent, the position information, temperature, light status, door status, and whether the device was in motion. 
-
-``` json
-{
-  temperature : number/degF,
-  position : { lat, lon },
-  inMotion: boolean,
-  doorOpen : boolean,
-  lights : boolean,
-  imei : string
-}
-```
-But there are some other pieces of data we probably want to capture. It’s probably a good idea to save the unparsed message string itself. It’s short, so we’re not worried about impact on memory. And it requires some parsing to get the values we want, which we may well screw up (or the vendor may change the interpretation on us), so it’d be good to have a record. It’d also be handy to know when we last updated the device, and (since we get it) when the device last recorded the data. 
-
-Finally, trackers usually have some easy to read label stamped on the side that helps humans quickly figure out which tracker is which. Let’s assume we’ll get one from the vendor and call that a name. So let’s add some more to our back-of-the-envelop sketch:
-
-``` json
-{
-  lastMsg : string,
-  lastUpdated: timestamp,
-  lastRecorded: timestamp,
-  name: string
-}
-```
-### Creating the Blueprint
+## Creating the Blueprint
 
 Now, it's quite easy to create a blueprint in our system. First, you'll navigate to the blueprints section and click the `Create Blueprint` button in the top right corner of the screen. Because the tracker is IoT hardware, you'll select the blueprint type `Device`.
 
@@ -99,7 +56,7 @@ Once you've created the blueprint, there are a few information fields to fill in
 | Alias | The alias should be short, obvious, and camelCase. We’re going to set up API calls that query and route data using this alias. In this case, we'll use tracker |
 | Description | Optional field to describe what your tracker in more depth. Here, we might put "Gen2 Cow Tracker" |
 
-### Adding Attributes
+## Adding Attributes
 
 Now that you've set up the blueprint, it's time to add your attributes. As a reminder, attributes are the data fields of a given blueprint.
 
@@ -113,6 +70,41 @@ The value that we type into the add attribute box controls how the data is actua
 
 As an example, let's say your attribute path is *fishEaten*. A display name for this might be *Total Number of Fish Eaten*. 
 
-<==VIDEO==>
+### Planning the Attributes for IoT Devices
 
+The most technical blueprint to set up will be the tracker blueprint, as it involves knowledge of the inbound messages the tracker sends and must be coordinated with your data ingestor. Below, we'll take some example inbound messages and point out how you could format your tracker blueprint based off of the given information.
+
+Inbound Message Example
+
+``` json
+{
+  "deviceId": "981472630769911",
+  "time": 1619291293517,
+  "payload": "+STA,981472630769911,28.39,1$"
+}
+```
+
+Let's use the following example message to start off. The message is coming from the external world. It needs to be read by an ingestor that can translate into a device message that our system can understand. Our ingestor is going to choose how to parse out the information in this message, what bits of it to forward on, and how that data is named. We’re going to use our tracker blueprint to set out how we want the data to be structured once it gets into our system--to dictate how the ingestor should translate this message.
+
+We can see that the inbound message to the ingestor gives us a deviceId, the time the message was sent, and the payload. In this case, the deviceId is an IMEI 
+(International Mobile Equipment Identity), which is a commonly used ID format for IoT devices. The time the message was sent does not need to be included in the blueprint, and we'll trust our ingestor is storing that information in logs for future reference.
+
+The real action is in the payload. It comes as a single piece of data (a string), but is packed with information. Our ingestor can parse this into a friendly message format. We just need to figure out what the format of each attribute should be. Below, we've outlined an example of the data you may receive and the attribute format (data : format).
+
+Payload Breakdown
+
+``` json
+{
+  temperature : number/degF,
+  position : { lat, lon },
+  inMotion: boolean,
+  doorOpen : boolean,
+  lights : boolean,
+  imei : string,
+  lastMsg : string,
+  lastUpdated: timestamp,
+  lastRecorded: timestamp,
+  name: string
+}
+```
 

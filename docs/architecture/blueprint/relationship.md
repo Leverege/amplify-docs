@@ -10,7 +10,7 @@ Once you've created all of your blueprints, it's time to form your relationships
 
 Our IoT stack supports 4 types of relationships. Note that the parent should always come first in the relationship. Imagine you have a location with 20 cows. The location is the parent in this hierarchy, meaning that this is a one-to-many relationship. 
 
-!!! Tip"Relationships Should Always Be Created on the Parent Blueprint"
+!!! Tip "Relationships Should Always Be Created on the Parent Blueprint"
     Whenever you are making a new relationship, it must be done on the parent blueprint
 
 | Types | Definition |
@@ -22,7 +22,9 @@ Our IoT stack supports 4 types of relationships. Note that the parent should alw
 
 The two most common relationship types are one-to-many and one-to-one. One-to-many relationships are commonly used for locations, companies, regions, etc and their children. One-to-one relationships are frequently used when you are pairing a single tracker to a single cow. 
 
-Revisiting our example hierarchy, let's discuss all of the different relationships, starting with the ones where Location is the parent. 
+Revisiting our farming example, let's discuss all of the different relationships. As a reminder, the farming company has multiple farm locations. Each of these locations has multiple cows. Each cow will have one tracker. At each location, the cow fields are divided up into zones. From this information, we can infer the below hierarchy is the best for our solution. This is because a location is the best organizational method for our cows, trackers, and zones. In the diagram below, arrows are pointing from a parent to a child and signify that there is a relationship between the two boxes.
+
+To start, we'll take a look at the location blueprint and the relationships it should have. In a given location, you have multiple cows, trackers, and zones. These cows, trackers, and zones are only related to the given location. This means the relationship you want to use is a one-to-many relationship for each of the location's children (outlined below).
 
 Location Relationships
 

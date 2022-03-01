@@ -1,14 +1,14 @@
 # Introduction
 
-This describes the various objects used in the Leverege IoT Stack. All of these can be accessed and manipulated using the API library and/or in Architect's UI.
+Below is a brief introduction to the different terminology you'll run into in the Project Setup section. 
 
 ## Project
 
-Projects are the top-level organization layer in our stack. They hold most other objects and data related to your solution, such as blueprints, systems, message routes, and scripts. A project has have project-specific users (accounts), that are used to assign access to systems and devices.
+Projects are the top-level organization layer in our stack. They hold most other objects and data related to your solution, such as blueprints, systems, message routes, and scripts. A project has project-specific users (accounts), that are used to assign access to systems and devices.
 
 ## Blueprint
 
-A Blueprint is used to define both IoT device data, and organizational data and relationships. Blueprints can have an alias that is useful when accessing data via the Model Interface API. The alias defines a human readable unique name for the model. Each Blueprint has a set of attributes. Messages for a Device can be routed based on its Blueprint type, allowing different handling of different data types.
+A Blueprint is used to define IoT device data and organizational data. Blueprints can have an alias that is useful when accessing data via the Model Interface API. The alias defines a human readable unique name for the model. Each Blueprint has a set of attributes. Messages for a Device can be routed based on its Blueprint type, allowing different handling of different data types.
 
 ## Attribute
 
@@ -16,9 +16,7 @@ An Attribute defines a field in a Blueprint. There are several types of Attribut
 
 ## Device
 
-A Device represents a thing, either an IoT device or an organizational construct. Each Device has a Blueprint that defines what kind of thing it is. Internally, a Device has an platform generated id. The Device can have multiple source specific ids as well. It is captured through the concept of a network alias. The network alias consists of a Network Id, a alias key, and a value. An example of this triplet might be ('boat-network', 'esn', '5551212' ). This triplet allows the platform to map the external id to the internal id. 
-
-!!! Tip "Project Users can also be assigned permissions on a Device."
+A Device represents a thing, either an IoT device or an organizational construct. Each Device has a Blueprint that defines what kind of thing it is. Every Device has a Leverege generated UUID. The Device can have multiple source-specific IDs as well. These source-specific IDs are captured through the concept of a network alias.
 
 ## System
 
@@ -26,27 +24,11 @@ A System holds a collection of Devices. Project Users can be given access rights
 
 ## Network
 
-A Network represents a source of device data. When a device needs to be contacted, the Network is used as the target. In particular, messages are published to the <networkId>-outbound topic. The ingestion service setup to manage that network's data can listen on this topic and then communicate appropriately to the source server. The Network Id is also part external identity of a Device.
-
-## Message Route
-
-A Message Route defines how a particular Message type (deviceDataEventMsg for example ) is acted upon. This is used to select which reason scripts will run when a new data for a Device is received.
-
-## Reason Script
-
-A Reason Script is code that can be run in response to new Message or a Timer. These Scripts are used to supply business logic to your project. Actions like Sending out a daily status email or calculating alert states and sending notifications when they occur would fall under the domain of a Reason Script. These Scripts can also interface with external systems, as needed.
-
-## Reason Trigger
-
-The Reason Triggers are like Scripts, but without having to write code. For many simple tasks such as sending alerts when a device is in a certain state for a certain amount of time, triggers will be easier to setup than a Script.
-
-## Timer
-
-A Timer represents a task that needs to be trigger in a certain amount of time, or repeatedly. These are often used to tell a Reason Script to run periodically.
+A Network represents a source of device data. When a device needs to be contacted, the Network is used as the target. In particular, messages are published to the `<networkId>-outbound topic`. The ingestion service setup to manage that network's data can listen on this topic and then communicate appropriately to the source server. The Network Id is also part of the external identity of a Device.
 
 ## Template
 
-Templates are used to create branded emails or SMS notifications. When Reason triggers a send email request, a Template Id and contextual data can be supplied to produce the branded email.
+Templates are used to create branded emails or SMS notifications. When Reason triggers a send email request, a Template ID and contextual data can be supplied to produce the branded email.
 
 ## Users
 
