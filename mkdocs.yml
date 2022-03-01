@@ -32,6 +32,7 @@ nav :
        - architecture/roles/index.md
        - Permissions: architecture/roles/permission.md
        - Creating Roles: architecture/roles/role.md
+       - Routing: architecture/roles/routing.md
   - UI Setup:
     - setup/index.md
     - Branding & Styling:
@@ -54,7 +55,7 @@ nav :
       - setup/multi.md
   - UI Configuration:
      - config/index.md
-     - Getting Started: config/config-basics.md
+     - Configuration Panels: config/config-basics.md
      - Layout Controller: config/layout-controller.md
      - Search: config/search-config.md
      - Map: config/map-config.md
