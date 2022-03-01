@@ -1490,9 +1490,94 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Two-Step Verification
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Two-Step Verification
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-two-step-verification-in-your-architect-project" class="md-nav__link">
+    Enabling Two-Step Verification in Your Architect Project
+  </a>
+  
+    <nav class="md-nav" aria-label="Enabling Two-Step Verification in Your Architect Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-your-two-step-verification-email-sms-template" class="md-nav__link">
+    Create Your Two-Step Verification Email &amp; SMS Template
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-example" class="md-nav__link">
+    Email Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sms-example" class="md-nav__link">
+    SMS Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-two-step-verification-as-a-user" class="md-nav__link">
+    Enabling Two-Step Verification As a User
+  </a>
+  
+    <nav class="md-nav" aria-label="Enabling Two-Step Verification As a User">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-settings-in-user-account-settings" class="md-nav__link">
+    Security Settings in User Account Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-two-step-verification-with-one-time-access-codes" class="md-nav__link">
+    Using Two-Step Verification with One-Time Access Codes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1926,6 +2011,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-two-step-verification-in-your-architect-project" class="md-nav__link">
+    Enabling Two-Step Verification in Your Architect Project
+  </a>
+  
+    <nav class="md-nav" aria-label="Enabling Two-Step Verification in Your Architect Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-your-two-step-verification-email-sms-template" class="md-nav__link">
+    Create Your Two-Step Verification Email &amp; SMS Template
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-example" class="md-nav__link">
+    Email Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sms-example" class="md-nav__link">
+    SMS Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-two-step-verification-as-a-user" class="md-nav__link">
+    Enabling Two-Step Verification As a User
+  </a>
+  
+    <nav class="md-nav" aria-label="Enabling Two-Step Verification As a User">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-settings-in-user-account-settings" class="md-nav__link">
+    Security Settings in User Account Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-two-step-verification-with-one-time-access-codes" class="md-nav__link">
+    Using Two-Step Verification with One-Time Access Codes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1938,6 +2092,88 @@
                 
 
 <h1 id="two-step-verification">Two-Step Verification<a class="headerlink" href="#two-step-verification" title="Permanent link">&para;</a></h1>
+<h2 id="enabling-two-step-verification-in-your-architect-project">Enabling Two-Step Verification in Your Architect Project<a class="headerlink" href="#enabling-two-step-verification-in-your-architect-project" title="Permanent link">&para;</a></h2>
+<p>Two-step Verification offers enhanced security to users by requiring two distinct factors of Verification in order to gain access to their account. Two-Step Verification is automatically enabled on all projects by default, but you will need to add the email and SMS templates in order for the feature to work.</p>
+<h3 id="create-your-two-step-verification-email-sms-template">Create Your Two-Step Verification Email &amp; SMS Template<a class="headerlink" href="#create-your-two-step-verification-email-sms-template" title="Permanent link">&para;</a></h3>
+<p>Start by going to Templates in Architect and create a blank template. You can use whatever display name you would like for this template, but the alias must be <code>twoFactorCode</code> . </p>
+<figure>
+<p><div class="lightgallery"><a data-sub-html="Alias" href="../assets/alias.png"><img alt="Alias" src="../assets/alias.png" width="700" />
+  </a></div></p>
+<figcaption>Template Alias Input Field</figcaption>
+</figure>
+<p>For the email template, you can change the text, images, and styling to whatever you would like, but please note that you will have to use <code>{{code}}</code> wherever you want the Verification code to appear. You can even add it to the subject line of the email. </p>
+<h3 id="email-example">Email Example<a class="headerlink" href="#email-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;font-family:Inter, sans-serif; max-width:600px; min-width:200px; background-color: #181e25; margin: 0 auto;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;background-color:white; padding: 32px 32px 32px 32px; text-align: left;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">          </span><span class="err">&lt;img</span><span class="w"> </span><span class="err">wid</span><span class="kc">t</span><span class="err">h=</span><span class="s2">&quot;140&quot;</span><span class="w"> </span><span class="err">heigh</span><span class="kc">t</span><span class="err">=</span><span class="s2">&quot;30&quot;</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;margin: 24px 0px;&quot;</span><span class="w"> </span><span class="err">src=</span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/leverege-logo.png&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">          </span><span class="err">&lt;hr</span><span class="w"> </span><span class="err">class=</span><span class="s2">&quot;solid&quot;</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;border: 1px solid #e7eaef&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;text-align:left; font-size:20px; line-height:28px; font-weight: bold; margin: 24px 0px;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="err">Sig</span><span class="kc">n</span><span class="w"> </span><span class="err">I</span><span class="kc">n</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;/div&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;text-align:left; font-size:16px; line-height:26px; margin: 24px 0px;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="err">Your</span><span class="w"> </span><span class="kc">t</span><span class="err">wo</span><span class="mi">-</span><span class="err">s</span><span class="kc">te</span><span class="err">p</span><span class="w"> </span><span class="err">veri</span><span class="kc">f</span><span class="err">ica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">code</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">below.</span><span class="w"> </span><span class="err">E</span><span class="kc">nter</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">code</span><span class="w"> </span><span class="err">i</span><span class="kc">n</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">ope</span><span class="kc">n</span><span class="w"> </span><span class="err">browser</span><span class="w"> </span><span class="err">wi</span><span class="kc">n</span><span class="err">dow</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="err">d</span><span class="w"> </span><span class="err">we&#39;ll</span><span class="w"> </span><span class="err">help</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">ge</span><span class="kc">t</span><span class="w"> </span><span class="err">sig</span><span class="kc">ne</span><span class="err">d</span><span class="w"> </span><span class="err">i</span><span class="kc">n</span><span class="err">.</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">code</span><span class="w"> </span><span class="err">expires</span><span class="w"> </span><span class="err">i</span><span class="kc">n</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="err">mi</span><span class="kc">nutes</span><span class="err">.</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;/div&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;font-weight: bold; overflow:auto; background-color: #f0f6ff; padding: 15px; border-radius: 5px; text-align: center;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="err">&lt;spa</span><span class="kc">n</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;color:black; padding:10px 20px; border-radius:5px; font-size: 24px;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="p">{{</span><span class="err">code</span><span class="p">}}</span><span class="w"></span>
+<span class="w">      </span><span class="err">&lt;/spa</span><span class="kc">n</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;/div&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;text-align:left; font-size:16px; line-height:26px; margin: 24px 0px;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="err">I</span><span class="kc">f</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">did</span><span class="kc">n</span><span class="err">&#39;</span><span class="kc">t</span><span class="w"> </span><span class="err">reques</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span><span class="w"> </span><span class="err">email</span><span class="p">,</span><span class="w"> </span><span class="kc">t</span><span class="err">here&#39;s</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="err">hi</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">worry</span><span class="w"> </span><span class="err">abou</span><span class="kc">t</span><span class="w"> </span><span class="mi">-</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">ca</span><span class="kc">n</span><span class="w"> </span><span class="err">sa</span><span class="kc">fel</span><span class="err">y</span><span class="w"> </span><span class="err">ig</span><span class="kc">n</span><span class="err">ore</span><span class="w"> </span><span class="err">i</span><span class="kc">t</span><span class="err">.</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;/div&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="err">&lt;/div&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;background-color:#e7eaef; padding: 11px;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;text-align:center; font-size:12px; line-height:18px;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="err">Copyrigh</span><span class="kc">t</span><span class="w"> </span><span class="err">Leverege</span><span class="p">,</span><span class="w"> </span><span class="err">LLC.</span><span class="w"> </span><span class="err">All</span><span class="w"> </span><span class="err">Righ</span><span class="kc">ts</span><span class="w"> </span><span class="err">Reserved.</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;/div&gt;</span><span class="w"> </span>
+<span class="w">  </span><span class="err">&lt;/div&gt;</span><span class="w"></span>
+<span class="err">&lt;/div&gt;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="sms-example">SMS Example<a class="headerlink" href="#sms-example" title="Permanent link">&para;</a></h3>
+<figure>
+<p><div class="lightgallery"><a data-sub-html="Text" href="../assets/text.png"><img alt="Text" src="../assets/text.png" width="700" />
+  </a></div></p>
+<figcaption>SMS Example</figcaption>
+</figure>
+<div class="highlight"><pre><span></span><code><span class="p">{{</span><span class="err">code</span><span class="p">}}</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">securi</span><span class="kc">t</span><span class="err">y</span><span class="w"> </span><span class="err">code</span><span class="w"> </span><span class="kc">f</span><span class="err">or</span><span class="w"> </span><span class="err">Leverege.</span><span class="w"> </span><span class="err">I</span><span class="kc">f</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">did</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="w"> </span><span class="err">reques</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span><span class="w"> </span><span class="err">code</span><span class="p">,</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">ca</span><span class="kc">n</span><span class="w"> </span><span class="err">sa</span><span class="kc">fel</span><span class="err">y</span><span class="w"> </span><span class="err">ig</span><span class="kc">n</span><span class="err">ore</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span><span class="w"> </span><span class="err">message.</span><span class="w"></span>
+</code></pre></div>
+<h2 id="enabling-two-step-verification-as-a-user">Enabling Two-Step Verification As a User<a class="headerlink" href="#enabling-two-step-verification-as-a-user" title="Permanent link">&para;</a></h2>
+<p>Two-Step Verification is optional for users. Therefore, users have to go into their Account Settings, under Security, to enable the feature and start using Two-Step Verification.</p>
+<h3 id="security-settings-in-user-account-settings">Security Settings in User Account Settings<a class="headerlink" href="#security-settings-in-user-account-settings" title="Permanent link">&para;</a></h3>
+<p>Users have the option to enable email, SMS, and/or an authenticator app (such as the Google Authenticator App) to use as their second factor of Verification. Users can update or disable Two-Step Verification at any time. </p>
+<div class="admonition tip">
+<p class="admonition-title">Email &amp; Phone Number </p>
+<p>If a user enables email or SMS as their second factor of Verification, they will be asked to provide the email or phone number they wish to use for that Verification method. The email and phone number are NOT synced or linked to their contact email and phone number. </p>
+</div>
+<p>Once a user enables their first method of Two-Step Verification, they will be given a list of Backup Codes that can be used in the event that they are locked out of their Two-Step Verification method (e.g. their phone is dead or their email has been compromised and they no longer have access to it). </p>
+<h3 id="using-two-step-verification-with-one-time-access-codes">Using Two-Step Verification with One-Time Access Codes<a class="headerlink" href="#using-two-step-verification-with-one-time-access-codes" title="Permanent link">&para;</a></h3>
+<p>If your project also has One-Time Access Codes enabled, users have the option to use a code sent via email or SMS to log into their account instead of providing a password. If a user has Two-Step Verification enabled, they will still need to provide an additional, distinct factor of Verification when logging in. </p>
+<p>Let’s look at a specific edge case to illustrate this point. Let’s say that we have a user who has Two-Step Verification enabled, but their only method of Verification is email. If the users attempts to use email to receive their One-Time Access Code, they will receive an email with an error message instead of their One-Time Access Code:</p>
+<p>This is because they are attempting to use email as both factors of Verification, but our system requires that the two factors be distinct. It is therefore recommended that users have at least two methods of Two-Step Verification enabled if they are going to also use One-Time Access Codes. In the even that this does happen to a user, they can simply return to the login screen and use or reset their password to login or select a different method for their One-Time Access Code. </p>
+<p>This error email also needs to be configured as a template in your project. To enable it, start by going to Templates in Architect and create a blank template. You can use whatever display name you would like for this template, but the alias must be <code>loginCodeError</code> . Below are examples of the email and SMS HTML that you’ll want to you’ll want to use in your template.</p>
+<p>Email Example:</p>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;font-family:Inter, sans-serif; max-width:600px; min-width:200px; background-color: #181e25; margin: 0 auto;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;background-color:white; padding: 32px 32px 32px 32px; text-align: left;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">          </span><span class="err">&lt;img</span><span class="w"> </span><span class="err">wid</span><span class="kc">t</span><span class="err">h=</span><span class="s2">&quot;140&quot;</span><span class="w"> </span><span class="err">heigh</span><span class="kc">t</span><span class="err">=</span><span class="s2">&quot;30&quot;</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;margin: 24px 0px;&quot;</span><span class="w"> </span><span class="err">src=</span><span class="s2">&quot;https://molten-ui-assets.storage.googleapis.com/leverege-logo.png&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">          </span><span class="err">&lt;hr</span><span class="w"> </span><span class="err">class=</span><span class="s2">&quot;solid&quot;</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;border: 1px solid #e7eaef&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;text-align:left; font-size:20px; line-height:28px; font-weight: bold; margin: 24px 0px;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="err">Error</span><span class="p">:</span><span class="w"> </span><span class="err">Access</span><span class="w"> </span><span class="err">Code</span><span class="w"> </span><span class="err">No</span><span class="kc">t</span><span class="w"> </span><span class="err">Available</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;/div&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;text-align:left; font-size:16px; line-height:26px; margin: 24px 0px;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="err">You</span><span class="w"> </span><span class="err">have</span><span class="w"> </span><span class="err">e</span><span class="kc">na</span><span class="err">bled</span><span class="w"> </span><span class="kc">t</span><span class="err">wo</span><span class="mi">-</span><span class="err">s</span><span class="kc">te</span><span class="err">p</span><span class="w"> </span><span class="err">veri</span><span class="kc">f</span><span class="err">ica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span><span class="w"> </span><span class="err">email.</span><span class="w"> </span><span class="err">O</span><span class="kc">ne</span><span class="mi">-</span><span class="err">Time</span><span class="w"> </span><span class="err">access</span><span class="w"> </span><span class="err">codes</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="w"> </span><span class="err">available</span><span class="w"> </span><span class="err">usi</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">same</span><span class="w"> </span><span class="err">me</span><span class="kc">t</span><span class="err">hod</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="kc">t</span><span class="err">wo</span><span class="mi">-</span><span class="err">s</span><span class="kc">te</span><span class="err">p</span><span class="w"> </span><span class="err">veri</span><span class="kc">f</span><span class="err">ica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">.</span><span class="w"> </span>
+<span class="w">        </span><span class="err">&lt;br&gt;&lt;br&gt;Please</span><span class="w"> </span><span class="err">choose</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="err">her</span><span class="w"> </span><span class="err">o</span><span class="kc">ne</span><span class="mi">-</span><span class="kc">t</span><span class="err">ime</span><span class="w"> </span><span class="err">access</span><span class="w"> </span><span class="err">code</span><span class="w"> </span><span class="err">me</span><span class="kc">t</span><span class="err">hod</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">sig</span><span class="kc">n</span><span class="w"> </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">crede</span><span class="kc">nt</span><span class="err">ials.</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;/div&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="err">&lt;/div&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;background-color:#e7eaef; padding: 11px;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">s</span><span class="kc">t</span><span class="err">yle=</span><span class="s2">&quot;text-align:center; font-size:12px; line-height:18px;&quot;</span><span class="err">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="err">Copyrigh</span><span class="kc">t</span><span class="w"> </span><span class="err">Leverege</span><span class="p">,</span><span class="w"> </span><span class="err">LLC.</span><span class="w"> </span><span class="err">All</span><span class="w"> </span><span class="err">Righ</span><span class="kc">ts</span><span class="w"> </span><span class="err">Reserved.</span><span class="w"></span>
+<span class="w">    </span><span class="err">&lt;/div&gt;</span><span class="w"> </span>
+<span class="w">  </span><span class="err">&lt;/div&gt;</span><span class="w"></span>
+<span class="err">&lt;/div&gt;</span><span class="w"></span>
+</code></pre></div>
+<p>SMS Example:</p>
+<div class="highlight"><pre><span></span><code><span class="err">You</span><span class="w"> </span><span class="err">have</span><span class="w"> </span><span class="err">e</span><span class="kc">na</span><span class="err">bled</span><span class="w"> </span><span class="kc">t</span><span class="err">wo</span><span class="mi">-</span><span class="err">s</span><span class="kc">te</span><span class="err">p</span><span class="w"> </span><span class="err">veri</span><span class="kc">f</span><span class="err">ica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span><span class="w"> </span><span class="err">pho</span><span class="kc">ne</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber.</span><span class="w"> </span><span class="err">O</span><span class="kc">ne</span><span class="mi">-</span><span class="err">Time</span><span class="w"> </span><span class="err">access</span><span class="w"> </span><span class="err">codes</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="w"> </span><span class="err">available</span><span class="w"> </span><span class="err">usi</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">same</span><span class="w"> </span><span class="err">me</span><span class="kc">t</span><span class="err">hod</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="kc">t</span><span class="err">wo</span><span class="mi">-</span><span class="err">s</span><span class="kc">te</span><span class="err">p</span><span class="w"> </span><span class="err">veri</span><span class="kc">f</span><span class="err">ica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">.</span><span class="w"> </span><span class="err">Please</span><span class="w"> </span><span class="err">choose</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="err">her</span><span class="w"> </span><span class="err">o</span><span class="kc">ne</span><span class="mi">-</span><span class="kc">t</span><span class="err">ime</span><span class="w"> </span><span class="err">access</span><span class="w"> </span><span class="err">code</span><span class="w"> </span><span class="err">me</span><span class="kc">t</span><span class="err">hod</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">sig</span><span class="kc">n</span><span class="w"> </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">crede</span><span class="kc">nt</span><span class="err">ials.</span><span class="w"></span>
+</code></pre></div>
 
               
             </article>
