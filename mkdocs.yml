@@ -48,8 +48,6 @@ nav :
       - Page Display Options: setup/nav/page.md
       - Styling Overrides : setup/nav/path-overrides.md
       - Role-Specific Settings: setup/nav/role.md
-      - Routing: setup/nav/routing.md
-
     - Developer Options:
       - Overview: setup/dev.md
     - Multi-UI Projects:
