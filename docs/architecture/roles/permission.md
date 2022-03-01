@@ -58,35 +58,39 @@ Some permissions are generated when Blueprints or relationship Attributes are ma
 
 ### Blueprints:
 
-* Create <blueprintName>: create Devices of a type
-* Read <blueprintName>: read Devices of a type (if you know the id)
-* Update <blueprintName>: update Devices of a type
-* Delete <blueprintName>: delete Devices of a type
-* List <blueprintName>: list Devices of a type
-* Read <blueprintName> History: read the history of any Devices of a given type
-* Read <blueprintName> Events: read the events of any Devices of a given type
-* Update <blueprintName> Events: update the events of any Devices of a given type
-* Send <blueprintName> Messages: send messages to any Devices of a given type
-* Delete <blueprintName> Relationships: delete any relationships that go to Devices of a given type
-* Create <blueprintName> Relationships: delete any relationships that go to Devices of a given type
-* Update <blueprintName> Data: update the data of any Devices of a given type
-* Update Any <blueprintName> Data: update any data (unvalidated) of any Devices of a given type
+For blueprint permissions, these will appear in the blueprint section. For our farm example, a permission the farm administrator might need is `Create Locations`. This would allow the farm manager to create new locations. 
+
+* Create Blueprint - create Devices of a given blueprint type
+* Read Blueprint - read Devices of a type (if you know the id)
+* Update Blueprint - update Devices of a given blueprint type
+* Delete Blueprint -  delete Devices of a type
+* List Blueprint - list Devices of a type
+* Read Blueprint History - read the history of any Devices of a given type
+* Read Blueprint Events - read the events of any Devices of a given type
+* Update Blueprint Events - update the events of any Devices of a given type
+* Send Blueprint Messages - send messages to any Devices of a given type
+* Delete Blueprint Relationships - delete any relationships that go to Devices of a given type
+* Create Blueprint Relationships - delete any relationships that go to Devices of a given type
+* Update Blueprint Data - update the data of any Devices of a given type
+* Update Any Blueprint Data -update any data (unvalidated) of any Devices of a given type
 
 ### Relationship Attributes
 
-* Create <aName> in a <bName>: Create Devices of a given Blueprint at a given place in the hierarchy
-* Read <aName> from a <bName>: Read Devices of a given Blueprint at a given place in the hierarchy (must know the id)
-* Update <aName> in a <bName>: Update Devices of a given Blueprint at a given place in the hierarchy
-* Delete <aName> from a <bName>: Delete Devices of a given Blueprint at a given place in the hierarchy
-* List <aName> in a <bName>: List Devices of a given Blueprint at a given place in the hierarchy
-* Read <aName> History in a <bName>: Read the history of Devices of a given Blueprint at a given place in the hierarchy
-* Read <aName> Events in a <bName>: Read the events of Devices of a given Blueprint at a given place in the hierarchy
-* Update <aName> Events in a <bName>: Update the events of Devices of a given Blueprint at a given place in the hierarchy
-* Send <aName> Messages in a <bName>: Send messages to Devices of a given Blueprint at a given place in the hierarchy
-* Remove <aName> from a <bName>: Delete relationships to Devices of a given Blueprint at a given place in the hierarchy
-* Add <aName> to a <bName>: Create Relationships to Devices of a given Blueprint at a given place in the hierarchy
-* Update <aName> data in a <bName>: Update the data of Devices of a given Blueprint at a given place in the hierarchy
-* Update Any <aName> Data in a <bName>: Update any data (unvalidated) of Devices of a given Blueprint at a given place in the hierarchy
+To better understand relationship attribute permissions, we will use our farm example. Imagine you want to permission a farmhand to take actions against a cow, but ONLY in the location they have access to. To do this, you would give the farm hand role permissions like "Create a Cow in a Location". If a user has the farmhand role in the Rockville location, they will be able to create cows inside that location. If they do not have a role at the Atlanta location, they will not be able to access that location or create cows in that location. To better understand the permissions below, we will include the example blueprints Cow & Location in parenthesis, while Blueprint X & Blueprint Y represent two generic blueprints  that have a relationship with one another.
+
+* Create Blueprint X (Cows) in Blueprint Y (Location): Create Devices of a given Blueprint at a given place in the hierarchy
+* Read Blueprint X (Cow) from a Blueprint Y (Location): Read Devices of a given Blueprint at a given place in the hierarchy (must know the id)
+* Update Blueprint X (Cow) in a Blueprint Y (Location): Update Devices of a given Blueprint at a given place in the hierarchy
+* Delete Blueprint X (Cow) from a Blueprint Y (Location): Delete Devices of a given Blueprint at a given place in the hierarchy
+* List Blueprint X (Cow) in a Blueprint Y (Location): List Devices of a given Blueprint at a given place in the hierarchy
+* Read Blueprint X (Cow) History in a Blueprint Y (Location): Read the history of Devices of a given Blueprint at a given place in the hierarchy
+* Read Blueprint X (Cow) Events in a Blueprint Y (Location): Read the events of Devices of a given Blueprint at a given place in the hierarchy
+* Update Blueprint X (Cow) Events in a Blueprint Y (Location): Update the events of Devices of a given Blueprint at a given place in the hierarchy
+* Send Blueprint X (Cow) Messages in a Blueprint Y (Location): Send messages to Devices of a given Blueprint at a given place in the hierarchy
+* Remove Blueprint X (Cow) from a Blueprint Y (Location): Delete relationships to Devices of a given Blueprint at a given place in the hierarchy
+* Add Blueprint X (Cow) to a Blueprint Y (Location): Create Relationships to Devices of a given Blueprint at a given place in the hierarchy
+* Update Blueprint X (Cow) data in a Blueprint Y (Location): Update the data of Devices of a given Blueprint at a given place in the hierarchy
+* Update Any Blueprint X (Cow) Data in a Blueprint Y (Location): Update any data (unvalidated) of Devices of a given Blueprint at a given place in the hierarchy
 
 
 ### Example

@@ -17,8 +17,8 @@ Our IoT stack supports 4 types of relationships. Note that the parent should alw
 |-------|---------------|
 | One-to-Many | In a one-to-many relationship, there is one parent (ex. Location) and many children (ex. Cows) |
 | One-to-One | In a one-to-one relationship, there is one parent (ex. Cow) and one child (ex. Tracker) |
-| Many-to-One | X |
-| Many-to-Many | X |
+| Many-to-One | In a many-to-one relationship, there are many parents who reference one child. |
+| Many-to-Many | In a many-to-many relationship, there are many parents who reference many children |
 
 The two most common relationship types are one-to-many and one-to-one. One-to-many relationships are commonly used for locations, companies, regions, etc and their children. One-to-one relationships are frequently used when you are pairing a single tracker to a single cow. 
 
@@ -42,6 +42,4 @@ Cow Relationship
     When data forwarding is enabled, any data that the child device reports to our system will be forwarded to the parent device and stored on both the child and parent devices. This is useful in some circumstances like position tracking, where you want to store the data the tracker reported about it's location in the cow's history.
 
 To create a relationship, you'll enter the name of the child blueprint in the path input field (singular or plural depending on if it's a one-to-one or one-to-many relationship respectively). When you select the type of attribute, you will choose relationship. Then you will be prompted to select the blueprint and relationship type. 
-
-<== INSERT VIDEO HERE ==>
 

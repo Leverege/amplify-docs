@@ -8,12 +8,14 @@ Systems can be used to silo devices on a project. A good use case for this would
 
 ## Creating a System
 
+<figure markdown>
 ![!System](assets/system.png){ width="700" }
   <figcaption>System Management</figcaption>
 </figure>
 
 To create a new System, go to the System tab on the left, and click Add New System in the top right corner. Once your system is created, you will want to update the display name and the alias. The alias is how custom API calls will refer to this collection of devices. Using an alias instead of the system ID (which is also an option) allows us to make minimal changes when deploying a production application off of a staging or development environment. 
 
+<figure markdown>
 ![!System](assets/info.png){ width="700" }
   <figcaption>System Information</figcaption>
 </figure>

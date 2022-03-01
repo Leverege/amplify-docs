@@ -1,10 +1,10 @@
 # Networks
 
-A Network represents a source of device data. When a device needs to be contacted, the Network is used as the target. In particular, messages are published to the <networkId>-outbound topic. The ingestion service setup to manage that network's data can listen on this topic and then communicate appropriately to the source server. The Network ID is also part external identity of a Device.
+A Network represents a source of device data. When a device needs to be contacted, the Network is used as the target. In particular, messages are published to the `<networkId>-outbound topic`. The ingestion service setup to manage that network's data can listen on this topic and then communicate appropriately to the source server. The Network ID is also part external identity of a Device.
 
-Inside the Leverege Stack, devices (and many other elements of a project) are assigned a Base62 UUID. Base62 IDs consist of the capital letters A-Z, the lower case letters a-z, and the numbers 0–9. It is a binary-to-text encoding schemes that represent binary data in an ASCII string format. An example of a UUID is **1pTW01YR4mUAEbcHhbXHk8**. 
+Inside the Leverege Stack, devices (and many other elements of a project) are assigned a Base62 UUID. Base62 IDs consist of the capital letters A-Z, the lower case letters a-z, and the numbers 0–9. It is a binary-to-text encoding schemes that represent binary data in an ASCII string format. An example of a UUID is **1pTW01YR4mUAEbcHhbXHk8**. But these IDs are not how devices refer to themselves when sending a message, or how users refer to a device when they need to interact with it.
 
-But these IDs are not how devices refer to themselves when sending a message, or how users refer to a device when they need to interact with it. Our example tracker from the cow solution sends an IMEI as its identifier when it reports. A farm hand might pair a tracker to a cow by scanning a QR code or typing an ID from a label printed on the tracker.  For this project, let’s assume the cow trackers have a QR code which encodes the serial number of the tracker.
+Revisiting our farm example, you'll remember that we mentioned our tracker had an IMEI that was used as its identifier (deviceId) when it reported. Trackers also usually have some type of label on the hardware, which frequently include a QR code or barcode for scanning purposes. In our farm example, let's assume the tracker has a QR code which encodes a serial number used to identify the tracker. This is a different ID than the IMEI & the UUID. It's common that IoT devices have multiple IDs they go by. 
 
 Networks let us define how our internal devices will be mapped onto the the source, and set up messaging topics that allow communication with the device using these external names. 
 
@@ -20,7 +20,7 @@ In your Architect project, click the Networks tab on the left side, and click th
 | Label | Value|  Definition |
 |-------|------|---------------|
 | Name | Display Name |  This is the display name of your network. |
-| Device ID | `deviceId` |  This is the identifier of the given device ID. In our example of the cow tracker, the tracker's identifier is a serial number. |
+| Device ID | `deviceId` |  This is the identifier of the given device ID. |
 | Identifiers | `aliasKey` |  This describes what type of identifier the given device ID is. It refers to a identifier type that we will enter into our network definition. |
 | API Key | `networkId` | This is used as the networkID and tells us which network, from the list of the networks on the given API server, the API should look to find this device. |
 
@@ -42,19 +42,18 @@ When creating the network, we are defining the `networkId` and the `aliasKeys` o
 
 ## Choosing Good Network Values
 
-Back to our Architect UI, where we are creating the network, we need to choose the name, API Key ('networkId'), and Identifiers ('aliasKeys'). 
+Back to our Architect UI, where we are creating the network, we need to choose the name, API Key ('networkId'), and Identifiers ('aliasKeys'). The name is simply a human readable display name for the network, so that we can pick it out on our list of networks. 
 
-The name is simply a human readable display name for the network, so that we can pick it out on our list of networks. We are creating the network for our cow trackers, so let's call it Cow GPS Tracker Network. Note that you should not include your environment in your network name (for example, Dev Tracker Network is a bad name). 
+As an example, let's create a network for the trackers in our farm example. We are creating the network for our cow trackers which are GPS-based, so let's call it Cow GPS Tracker Network. Note that you should not include your environment in your network name (for example, Dev Tracker Network is a bad name). 
 
 The networkId (entered in the ‘Api Key’ field) must be unique across all projects in your Architect instance. It should be short, and describe the source / interface. For our example, we'll use  ‘cow-tracker-network’. By convention, networkIds are skewer cased.
 
-The aliasKeys are the types of external identifiers. The devices provide us with IMEIs when they send messages, and the users will use the serial number. It’s a good practice to be descriptive and specific with these names (and not just default to ‘deviceId’, for example). So lets set that field to ‘imei,serialNumber’.
+The aliasKeys are the types of external identifiers. In our farm example, the devices provide us with IMEIs when they send messages, and the users will use the serial number. It’s a good practice to be descriptive and specific with these names (and not just default to ‘deviceId’, for example). So lets set that field to ‘imei,serialNumber’.
 
 <figure markdown>
 ![!Network](assets/networkcreate.png){ width="700" }
   <figcaption>Creating a Network</figcaption>
 </figure>
-
 
 To tie this together, this tells us that a parsed inbound Cow Tracker device message from our ingestor might look something like this:
 
@@ -64,7 +63,7 @@ To tie this together, this tells us that a parsed inbound Cow Tracker device mes
   type : 'inboundDataEventMsg',
   time : 1619388341985,
   networkId : 'cow-tracker-network',
-  aliasKey : 'imei',
+  aliasKey : 'imei, serialNumber',
   deviceId : '981472630769911',
   data : [
    { path : 'temperature', value : 30.20 }
