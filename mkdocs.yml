@@ -32,7 +32,6 @@ nav :
        - architecture/roles/index.md
        - Permissions: architecture/roles/permission.md
        - Creating Roles: architecture/roles/role.md
-       - Routing: architecture/roles/routing.md
   - UI Setup:
     - setup/index.md
     - Branding & Styling:
@@ -49,6 +48,8 @@ nav :
       - Page Display Options: setup/nav/page.md
       - Styling Overrides : setup/nav/path-overrides.md
       - Role-Specific Settings: setup/nav/role.md
+      - Routing: setup/nav/routing.md
+
     - Developer Options:
       - Overview: setup/dev.md
     - Multi-UI Projects:
