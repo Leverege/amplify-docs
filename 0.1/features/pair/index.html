@@ -561,6 +561,8 @@
         
           
         
+          
+        
       
       
         
@@ -605,6 +607,20 @@
     <li class="md-nav__item">
       <a href="../../architecture/roles/role/" class="md-nav__link">
         Creating Roles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/roles/routing/" class="md-nav__link">
+        Routing
       </a>
     </li>
   
@@ -1107,7 +1123,7 @@
   
     <li class="md-nav__item">
       <a href="../../config/config-basics/" class="md-nav__link">
-        Getting Started
+        Configuration Panels
       </a>
     </li>
   
@@ -1900,6 +1916,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-pairing" class="md-nav__link">
+    Enabling Pairing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pairing-assets" class="md-nav__link">
+    Pairing Assets
+  </a>
+  
+    <nav class="md-nav" aria-label="Pairing Assets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#individual-pairing" class="md-nav__link">
+    Individual Pairing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk-pairing" class="md-nav__link">
+    Bulk Pairing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unpairing-assets" class="md-nav__link">
+    Unpairing Assets
+  </a>
+  
+    <nav class="md-nav" aria-label="Unpairing Assets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#individual-unpairing" class="md-nav__link">
+    Individual Unpairing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk-unpairing" class="md-nav__link">
+    Bulk Unpairing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1912,6 +1997,117 @@
                 
 
 <h1 id="pairing">Pairing<a class="headerlink" href="#pairing" title="Permanent link">&para;</a></h1>
+<p>Pairing allows users to associate each of their devices to the assets they are actually tracking. </p>
+<p>For example, a solution may use GPS trackers to monitor positions of a fleet of trucks. The GPS tracker is the device, and the asset is the truck. Pairing associates trackers to trucks, thereby giving business-specific context to each device without having to hard-code business-specific attributes against the device itself.</p>
+<p>Enable pairing on the UI to allow users to use scan-based, search-based, and/or bulk pairing of assets and devices from the desktop and mobile views of an application.</p>
+<h2 id="enabling-pairing">Enabling Pairing<a class="headerlink" href="#enabling-pairing" title="Permanent link">&para;</a></h2>
+<p>To enable pairing on a project, in Architect add the <code>pairingEnabled</code> property to <code>moltenConfigOptions</code> within metadata of the system. If the <code>moltenConfigOptions</code> doesn't already exist, add the entire JSON in:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;moltenConfigOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nt">&quot;pairingEnabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+</span><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Then, add one or more of the pairing tags to enable pairing:</p>
+<ol>
+<li><code>is:pairing</code> - to enable pairing of an asset to a device one at a time </li>
+<li><code>is:bulkPairing</code> - to enable pairing of assets to devices in bulk</li>
+</ol>
+<p>Apply one or both tags on the relationship attribute on which the pairing will occur. For example, to pair a truck to a tracker, apply tags on the truck blueprint’s tracker attribute.</p>
+<p>Lastly, create a network for the assets &amp; network for the devices (if not already created), and apply them to the blueprints. This tells the system which identifiers to look for when the user searches for assets and devices in the pairing popup.</p>
+<ol>
+<li>In Architect go to the <strong>Device Control &gt; Networks</strong></li>
+<li>Click the <strong>+ Custom</strong> button in the upper right to create the device network</li>
+<li>In the <strong>Create Custom Network</strong> popup, enter: <ol>
+<li>A name for the network: can be something like <code>asset-network-01</code></li>
+<li>The API Key: can use the same as the name)</li>
+<li>The identifiers: the field should match the unique identifier used on the asset (e.g. <code>assetId</code>)</li>
+</ol>
+</li>
+<li>In the asset blueprint, add the following tag to the blueprint: <code>network:[asset network name]:[identifier]</code> (e.g. <code>network:asset-network01:assetId</code>)</li>
+<li>Repeat the steps for a device network and device blueprint, if not already created</li>
+</ol>
+<h2 id="pairing-assets">Pairing Assets<a class="headerlink" href="#pairing-assets" title="Permanent link">&para;</a></h2>
+<h3 id="individual-pairing">Individual Pairing<a class="headerlink" href="#individual-pairing" title="Permanent link">&para;</a></h3>
+<p>Individual pairing is accomplished through using the <code>is:pairing</code> tag on the relationship blueprint on which the pairing occurs.</p>
+<p>Once added, a link icon should appear to the right of the screen title that when clicked shows the action to pair.</p>
+<figure>
+<p><img alt="Pairing icon" src="assets/individual-pairing.png" width="400" />
+  </p>
+<figcaption>Pairing icon with pairing action shown</figcaption>
+</figure>
+<p>To pair an asset to a device:</p>
+<ol>
+<li>Select the <strong>Pair</strong> action</li>
+<li>In the popup, search for the asset in the <strong>Asset</strong> field (or whatever the asset blueprint is named) and select it from the list<ol>
+<li>Users can also click the camera icon to scan for a barcode using their computer or mobile device's camera. When a barcoe is detected, it will automatically populate in the <strong>Asset</strong> field</li>
+</ol>
+</li>
+<li>Search for the device in the <strong>Device</strong> field (or whatever the device blueprint is named) and select it from the list<ol>
+<li>Users can also click the camera icon to scan for a barcode using their computer or mobile device's camera. When a barcode is detected, it will automatically populate in the <strong>Device</strong> field</li>
+</ol>
+</li>
+<li>Click <strong>Pair</strong> and confirm the pairing was succcessful in the confirmation screen</li>
+</ol>
+<figure>
+<p><img alt="Pairing screen" src="assets/pairing-screen.png" width="500" />
+  </p>
+<figcaption>Individual pairing screen</figcaption>
+</figure>
+<p>When you pair, any relevant information, such as the position of the device, will be automatically forwarded to the asset.</p>
+<div class="admonition tip">
+<p class="admonition-title">Pre-selecting asset to pair</p>
+<p>Selecting an asset on the table (by marking its checkbox) before clicking the Pair action will auto-populate the Asset ID in the pairing form. This avoids having users needing to manually type in the asset ID every time.</p>
+</div>
+<h3 id="bulk-pairing">Bulk Pairing<a class="headerlink" href="#bulk-pairing" title="Permanent link">&para;</a></h3>
+<p>Bulk pairing provides users with a CSV template to populate that when uploaded will pair assets to devices en masse. This is particularly helpful for initial system setup or deployments.</p>
+<p>Before using bulk pairing, first ensure that the <code>is:bulkPairing</code> tag is applied on the relationship blueprint on which the pairing occurs.</p>
+<p>Once added, a link icon should appear to the right of the screen title that when clicked shows the action to pair.</p>
+<figure>
+<p><img alt="Pairing icon" src="assets/bulk-pairing.png" width="400" />
+  </p>
+<figcaption>Pairing icon with bulk pairing action shown</figcaption>
+</figure>
+<p>To bulk pair:</p>
+<ol>
+<li>Select the <strong>Bulk Pair</strong> action from the menu</li>
+<li>In the Bulk Pair screen, click <strong>Bulk Pair CSV Template</strong> to download the CSV template</li>
+<li>Open the template file in a spreadsheet editor of your choice (Excel, Google Sheets, etc.)</li>
+<li>In the template there are two columns, one for the asset ID and the other for the device ID. Populate the desired pairings in the sheet. The asset and devices entered in the same row will be paired together</li>
+<li>Save the file</li>
+<li>Return to the <strong>Bulk Pair</strong> screen and under <strong>Upload File</strong>, click <strong>Browse</strong></li>
+<li>Select the populated template file to upload</li>
+<li>Wait a few seconds for the pairings to occur</li>
+<li>Confirm the results in the subsequent screens</li>
+</ol>
+<figure>
+<p><img alt="Bulk pairing screen" src="assets/bulk-pairing-screen.png" width="500" />
+  </p>
+<figcaption>Bulk pairing screen</figcaption>
+</figure>
+<h2 id="unpairing-assets">Unpairing Assets<a class="headerlink" href="#unpairing-assets" title="Permanent link">&para;</a></h2>
+<h3 id="individual-unpairing">Individual Unpairing<a class="headerlink" href="#individual-unpairing" title="Permanent link">&para;</a></h3>
+<p>To unpair an individual asset:</p>
+<ol>
+<li>Click the link icon and select <strong>Unpair</strong></li>
+<li>In the <strong>Unpair</strong> screen, search for the the asset ID to unpair<ol>
+<li>Users can also select the checkmark next to the asset before selecting Unpair to auto-populate the asset ID in the unpairing form.</li>
+</ol>
+</li>
+<li>Click <strong>Unpair</strong> and confirm the results in the subsequent screen</li>
+</ol>
+<h3 id="bulk-unpairing">Bulk Unpairing<a class="headerlink" href="#bulk-unpairing" title="Permanent link">&para;</a></h3>
+<p>To unpair assets in bulk:</p>
+<ol>
+<li>Click the link icon and select <strong>Bulk Unpair</strong></li>
+<li>In the Bulk Pair screen, click <strong>Bulk Unpair CSV Template</strong> to download the CSV template</li>
+<li>In the template there is column for the asset ID. Populate the desired asset IDs to unpair in the sheet</li>
+<li>Save the file</li>
+<li>Return to the <strong>Bulk Unpair</strong> screen and under <strong>Upload File</strong>, click <strong>Browse</strong></li>
+<li>Select the populated template file to upload</li>
+<li>Wait a few seconds for the unpairings to occur</li>
+<li>Confirm the results in the subsequent screens</li>
+</ol>
 
               
             </article>

@@ -561,6 +561,8 @@
         
           
         
+          
+        
       
       
         
@@ -605,6 +607,20 @@
     <li class="md-nav__item">
       <a href="../../../architecture/roles/role/" class="md-nav__link">
         Creating Roles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/roles/routing/" class="md-nav__link">
+        Routing
       </a>
     </li>
   
@@ -1107,7 +1123,7 @@
   
     <li class="md-nav__item">
       <a href="../../../config/config-basics/" class="md-nav__link">
-        Getting Started
+        Configuration Panels
       </a>
     </li>
   
@@ -1502,9 +1518,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Multi-Role Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Multi-Role Management
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#switching-between-roles" class="md-nav__link">
+    Switching Between Roles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordering-the-roles-in-the-role-selector" class="md-nav__link">
+    Ordering the Roles in the Role Selector
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1910,6 +1964,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#switching-between-roles" class="md-nav__link">
+    Switching Between Roles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordering-the-roles-in-the-role-selector" class="md-nav__link">
+    Ordering the Roles in the Role Selector
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1922,12 +1998,60 @@
                 
 
 <h1 id="multi-role-management">Multi-Role Management<a class="headerlink" href="#multi-role-management" title="Permanent link">&para;</a></h1>
-<p>It's common that some users may have multiple roles in the system. Especially <strong>administrator-type</strong> roles. This is because to assign a role to a new or current user, you must already have that role yourself. </p>
-<p>Thus, some users have multiple roles. Our system allows those users to toggle between the different UI experiences for those roles under the account dropdown in the top right corner. This will change the UI to the one configured for the selected role. Note that if you have all four of the roles below and selected the viewer role, you would still be able to perform actions around the UI that a Company Administrator can, you would just see the different dashboards &amp; maps available to the viewer.</p>
+<p>​
+Users can be assigned one or more roles in a project. Each role may contain a different set of views, visible data fields, and actions. It's common for users to switch between roles in order to perform their desired task.
+​</p>
+<div class="admonition note">
+<p class="admonition-title">Creating Roles and Managing Users</p>
+<p>For information on how to create users, see the documentation on Roles and Permissions.
+For information on how to assign roles to and manage users, see the documenetation on User Management.</p>
+</div>
+<p>​</p>
+<h2 id="switching-between-roles">Switching Between Roles<a class="headerlink" href="#switching-between-roles" title="Permanent link">&para;</a></h2>
+<p>​
+To switch between assigned roles in an application:
+​
+1. Click the username in the upper right corner to access the role selector
+1. A dropdown should appear which contains the list of available roles under <strong>User Role</strong>
+1. Select a the desired role and the UI will reload the view according the newly selected role
+​</p>
 <figure>
-<p><div class="lightgallery"><a data-sub-html="Role Picker" href="../assets/role-picker.png"><img alt="Role Picker" src="../assets/role-picker.png" width="700" />
-  </a></div></p>
-<figcaption>Role Picker</figcaption>
+<p><img alt="Role selector" src="../assets/role-selector.png" width="400" />
+  </p>
+<figcaption>Switching among assigned roles</figcaption>
+</figure>
+<p>​
+​</p>
+<h2 id="ordering-the-roles-in-the-role-selector">Ordering the Roles in the Role Selector<a class="headerlink" href="#ordering-the-roles-in-the-role-selector" title="Permanent link">&para;</a></h2>
+<p>​
+To define the order of roles presented in the role selector dropdown, use the <code>priority</code> property in the metadata of a role. The <code>priority</code> property is an integer to represent the rank, with <code>0</code> being the highest priority.
+​
+To order the roles in the role selector:
+​
+1. In Architect, navigate to <strong>Permissions &gt; Roles</strong>
+1. Select a role and edit the metadata by clicking the <strong>Edit</strong> button in the <strong>Metadata</strong> section (see screenshot below for reference)
+1. Add the <code>priority</code> property in top level of the metadata. There may be other properties in the metadata already:
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ui&quot;</span><span class="p">:{</span><span class="w"></span>
+<span class="w">    </span><span class="err">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="err">...</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;usedAtBlueprints&quot;</span><span class="p">:</span><span class="err">...</span><span class="w"></span>
+<span class="w">    </span><span class="err">...</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+</span><span class="w">    </span><span class="err">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+1. Click <strong>OK</strong> to close the <strong>Metadata</strong> popup
+1. Click <strong>Save</strong> in the role panel on the right to save the metadata to the role
+1. Repeat the steps for all remaining roles on the project
+​
+The roles will be ordered top to bottom from highest priority (smallest number) to lowest priority (largest number).
+​</p>
+<figure>
+<p><img alt="Editing role metadata" src="../assets/edit-role-metadata.png" width="800" />
+  </p>
+<figcaption>Editing role metadata</figcaption>
 </figure>
 
               

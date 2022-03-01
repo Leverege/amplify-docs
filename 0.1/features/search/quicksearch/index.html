@@ -561,6 +561,8 @@
         
           
         
+          
+        
       
       
         
@@ -605,6 +607,20 @@
     <li class="md-nav__item">
       <a href="../../../architecture/roles/role/" class="md-nav__link">
         Creating Roles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/roles/routing/" class="md-nav__link">
+        Routing
       </a>
     </li>
   
@@ -1107,7 +1123,7 @@
   
     <li class="md-nav__item">
       <a href="../../../config/config-basics/" class="md-nav__link">
-        Getting Started
+        Configuration Panels
       </a>
     </li>
   
@@ -1651,9 +1667,81 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Quick Search
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Quick Search
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#root-level-search" class="md-nav__link">
+    Root Level Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-level-search" class="md-nav__link">
+    Page-Level Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-simple-search-results" class="md-nav__link">
+    Configuring Simple Search Results
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-the-look-feel-of-quick-search" class="md-nav__link">
+    Configuring the Look &amp; Feel of Quick Search
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring the Look &amp; Feel of Quick Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-search-tags" class="md-nav__link">
+    Simple Search Tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-search-metadata" class="md-nav__link">
+    Simple Search Metadata
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1910,6 +1998,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#root-level-search" class="md-nav__link">
+    Root Level Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-level-search" class="md-nav__link">
+    Page-Level Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-simple-search-results" class="md-nav__link">
+    Configuring Simple Search Results
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-the-look-feel-of-quick-search" class="md-nav__link">
+    Configuring the Look &amp; Feel of Quick Search
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring the Look &amp; Feel of Quick Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-search-tags" class="md-nav__link">
+    Simple Search Tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-search-metadata" class="md-nav__link">
+    Simple Search Metadata
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1922,6 +2066,118 @@
                 
 
 <h1 id="quick-search">Quick Search<a class="headerlink" href="#quick-search" title="Permanent link">&para;</a></h1>
+<p>When you have multiple devices, it’s helpful to use a quick search engine to find a specific device easily. Just like search engines have saved us so much time searching for information, we want to provide users the ability to search for any item within seconds. </p>
+<p>The Leverege IoT Stack offers two types of quick search: </p>
+<ol>
+<li><strong>Root-level search:</strong> Quickly search devices across the entire application</li>
+<li><strong>Page-level search:</strong> Quickly search devices within a certain level of the application</li>
+</ol>
+<h2 id="root-level-search">Root Level Search<a class="headerlink" href="#root-level-search" title="Permanent link">&para;</a></h2>
+<p>Root-level search is helpful to search for all devices of a particular blueprint type across an entire project. To add the root level search:</p>
+<ol>
+<li>Go to the blueprint named <code>Asset</code> and under the <strong>Info</strong> page and add the tag called <code>&lt;has:simpleSearch&gt;</code></li>
+<li>Once you add this tag, you will see a search assets button appear on the top navigation bar. </li>
+</ol>
+<figure>
+<p><img alt="Simple Search Tag" src="../assets/architect-has-simple-search-tag.png" width="900" />
+  </p>
+<figcaption>Simple search tag added to asset blueprint </figcaption>
+</figure>
+<figure>
+<p><img alt="Simple search on root" src="../assets/simple-search-root.png" width="900" />
+  </p>
+<figcaption>Root-level Search Assets page appears on the top nav bar</figcaption>
+</figure>
+<h2 id="page-level-search">Page-Level Search<a class="headerlink" href="#page-level-search" title="Permanent link">&para;</a></h2>
+<p>Page-level search is helpful in quickly searching within a specific level of the application. For example, to search all assets in a given company, add the tag <code>&lt;has:simpleSearch&gt;</code> to the <code>company.assets</code> attribute in the <code>Company</code> blueprint.</p>
+<figure>
+<p><img alt="Simple Search Tag on Attribute" src="../assets/architect-attribute-has-simple-search.png" width="900" />
+  </p>
+<figcaption>Add page-level quick search in blueprint attribute </figcaption>
+</figure>
+<figure>
+<p><img alt="Simple Search on page level" src="../assets/simple-search-page-level.png" width="900" />
+  </p>
+<figcaption>Page-level search appears on the side navigation bar </figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Adding simple search to attributes</p>
+<p>It’s important to note that you can only apply page-level searches to attributes representing other blueprints. </p>
+<p>For instance, within the company blueprint below, you can add the quick search tag to the following attributes: locations, assets, and trackers because these are relationship attributes referencing other blueprints. </p>
+<p>You cannot add page-level quick search to regular data attributes that don’t have their own blueprints (e.g., email, phone, name, and contact)</p>
+</div>
+<h2 id="configuring-simple-search-results">Configuring Simple Search Results<a class="headerlink" href="#configuring-simple-search-results" title="Permanent link">&para;</a></h2>
+<p>To configure which fields are included in a quick search, click the gear icon in the search bar. Configuration behaves in the same way as the main Search configuration. </p>
+<figure>
+<p><img alt="Simple Search Field Config" src="../assets/simple-search-config.png" width="900" />
+  </p>
+<figcaption>Configuring searchable fields in Quick Search</figcaption>
+</figure>
+<p>Executing a simple search will bring users to a dedicated simple search results page. This page must be configured as any other UI page by setting the layout and configuring each component. Refer to the previous documentation on the layout controller and the other UI components for how to configure this in more detail.</p>
+<h2 id="configuring-the-look-feel-of-quick-search">Configuring the Look &amp; Feel of Quick Search<a class="headerlink" href="#configuring-the-look-feel-of-quick-search" title="Permanent link">&para;</a></h2>
+<p>Other tags and metadata can be added to change the look of the quick search page.</p>
+<ul>
+<li>If configuring a <strong>root-level</strong> quick search page, the tags and metadata are added on the blueprint</li>
+<li>If configuring a <strong>page-level</strong> quick search page, the tags and metadata are added on the attribute</li>
+</ul>
+<h3 id="simple-search-tags">Simple Search Tags<a class="headerlink" href="#simple-search-tags" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>simpleSearchLinkName:&lt;name&gt;</code></td>
+<td>Set the name of the quick search page in the nav bar</td>
+</tr>
+<tr>
+<td><code>simpleSearchScreenTitle:&lt;title&gt;</code></td>
+<td>Set the name of the quick search page in the search results page header</td>
+</tr>
+<tr>
+<td><code>simpleSearchNavSort:&lt;SortKey&gt;</code></td>
+<td>Set the sort key that determines where the quick search appears in the nav ordering</td>
+</tr>
+<tr>
+<td><code>simpleSearchExcludeFrom:&lt;ROLE&gt;</code></td>
+<td>Set which role cannot not see quick search</td>
+</tr>
+<tr>
+<td><code>simpleSearch:preferredView</code></td>
+<td>Set the quick search to be the default redirect page</td>
+</tr>
+</tbody>
+</table>
+<h3 id="simple-search-metadata">Simple Search Metadata<a class="headerlink" href="#simple-search-metadata" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>strings/simpleSearchHint</code></td>
+<td>Set the text on the search hint that appears below the search bar</td>
+</tr>
+<tr>
+<td><code>icons/simpleSearchScreenIcon</code></td>
+<td>Set the screen icon on the simple search page</td>
+</tr>
+<tr>
+<td><code>icons/simpleSearchNavIcon</code></td>
+<td>Set the nav icon on the simple search page</td>
+</tr>
+<tr>
+<td><code>icons/simpleSearchDoodle</code></td>
+<td>Set the doodle artwork above the search bar</td>
+</tr>
+</tbody>
+</table>
 
               
             </article>

@@ -561,6 +561,8 @@
         
           
         
+          
+        
       
       
         
@@ -605,6 +607,20 @@
     <li class="md-nav__item">
       <a href="../../architecture/roles/role/" class="md-nav__link">
         Creating Roles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/roles/routing/" class="md-nav__link">
+        Routing
       </a>
     </li>
   
@@ -1107,7 +1123,7 @@
   
     <li class="md-nav__item">
       <a href="../../config/config-basics/" class="md-nav__link">
-        Getting Started
+        Configuration Panels
       </a>
     </li>
   
@@ -1900,6 +1916,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-user-management-interface-to-a-page" class="md-nav__link">
+    Adding a User Management Interface to a Page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-users-to-a-page" class="md-nav__link">
+    Adding Users to a Page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-and-removing-users-from-a-page" class="md-nav__link">
+    Editing and Removing Users from a Page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-users" class="md-nav__link">
+    Deleting Users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-a-user-management-interface-from-certain-roles" class="md-nav__link">
+    Hiding a User Management Interface from Certain Roles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-the-selectable-roles-in-user-management-ui" class="md-nav__link">
+    Setting The Selectable Roles In User Management UI
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1912,6 +1978,88 @@
                 
 
 <h1 id="user-management">User Management<a class="headerlink" href="#user-management" title="Permanent link">&para;</a></h1>
+<p>The Leverege IoT stack offers a powerful set of user management capabilities. Using role-based access control (RBAC), application administrators can add user management to any level of their organizational hierarchy and assign one or more roles to their users.</p>
+<p>This documentation focuses on enabling the user management function and managing users within applications built using the Leverege Stack. For information on how user roles and permissions are configured, see the documentation on user roles and permissions.</p>
+<h2 id="adding-a-user-management-interface-to-a-page">Adding a User Management Interface to a Page<a class="headerlink" href="#adding-a-user-management-interface-to-a-page" title="Permanent link">&para;</a></h2>
+<p>Users can add a user management interface (the same one seen on API UI) on specific pages of the UI by adding in the <code>has:userManagement</code> tag onto the blueprint corresponding to the page. For example, to add a user management tab onto the Locations page, enter in the tag has:userManagement on the Location blueprint. </p>
+<figure>
+<p><img alt="User management architect tag" src="assets/architect-user-management-tag.png" width="900" />
+  </p>
+<figcaption>User management tag applied to blueprint</figcaption>
+</figure>
+<figure>
+<p><img alt="User management UI page" src="assets/ui-user-management-page.png" width="900" />
+  </p>
+<figcaption>Resulting user management page from adding user management tag</figcaption>
+</figure>
+<h2 id="adding-users-to-a-page">Adding Users to a Page<a class="headerlink" href="#adding-users-to-a-page" title="Permanent link">&para;</a></h2>
+<p>To add users to a given part of the system, administrators can either go to:</p>
+<ul>
+<li>The user management page at the relevant page/level of the application itself, provided that the User Management page has been added using the <code>has:userManagement</code> tag as described in the previous section, OR</li>
+</ul>
+<figure>
+<p><img alt="User management UI page" src="assets/ui-user-management-add.png" width="900" />
+  </p>
+<figcaption>Adding a user to a specific location using the UI-embedded user management page</figcaption>
+</figure>
+<ul>
+<li>The <strong>Access</strong> page in Architect of the System or specific Device to which the user should have access.</li>
+</ul>
+<figure>
+<p><img alt="User management UI page" src="assets/ui-user-management-add.png" width="900" />
+  </p>
+<figcaption>Adding a user to a specific location using the location's Access page in Architect</figcaption>
+</figure>
+<p>In either case, the process for adding a user to the page is the same:</p>
+<ol>
+<li>Click the <strong>+ Button</strong> at the top of the page to open the <strong>Add Users</strong> page</li>
+<li>Enter the email address of the user to add, and press <strong>Enter</strong></li>
+<li>If the user is new, select either <strong>Invite New User</strong> or <strong>Create New User Account</strong>. If the user already exists, then skip this step.<ol>
+<li>If selecting <strong>Invite New User</strong>, the system will provide a prompt to select the roles from the system. Once the roles have been selected, click <strong>Invite</strong>. This will send an automated invitation email to the user, which will contain a link for them to activate their account and enter in the remaining account details and set their password.</li>
+<li>If selecting <strong>Create New User Account</strong>, the system will provide a prompt enter in the necessary account information and select the roles to assign the user. Once the roles have been selected, click <strong>Create</strong>. This will send an automated invitation email to the user, which will contain a link for them to activate their account and log in.</li>
+</ol>
+</li>
+</ol>
+<h2 id="editing-and-removing-users-from-a-page">Editing and Removing Users from a Page<a class="headerlink" href="#editing-and-removing-users-from-a-page" title="Permanent link">&para;</a></h2>
+<p>To edit a user's roles, click the pencil icon to the right of their row. Edit the roles in the popup that appears.</p>
+<p>To remove a user access from a page, mark the checkbox on the left next to their username. Then select the three-dots icon next to Users in the header &gt; <strong>Remove User</strong>. This removes the user access from the page, but does not delete the user entirely from the system. To delete a user entirely from the system, see the following section.</p>
+<h2 id="deleting-users">Deleting Users<a class="headerlink" href="#deleting-users" title="Permanent link">&para;</a></h2>
+<p>To completely delete a user from the system, in Architect go to the <strong>Users</strong> page. Find the user to delete and click the gear icon on the right side of the row and select <strong>Delete</strong>.</p>
+<h2 id="hiding-a-user-management-interface-from-certain-roles">Hiding a User Management Interface from Certain Roles<a class="headerlink" href="#hiding-a-user-management-interface-from-certain-roles" title="Permanent link">&para;</a></h2>
+<p>To hide the user management interface added on a blueprint page from certain roles, use the <code>excludeUserManagementFrom:[roleName]</code> tag, replacing <code>roleName</code> with the desired role name to exclude.</p>
+<h2 id="setting-the-selectable-roles-in-user-management-ui">Setting The Selectable Roles In User Management UI<a class="headerlink" href="#setting-the-selectable-roles-in-user-management-ui" title="Permanent link">&para;</a></h2>
+<p>To set which roles appear on which pages of the UI:</p>
+<ol>
+<li>Go to the <strong>Permissions &gt; Roles</strong> page and select the role to configure</li>
+<li>In the panel on the right, click on the <strong>Edit</strong> button next to the <strong>Metadata</strong> section to open up the dialog box</li>
+<li>Add a property called <code>usedAtBlueprints</code> and enter an array of the blueprint name(s) of the pages for which that role can be selected. The blueprint name should match the alias field in the blueprint configuration. In the example below, the metadata shown is for the Editor role and shows that it is selectable only in a Locations page. The alias of the blueprint is <code>location</code>. </li>
+</ol>
+<p>The following two screenshots below the metadata show that the role is selectable in the Locations page, but not selectable in other places in the UI (e.g. the Company page).</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;ui&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;defaultUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;urlPathRoleCalculator&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;single&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/p/editor/location/:resourceId&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;multiple&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/p/editor/location&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5xoe2UpeFrV8xcmvekKbG4&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">&quot;usedAtBlueprints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="s2">&quot;location&quot;</span><span class="w"></span>
+</span><span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<figure>
+<p><img alt="Role on locations page" src="assets/role-on-location-page.png" width="900" />
+  </p>
+<figcaption>Editor role showing on the location page</figcaption>
+</figure>
+<figure>
+<p><img alt="Role on company page" src="assets/role-on-company-page.png" width="900" />
+  </p>
+<figcaption>Editor role correctly hidden from the company page</figcaption>
+</figure>
 
               
             </article>

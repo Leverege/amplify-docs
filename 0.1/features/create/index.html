@@ -561,6 +561,8 @@
         
           
         
+          
+        
       
       
         
@@ -605,6 +607,20 @@
     <li class="md-nav__item">
       <a href="../../architecture/roles/role/" class="md-nav__link">
         Creating Roles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/roles/routing/" class="md-nav__link">
+        Routing
       </a>
     </li>
   
@@ -1107,7 +1123,7 @@
   
     <li class="md-nav__item">
       <a href="../../config/config-basics/" class="md-nav__link">
-        Getting Started
+        Configuration Panels
       </a>
     </li>
   
@@ -1900,6 +1916,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    Create
+  </a>
+  
+    <nav class="md-nav" aria-label="Create">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-a-create-form" class="md-nav__link">
+    Configuring a Create Form
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bulk-create" class="md-nav__link">
+    Bulk Create
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit" class="md-nav__link">
+    Edit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    Remove
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    Delete
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1912,6 +1984,103 @@
                 
 
 <h1 id="create-edit-actions">Create &amp; Edit Actions<a class="headerlink" href="#create-edit-actions" title="Permanent link">&para;</a></h1>
+<p>A powerful and handy feature of the Leverege IoT Stack is the ability to create and edit every type of object in the system, both individually and in bulk. </p>
+<p>Users, especially those with admin roles, will often need to upload objects like assets or devices into the application. Once they create the object, they may also want the ability to edit the object, remove the object from a specific level of the application, or remove the object from the application altogether.</p>
+<p>Below are the 5 actions you can perform on an object: </p>
+<ol>
+<li><strong>Create</strong>: create an individual object and add the various fields that define the object </li>
+<li><strong>Bulk Create</strong>: bulk create objects by uploading a CSV to the application </li>
+<li><strong>Edit</strong>: edit the data fields to ensure the object information is up to date</li>
+<li><strong>Remove</strong>: remove the object from a specific level of the application </li>
+<li><strong>Delete</strong>: delete the object from the entire application </li>
+</ol>
+<h2 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h2>
+<p>The create action is an out-of-the-box feature for any blueprint type. </p>
+<p>To create an object, like an asset:</p>
+<ol>
+<li>Click the three-dot icon and select <strong>+ Create [Blueprint Name]</strong></li>
+<li>A form will appear where you can fill out the different fields that define the object</li>
+<li>Populate the fields of the form and click <strong>Create</strong>. The newly created object of the Blueprint type should appear in the table (if one is shown)</li>
+</ol>
+<figure>
+<p><img alt="Create object action" src="assets/create-action.png" width="400" />
+  </p>
+<figcaption>Example of a create action</figcaption>
+</figure>
+<h3 id="configuring-a-create-form">Configuring a Create Form<a class="headerlink" href="#configuring-a-create-form" title="Permanent link">&para;</a></h3>
+<p>For fields to appear on the form, their attribute must have a <code>Source</code> = <code>User</code> in Architect</p>
+<figure>
+<p><img alt="User source field" src="assets/source-user.png" width="700" />
+  </p>
+<figcaption>Example of an attribute with a Source = User</figcaption>
+</figure>
+<p>To sort the order of fields on the form: </p>
+<ol>
+<li>Apply the tag <code>formSort:[x.y]</code> in Architect on each attribute of the form</li>
+<li>Forms will be sorted in alphanumeric order using the <code>x.y</code> field (e.g. <code>a.1</code> will appear before <code>a.2</code>, and <code>a.2</code> will appear before <code>b.1</code>).</li>
+</ol>
+<p>Below is an example of adding the <code>formSort:a.1</code> tag on the <code>assetId</code> attribute to specify that the Asset ID field should appear as the first field on the form.  The <code>formSort:required</code> field can also be applied to make that field required upon creation.</p>
+<p>Then a <code>formSort:a.2</code> tag is applied on the <code>type</code> attribute to specify that it should appear second in the form.</p>
+<figure>
+<p><img alt="Form sort tags applied to attributes" src="assets/form-sort.png" width="700" />
+  </p>
+<figcaption>formSort tags applied to Asset ID and Type attributes</figcaption>
+</figure>
+<figure>
+<p><img alt="Form sorted by tags" src="assets/create-form-sorted.png" width="700" />
+  </p>
+<figcaption>Create form sorted by Asset ID then Type</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can create an object at the root level of the application, or you can create an object on a specific page. </p>
+<p>For example, if you create an asset within a particular company, the asset will be created and associated with the company. On the other hand, if you create an asset at the root level, it will be created, but it will not be associated with any company. </p>
+</div>
+<h2 id="bulk-create">Bulk Create<a class="headerlink" href="#bulk-create" title="Permanent link">&para;</a></h2>
+<p>The Leverege IoT Stack offers users the ability to bulk create objects through a CSV upload mechanism. When using bulk create, users populate a template that defines the main identifers and supporting data fields of each object to create.</p>
+<p>To enable the bulk create action for objects of a given blueprint type, apply the <code>bulkCreate:true</code> tag to the desired blueprint.</p>
+<p>Then, to bulk create objects:</p>
+<ol>
+<li>Navigate to the page where the objects should be created and click the three-dots action menu and select <strong>Bulk Create [Blueprint Name]</strong> </li>
+<li>In the <strong>Bulk Create [Blueprint Name]</strong> popup, click the <strong>Bulk Create CSV Template</strong> button to download the CSV template</li>
+<li>Open the template in your desired spreadsheet editor. The CSV contains all the required data fields that appear in the same form for creating individual assets</li>
+<li>Enter all the object data fields into the template and save the file to your computer</li>
+<li>Return to the <strong>Bulk Create [Blueprint Name]</strong> popup and click <strong>Choose File</strong> to upload the file to the application</li>
+<li>Wait a few seconds for the objects to create</li>
+<li>Confirm the results in the following prompt. The results should show the objects that were successfully created. In addition the results show a record of objects that did not successfully create, with an option to download the failures for further investigation</li>
+<li>Close the confirmation prompt to return to the application. The created objects now appear in the table</li>
+</ol>
+<figure>
+<p><img alt="Bulk create popup" src="assets/bulk-create.png" width="700" />
+  </p>
+<figcaption>Example of bulk create screen</figcaption>
+</figure>
+<h2 id="edit">Edit<a class="headerlink" href="#edit" title="Permanent link">&para;</a></h2>
+<p>To edit the data fields of an existing object:</p>
+<ol>
+<li>Select the checkbox next to the object</li>
+<li>Clicking the three-dots actions drop-down menu and select <strong>Edit [Blueprint Name]</strong> to open the <strong>Edit [Blueprint Name]</strong> popup</li>
+<li>Modify the popup as desired and click <strong>Save Changes</strong> to complete the changes</li>
+</ol>
+<h2 id="remove">Remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h2>
+<p>If you previously added an object to another object that contain it, you have the ability to remove that object from its containing object. For example, if you added a device to a location, you have the ability to remove the device from the location. </p>
+<div class="admonition note">
+<p class="admonition-title">Remove vs. Delete</p>
+<p>Note that the <strong>Remove</strong> action only severs the relationship between the two objects, it does not delete the object entirely from the system (for that, see the next section on Delete).</p>
+</div>
+<p>To remove an object:</p>
+<ol>
+<li>Check the box next to the object and click the three-dots drop-down menu and select the action <strong>Remove [Blueprint Name] from [Containing Blueprint Name]</strong>. </li>
+<li>This will unassign the object from the containing object with which it was associated.</li>
+</ol>
+<h2 id="delete">Delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h2>
+<p>You can also delete an item from the application entirely. </p>
+<p>To delete an object:</p>
+<ol>
+<li>Select the checkbox next to the object, click the three-dots action menu, and select <strong>Delete</strong> </li>
+<li>Confirm the deletion in the following prompt</li>
+</ol>
+<p>Deleting an object at any level will delete that asset from the application and disassociate it from all its relationships with other objects.</p>
 
               
             </article>

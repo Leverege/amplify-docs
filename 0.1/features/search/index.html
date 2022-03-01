@@ -561,6 +561,8 @@
         
           
         
+          
+        
       
       
         
@@ -605,6 +607,20 @@
     <li class="md-nav__item">
       <a href="../../architecture/roles/role/" class="md-nav__link">
         Creating Roles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/roles/routing/" class="md-nav__link">
+        Routing
       </a>
     </li>
   
@@ -1107,7 +1123,7 @@
   
     <li class="md-nav__item">
       <a href="../../config/config-basics/" class="md-nav__link">
-        Getting Started
+        Configuration Panels
       </a>
     </li>
   
@@ -1900,6 +1916,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#searching-for-data" class="md-nav__link">
+    Searching for Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtering-and-sorting-data" class="md-nav__link">
+    Filtering and Sorting Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtering and Sorting Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtering" class="md-nav__link">
+    Filtering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorting" class="md-nav__link">
+    Sorting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-search" class="md-nav__link">
+    Configuring Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-filters-and-sorts" class="md-nav__link">
+    Configuring Filters and Sorts
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1912,6 +1984,90 @@
                 
 
 <h1 id="search-filter-overview">Search &amp; Filter Overview<a class="headerlink" href="#search-filter-overview" title="Permanent link">&para;</a></h1>
+<p>The Leverege IoT Stack provides robust capabilities to search and filter your data.</p>
+<h2 id="searching-for-data">Searching for Data<a class="headerlink" href="#searching-for-data" title="Permanent link">&para;</a></h2>
+<p>Every page of the application contains a search, typically in the upper right of the UI. To search for given item on the screen, begin typing in the search bar.</p>
+<p>Suggested matching values will be shown in the dropdown as the user types.</p>
+<p>Hit enter to complete the search. The relevant search results will appear in the table, map, or other components that are configured on the page.</p>
+<figure>
+<p><img alt="Search example" src="assets/search-example.png" width="450" />
+  </p>
+<figcaption>Example of search result suggestion feature</figcaption>
+</figure>
+<h2 id="filtering-and-sorting-data">Filtering and Sorting Data<a class="headerlink" href="#filtering-and-sorting-data" title="Permanent link">&para;</a></h2>
+<p>Each data column in a table viewer can be filtered and sorted.</p>
+<h3 id="filtering">Filtering<a class="headerlink" href="#filtering" title="Permanent link">&para;</a></h3>
+<p>To filter data, click the filter icon next to the column name. It will open a dropdown that contains the list of possible values. Check one or more those values and then click <strong>Apply</strong> to apply the filter. The results should then be filtered by the selected values.</p>
+<figure>
+<p><img alt="Filter example" src="assets/filtering-data.png" width="700" />
+  </p>
+<figcaption>Example of filter dropdown when selecting the filter icon</figcaption>
+</figure>
+<h3 id="sorting">Sorting<a class="headerlink" href="#sorting" title="Permanent link">&para;</a></h3>
+<p>To sort the data, click the column name directly. A colored line should appear above or below the column header to indicate that it's being sorted either ascending or descending. Click the column header again to cycle through the sorting options, which rotates through ascending, descending, or unsorted (default).</p>
+<figure>
+<p><img alt="Sort example" src="assets/sorting-data.png" width="700" />
+  </p>
+<figcaption>Example of Asset ID column being sorted descending when clicking column name</figcaption>
+</figure>
+<h2 id="configuring-search">Configuring Search<a class="headerlink" href="#configuring-search" title="Permanent link">&para;</a></h2>
+<p>The search bar can be configured so that only certain data fields are searchable. For more information on search configuration, see the documentation on Search in the UI Configuration section.</p>
+<h2 id="configuring-filters-and-sorts">Configuring Filters and Sorts<a class="headerlink" href="#configuring-filters-and-sorts" title="Permanent link">&para;</a></h2>
+<p>It is possible to set defaults and base components for filtering and sorting for a given page using blueprint metadata. Defaults will apply to your search when no filters/sorts have been added by the user. Bases will always apply in addition to user selected sorts and filters.</p>
+<p>To apply sorts and filters, add metadata to the blueprint of the object that you want to apply filters to. In the below example:</p>
+<ul>
+<li>A default filter of <code>Name = Bessey</code> will be applied to all cows at the <code>farm.cows</code> path. </li>
+<li>A base filter of <code>Color = Blue</code> will be applied to all cows on any cow page (<code>objectType = cow</code>). </li>
+<li>A default sort of <code>id</code> by order <code>asc</code> will be applied to all cows on cow pages and a base sort of <code>Name</code> descending will be applied to all cows at the <code>field.cows</code> path. </li>
+</ul>
+<p>Note: You can use the <code>missing</code> field of a sort with values of <code>_first</code> or <code>_last</code> to sort null values to the top or bottom of a list.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;searchOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;filter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;filter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data/name&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;equals&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bessey&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;matches&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;farm.cows&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;base&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;filter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data/color&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;equals&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Blue&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;matches&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;objectType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cow&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}]</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;sort&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;matches&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;objectType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cow&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;sort&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;asc&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;base&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;matches&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;field.cows&quot;</span><span class="w"></span>
+
+<span class="w">            </span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;sort&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data/name&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;desc&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;missing&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;_first&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}]</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
               
             </article>
