@@ -1,4 +1,4 @@
 ---
-title: Leverege Build
+title: Leverege Stack
 template: home.html
 ---
