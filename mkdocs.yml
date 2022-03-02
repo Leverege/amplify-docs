@@ -50,8 +50,6 @@ nav :
       - Role-Specific Settings: setup/nav/role.md
     - Developer Options:
       - Overview: setup/dev.md
-    - Multi-UI Projects:
-      - setup/multi.md
   - UI Configuration:
      - config/index.md
      - Configuration Panels: config/config-basics.md
@@ -85,10 +83,6 @@ nav :
         - Quick Search: features/search/quicksearch.md
      - Pairing:
         - features/pair/index.md
-     - Maps:
-        - features/map/index.md
-        - Zones: features/map/zone.md
-        - Multi-Floor Management: features/map/multifloor.md
      - FOTA Management:
         - features/fota/index.md
         - Device Type: features/fota/type.md
