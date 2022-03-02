@@ -1,0 +1,2285 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/amplify-favicon.svg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
+    
+    
+      
+        <title>Configuration and Dashboard Basics - Leverege Stack Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2b4465f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:""}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuration-and-dashboard-basics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+            <div class="md-banner__inner md-grid md-typeset">
+              
+  You're not viewing the latest version.
+  <a href="../../../.."> 
+    <strong>Click here to go to latest.</strong>
+  </a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Leverege Stack Documentation" class="md-header__button md-logo" aria-label="Leverege Stack Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/amplify-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Leverege Stack Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration and Dashboard Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../architecture/" class="md-tabs__link">
+        Project Setup
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../setup/" class="md-tabs__link">
+        UI Setup
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        UI Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../features/" class="md-tabs__link">
+        Features
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Leverege Stack Documentation" class="md-nav__button md-logo" aria-label="Leverege Stack Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/amplify-logo.svg" alt="logo">
+
+    </a>
+    Leverege Stack Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../architecture/">Project Setup</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Project Setup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Project Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../architecture/core/">Core Concepts</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Core Concepts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Core Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../architecture/blueprint/">Blueprints</a>
+          
+            <label for="__nav_2_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Blueprints" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Blueprints
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/blueprint/relationship/" class="md-nav__link">
+        Relationships
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../architecture/network/">Networks</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Networks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Networks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../architecture/system/">Systems & Devices</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Systems & Devices" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Systems & Devices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../architecture/roles/">Roles & Permissions</a>
+          
+            <label for="__nav_2_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Roles & Permissions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Roles & Permissions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/roles/permission/" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/roles/role/" class="md-nav__link">
+        Creating Roles
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../setup/">UI Setup</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="UI Setup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          UI Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../setup/branding/">Branding & Styling</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Branding & Styling" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Branding & Styling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/branding/builder/" class="md-nav__link">
+        UI Theme
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/branding/inspector/" class="md-nav__link">
+        UI Inspector
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/branding/logos/" class="md-nav__link">
+        Logos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/branding/icons/" class="md-nav__link">
+        Icons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/branding/notifications/" class="md-nav__link">
+        Email & SMS Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/branding/empty-states/" class="md-nav__link">
+        Empty States
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Navigation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Navigation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Navigation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/nav/route/" class="md-nav__link">
+        Roots
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/nav/sort/" class="md-nav__link">
+        Sort & Order Pages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/nav/page/" class="md-nav__link">
+        Page Display Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/nav/path-overrides/" class="md-nav__link">
+        Styling Overrides
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/nav/role/" class="md-nav__link">
+        Role-Specific Settings
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Developer Options
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Developer Options" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Options
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/dev/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Multi-UI Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Multi-UI Projects" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Multi-UI Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/multi/" class="md-nav__link">
+        Multi-UI Projects & Use Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">UI Configuration</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="UI Configuration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          UI Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config-basics/" class="md-nav__link">
+        Configuration Panels
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../layout-controller/" class="md-nav__link">
+        Layout Controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search-config/" class="md-nav__link">
+        Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../map-config/" class="md-nav__link">
+        Map
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Tables
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tables" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tables
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table-viewer/" class="md-nav__link">
+        Table Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../list-viewer/" class="md-nav__link">
+        List Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../responsive-table/" class="md-nav__link">
+        Responsive Table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history-table-viewer/" class="md-nav__link">
+        History Table Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history-list-viewer/" class="md-nav__link">
+        History List Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../responsive-history-table/" class="md-nav__link">
+        Responsive History Table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parents/" class="md-nav__link">
+        Parent Data Columns in Tables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aggregations-viewer/" class="md-nav__link">
+        Aggregations Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grouping-selector/" class="md-nav__link">
+        Grouping Selector
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rollover-selection/" class="md-nav__link">
+        Rollovers and Selections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboard-viewer/" class="md-nav__link">
+        Dashboard Viewer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../features/">Features</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Features" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Account Access
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Account Access" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Account Access
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/account/authentication/" class="md-nav__link">
+        Two-Step Verification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/account/signincode/" class="md-nav__link">
+        One-Time Access Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/account/roles/" class="md-nav__link">
+        Multi-Role Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../features/users/">User Management</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="User Management" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          User Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../features/create/">Create & Edit Items</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Create & Edit Items" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Create & Edit Items
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../features/search/">Search & Filter Items</a>
+          
+            <label for="__nav_5_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Search & Filter Items" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Search & Filter Items
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/search/quicksearch/" class="md-nav__link">
+        Quick Search
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../features/pair/">Pairing</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Pairing" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Pairing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../features/map/">Maps</a>
+          
+            <label for="__nav_5_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Maps" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          Maps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/map/zone/" class="md-nav__link">
+        Zones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/map/multifloor/" class="md-nav__link">
+        Multi-Floor Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../features/fota/">FOTA Management</a>
+          
+            <label for="__nav_5_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="FOTA Management" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_8">
+          <span class="md-nav__icon md-icon"></span>
+          FOTA Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/fota/type/" class="md-nav__link">
+        Device Type
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/fota/application/" class="md-nav__link">
+        Applications & Components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/fota/release/" class="md-nav__link">
+        FOTA Releases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-a-configuration-panel" class="md-nav__link">
+    Accessing a Configuration Panel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-configuration-area" class="md-nav__link">
+    Primary Configuration Area
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versions" class="md-nav__link">
+    Versions
+  </a>
+  
+    <nav class="md-nav" aria-label="Versions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-version" class="md-nav__link">
+    Create A Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-a-version" class="md-nav__link">
+    Save A Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-a-version" class="md-nav__link">
+    Load A Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-version" class="md-nav__link">
+    Delete A Version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-a-page" class="md-nav__link">
+    Configuring a Page
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring a Page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pick-the-role-and-page" class="md-nav__link">
+    Pick the Role and Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-each-component-on-the-page" class="md-nav__link">
+    Configure Each Component on the Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-the-configured-state-to-a-dashboard" class="md-nav__link">
+    Save the Configured State to a Dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-the-defaults-of-the-page" class="md-nav__link">
+    Set the Defaults Of The Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-dashboards" class="md-nav__link">
+    Managing Dashboards
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renaming-a-dashboard" class="md-nav__link">
+    Renaming A Dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-dashboard" class="md-nav__link">
+    Delete a Dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-personal-default-dashboard-back-to-stock" class="md-nav__link">
+    Reset Personal Default Dashboard Back to Stock
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-best-practices" class="md-nav__link">
+    Configuration Best Practices
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="configuration-and-dashboard-basics">Configuration and Dashboard Basics<a class="headerlink" href="#configuration-and-dashboard-basics" title="Permanent link">&para;</a></h1>
+<p>Leverege Amplify provides users with the ability to configure the look, feel, and behavior of the vast majority of components in the application. Examples of components include tables, maps, rollover cards, and graphs. Configuring a page of the application relies on three primary steps:</p>
+<ol>
+<li>
+<p><strong>Configuring each component using its configuration panel</strong>. A configuration panel is a popup or screen where a user can configure and change settings of an individual component on a page</p>
+</li>
+<li>
+<p><strong>Saving the components to a dashboard</strong>. A dashboard is a single view that arranges and displays all the components on the page</p>
+</li>
+<li>
+<p><strong>Setting where and for whom the dashboard appears</strong>. By setting the dashboard availability and defaults, a user can specify on which pages and for which types of users the dashboard is seen.</p>
+</li>
+</ol>
+<p>The following sections describe how to interact with configuration panel, save configured components to a dashboard, and administer a dashboard to be seen by either all or select users of an application.</p>
+<h2 id="accessing-a-configuration-panel">Accessing a Configuration Panel<a class="headerlink" href="#accessing-a-configuration-panel" title="Permanent link">&para;</a></h2>
+<p>Each configurable component in the application is controlled by a configuration panel. All configuration panels share a similar layout and set of functions. Accessing the configuration panel differs by component, but most can be identified with the gear icon. Refer to the specific component’s documentation for instructions on how to exactly access its configuration panel. </p>
+<p>Configuration is only available for those users with the appropriate permission.</p>
+<h2 id="primary-configuration-area">Primary Configuration Area<a class="headerlink" href="#primary-configuration-area" title="Permanent link">&para;</a></h2>
+<p>The primary configuration area on a configuration page is typically a 2-panel card. For example, tables have a configuration area where the list of available fields are selectable on the left and the configurable values are displayed on the right. </p>
+<p>[Screenshot of table configuration panel with each side outlined and labeled]</p>
+<p>The primary configuration may vary slightly depending on the UI component. For example, in the search bar configuration, the configuration area is a list of the searchable fields with checkboxes.</p>
+<p>[Screenshot of search bar configuration]</p>
+<h2 id="versions">Versions<a class="headerlink" href="#versions" title="Permanent link">&para;</a></h2>
+<p>A version is a saved configuration profile for an individual UI component. A user may use versions when experimenting with the configuration of a component before rolling it out to others. </p>
+<p>A version is specific to the user, in that no users can see another’s user versions. </p>
+<h3 id="create-a-version">Create A Version<a class="headerlink" href="#create-a-version" title="Permanent link">&para;</a></h3>
+<p>To create a version, use the <strong>Save To &gt; Create Version</strong> button in the upper right of the configuration panel. </p>
+<h3 id="save-a-version">Save A Version<a class="headerlink" href="#save-a-version" title="Permanent link">&para;</a></h3>
+<p>Once created, users can save their current component’s configuration to the version by clicking <strong>Save To &gt; Versions</strong> and selecting the version. Once saved, click <strong>Apply</strong> to apply the configuration to the component.</p>
+<h3 id="load-a-version">Load A Version<a class="headerlink" href="#load-a-version" title="Permanent link">&para;</a></h3>
+<p>To retrieve a previously saved version, click the <strong>Load From</strong> button in the upper left of the configuration panel and select the desired version. This will load that version’s configuration into the panel. Click <strong>Apply</strong> to the apply that version’s configuration to the component.</p>
+<p>[Save To Screenshot]</p>
+<p>[Load From Screenshot]</p>
+<h3 id="delete-a-version">Delete A Version<a class="headerlink" href="#delete-a-version" title="Permanent link">&para;</a></h3>
+<p>To delete a version, click the three dots icon next to <strong>Save To  &gt; Delete Versions</strong>, and select the version to delete. Confirm the deletion in the prompt.</p>
+<h2 id="configuring-a-page">Configuring a Page<a class="headerlink" href="#configuring-a-page" title="Permanent link">&para;</a></h2>
+<p>The high-level steps to configuring a page are:</p>
+<ol>
+<li>
+<p><strong>Pick the role and page</strong>: If the configured page is applicable to a specific role, assume the role using the role selector. Then, navigate to the page where the configuration should apply.</p>
+</li>
+<li>
+<p><strong>Configure each component on the page</strong>: Refer to the UI component documentation as necessary</p>
+</li>
+<li>
+<p><strong>Save the configured state to a dashboard</strong>: The dashboard can either be an existing or new dashboard. If new, specify where and to which users the dashboard can be shown as a selection option.</p>
+</li>
+<li>
+<p><strong>Set the priority of the dashboards by setting defaults</strong>: once the dashboard is saved, determine when it should be shown to a user in relative priority to other dashboards already configured for the page</p>
+</li>
+</ol>
+<h3 id="pick-the-role-and-page">Pick the Role and Page<a class="headerlink" href="#pick-the-role-and-page" title="Permanent link">&para;</a></h3>
+<p>It’s common for an application to present data on the same page differently to users with different roles. For example, a field engineer may want to see the battery level and firmeware version of a device, while a customer service rep may want to see its last known location. </p>
+<ol>
+<li>
+<p>If the configuration is applicable to a specific role, assume the role by selecting it from the role selector. Access the role selector by clicking the username in upper right of the page and selecting the role under <strong>User Role</strong>.
+[Screenshot of role selector]</p>
+</li>
+<li>
+<p>Navigate to the page to where the configuration should be applied. For example, if the configuration is intended for the Assets page, navigate to the Assets page.</p>
+</li>
+<li>
+<p>If the configuration is meant to be applied to an existing dashboard, load the dashboard by selecting it from the dashboard selector at the top of the page.</p>
+</li>
+</ol>
+<p>[Screenshot of the dashboard selector]</p>
+<h3 id="configure-each-component-on-the-page">Configure Each Component on the Page<a class="headerlink" href="#configure-each-component-on-the-page" title="Permanent link">&para;</a></h3>
+<p>Use the layout controller to place the desired components on the page. Refer to the documentation for the layout controller for more details.</p>
+<p>[Screenshot of layout controller on the UI]</p>
+<p>For each component, access the control panel and make the desired configuration changes. Click <strong>Apply</strong> in the configuration panel of that component once all the desired changes are performed. Refer to the document for the specific component for more details.</p>
+<h3 id="save-the-configured-state-to-a-dashboard">Save the Configured State to a Dashboard<a class="headerlink" href="#save-the-configured-state-to-a-dashboard" title="Permanent link">&para;</a></h3>
+<p>Once all configuration to all components have been completed, a user can save the entire state of the page to a dashboard.</p>
+<ol>
+<li>
+<p>To save the configured state to the current dashboard, click the check mark icon next to the dashboard selector.</p>
+</li>
+<li>
+<p>To revert the changes back to its previously saved state, click the reverse circle icon.</p>
+</li>
+</ol>
+<p>[Screenshot of save &amp; revert of current dashboard]</p>
+<p>Note: The Default dashboard is a user’s personal dashboard configuration for exact page location. Saving the configuration to the dashboard titled “Default” will only apply the configuration as the default dashboard to the current user, for currently assumed role, and to exact path for which the configuration was performed. </p>
+<p>For example, if a user A is on the Company &gt; Assets page as Role A and saves a new configuration to the Default dashboard at that page, it will affect only the Default dashboard for User A while they are using Role A on the Company &gt; Assets page. </p>
+<p>It will not impact the Default dashboard for user B at Company &gt; Assets using Role A, not impact Default dashboard for any users at Company &gt; Assets using Role B, and not impact the Default dashboard of user A at other Asset paths (e.g. Location &gt; Assets) using Role A.</p>
+<ol>
+<li>
+<p>To save the configured state to a new dashboard, click the three-dot icon next to the dashboard selector and click <strong>Save Dashboard As…</strong></p>
+</li>
+<li>
+<p>In the Save Dashboard As… popup, enter the name of the new dashboard</p>
+</li>
+<li>
+<p>Select the availability of the dashboard from the <strong>Available To</strong> dropdown:</p>
+<ol>
+<li>
+<p><strong>Role Level</strong> - Any <role X> on this page: The option to select this dashboard will appear for any users of role X on this exact page path, with role X being the currently assumed role of the user doing the configuration. For example, only show this dashboard for users with Role A and on the Assets page at the Company &gt; Assets path. This will create an option in the dropdown under the “Role” section of the dashboard selector.</p>
+</li>
+<li>
+<p><strong>Page Level</strong> - Any user on this page: The option to select this dashboard will appear for any user of any role on this exact page path.  For example, show this dashboard for all users on the Assets page at the Company &gt; Assets path. This will create an option in the dropdown under the “Page” section.</p>
+</li>
+<li>
+<p><strong>Blueprint Level</strong> - Any user on the page showing this page's Blueprint type: The option to select this dashboard will appear for any user of any role on a page of the same Blueprint type as the one being configured. For example, show this dashboard for all users on all Asset pages, regardless of its specific path. This will create an option in the dropdown under the section named after the Blueprint type (e.g. Assets).</p>
+</li>
+<li>
+<p><strong>Personal Blueprint Level</strong> - Me on any page showing this page's Blueprint type: The option to select this dashboard will appear for only the current user on any page of any role on a page of the same Blueprint type as the one being configured. This will create an option in the dropdown under the “Mine” section.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>Looking for an option to save the configured page to the current user for the current role and current path? Save the dashboard to the Default dashboard by click the check mark next to the left of the dashboard selector?</p>
+<h3 id="set-the-defaults-of-the-page">Set the Defaults Of The Page<a class="headerlink" href="#set-the-defaults-of-the-page" title="Permanent link">&para;</a></h3>
+<p>The previous section on Saving the Dashboard produces a dashboard that is available for selection by a user on a give page. It does not yet specify whether it will load by default when a user visits that page.</p>
+<p>In order to apply the dashboard to pages so that it loads for given users, page locations, and roles, set the dashboard defaults. </p>
+<ol>
+<li>
+<p>Click the three dots icon next to the dashboard selector to load the list of editable dashboards</p>
+</li>
+<li>
+<p>Depending on how many dashboards you have configured and their availability on the page, you will see dashboards separated into the following categories based on availability criteria:</p>
+<ol>
+<li>
+<p><strong>Role</strong> - Dashboards that are available to show on this page based on the user’s role</p>
+</li>
+<li>
+<p><strong>Page</strong> - Dashboards that are available to show on this page based on the user’s page path in the application</p>
+</li>
+<li>
+<p><strong>[Name of Blueprint Type]</strong> (e.g. Assets) - Dashboards that are available to show on this page based on the type of blueprint that page is showing</p>
+</li>
+<li>
+<p><strong>Mine</strong> - Personal dashboards that are available to show on this page based on the type of blueprint that page is showing</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To set a dashboard to show by default on the page when it meets the availability criteria, select the dashboard &gt; <strong>Use as Default</strong>.</p>
+<ol>
+<li>
+<p>Only one dashboard from each section can be set as default (e.g. only one Role-level dashboard can be set as default, one Page-level dashboard can be set as default, etc.) </p>
+</li>
+<li>
+<p>In the event that multiple dashboards across each section is set as default, the application shows the default dashboard based on this ranking (from highest to lowest):</p>
+<ol>
+<li>Mine</li>
+<li>Role</li>
+<li>Page</li>
+<li>Blueprint</li>
+<li>Default</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="managing-dashboards">Managing Dashboards<a class="headerlink" href="#managing-dashboards" title="Permanent link">&para;</a></h3>
+<h4 id="renaming-a-dashboard">Renaming A Dashboard<a class="headerlink" href="#renaming-a-dashboard" title="Permanent link">&para;</a></h4>
+<p>To rename a dashboard, click the three dots icon next to the dashboard selector and select the <strong>[dashboard name] &gt; Rename</strong>.</p>
+<h4 id="delete-a-dashboard">Delete a Dashboard<a class="headerlink" href="#delete-a-dashboard" title="Permanent link">&para;</a></h4>
+<p>To delete a dashboard, click the three dots icon next to the dashboard selector and select the <strong>dashboard name &gt; Delete</strong>. If the deleted dashboard was displayed on the page, the page will switch to showing the Default dashboard.</p>
+<h4 id="reset-personal-default-dashboard-back-to-stock">Reset Personal Default Dashboard Back to Stock<a class="headerlink" href="#reset-personal-default-dashboard-back-to-stock" title="Permanent link">&para;</a></h4>
+<p>If the Default dashboard has been changed and a user wishes to reset it back to its original state (e.g. “factory defaults”), select the Default dashboard from the dashboard selector. Then click the three dots icon next to the dashboard selector &gt; <strong>Reset to Default Dashboard</strong>.</p>
+<h2 id="configuration-best-practices">Configuration Best Practices<a class="headerlink" href="#configuration-best-practices" title="Permanent link">&para;</a></h2>
+<p>We’re working on making a list of best practices, stay tuned!</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Leverege LLC 2022 | All Rights Reserved | IoT Changes Everything&trade;
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:6589859965832347648/" target="_blank" rel="noopener" title="Leverege on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.facebook.com/leverege/" target="_blank" rel="noopener" title="Leverege on Facebook" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://twitter.com/leverege?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener" title="Leverege on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "NOnavigation.sections", "navigation.indexes", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.22074ed6.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
