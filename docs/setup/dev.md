@@ -1,6 +1,6 @@
 # Developer Options
 
-Developers have more UI setup options available in the config file for the UI. You can review the complete guide to what developers can [configure here] (https://leverege-steve-molten-docs.web.app/config/).
+Developers have more UI setup options available in the config file for the UI. Below are just the start to what developers can do with the Leverege Stack. Review our Build documentation for a deeper look.
 
 Some developer configuration options include:
 

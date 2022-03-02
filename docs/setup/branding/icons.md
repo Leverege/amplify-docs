@@ -126,7 +126,7 @@ The `navIcon` property is used in the top navigation bar and the sidebar, as wel
 
   
 
-## Title Icons
+## Screen Icons
   
 The  `screenIcon` property is used in the header section of a given page. You can set the default icon in the blueprint metadata.
 

@@ -21,7 +21,7 @@ The location blueprint also has child relationships, all of which are one-to-man
 - Beacon Blueprint
 - Floor Blueprint
 
-For a refresher on relationship types and usages, {==please refer to this link.==}
+For a refresher on relationship types and usages, please review our [Blueprints & Relationships section](../../../architecture/blueprint/) help guide.
 
 
 ## Selecting Roots
@@ -39,7 +39,7 @@ On top of adding companies to the top level navigation, the root also will only 
   <figcaption>Multi-root example</figcaption>
 </figure>
 
-Under the location's tab, you will have entirely new set of pages, representing the child blueprints, in your UI. This pages will be completely separate from the pages representing the same blueprint under the company root. To help visual this, take a look at the diagram below. 
+Under the location's tab, you will have entirely new set of pages, representing the child blueprints, in your UI. This pages will be completely separate from the pages representing the same blueprint under the company root. To help visualize this, take a look at the diagram below. 
 
 <figure markdown>
 ![!Hierarchy 2](assets/location-hierarchy.svg){ width="700" }

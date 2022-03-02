@@ -13,7 +13,7 @@ The sidebar navigation includes:
 - All blueprints that have the location blueprint as a parent, regardless of if the relationship is one-to-one or one-to-many
 - If user management is enabled, a users page. For more information on enabling user management, review {==our documentation here. ==}
 
-!!! Tip “Icons”
+!!! Tip "Icons"
     Reminder that the icons loading into the side navigation were set in the blueprint metadata. Revisit our icons documentation to review this process.
 
 ## Sections & Ordering

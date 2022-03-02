@@ -48,6 +48,6 @@ When creating a new variant, you very rarely need to start from scratch. Let's s
 
 <figure markdown>
 ![!UI Builder Elements](assets/inherit-variant.svg){ width="700" }
-  <figcaption>Adding a new variant</figcaption>
+  <figcaption>Setting Inheritance</figcaption>
 </figure>
 

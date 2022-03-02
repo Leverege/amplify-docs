@@ -3,7 +3,7 @@
 The logos used in the interfaces are stored in the UI builder in various places. Below, we will show you where each logo is located so that you can update them anytime. 
 
 !!! Tip "Logo Storage"
-    The UI Builder does not store any files. Before you begin, please host your logos publicly on the web. We suggest using GCP for this step.
+    The UI Builder does not store any files. Before you begin, please host your logos publicly on the web. We suggest using Google Cloud Storage Buckets or something similar for this step.
     
 ## Top Navigation Logo
 
