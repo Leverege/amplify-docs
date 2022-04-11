@@ -56,7 +56,7 @@ Now that we've added all of our tags, our sidebar should look like the sidebar o
 
 <figure markdown>
 ![!step one](assets/step-one.svg){ width="700" }
-  <figcaption>Sections & Ordering Outcome/figcaption>
+  <figcaption>Sections & Ordering Outcome</figcaption>
 </figure>
 
 

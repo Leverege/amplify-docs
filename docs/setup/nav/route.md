@@ -75,6 +75,7 @@ Below are the different types of configuration options for roots via tags.
 | `is:root` | Adds the blueprint to the top-level navigation as a root |
 | `rootNavGroup:<Name>` | If a blueprint is set as a root, it can be added to a group in the top navigation. Name represents which group the blueprint is added to and is used in the label of the dropdown  |
 | `rootNavGroupIcons:<URL>` | To set the icon for a group, use this tag on any blueprint in that group. This icon must be hosted publicly online |
+| `navSort:<SORT_KEY>` | Orders root level page according to the `SORT_KEY`. It compares the `SORT_KEY` of the current page with the `SORT_KEY`s of all other blueprints that have a `navSort` tag applied at the root level. See the section on "Sort & Order Pages" for more info on `SORT_KEY` |
 
 
 ## Hiding Roots from Specific Roles

@@ -12,6 +12,7 @@ To access the table configuration, click the gear icon in the upper right of the
 ![Table viewer config panel](assets/table-viewer-config.png){ width="600" }
   <figcaption>Table viewer configuration panel</figcaption>
 </figure>
+
 The table view is organized by columns. The currently displayed columns are shown in the list on the left side of the panel.
 
 To add a column to the table, click **Add > [new column]**.
